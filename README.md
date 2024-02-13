@@ -6,7 +6,7 @@ I'm eager to translate my passion for user-centric design into functional and be
 Eager to learn and grow, I'm currently mastering the fundamentals of HTML, CSS, and JavaScript, eager to dive deeper into frameworks like React or Vue.js in the future.
 In my free time, I enjoy tinkering with personal projects and staying up-to-date with the latest web technologies.
 
-###***QUICK FACTS ABOUT ME***
+***QUICK FACTS ABOUT ME***
 
 - 😄 Pronouns: HE/HIM.
 - 🔭 I’m currently working on [My Porfolio](https://favorodera.vercel.app/).
