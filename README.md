@@ -1,5 +1,5 @@
 ### Hello there 👋
-## It's *FAVOUR CHIDERA EMEKA*.
+#### It's *FAVOUR CHIDERA EMEKA*.
 
 A driven frontend software engineering student at AltSchool Africa. 
 I'm eager to translate my passion for user-centric design into functional and beautiful interfaces. 
