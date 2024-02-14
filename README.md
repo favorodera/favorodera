@@ -1,4 +1,4 @@
-#### Hello there 👋
+#### Hello there 👋🏿
 #### It's *FAVOUR CHIDERA EMEKA*.
 
 A driven frontend software engineering student at AltSchool Africa. 
@@ -8,7 +8,7 @@ In my free time, I enjoy tinkering with personal projects and staying up-to-date
 
 ***QUICK FACTS ABOUT ME***
 
-- 😄 Pronouns: HE/HIM.
-- 🔭 I’m currently working on [My Porfolio](https://favorodera.vercel.app/).
-- 🌱 I’m currently studying at [AltSchool Africa](https://www.altschoolafrica.com/).
-- 📫 You can reach me via the socual links on my profile.
+- 👨🏿‍💻 Pronouns: HE/HIM.
+- ⚙️ I’m currently working on [My Porfolio](https://favorodera.vercel.app/).
+- 🎒 I’m currently studying at [AltSchool Africa](https://www.altschoolafrica.com/).
+- ✉️ You can reach me via the socual links on my profile.
