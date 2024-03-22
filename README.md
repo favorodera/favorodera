@@ -9,6 +9,5 @@ In my free time, I enjoy tinkering with personal projects and staying up-to-date
 ***QUICK FACTS ABOUT ME***
 
 - 👨🏿‍💻 Pronouns: HE/HIM.
-- ⚙️ I’m currently working on [My Porfolio](https://favorodera.vercel.app/).
 - 🎒 I’m currently studying at [AltSchool Africa](https://www.altschoolafrica.com/).
 - ✉️ You can reach me via the social links on my profile.
