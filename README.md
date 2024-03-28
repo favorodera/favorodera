@@ -57,18 +57,19 @@
 
 ###
 
-<p align="center"> <img src="https://komarev.com/ghpvc/?username=favorodera&label=Profile%20views&color=0e75b6&style=flat" alt="favorodera" /> </p>
-
-###
-
-###
-<p align="center"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=favorodera" alt="favorodera" /></a> </p>
-
-###
-
-###
 <div align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=favorodera&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=false&order=1" height="150" alt="stats graph"  />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=favorodera&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=false&order=2" height="150" alt="languages graph"  />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=favorodera.favorodera&left_color=darkslateblue&right_color=darkslateblue&left_text=Profile%20Views"  />
 </div>
-<p align="center"><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=favorodera&" alt="favorodera" /></p>
+
+###
+
+###
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=favorodera&hide_title=false&hide_rank=false&show_icons=true&include_all_commits=true&count_private=true&disable_animations=false&theme=dracula&locale=en&hide_border=true&order=1" height="150" alt="stats graph"  />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs?username=favorodera&locale=en&hide_title=false&layout=compact&card_width=320&langs_count=5&theme=dracula&hide_border=true&order=2" height="150" alt="languages graph"  />
+  <img src="https://streak-stats.demolab.com?user=favorodera&locale=en&mode=daily&theme=dracula&hide_border=true&border_radius=5&order=3" height="150" alt="streak graph"  />
+  <img src="https://github-profile-trophy.vercel.app?username=favorodera&theme=dracula&column=-1&row=1&margin-w=8&margin-h=8&no-bg=false&no-frame=true&order=4" height="150" alt="trophy graph"  />
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=favorodera&radius=16&theme=dracula&area=true&order=5&hide_border=true" height="300" alt="activity-graph graph"  />
+</div>
+
