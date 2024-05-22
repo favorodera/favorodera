@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Favour Chidera Emeka</h1>
-<h5 align="left">A driven frontend software engineering student at AltSchool Africa. I'm eager to translate my passion for user-centric design into functional and beautiful interfaces. Eager to learn and grow, I'm currently mastering the fundamentals of HTML, CSS, and JavaScript, eager to dive deeper into frameworks like React or Vue.js in the future. In my free time, I enjoy tinkering with personal projects and staying up-to-date with the latest web technologies</h5>
+<h4 align="left">A driven frontend software engineering student at AltSchool Africa. I'm eager to translate my passion for user-centric design into functional and beautiful interfaces. Eager to learn and grow, I'm currently mastering the fundamentals of HTML, CSS, and JavaScript, eager to dive deeper into frameworks like React or Vue.js in the future. In my free time, I enjoy tinkering with personal projects and staying up-to-date with the latest web technologies</h4>
 
 ###
 
