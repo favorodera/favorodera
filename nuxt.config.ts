@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import Aura from '@primevue/themes/aura';
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: false },
@@ -8,11 +10,36 @@ export default defineNuxtConfig({
   ssr: true,
   css: ['~/assets/scss/index.scss','@unocss/reset/normalize.css'],
   modules: [
-    '@primevue/nuxt-module','@unocss/nuxt', '@pinia/nuxt', '@nuxt/eslint'
+    '@primevue/nuxt-module','@unocss/nuxt', '@pinia/nuxt', '@nuxt/eslint', '@nuxtjs/color-mode'
   ],
-  primevue: {
-
+  colorMode: {
+    preference: 'system',
+    fallback: 'dark',
+    hid: 'nuxt-color-mode-script',
+    globalName: '__NUXT_COLOR_MODE__',
+    componentName: 'ColorScheme',
+    classPrefix: '',
+    classSuffix: '',
+    storage: 'localStorage',
+    storageKey: 'color-mode'
   },
+  primevue: {
+    components: {
+      exclude:[]
+    },
+    options: {
+        ripple: true,
+        inputVariant: 'filled',
+        theme: {
+            preset: Aura,
+            options: {
+                prefix: 'p',
+                darkModeSelector: 'system',
+                cssLayer: false
+            }
+        }
+    }
+},
   unocss: {
     nuxtLayers: true,
   },
@@ -29,6 +56,5 @@ export default defineNuxtConfig({
       id: "app",
       style: "width:100%; max-width:90rem"
     },
-
   },
 })

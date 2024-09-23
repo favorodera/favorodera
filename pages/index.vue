@@ -1,7 +1,11 @@
 <template>
-  <div class="w-full flex items-center justify-center">
-    <p class="font-700">
-      HELLO WORLD <span class="i-openmoji-raised-back-of-hand-dark-skin-tone" />
-    </p>
-  </div>
+  <section class="w-full flex flex-col items-center justify-between">
+    <LazyHomeHeader />
+  </section>
 </template>
+
+<script setup lang="ts">
+definePageMeta({
+  layout: 'default',
+})
+</script>
