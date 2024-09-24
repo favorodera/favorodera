@@ -35,7 +35,7 @@ export default defineNuxtConfig({
             options: {
                 prefix: 'p',
                 darkModeSelector: 'system',
-                cssLayer: false
+                cssLayer: true
             }
         }
     }

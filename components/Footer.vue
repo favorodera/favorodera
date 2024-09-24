@@ -3,7 +3,7 @@
   <footer class="w-full">
     <Divider
       type="solid"
-      pt:content:style="padding: 0rem; border-radius: 100%;"
+      pt:content:class="p-0 rounded-full"
     >
       <Avatar
         image="https://lh3.googleusercontent.com/a/ACg8ocIl5OIPOEbL6CgJpbTrpW7kC9HLnzb8QzB2dGrF9UQivv0BAbde=s96-c"

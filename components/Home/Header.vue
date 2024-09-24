@@ -15,8 +15,11 @@
       <Select
         v-model="$colorMode.preference"
         :options="['light', 'dark', 'system']"
-        pt:dropdown:style="display:none;"
-        :pt="{ root: { style: 'background:transparent;' } }"
+        pt:dropdown:class="hidden"
+        pt:root:class="bg-transparent dark:bg-transparent"
+        pt:label:class="p-0.1rem"
+        pt:list-container:class="p-2"
+        pt:list:class="gap-2"
       >
         <template #value="slotProps">
           <i
@@ -72,18 +75,16 @@
 
 <script setup lang="ts">
 const currentTime = ref('')
-const timeZone = ref('GMT+1')
-function formatTime() {
-  const now = new Date()
-  now.setUTCHours(now.getUTCHours() + parseInt(timeZone.value.slice(3), 10))
-  const hours = now.getHours()
-  const minutes = now.getMinutes().toString().padStart(2, '0')
-  const meridian = hours >= 12 ? 'PM' : 'AM'
-  const formattedHours = hours % 12 || 12
-  return `${formattedHours}:${minutes} ${meridian} ${timeZone.value}`
-}
-
-onMounted(() => setInterval(() => {
-  currentTime.value = formatTime()
-}, 1000))
+onMounted(() =>
+  setInterval(() => {
+    currentTime.value = new Date().toLocaleString('en-US', {
+      timeZoneName: 'short',
+      timeZone: 'Africa/Lagos',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true,
+    })
+  }, 1000),
+)
 </script>
