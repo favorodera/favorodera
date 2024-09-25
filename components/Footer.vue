@@ -1,16 +1,10 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <footer class="w-full">
+  <footer class="grid w-full gap-y-2">
     <Divider
       type="solid"
       pt:content:class="p-0 rounded-full"
-    >
-      <Avatar
-        image="https://lh3.googleusercontent.com/a/ACg8ocIl5OIPOEbL6CgJpbTrpW7kC9HLnzb8QzB2dGrF9UQivv0BAbde=s96-c"
-        size="normal"
-        shape="circle"
-      />
-    </Divider>
+    />
     <div class="flex flex-col items-center justify-center gap-y-4 text-sm md:flex-row md:justify-between md:gap-0">
       <div class="flex items-center gap-1">
         <p>Copyright</p>

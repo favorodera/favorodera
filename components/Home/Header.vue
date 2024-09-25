@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full flex flex-col gap-16">
+  <header class="grid w-full gap-y-16">
     <div class="flex items-center justify-end gap-4">
       <div class="flex items-center gap-1 font-600">
         <i class="i-heroicons-clock-solid size-6" />
@@ -52,12 +52,12 @@
         </template>
       </Select>
     </div>
-    <div class="flex items-end justify-center gap-4">
+    <div class="flex items-end justify-center gap-4 lg:pl-37.5">
       <Avatar
-        image="https://lh3.googleusercontent.com/a/ACg8ocIl5OIPOEbL6CgJpbTrpW7kC9HLnzb8QzB2dGrF9UQivv0BAbde=s96-c"
+        image="../images/avatar.jpg"
         size="xlarge"
         shape="circle"
-        :pt="{ root: 'flex-shrink-0' }"
+        pt:root:class="flex-shrink-0"
       />
 
       <div class="text-sm font-600">

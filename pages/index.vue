@@ -1,6 +1,8 @@
 <template>
-  <section class="w-full flex flex-col items-center justify-between">
+  <section class="grid w-full items-center justify-between gap-y-10">
     <LazyHomeHeader />
+    <LazyHomeAbout />
+    <LazyHomeRecentWorks />
   </section>
 </template>
 
