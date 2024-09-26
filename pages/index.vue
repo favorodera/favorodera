@@ -3,6 +3,7 @@
     <LazyHomeHeader />
     <LazyHomeAbout />
     <LazyHomeRecentWorks />
+    <LazyHomeEducation />
   </section>
 </template>
 

@@ -9,7 +9,7 @@
           :alt="projectName"
           :src="projectImage"
           width="100%"
-          pt:root:class="size-full object-cover"
+          height="100%"
         />
       </div>
     </div>

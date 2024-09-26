@@ -16,7 +16,7 @@
             v-for="project in projects?.data"
             :key="project.name"
             :project-name="project.name"
-            :project-path="`/projects/${project.name}`"
+            :project-path="`/projects/${project.name.toLowerCase()}`"
             :project-image="project.image"
             :project-description="project.description"
           />
@@ -26,7 +26,7 @@
           <Skeleton
             v-for="n in 2"
             :key="n"
-            pt:root:class="grid grow-1 min-h-17rem basis-20rem  rounded-4 bg-#1c1c1c/10 dark:bg-#1c1c1c"
+            pt:root:class="grow-1 min-h-17rem basis-20rem  rounded-4 bg-#1c1c1c/10 dark:bg-#1c1c1c"
           />
         </template>
       </div>

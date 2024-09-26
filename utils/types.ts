@@ -11,4 +11,15 @@ type Project = {
 
 type Projects = Project[];
 
-export type { Project, Projects }
+type Education = {
+  course: string;
+  institute: string;
+  institute_url: string;
+  start_date: string;
+  end_date:string
+  description: string;
+}
+
+type Educations = Education[]
+
+export type { Project, Projects,Education,Educations };
