@@ -1,22 +1,36 @@
 <template>
-  <section class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8">
+  <section
+    class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8"
+  >
     <div class="flex gap-2 text-4 font-700">
       <i class="i-heroicons-solid-code" />
       <p class="w-37.5">
         RECENT WORKS
       </p>
     </div>
-    <div class="flex flex-col gap-4">
+
+    <div class="w-full flex flex-col gap-4">
       <div class="w-full flex flex-wrap gap-4">
-        <ProjectsCard
-          v-for="n in 2"
-          :key="n"
-          project-name="Brainiac"
-          project-path="/projects/brainiac"
-          project-image="/images/myProfilePicture.jpg"
-          project-description="Lorem ipsum dolor sit amLorem ipsum dolor sit amet consectetur, adipisicing elit. Aspernatur dicta accusantium ad quae veritatis veniam eligendi debitis est, labore"
-        />
+        <template v-if="projects?.data && status === 'success'">
+          <ProjectsCard
+            v-for="project in projects?.data"
+            :key="project.name"
+            :project-name="project.name"
+            :project-path="`/projects/${project.name}`"
+            :project-image="project.image"
+            :project-description="project.description"
+          />
+        </template>
+
+        <template v-else>
+          <Skeleton
+            v-for="n in 2"
+            :key="n"
+            pt:root:class="grid grow-1 min-h-17rem basis-20rem  rounded-4 bg-#1c1c1c/10 dark:bg-#1c1c1c"
+          />
+        </template>
       </div>
+
       <Button
         as="router-link"
         to="/projects"
@@ -31,3 +45,11 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+const { data: projects, status } = await useLazyAsyncData(
+  'projects',
+  () => $fetch('/api/projects', { method: 'GET' }),
+  { server: false },
+)
+</script>

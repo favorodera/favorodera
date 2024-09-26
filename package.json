@@ -21,6 +21,8 @@
     "@unocss/nuxt": "^0.62.4",
     "@unocss/reset": "^0.62.4",
     "eslint": "^9.11.0",
+    "firebase": "^10.13.2",
+    "firebase-admin": "^12.5.0",
     "nuxt": "^3.13.0",
     "primevue": "^4.0.7",
     "sass": "^1.79.3",

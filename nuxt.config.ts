@@ -7,6 +7,9 @@ export default defineNuxtConfig({
   experimental: {
     asyncContext: true,
   },
+  runtimeConfig: {
+    firebaseServiceAccount: "",
+  },
   ssr: true,
   css: ['~/assets/scss/index.scss','@unocss/reset/normalize.css'],
   modules: [
