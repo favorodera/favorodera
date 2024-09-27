@@ -16,10 +16,21 @@ type Education = {
   institute: string;
   institute_url: string;
   start_date: string;
-  end_date:string
+  end_date: string;
   description: string;
-}
+};
 
-type Educations = Education[]
+type Educations = Education[];
 
-export type { Project, Projects,Education,Educations };
+type Experience = {
+  firm: string;
+  position: string;
+  firm_url: string;
+  start_date: string;
+  end_date: string;
+  description: string;
+};
+
+type Experiences = Experience[];
+
+export type { Project, Projects, Education, Educations, Experience, Experiences };

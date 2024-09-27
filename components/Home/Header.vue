@@ -1,8 +1,8 @@
 <template>
   <header class="grid w-full gap-y-16">
     <div class="flex items-center justify-end gap-4">
-      <div class="flex items-center gap-1 font-600">
-        <i class="i-heroicons-clock-solid size-6" />
+      <div class="flex items-center gap-1">
+        <i class="i-heroicons-clock size-6" />
         <p v-if="currentTime">
           {{ currentTime }}
         </p>

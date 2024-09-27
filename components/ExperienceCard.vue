@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-10 grid w-full gap-y-1.5 rounded-4 bg-#1c1c1c/10 p-3 p-4 text-black dark:bg-#1c1c1c dark:text-white dark:shadow-2xl"
+    class="sticky top-10 grid w-full gap-y-1.5 rounded-4 bg-#1c1c1c/10 p-3 p-4 text-black shadow-2xl dark:bg-#1c1c1c dark:text-white"
   >
     <p class="text-xs md:text-sm dark:text-gray">
       {{ course }}
@@ -18,9 +18,9 @@
 
     <p class="text-xs md:text-sm dark:text-gray">
       from
-      <span class="text-xs text-black font-bold md:text-sm dark:text-white">{{ startDate }}</span>
+      <span class="text-xs text-black md:text-sm dark:text-white">{{ startDate }}</span>
       to
-      <span class="text-xs text-black font-bold md:text-sm dark:text-white">{{ endDate }}</span>
+      <span class="text-xs text-black md:text-sm dark:text-white">{{ endDate }}</span>
     </p>
     <Divider pt:root:class="mt-1.5" />
     <p class="mt-4 text-sm">

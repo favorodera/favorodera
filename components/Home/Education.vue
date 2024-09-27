@@ -25,8 +25,6 @@
 
       <template v-else>
         <Skeleton
-          v-for="n in 2"
-          :key="n"
           pt:root:class="grow-1 min-h-17rem basis-20rem  rounded-4 bg-#1c1c1c/10 dark:bg-#1c1c1c"
         />
       </template>

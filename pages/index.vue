@@ -4,6 +4,12 @@
     <LazyHomeAbout />
     <LazyHomeRecentWorks />
     <LazyHomeEducation />
+    <LazyHomeExperience />
+    <LazyHomeContact />
+    <ScrollTop
+      icon="i-heroicons-arrow-up"
+      :button-props="{ severity: 'contrast', raised: true, rounded: true }"
+    />
   </section>
 </template>
 
