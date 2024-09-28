@@ -13,7 +13,7 @@ export default defineNuxtConfig({
   ssr: true,
   css: ['~/assets/scss/index.scss','@unocss/reset/normalize.css'],
   modules: [
-    '@primevue/nuxt-module','@unocss/nuxt', '@pinia/nuxt', '@nuxt/eslint', '@nuxtjs/color-mode'
+    '@primevue/nuxt-module','@unocss/nuxt', '@nuxt/eslint', '@nuxtjs/color-mode'
   ],
   colorMode: {
     preference: 'system',
