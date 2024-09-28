@@ -1,6 +1,6 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <footer class="grid w-full gap-y-2">
+  <footer class="w-full flex flex-col gap-y-2">
     <Divider
       type="solid"
       pt:content:class="p-0 rounded-full"

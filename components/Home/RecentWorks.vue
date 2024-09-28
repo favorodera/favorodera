@@ -10,10 +10,10 @@
     </div>
 
     <div class="w-full flex flex-col gap-4">
-      <div class="w-full flex flex-wrap gap-4">
+      <div class="grid grid-cols-1 w-full gap-4 sm:grid-cols-2">
         <template v-if="projects?.data && status === 'success'">
           <ProjectsCard
-            v-for="project in projects?.data"
+            v-for="project in projects?.data.slice(0, 2)"
             :key="project.name"
             :project-name="project.name"
             :project-path="`/projects/${project.name.toLowerCase()}`"
@@ -37,7 +37,6 @@
         label="View More"
         icon="i-heroicons-arrow-right-solid"
         icon-pos="right"
-        raised
         pt:root:class="p-1 dark:bg-#1c1c1c bg-#1c1c1c/10 hover:bg-gray/10 decoration-none dark:text-white  text-black b-0 h-8 px-3 w-max self-end "
         pt:label:class="font-400"
         pt:icon:class=" text-5"
@@ -48,7 +47,7 @@
 
 <script setup lang="ts">
 const { data: projects, status } = await useLazyAsyncData(
-  'projects',
+  'recent-projects',
   () => $fetch('/api/projects', { method: 'GET' }),
   { server: false },
 )

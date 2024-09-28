@@ -1,6 +1,6 @@
 <template>
   <div
-    class="sticky top-10 grid w-full gap-y-1.5 rounded-4 bg-#1c1c1c/10 p-3 p-4 text-black shadow-2xl dark:bg-#1c1c1c dark:text-white"
+    class="sticky top-10 w-full flex flex-col gap-y-1.5 rounded-4 bg-#1c1c1c/10 p-3 p-4 text-black shadow-2xl dark:bg-#1c1c1c dark:text-white"
   >
     <p class="text-xs md:text-sm dark:text-gray">
       {{ course }}

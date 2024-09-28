@@ -9,7 +9,7 @@
       </p>
     </div>
 
-    <div class="grid w-full gap-4">
+    <div class="w-full flex flex-col gap-4">
       <template v-if="educations?.data && status === 'success'">
         <EducationCard
           v-for="education in educations?.data"

@@ -1,5 +1,5 @@
 <template>
-  <header class="grid w-full gap-y-16">
+  <header class="w-full flex flex-col gap-y-16">
     <div class="flex items-center justify-end gap-4">
       <div class="flex items-center gap-1">
         <i class="i-heroicons-clock size-6" />
@@ -12,45 +12,14 @@
           class="h-10"
         />
       </div>
-      <Select
-        v-model="$colorMode.preference"
-        :options="['light', 'dark', 'system']"
-        pt:dropdown:class="hidden"
-        pt:root:class="bg-transparent dark:bg-transparent"
-        pt:label:class="p-0.1rem"
-        pt:list-container:class="p-2"
-        pt:list:class="gap-2"
-      >
-        <template #value="slotProps">
-          <i
-            v-if="slotProps.value"
-            class="text-2xl text-black font-400 dark:text-white"
-            :class="
-              slotProps.value === 'light'
-                ? 'i-heroicons-sun-solid'
-                : slotProps.value === 'dark'
-                  ? 'i-heroicons-moon-solid'
-                  : 'i-heroicons-computer-desktop-solid'
-            "
-          />
-        </template>
-        <template #option="slotProps">
-          <div class="flex items-center gap-1">
-            <i
-              :class="
-                slotProps.option === 'light'
-                  ? 'i-heroicons-sun-solid'
-                  : slotProps.option === 'dark'
-                    ? 'i-heroicons-moon-solid'
-                    : 'i-heroicons-computer-desktop-solid '
-              "
-            />
-            <p class="capitalize">
-              {{ slotProps.option }}
-            </p>
-          </div>
-        </template>
-      </Select>
+
+      <Button
+        :icon="isDarkMode ? 'i-heroicons-sun-solid' : 'i-heroicons-moon-solid'"
+        outlined
+        pt:root:class="decoration-none group bg-transparent p-1 aspect-square b-gray hover:b-black dark:hover:b-white w-max"
+        pt:icon:class="text-black dark:text-white  size-4"
+        @click="toggleDarkMode"
+      />
     </div>
     <div class="flex items-end justify-center gap-4 lg:pl-37.5">
       <Avatar
@@ -75,6 +44,13 @@
 
 <script setup lang="ts">
 const currentTime = ref('')
+const isDarkMode = ref(false)
+
+const toggleDarkMode = () => {
+  isDarkMode.value = !isDarkMode.value
+  useColorMode().preference = isDarkMode.value ? 'light' : 'dark'
+}
+
 onMounted(() =>
   setInterval(() => {
     currentTime.value = new Date().toLocaleString('en-US', {

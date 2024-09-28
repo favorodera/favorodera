@@ -57,7 +57,7 @@ export default defineNuxtConfig({
     rootTag: "main",
     rootAttrs: {
       id: "app",
-      style: "width:100%; max-width:55rem"
+      style: "width:100%; max-width:50rem"
     },
   },
 })
