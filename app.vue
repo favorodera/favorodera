@@ -1,5 +1,5 @@
 <template>
-  <NuxtLoadingIndicator />
+  <NuxtLoadingIndicator color="white" />
   <LazyNuxtLayout>
     <LazyNuxtPage />
   </LazyNuxtLayout>
@@ -13,7 +13,7 @@ useHead({
   },
   bodyAttrs: {
     class:
-      'min-h-screen flex flex-col flex-1 dark:bg-black bg-white dark:text-white text-black items-center p-4',
+      'min-h-screen flex flex-col flex-1 bg-black  text-white  items-center p-4',
   },
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   style: [

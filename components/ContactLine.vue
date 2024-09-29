@@ -1,9 +1,9 @@
 <template>
   <div class="w-full flex items-center justify-between gap-4">
-    <p class="w-max flex shrink-0 gap-1 font-bold">
+    <p class="w-max flex shrink-0 gap-1 text-xs font-semibold md:text-sm">
       {{ contactType }}:
       <NuxtLink
-        class="w-max text-xs text-black font-normal decoration-none md:text-sm dark:text-gray hover:decoration-underline"
+        class="w-max text-xs text-#a3a3a3 font-normal decoration-none md:text-sm hover:decoration-underline"
         :to="contactUrl"
         target="_blank"
         rel="noopener noreferrer"

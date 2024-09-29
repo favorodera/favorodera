@@ -1,7 +1,7 @@
 <template>
   <header class="w-full flex flex-col gap-y-16">
     <div class="flex items-center justify-end gap-4">
-      <div class="flex items-center gap-1">
+      <div class="flex items-center gap-1 font-semibold">
         <i class="i-heroicons-clock size-6" />
         <p v-if="currentTime">
           {{ currentTime }}
@@ -12,14 +12,6 @@
           class="h-10"
         />
       </div>
-
-      <Button
-        :icon="isDarkMode ? 'i-heroicons-sun-solid' : 'i-heroicons-moon-solid'"
-        outlined
-        pt:root:class="decoration-none group bg-transparent p-1 aspect-square b-gray hover:b-black dark:hover:b-white w-max"
-        pt:icon:class="text-black dark:text-white  size-4"
-        @click="toggleDarkMode"
-      />
     </div>
     <div class="flex items-end justify-center gap-4 lg:pl-37.5">
       <Avatar
@@ -44,12 +36,6 @@
 
 <script setup lang="ts">
 const currentTime = ref('')
-const isDarkMode = ref(false)
-
-const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value
-  useColorMode().preference = isDarkMode.value ? 'light' : 'dark'
-}
 
 onMounted(() =>
   setInterval(() => {

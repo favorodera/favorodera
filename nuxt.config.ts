@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     '@primevue/nuxt-module','@unocss/nuxt', '@nuxt/eslint', '@nuxtjs/color-mode'
   ],
   colorMode: {
-    preference: 'system',
+    preference: 'dark',
     fallback: 'dark',
     hid: 'nuxt-color-mode-script',
     globalName: '__NUXT_COLOR_MODE__',
@@ -37,7 +37,7 @@ export default defineNuxtConfig({
             preset: Aura,
             options: {
                 prefix: 'p',
-                darkModeSelector: 'system',
+                darkModeSelector: '.dark',
                 cssLayer: true
             }
         }

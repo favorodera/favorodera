@@ -2,9 +2,9 @@
   <section
     class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8"
   >
-    <div class="flex gap-2 text-4 font-700">
+    <div class="min-w-37.5 flex gap-2 text-4 font-700 lg:sticky lg:top-10">
       <i class="i-heroicons-academic-cap-solid" />
-      <p class="w-37.5">
+      <p>
         EDUCATION
       </p>
     </div>
@@ -25,7 +25,7 @@
 
       <template v-else>
         <Skeleton
-          pt:root:class="grow-1 min-h-17rem basis-20rem  rounded-4 bg-#1c1c1c/10 dark:bg-#1c1c1c"
+          pt:root:class="grow-1 basis-20rem  rounded-4"
         />
       </template>
     </div>
