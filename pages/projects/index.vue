@@ -4,7 +4,7 @@
     <LazyProjectsGrid />
     <ScrollTop
       icon="i-heroicons-arrow-up"
-      :button-props="{ severity: 'contrast', raised: true, rounded: true }"
+      pt:button:root="text-white text-lg b-gray hover:b-white bg-black"
     />
   </section>
 </template>

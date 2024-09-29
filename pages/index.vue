@@ -8,7 +8,7 @@
     <LazyHomeContact />
     <ScrollTop
       icon="i-heroicons-arrow-up"
-      pt:button:root="text-black dark:text-white text-lg b-gray hover:b-black dark:hover:b-white bg-white dark:bg-black"
+      pt:button:root="text-white text-lg b-gray hover:b-white bg-black"
     />
   </section>
 </template>

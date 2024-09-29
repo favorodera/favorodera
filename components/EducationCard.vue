@@ -10,7 +10,7 @@
       target="_blank"
       rel="noopener noreferrer"
       external
-      class="w-max flex gap-2 text-sm text-black text-white font-700 decoration-none md:text-4 hover:decoration-underline"
+      class="w-max flex gap-2 text-sm text-white font-700 decoration-none md:text-4 hover:decoration-underline"
     >
       <p>{{ institute }}</p>
       <i class="i-heroicons-arrow-long-right-solid text-5" />
