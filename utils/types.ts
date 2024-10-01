@@ -4,7 +4,7 @@ type Project = {
   description: string;
   repository: string;
   technologies: string[];
-  status: string;
+  status: 'Production' | 'Issues' | 'Development';
   created: string;
   link: string;
   tags: string[];

@@ -2,7 +2,8 @@ import { database } from "~/firebase/serverside";
 import { Projects } from "~/utils/types";
 
 export default defineEventHandler(async (event) => {
-  const { tag,projectName }: { tag: string,projectName: string } = getQuery(event);
+  const { tag, projectName }: { tag: string; projectName: string } =
+    getQuery(event);
 
   const projectsSnapshot = await database
     .collection("portfoliodata")
@@ -12,8 +13,8 @@ export default defineEventHandler(async (event) => {
   const allProjects = projectsSnapshot.data()?.projects as Projects;
 
   if (tag) {
-    const tagFilteredProjects = allProjects.filter((project) =>
-      project.tags.includes(tag)
+    const tagFilteredProjects = allProjects?.filter((project) =>
+      project.tags?.includes(tag)
     );
     return {
       data: tagFilteredProjects,
@@ -25,16 +26,15 @@ export default defineEventHandler(async (event) => {
   }
 
   if (projectName) {
-    const nameFilteredProject = allProjects.find((project) =>
-      project.name.toLowerCase() === projectName.toLowerCase()
+    const nameFilteredProject = allProjects?.find(
+      (project) => project.name?.toLowerCase() === projectName?.toLowerCase()
     );
     return {
       data: nameFilteredProject ? [nameFilteredProject] : [],
-      message:
-        nameFilteredProject
-          ? "Project Fetched Successfully"
-          : "No Project Found with that name",
-    }
+      message: nameFilteredProject
+        ? "Project Fetched Successfully"
+        : "No Project Found with that name",
+    };
   }
 
   // If no tag or projectName is provided, return all projects

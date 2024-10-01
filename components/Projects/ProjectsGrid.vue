@@ -4,8 +4,8 @@
   >
     <div class="max-w-37.5 min-w-37.5 flex gap-2 text-4 font-700 lg:sticky lg:top-20">
       <Select
-        v-if="projects?.data && status === 'success'"
         v-model="selectedTag"
+        :disabled="status === 'pending'"
         checkmark
         :options="tags"
         option-label="name"
@@ -18,12 +18,6 @@
         pt:overlay:class="bg-black p-1 mt-2"
         pt:option:class="text-sm text-white px-2 py-1.5 flex-row-reverse justify-between"
         pt:dropdown:class="w-max"
-      />
-
-      <Skeleton
-        v-else
-        width="100%"
-        pt:root:class="grow-1 min-h-9 rounded-2"
       />
     </div>
 
@@ -76,6 +70,7 @@ const tags = ref([
   { name: 'Tools' },
   { name: 'Portfolio' },
   { name: 'Replicas' },
+  { name: 'Personal' },
 ])
 
 const { data: projects, status, error } = await useLazyAsyncData(

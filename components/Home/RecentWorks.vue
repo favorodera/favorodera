@@ -13,7 +13,7 @@
       <div class="grid grid-cols-1 w-full gap-4 sm:grid-cols-2">
         <template v-if="projects?.data && status === 'success'">
           <ProjectsCard
-            v-for="project in projects?.data.slice(0, 2)"
+            v-for="project in projects?.data.slice(-2)"
             :key="project.name"
             :project-name="project.name"
             :project-path="`/projects/${project.name.toLowerCase()}`"

@@ -9,8 +9,8 @@ export default defineEventHandler(async () => {
 
   return {
     data: projectsSnapshot.data()?.educations as Educations,
-    message: projectsSnapshot.data()?.educations 
-      ? "Educations Fetched Successfully" 
+    message: projectsSnapshot.data()?.educations
+      ? "Educations Fetched Successfully"
       : "Error Fetching Educations",
   };
 });

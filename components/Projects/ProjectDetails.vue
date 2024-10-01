@@ -26,7 +26,7 @@
           <div
             class="min-w-37.5 flex flex items-center gap-2 text-blue-500 font-medium capitalize lg:sticky lg:top-10"
           >
-            <i class="i-heroicons-folder-solid" />
+            <i class="i-heroicons-folder-solid text-xl" />
             <p>Name</p>
           </div>
           <p v-if="status === 'success'">
@@ -54,7 +54,7 @@
           <div
             class="min-w-37.5 flex items-center gap-2 text-orange-400 font-medium capitalize lg:sticky lg:top-10"
           >
-            <i class="i-heroicons-list-bullet-solid" />
+            <i class="i-heroicons-list-bullet-solid text-xl" />
             <p>Description</p>
           </div>
           <p v-if="status === 'success'">
@@ -94,7 +94,7 @@
           <div
             class="min-w-37.5 flex items-center gap-2 text-purple-400 font-medium capitalize lg:sticky lg:top-10"
           >
-            <i class="i-heroicons-square-3-stack-3d-solid" />
+            <i class="i-heroicons-square-3-stack-3d-solid text-xl" />
             <p>Technologies</p>
           </div>
           <div
@@ -123,9 +123,13 @@
 
         <div class="w-full flex flex-col items-start gap-2 lg:flex-row lg:gap-4">
           <div
-            class="min-w-37.5 flex items-center gap-2 text-orange-400 font-medium capitalize lg:sticky lg:top-10"
+            class="min-w-37.5 flex items-center gap-2 font-medium capitalize lg:sticky lg:top-10"
+            :class="projects?.status === 'Production' ? 'text-green-500' : projects?.status === 'Issues' ? 'text-red-500' : projects?.status === 'Development' ? 'text-orange-400' : 'text-white'"
           >
-            <i class="i-heroicons-command-line-solid" />
+            <i
+              :class="projects?.status === 'Production' ? 'i-heroicons-check-circle-solid' : projects?.status === 'Issues' ? 'i-heroicons-exclamation-circle-solid' : projects?.status === 'Development' ? 'i-heroicons-command-line-solid' : 'i-heroicons-clock-solid'"
+              class="text-xl"
+            />
             <p>Status</p>
           </div>
           <p v-if="status === 'success'">
@@ -143,7 +147,7 @@
           <div
             class="min-w-37.5 flex items-center gap-2 text-teal-500 font-medium capitalize lg:sticky lg:top-10"
           >
-            <i class="i-heroicons-clock-solid" />
+            <i class="i-heroicons-clock-solid text-xl" />
             <p>Created</p>
           </div>
           <p v-if="status === 'success'">
@@ -166,7 +170,7 @@
           <div
             class="min-w-37.5 flex items-center gap-2 text-blue-700 font-medium capitalize lg:sticky lg:top-10"
           >
-            <i class="i-heroicons-document-solid" />
+            <i class="i-heroicons-document-solid text-xl" />
             <p>Link Access</p>
           </div>
 
