@@ -1,5 +1,7 @@
 <template>
-  <header class="sticky top-0 w-full flex items-center justify-between gap-y-16 bg-black py-4">
+  <header
+    class="sticky top-0 w-full flex items-center justify-between gap-y-16 bg-black py-4"
+  >
     <Button
       label="GO BACK"
       icon="i-heroicons-arrow-long-left-solid"
@@ -29,8 +31,8 @@
 
 <script setup lang="ts">
 const { data: projects, status } = await useLazyAsyncData(
-  'projects',
-  () => $fetch('/api/projects', { method: 'GET' }),
+  'projects-total',
+  () => $fetch('/api/projects', { method: 'GET', timeout: 30000 }),
   { server: false },
 )
 </script>

@@ -9,8 +9,8 @@ export default defineEventHandler(async () => {
 
   return {
     data: projectsSnapshot.data()?.experiences as Experiences,
-    message: projectsSnapshot.data()?.experiences 
-      ? "Experiences Fetched Successfully" 
+    message: projectsSnapshot.data()?.experiences
+      ? "Experiences Fetched Successfully"
       : "Error Fetching Experiences",
   };
 });

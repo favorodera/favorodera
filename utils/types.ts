@@ -7,6 +7,7 @@ type Project = {
   status: string;
   created: string;
   link: string;
+  tags: string[];
 };
 
 type Projects = Project[];

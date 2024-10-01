@@ -23,9 +23,20 @@
         />
       </template>
 
+      <template v-else-if="error">
+        <div
+          class="col-span-2 b-1 b-red-500/60 rounded b-solid bg-red-500/5 px-3.5 py-2.5"
+        >
+          <p class="text-xs text-red-500">
+            Oops!! 🫢 Network error.
+            There's something wrong with your network. Please check your network and reload the page.
+          </p>
+        </div>
+      </template>
+
       <template v-else>
         <Skeleton
-          pt:root:class="grow-1 min-h-17rem basis-20rem  rounded-4 "
+          pt:root:class="grow-1 basis-20rem  rounded-4"
         />
       </template>
     </div>
@@ -33,9 +44,9 @@
 </template>
 
 <script setup lang="ts">
-const { data: experiences, status } = await useAsyncData(
+const { data: experiences, status, error } = await useLazyAsyncData(
   'experiences',
-  () => $fetch('/api/experience', { method: 'GET' }),
+  () => $fetch('/api/experience', { timeout: 30000, method: 'GET' }),
   { server: false },
 )
 </script>
