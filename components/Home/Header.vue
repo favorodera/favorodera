@@ -21,13 +21,21 @@
         pt:root:class="flex-shrink-0"
       />
 
-      <div class="text-sm font-600">
-        <p class="text-xl">
+      <div class="flex flex-col gap-2 font-semibold tracking-widest">
+        <p class="text-2xl">
           FAVOUR EMEKA
         </p>
-        <div class="flex items-center gap-1 text-emerald">
-          <div class="h-3 w-3 animate-pulse rounded-full bg-emerald" />
-          <p>AVAILABLE FOR WORK</p>
+        <div class="flex items-center gap-3 text-xs text-emerald">
+          <div class="flex items-center gap-1">
+            <i class="h-3 w-3 animate-pulse rounded-full bg-emerald" />
+            <p>AVAILABLE</p>
+          </div>
+          <NuxtLink
+            class="text-#A3A3A3 decoration-none hover:underline"
+            to="#contact"
+          >
+            @LETS TALK
+          </NuxtLink>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 <template>
   <section
+    id="contact"
     class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8"
   >
     <div class="min-w-37.5 flex gap-2 text-4 font-700 lg:sticky lg:top-10">
