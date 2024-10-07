@@ -7,21 +7,11 @@
 
 <script setup lang="ts">
 useHead({
-  title: 'Favorodera',
+  title: 'Favour Emeka',
   htmlAttrs: {
     lang: 'en',
   },
-  bodyAttrs: {
-    class:
-      'min-h-screen flex flex-col flex-1 bg-black  text-white  items-center p-4',
-  },
   meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
-  style: [
-    {
-      children:
-        ':root { font-family: "IBM Plex Mono", monospace;} * {margin: 0; padding: 0; box-sizing: border-box; }',
-    },
-  ],
   link: [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },

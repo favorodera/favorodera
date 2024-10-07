@@ -1,5 +1,5 @@
 import { getApps, initializeApp, cert } from "firebase-admin/app";
-import { getFirestore } from "firebase-admin/firestore";
+import { getFirestore} from "firebase-admin/firestore";
 
 const runtime = useRuntimeConfig();
 
@@ -10,4 +10,4 @@ const app =
 
 const database = getFirestore(app);
 
-export { database, app };
+export { database, app};
