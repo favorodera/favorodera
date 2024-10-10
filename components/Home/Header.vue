@@ -6,11 +6,10 @@
         <p v-if="currentTime">
           {{ currentTime }}
         </p>
-        <Skeleton
-          v-else
-          width="12rem"
-          class="h-10"
-        />
+
+        <p v-else>
+          CHECKING TIME...
+        </p>
       </div>
     </div>
     <div class="flex items-end justify-center gap-4 lg:pl-37.5">

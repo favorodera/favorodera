@@ -164,7 +164,7 @@
         <Divider v-if="status === 'success' && data?.project?.repository" />
 
         <div
-          v-if="status === 'success'"
+          v-if="status === 'success' "
           class="w-full flex flex-col items-start gap-2 lg:flex-row lg:gap-4"
         >
           <div
@@ -176,6 +176,7 @@
 
           <div class="w-full flex flex-1 flex-col gap-2">
             <NuxtLink
+              v-if="data?.project?.repository"
               :to="data?.project?.repository"
               target="_blank"
               rel="noopener noreferrer"
@@ -184,6 +185,7 @@
               <i class="i-prime-github text-xl" /><p>Repository</p>
             </NuxtLink>
             <NuxtLink
+              v-if="data?.project.link"
               :to="data?.project.link"
               target="_blank"
               rel="noopener noreferrer"

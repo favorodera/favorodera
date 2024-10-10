@@ -18,6 +18,7 @@
         pt:overlay:class="bg-black p-1 mt-2"
         pt:option:class="text-sm text-white px-2 py-1.5 flex-row-reverse justify-between"
         pt:dropdown:class="w-max"
+        pt:listcontainer:style="max-height: 20rem"
       />
     </div>
 
@@ -71,6 +72,7 @@ const tags = ref([
   { name: 'Portfolio' },
   { name: 'Replicas' },
   { name: 'Personal' },
+  { name: 'Landing Pages' },
 ])
 
 const { data: projects, status, error } = await useLazyAsyncData(

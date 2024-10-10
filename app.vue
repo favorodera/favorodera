@@ -1,13 +1,17 @@
 <template>
   <NuxtLoadingIndicator color="white" />
-  <LazyNuxtLayout>
+  <section class="min-h-screen w-full flex flex-col items-center justify-between gap-y-10">
     <LazyNuxtPage />
-  </LazyNuxtLayout>
+
+    <LazyFooter />
+  </section>
 </template>
 
 <script setup lang="ts">
 useHead({
-  title: 'Favour Emeka',
+  titleTemplate(title) {
+    return title ? `Favorodera | ${title}` : 'Favorodera'
+  },
   htmlAttrs: {
     lang: 'en',
   },
