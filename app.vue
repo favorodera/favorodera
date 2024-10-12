@@ -1,6 +1,8 @@
 <template>
   <NuxtLoadingIndicator color="white" />
-  <section class="min-h-screen w-full flex flex-col items-center justify-between gap-y-10">
+  <section
+    class="min-h-screen w-full flex flex-col items-center justify-between gap-y-10"
+  >
     <LazyNuxtPage />
 
     <LazyFooter />
@@ -8,14 +10,47 @@
 </template>
 
 <script setup lang="ts">
+useServerSeoMeta({
+  title: 'Favour Emeka',
+  ogTitle: 'Favour Emeka',
+  description: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+  ogDescription: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+  ogUrl: 'https://favorodera.vercel.app',
+  ogSiteName: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+  ogImage: {
+    url: 'https://favorodera.vercel.app/images/avatar.jpg',
+    alt: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+    type: 'image/jpeg',
+    width: 1200,
+    height: 630,
+  },
+  ogType: 'profile',
+  ogLocale: 'en_NG',
+  twitterCard: 'summary_large_image',
+  twitterTitle: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+  twitterDescription: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+  twitterImage: {
+    url: 'https://pbs.twimg.com/profile_images/1781932691182522368/8I_wmKdt_400x400.jpg',
+    alt: 'Favour Emeka | Vue/Nuxt Frontend Developer',
+  },
+  twitterSite: '@favorodera',
+  twitterCreator: '@favorodera',
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: 'yes',
+    viewportFit: 'cover',
+  },
+  charset: 'UTF-8',
+})
 useHead({
   titleTemplate(title) {
-    return title ? `Favorodera | ${title}` : 'Favorodera'
+    return title ? `Favour Emeka | ${title}` : 'Favour Emeka'
   },
   htmlAttrs: {
     lang: 'en',
   },
-  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
   link: [
     { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
     { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
