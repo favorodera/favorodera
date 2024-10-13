@@ -15,11 +15,7 @@
 
     <div class="flex items-center gap-1 text-xs text-#a3a3a3 font-semibold md:text-sm">
       <template v-if="projects?.data && status === 'success'">
-        <i class="i-heroicons-folder-solid" />
-        <p>TOTAL PROJECTS:</p>
-        <p class="text-white">
-          {{ projects?.data.length }}
-        </p>
+        <p><i class="i-heroicons-folder-solid" /> TOTAL PROJECTS: <span class="text-white">{{ projects?.data.length }}</span></p>
       </template>
 
       <template v-else>

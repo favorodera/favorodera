@@ -1,17 +1,12 @@
 <template>
-  <header class="w-full flex flex-col gap-y-16">
-    <div class="flex items-center justify-end gap-4">
-      <div class="flex items-center gap-1 font-semibold">
-        <i class="i-heroicons-clock size-6" />
-        <p v-if="currentTime">
-          {{ currentTime }}
-        </p>
+  <header class="w-full flex flex-col items-center justify-between gap-y-10">
+    <time
+      :datetime="currentTime"
+      class="inline-flex items-center self-end gap-2 text-4 font-semibold"
+    >
+      <i class="i-heroicons-clock size-6" /> {{ currentTime ? currentTime : 'CHECKING TIME...' }}
+    </time>
 
-        <p v-else>
-          CHECKING TIME...
-        </p>
-      </div>
-    </div>
     <div class="flex items-end justify-center gap-4 lg:pl-37.5">
       <Avatar
         image="../images/avatar.jpg"
