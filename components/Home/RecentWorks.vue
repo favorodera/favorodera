@@ -37,7 +37,7 @@
           <USkeleton
             v-for="n in 2"
             :key="n"
-            :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+            :ui="{ rounded: 'rounded-2xl', background: 'dark:bg-gray/15' }"
             class="min-h-17rem"
           />
         </template>

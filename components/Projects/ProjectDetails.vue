@@ -4,7 +4,7 @@
       class="w-full flex flex-col gap-y-4"
     >
       <div
-        class="aspect-[1.3] h-auto w-full overflow-hidden rounded-2xl rounded-4 b-solid lg:aspect-auto sm:aspect-auto"
+        class="aspect-video h-auto w-full overflow-hidden rounded-2xl rounded-4 b-solid"
       >
         <img
           v-if="status === 'success'"
@@ -109,7 +109,7 @@
               <USkeleton
                 v-for="n in 6"
                 :key="n"
-                :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+                :ui="{ rounded: 'rounded', background: 'dark:bg-gray/15' }"
                 class="h-8 w-4rem"
               />
             </template>
