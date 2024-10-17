@@ -35,8 +35,9 @@
       </template>
 
       <template v-else>
-        <Skeleton
-          pt:root:class="grow-1 basis-20rem  rounded-4"
+        <USkeleton
+          :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+          class="grow-1 basis-20rem"
         />
       </template>
     </div>

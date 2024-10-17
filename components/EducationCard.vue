@@ -1,11 +1,11 @@
 <template>
   <div
-    class="sticky top-10 w-full flex flex-col gap-y-1.5 rounded-4 bg-#1c1c1c p-3 p-4 text-#a3a3a3 shadow-2xl"
+    class="sticky top-10 w-full flex flex-col gap-y-1.5 rounded-4 bg-#1c1c1c p-4 text-#a3a3a3 shadow-2xl"
   >
     <p class="text-xs text-#a3a3a3 md:text-sm">
       {{ course }}
     </p>
-    <NuxtLink
+    <ULink
       :to="instituteUrl"
       target="_blank"
       rel="noopener noreferrer"
@@ -14,7 +14,7 @@
     >
       <p>{{ institute }}</p>
       <i class="i-heroicons-arrow-long-right-solid text-5" />
-    </NuxtLink>
+    </ULink>
 
     <p class="text-xs text-#a3a3a3 md:text-sm">
       from
@@ -22,8 +22,8 @@
       to
       <span class="text-xs text-white font-semibold md:text-sm">{{ endDate }}</span>
     </p>
-    <Divider pt:root:class="mt-1.5" />
-    <p class="mt-4 text-sm">
+    <UDivider :ui="{ border: { base: 'mt-1.5 mb-4 dark:b-gray/25' } }" />
+    <p class="text-sm">
       {{ description }}
     </p>
   </div>

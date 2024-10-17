@@ -2,23 +2,35 @@
   <section
     class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8"
   >
-    <div class="max-w-37.5 min-w-37.5 flex gap-2 text-4 font-700 lg:sticky lg:top-20">
-      <Select
-        v-model="selectedTag"
+    <div class="max-w-37.5 min-w-37.5 gap-2 text-4 font-700 lg:sticky lg:top-20">
+      <USelectMenu
+        v-model="selected"
         :disabled="status === 'pending'"
-        checkmark
+        searchable
+        clear-search-on-close
+        searchable-placeholder="FilterTags..."
+        color="gray"
+        size="sm"
+        variant="outline"
+        :style="{ cursor: status === 'pending' ? 'not-allowed' : 'pointer' }"
         :options="tags"
-        option-label="name"
-        :max-selected-labels="10"
-        :show-toggle-all="false"
-        placeholder="Categories"
-        dropdown-icon="i-heroicons-chevron-up-down-solid text-4 "
-        pt:root:class="flex min-w-full h-9 items-center justify-between whitespace-nowrap rounded-md border  b-#d4d4d4/25 bg-black px-3 py-2 text-sm shadow-sm line-clamp-1"
-        pt:label:class="text-white font-normal flex"
-        pt:overlay:class="bg-black p-1 mt-2"
-        pt:option:class="text-sm text-white px-2 py-1.5 flex-row-reverse justify-between"
-        pt:dropdown:class="w-max"
-        pt:listcontainer:style="max-height: 20rem"
+        trailing-icon="i-heroicons-chevron-up-down-solid"
+        :ui="{
+          color: { gray: { outline: 'dark:bg-black focus:ring-0' } },
+          base: 'b b-#d4d4d4/25 max-h-9',
+          size: { sm: 'font-normal' },
+          padding: { sm: 'px-3 py-2' },
+          icon: { size: { sm: 'size-4' }, base: 'dark:text-white' },
+        }"
+        :ui-menu="{
+          base: 'pb-1',
+          input: 'dark:bg-black m-0 w-full px-2 text-sm font-normal py-1.5 mb-2',
+          padding: 'p-0',
+          ring: 'dark:ring-gray-100/25',
+          background: 'dark:bg-black',
+          height: 'max-h-29rem',
+          option: { base: 'cursor-pointer mx-1 ', size: 'font-normal', active: 'dark:bg-gray/25', padding: 'px-2 py-1.5' },
+        }"
       />
     </div>
 
@@ -35,11 +47,11 @@
       </template>
 
       <template v-if="status === 'pending'">
-        <Skeleton
+        <USkeleton
           v-for="n in 6"
           :key="n"
-          width="100%"
-          pt:root:class="grow-1 min-h-17rem basis-20rem min-w-full rounded-4"
+          :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+          class="min-h-17rem"
         />
       </template>
 
@@ -64,20 +76,22 @@
 </template>
 
 <script setup lang="ts">
-const selectedTag = ref()
 const tags = ref([
-  { name: 'Complete' },
-  { name: 'AI' },
-  { name: 'Tools' },
-  { name: 'Portfolio' },
-  { name: 'Replicas' },
-  { name: 'Personal' },
-  { name: 'Landing Pages' },
+  'All',
+  'AI',
+  'Tools',
+  'Portfolio',
+  'Replicas',
+  'Personal',
+  'Landing Pages',
+  'Templates',
+  'Libraries',
 ])
+const selected = ref(tags.value[0])
 
 const { data: projects, status, error } = await useLazyAsyncData(
-  `projects-${selectedTag.value}`,
-  () => $fetch(`/api/projects?tag=${selectedTag.value ? selectedTag.value.name.toLowerCase() : ''}`, { timeout: 30000, method: 'GET' }),
-  { server: false, watch: [selectedTag] },
+  `projects-${selected.value}`,
+  () => $fetch(`/api/projects?tag=${selected.value ? selected.value.toLowerCase() : ''}`, { timeout: 30000, method: 'GET' }),
+  { server: false, watch: [selected] },
 )
 </script>

@@ -6,6 +6,8 @@
     <LazyNuxtPage />
 
     <LazyFooter />
+
+    <ScrollTop />
   </section>
 </template>
 

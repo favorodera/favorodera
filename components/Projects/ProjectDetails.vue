@@ -4,19 +4,18 @@
       class="w-full flex flex-col gap-y-4"
     >
       <div
-        class="aspect-1.5 w-full overflow-hidden b-1 b-transparent rounded-4 b-solid sm:aspect-auto"
+        class="aspect-[1.3] h-auto w-full overflow-hidden rounded-2xl rounded-4 b-solid lg:aspect-auto sm:aspect-auto"
       >
-        <Image
+        <img
           v-if="status === 'success'"
-          :alt="data?.project?.name"
           :src="data?.project?.image"
-          width="100%"
-          height="100%"
-        />
+          :alt="data?.project?.name"
+          class="size-full"
+        >
 
-        <Skeleton
+        <USkeleton
           v-else
-          width="100%"
+          :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
           class="min-h-25rem"
         />
       </div>
@@ -29,23 +28,23 @@
             <i class="i-heroicons-folder-solid text-xl" />
             <p>Name</p>
           </div>
-          <p v-if="status === 'success'">
+          <p
+            v-if="status === 'success'"
+            class="text-xs md:text-sm"
+          >
             {{ data?.project?.name }}
           </p>
           <div
             v-else
             class="w-full flex gap-4"
           >
-            <Skeleton
-              width="20%"
-              class="h-2"
-              border-radius="1rem"
+            <USkeleton
+              :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+              class="h-4 w-[20%]"
             />
-
-            <Skeleton
-              width="2rem"
-              class="h-2"
-              border-radius="1rem"
+            <USkeleton
+              :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+              class="h-4 w-2rem"
             />
           </div>
         </div>
@@ -57,35 +56,31 @@
             <i class="i-heroicons-list-bullet-solid text-xl" />
             <p>Description</p>
           </div>
-          <p v-if="status === 'success'">
+          <p
+            v-if="status === 'success'"
+            class="text-xs font-normal leading-5 md:text-sm md:leading-6"
+          >
             {{ data?.project?.description }}
           </p>
           <div
             v-else
             class="w-full flex flex-col gap-4"
           >
-            <Skeleton
-              width="80%"
-              class="h-2"
-              border-radius="1rem"
+            <USkeleton
+              :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+              class="h-4 w-[80%]"
             />
-
-            <Skeleton
-              width="60%"
-              class="h-2"
-              border-radius="1rem"
+            <USkeleton
+              :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+              class="h-4 w-[60%]"
             />
-
-            <Skeleton
-              width="40%"
-              class="h-2"
-              border-radius="1rem"
+            <USkeleton
+              :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+              class="h-4 w-[40%]"
             />
-
-            <Skeleton
-              width="20%"
-              class="h-2"
-              border-radius="1rem"
+            <USkeleton
+              :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+              class="h-4 w-[20%]"
             />
           </div>
         </div>
@@ -104,18 +99,18 @@
               <p
                 v-for="technology in data?.project?.technologies"
                 :key="technology"
-                class="rounded bg-#1c1c1c px-2 py-1 font-semibold tracking-widest"
+                class="rounded bg-#1c1c1c px-2 py-1 text-2.5 font-semibold tracking-widest md:text-xs"
               >
                 {{ technology }}
               </p>
             </template>
 
             <template v-else>
-              <Skeleton
+              <USkeleton
                 v-for="n in 6"
                 :key="n"
-                width="4rem"
-                class="min-h-8"
+                :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+                class="h-8 w-4rem"
               />
             </template>
           </div>
@@ -132,14 +127,17 @@
             />
             <p>Status</p>
           </div>
-          <p v-if="status === 'success'">
+          <p
+            v-if="status === 'success'"
+            class="text-xs md:text-sm"
+          >
             {{ data?.project?.status }}
           </p>
-          <Skeleton
+
+          <USkeleton
             v-else
-            width="30%"
-            class="h-2"
-            border-radius="1rem"
+            :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+            class="h-4 w-[30%]"
           />
         </div>
 
@@ -150,18 +148,23 @@
             <i class="i-heroicons-clock-solid text-xl" />
             <p>Created</p>
           </div>
-          <p v-if="status === 'success'">
+          <p
+            v-if="status === 'success'"
+            class="text-xs md:text-sm"
+          >
             {{ data?.project?.created }}
           </p>
-          <Skeleton
+          <USkeleton
             v-else
-            width="30%"
-            class="h-2"
-            border-radius="1rem"
+            :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+            class="h-4 w-[30%]"
           />
         </div>
 
-        <Divider v-if="status === 'success' && data?.project?.repository" />
+        <UDivider
+          v-if="status === 'success' && data?.project?.repository"
+          :ui="{ border: { base: ' dark:b-gray/25' } }"
+        />
 
         <div
           v-if="status === 'success' "
@@ -175,7 +178,7 @@
           </div>
 
           <div class="w-full flex flex-1 flex-col gap-2">
-            <NuxtLink
+            <ULink
               v-if="data?.project?.repository"
               :to="data?.project?.repository"
               target="_blank"
@@ -183,8 +186,8 @@
               class="w-full flex items-center justify-center gap-2 b-1 b-#262626 rounded-md b-solid bg-transparent px-4 py-2 text-xs text-white decoration-none duration-1000 delay-50 ease property-all hover:bg-gray/15 md:text-sm"
             >
               <i class="i-prime-github text-xl" /><p>Repository</p>
-            </NuxtLink>
-            <NuxtLink
+            </ULink>
+            <ULink
               v-if="data?.project.link"
               :to="data?.project.link"
               target="_blank"
@@ -192,7 +195,7 @@
               class="w-full flex items-center justify-center gap-2 b-1 b-#262626 rounded-md b-solid bg-transparent px-4 py-2 text-xs text-white decoration-none duration-1000 delay-50 ease property-all hover:bg-gray/15 md:text-sm"
             >
               <i class="i-prime-external-link text-xl" /><p>Live Site</p>
-            </NuxtLink>
+            </ULink>
           </div>
         </div>
       </div>

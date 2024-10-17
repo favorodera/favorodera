@@ -2,7 +2,7 @@
   <section
     class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8"
   >
-    <div class="min-w-37.5 flex gap-2 text-4 font-700 lg:sticky lg:top-10">
+    <div class="min-w-37.5 flex flex items-center gap-2 text-4 font-700 lg:sticky lg:top-10">
       <i class="i-heroicons-academic-cap-solid" />
       <p>
         EDUCATION
@@ -35,8 +35,9 @@
       </template>
 
       <template v-else>
-        <Skeleton
-          pt:root:class="grow-1 basis-20rem  rounded-4"
+        <USkeleton
+          :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+          class="grow-1 basis-20rem"
         />
       </template>
     </div>

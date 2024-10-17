@@ -8,11 +8,10 @@
     </time>
 
     <div class="flex items-end justify-center gap-4 lg:pl-37.5">
-      <Avatar
-        image="../images/avatar.jpg"
-        size="xlarge"
-        shape="circle"
-        pt:root:class="flex-shrink-0"
+      <UAvatar
+        src="../images/avatar.jpg"
+        size="2xl"
+        alt="Favour Emeka"
       />
 
       <div class="flex flex-col gap-2 font-semibold tracking-widest">
@@ -24,12 +23,12 @@
             <i class="h-3 w-3 animate-pulse rounded-full bg-emerald" />
             <p>AVAILABLE</p>
           </div>
-          <NuxtLink
+          <ULink
             class="text-#A3A3A3 decoration-none hover:underline"
             to="#contact"
           >
             @LETS TALK
-          </NuxtLink>
+          </ULink>
         </div>
       </div>
     </div>

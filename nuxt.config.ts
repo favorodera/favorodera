@@ -1,8 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import Aura from '@primevue/themes/aura';
-
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
+  compatibilityDate: "2024-04-03",
   devtools: { enabled: false },
   experimental: {
     asyncContext: true,
@@ -11,38 +9,18 @@ export default defineNuxtConfig({
     firebaseServiceAccount: "",
   },
   ssr: true,
-  css: ['~/assets/scss/index.scss','@unocss/reset/normalize.css'],
+  css: ["~/assets/scss/index.scss", "@unocss/reset/normalize.css"],
   modules: [
-    '@primevue/nuxt-module','@unocss/nuxt', '@nuxt/eslint', '@nuxtjs/color-mode'
+    "@unocss/nuxt",
+    "@nuxt/eslint",
+    "@nuxt/ui"
   ],
   colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
-    hid: 'nuxt-color-mode-script',
-    globalName: '__NUXT_COLOR_MODE__',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-    storage: 'localStorage',
-    storageKey: 'color-mode'
+    preference: "dark",
+    fallback: "dark",
+    storage: "localStorage",
+    storageKey: "color-mode",
   },
-  primevue: {
-    components: {
-      exclude:[]
-    },
-    options: {
-        ripple: true,
-        inputVariant: 'filled',
-        theme: {
-            preset: Aura,
-            options: {
-                prefix: 'p',
-                darkModeSelector: '.dark',
-                cssLayer: true
-            }
-        }
-    }
-},
   unocss: {
     nuxtLayers: true,
   },
@@ -59,4 +37,4 @@ export default defineNuxtConfig({
       id: "app",
     },
   },
-})
+});

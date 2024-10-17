@@ -2,7 +2,7 @@
   <section
     class="w-full flex flex-col items-start justify-between gap-4 lg:flex-row lg:gap-8"
   >
-    <div class="min-w-37.5 flex gap-2 text-4 font-700 lg:sticky lg:top-10">
+    <div class="min-w-37.5 flex items-center gap-2 text-4 font-700 lg:sticky lg:top-10">
       <i class="i-heroicons-solid-code" />
       <p>
         RECENT WORKS
@@ -34,24 +34,26 @@
         </template>
 
         <template v-else>
-          <Skeleton
+          <USkeleton
             v-for="n in 2"
             :key="n"
-            pt:root:class="grow-1 min-h-17rem basis-20rem rounded-4"
+            :ui="{ rounded: 'rounded-4', background: 'dark:bg-gray/15' }"
+            class="min-h-17rem"
           />
         </template>
       </div>
 
-      <Button
+      <UButton
         v-if="projects?.data && status === 'success'"
-        as="router-link"
-        to="/projects"
         label="View More"
+        trailing
+        style="outline: none;"
+        size="sm"
+        color="gray"
+        variant="solid"
         icon="i-heroicons-arrow-right-solid"
-        icon-pos="right"
-        pt:root:class="p-1 bg-#1c1c1c hover:bg-gray/10 decoration-none text-white b-0 h-8 px-3 w-max self-end "
-        pt:label:class="font-bold"
-        pt:icon:class=" text-5"
+        :ui="{ padding: { sm: 'px-3 py-1' }, gap: { sm: 'gap-x-2' }, size: { sm: 'text-[1rem]' }, base: 'dark:ring-0 self-end property-all duration-500 ', font: 'font-bold', color: { gray: { solid: 'dark:bg-#1c1c1c dark:hover:bg-gray/10 dark:text-white' } } }"
+        to="/projects"
       />
     </div>
   </section>

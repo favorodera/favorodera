@@ -6,10 +6,6 @@
     <LazyHomeEducation />
     <!-- <LazyHomeExperience /> NO EXPERIENCE YET -->
     <LazyHomeContact />
-    <ScrollTop
-      icon="i-heroicons-arrow-up"
-      pt:button:root="text-white text-lg b-gray hover:b-white bg-black"
-    />
   </section>
 </template>
 
