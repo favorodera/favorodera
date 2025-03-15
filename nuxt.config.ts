@@ -11,6 +11,14 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   ssr: true,
+  components: [
+    {
+      path: '~/components/content-components',
+      global: true,
+      pathPrefix: true,
+      prefix: 'Content',
+    },
+  ],
   devtools: { enabled: false },
   app: {
     rootTag: 'main',
@@ -36,7 +44,7 @@ export default defineNuxtConfig({
     storageKey: 'portfolio-color-mode',
     componentName: 'ColorScheme',
     classPrefix: '',
-    classSuffix: '-mode',
+    classSuffix: '',
   },
   content: {
     preview: {

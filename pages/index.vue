@@ -1,13 +1,12 @@
 <template>
 
-  <main class="w-full flex flex-auto flex-col">
   
-    <ContentRenderer
-      v-if="page"
-      :value="page"
-    />
+  <ContentRenderer
+    v-if="page"
+    :value="page"
+    tag="main"
+  />
   
-  </main>
   
 </template>
 
