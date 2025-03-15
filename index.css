@@ -1,0 +1,40 @@
+@import '@unocss/reset/tailwind.css';
+
+:root {
+  color-scheme: light dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: light-dark(#eceff3, #161616 );
+  font-family: "Inter", sans-serif;
+  color: light-dark(black, white );
+}
+
+#app {
+  min-height: 100dvh;
+  width: clamp(1rem, 100%, 90rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition: all 1s ease;
+}
+
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+}
+
+.page-enter-to,
+.page-leave-from {
+  opacity: 1;
+}
