@@ -1,11 +1,15 @@
 <template>
 
   
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-    tag="main"
-  />
+  <main class="w-full flex-auto space-y-10">
+
+    <ContentRenderer
+      v-if="page"
+      :value="page"
+      tag="section"
+    />
+
+  </main>
   
   
 </template>

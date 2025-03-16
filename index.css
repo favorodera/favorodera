@@ -1,5 +1,26 @@
 @import '@unocss/reset/tailwind.css';
 
+*{
+  transition: all 1s ease;
+}
+
+body {
+  color: white;
+  background: #09090B;
+}
+
+#app {
+  min-height: 100dvh;
+  width: clamp(1rem, 100%, 60rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 3rem 1rem;
+  margin: 0 auto;
+}
+
 html {
   scroll-behavior: smooth;
 }

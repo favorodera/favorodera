@@ -1,6 +1,10 @@
 <template>
 
-  <p>Hello</p>
+  <main class="w-full flex flex-auto flex-col items-center justify-center">
+
+    <NuxtPage />
+
+  </main>
 
 </template>
 

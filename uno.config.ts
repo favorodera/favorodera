@@ -3,7 +3,7 @@ import { defineConfig, presetAttributify, presetIcons, presetTypography, presetU
 export default defineConfig({
   theme: {
     fontFamily: {
-      inter: 'Inter',
+      poppins: 'Poppins',
     },
   },
   extendTheme: theme => ({
@@ -11,6 +11,9 @@ export default defineConfig({
     colors: {
       ...theme.colors,
       brand: {
+        background: '#09090B',
+        textGray: '#A1A1AA',
+        textWhite: '#FAFAFA',
       },
     },
   }),
