@@ -47,6 +47,8 @@
       class="size-[clamp(8rem,10vw,10rem)] shrink-0 rounded-full"
     />
 
+    <!-- TODO: Add Navigation inks to the buttons -->
+
   </header>
 
 </template>
