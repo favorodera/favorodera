@@ -1,17 +1,19 @@
 <template>
 
-  <header class="flex flex-col-reverse items-start justify-between gap-4 sm:flex-row">
+  <header class="flex flex-col-reverse items-start justify-between gap-2">
 
     <section>
 
-      <h1 class="text-brand-textWhite text-[clamp(2rem,8vw,3rem)] font-bold">
+      <h1 class="text-2xl font-medium">
         <slot
           name="myName"
           mdc-unwrap="h1"
         />
       </h1>
 
-      <p class="text-brand-textGray max-w-[40rem] text-[clamp(1rem,3vw,1.2rem)]">
+      <p
+        class="text-lg"
+      >
         <slot
           name="intro"
           mdc-unwrap="p"
@@ -22,7 +24,7 @@
 
         <button
           type="button"
-          class="b-brand-textGray text-brand-textWhite hover:shadow-brand-textGray flex items-center gap-2 b rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] shadow"
+          class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] shadow hover:shadow-brand-textGray"
         >
           <NuxtIcon name="hugeicons:message-01" />
           <span>Let's Talk</span>
@@ -31,7 +33,7 @@
 
         <button
           type="button"
-          class="b-brand-textGray text-brand-textWhite hover:shadow-brand-textGray flex items-center gap-2 b rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] shadow"
+          class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] shadow hover:shadow-brand-textGray"
         >
           <NuxtIcon name="hugeicons:document-attachment" />
           <span>Resume</span>
@@ -44,7 +46,9 @@
 
     <NuxtImg
       src="/images/avatar.jpg"
-      class="size-[clamp(8rem,10vw,10rem)] shrink-0 rounded-full"
+      class="size-[clamp(2rem,10vw,3rem)] shrink-0 rounded-full"
+      loading="lazy"
+      alt="Avatar"
     />
 
     <!-- TODO: Add Navigation inks to the buttons -->

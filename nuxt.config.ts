@@ -5,7 +5,6 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@unocss/nuxt',
     '@nuxt/content',
-    '@nuxtjs/color-mode',
     '@unocss/nuxt',
     '@nuxt/fonts',
     '@nuxt/image',
@@ -37,15 +36,6 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
   },
   css: ['~/index.css'],
-  colorMode: {
-    preference: 'system',
-    fallback: 'light',
-    storage: 'localStorage',
-    storageKey: 'portfolio-color-mode',
-    componentName: 'ColorScheme',
-    classPrefix: '',
-    classSuffix: '',
-  },
   content: {
     preview: {
       api: 'https://api.nuxt.studio',

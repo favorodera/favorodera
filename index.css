@@ -1,17 +1,18 @@
 @import '@unocss/reset/tailwind.css';
 
 *{
-  transition: all 1s ease;
+  transition: all 500ms ease;
 }
 
 body {
-  color: white;
-  background: #09090B;
+  color: #DBDFDF;
+  background: #151615;
+  font-family: 'Anuphan', sans-serif;
 }
 
 #app {
   min-height: 100dvh;
-  width: clamp(1rem, 100%, 60rem);
+  width: clamp(1rem, 100%, 40rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +20,17 @@ body {
   font-size: 16px;
   padding: 3rem 1rem;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+  font-weight: 500;
+  color: #6eb8ff;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 html {

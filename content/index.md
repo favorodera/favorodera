@@ -1,7 +1,15 @@
 ::content-home-intro-headline
 #myName
-Hi,I'm Favour 👋
+Favour Emeka
 
 #intro 
-Front-end web developer focused on crafting modern, beautiful, and functional interfaces.
+Frontend Web Developer specializing in [**Vue.js**](https://vuejs.org), [**Nuxt.js**](https://nuxt.com), 
+[**TypeScript**](https://www.typescriptlang.org) and [**UnoCSS**](https://unocss.dev). Skilled in building scalable web applications, 
+optimizing development workflows, and delivering high-quality, user-focused solutions.
+::
+
+::content-home-projects
+::
+
+::content-home-experiences
 ::

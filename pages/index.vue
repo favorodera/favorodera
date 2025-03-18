@@ -1,12 +1,13 @@
 <template>
 
   
-  <main class="w-full flex-auto space-y-10">
+  <main class="w-full flex flex-auto flex-col items-center justify-center">
 
     <ContentRenderer
       v-if="page"
       :value="page"
       tag="section"
+      class="flex-auto space-y-10"
     />
 
   </main>
@@ -15,11 +16,8 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
 const { data: page } = await useLazyAsyncData(
   'home-page',
-  () => queryCollection('content')
-    .path(route.path)
-    .first(),
+  () => queryCollection('homePage').first(),
 )
 </script>

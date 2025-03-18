@@ -3,7 +3,7 @@ import { defineConfig, presetAttributify, presetIcons, presetTypography, presetU
 export default defineConfig({
   theme: {
     fontFamily: {
-      poppins: 'Poppins',
+      anuphan: 'Anuphan',
     },
   },
   extendTheme: theme => ({
@@ -11,9 +11,11 @@ export default defineConfig({
     colors: {
       ...theme.colors,
       brand: {
-        background: '#09090B',
-        textGray: '#A1A1AA',
-        textWhite: '#FAFAFA',
+        background: '#151615',
+        textGray: '#b4b6b8',
+        link: '#6eb8ff',
+        text: '#DBDFDF',
+        elevate: '#27272A',
       },
     },
   }),
