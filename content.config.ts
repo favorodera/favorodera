@@ -23,7 +23,6 @@ export default defineContentConfig({
         name: z.string(),
         type: z.string(),
         firm: z.string(),
-        location: z.string(),
         duration: z.string(),
         icon: z.string(),
         role: z.string(),

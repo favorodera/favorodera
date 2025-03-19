@@ -7,6 +7,8 @@
     class="flex items-center gap-2"
   >
 
+    <!-- TODO: Add firm links to button -->
+
     <NuxtIcon
       :name="project.icon"
       class="size-[2.25rem] shrink-0"

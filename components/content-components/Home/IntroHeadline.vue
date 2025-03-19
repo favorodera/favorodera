@@ -51,7 +51,7 @@
       alt="Avatar"
     />
 
-    <!-- TODO: Add Navigation inks to the buttons -->
+    <!-- TODO: Add Navigation and resume links to the buttons -->
 
   </header>
 
