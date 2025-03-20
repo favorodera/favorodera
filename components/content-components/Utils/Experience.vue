@@ -16,12 +16,12 @@
   
       <div class="flex flex-wrap items-center gap-2">
 
-        <h2 class="text-start text-xl font-medium">
+        <h2 class="text-start">
           {{ experience.firm }}
         </h2>
 
-        <span class="bg-brand-elevate rounded-sm px-1 py-0.5 text-xs">{{ experience.type }}</span>
-        <span class="bg-brand-elevate rounded-sm px-1 py-0.5 text-xs">{{ experience.duration }}</span>
+        <span class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs">{{ experience.type }}</span>
+        <span class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs">{{ experience.duration }}</span>
 
       </div>
   
@@ -39,8 +39,8 @@
 <script setup lang="ts">
 const { data: experiences } = await useLazyAsyncData(
   'experiences',
-  () => queryCollection('experience').order('stem', 'DESC').all(),
+  () => queryCollection('experiences').order('stem', 'DESC').all(),
 )
-  
+
 </script>
   

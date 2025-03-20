@@ -8,8 +8,14 @@ Frontend Web Developer specializing in [**Vue.js**](https://vuejs.org), [**Nuxt.
 optimizing development workflows, and delivering high-quality, user-focused solutions.
 ::
 
+::content-home-stack
+::
+
 ::content-home-projects
 ::
 
 ::content-home-experiences
+::
+
+::content-home-contact
 ::

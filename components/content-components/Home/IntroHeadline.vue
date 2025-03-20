@@ -4,7 +4,7 @@
 
     <section>
 
-      <h1 class="text-2xl font-medium">
+      <h1>
         <slot
           name="myName"
           mdc-unwrap="h1"
@@ -24,7 +24,7 @@
 
         <button
           type="button"
-          class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] shadow hover:shadow-brand-textGray"
+          class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] hover:b-brand-textGray/70"
         >
           <NuxtIcon name="hugeicons:message-01" />
           <span>Let's Talk</span>
@@ -33,7 +33,7 @@
 
         <button
           type="button"
-          class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] shadow hover:shadow-brand-textGray"
+          class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] hover:b-brand-textGray/70"
         >
           <NuxtIcon name="hugeicons:document-attachment" />
           <span>Resume</span>

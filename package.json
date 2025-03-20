@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@iconify-json/hugeicons": "^1.2.4",
+    "@iconify-json/simple-icons": "^1.2.29",
     "@nuxt/eslint": "^1.2.0",
     "@nuxt/fonts": "^0.11.0",
     "@unocss/eslint-config": "^66.1.0-beta.5",

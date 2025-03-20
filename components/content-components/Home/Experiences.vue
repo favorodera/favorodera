@@ -2,7 +2,7 @@
 
   <section class="space-y-4">
   
-    <h1 class="text-2xl font-medium">
+    <h1>
       Work Experience
     </h1>
   

@@ -6,6 +6,22 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.md',
     }),
+    stackAndSocials: defineCollection({
+      type: 'data',
+      source: 'stack-and-socials.json',
+      schema: z.object({
+        stack: z.array(z.object({
+          name: z.string(),
+          icon: z.string(),
+          url: z.string(),
+        })),
+        socials: z.array(z.object({
+          name: z.string(),
+          icon: z.string(),
+          url: z.string(),
+        })),
+      }),
+    }),
     projects: defineCollection({
       type: 'data',
       source: 'projects/*.md',
@@ -16,9 +32,9 @@ export default defineContentConfig({
         icon: z.string(),
       }),
     }),
-    experience: defineCollection({
-      type: 'data',
-      source: 'experiences/*.json',
+    experiences: defineCollection({
+      type: 'page',
+      source: 'experiences/*.md',
       schema: z.object({
         name: z.string(),
         type: z.string(),
@@ -27,7 +43,6 @@ export default defineContentConfig({
         icon: z.string(),
         role: z.string(),
       }),
-      
     }),
   },
 })

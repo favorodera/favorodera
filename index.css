@@ -1,7 +1,11 @@
 @import '@unocss/reset/tailwind.css';
 
-*{
+* {
   transition: all 500ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -33,8 +37,16 @@ a {
   }
 }
 
-html {
-  scroll-behavior: smooth;
+h1 {
+  font-size: 1.4rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
 }
 
 .page-enter-active,
