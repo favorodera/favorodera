@@ -3,18 +3,20 @@
 # Favour Emeka
 
 #intro 
-Frontend Web Developer specializing in [**Vue.js**](https://vuejs.org), [**Nuxt.js**](https://nuxt.com), 
-[**TypeScript**](https://www.typescriptlang.org) and [**UnoCSS**](https://unocss.dev). Skilled in building scalable web applications, 
-optimizing development workflows, and delivering high-quality, user-focused solutions.
+Frontend Web Developer specializing in **Vue.js**, **Nuxt.js**, **TypeScript** and **UnoCSS**. 
+Skilled in building scalable web applications, optimizing development workflows, and delivering high-quality, user-focused solutions.
 ::
 
 ::content-home-stack
 ::
 
-::content-home-projects
+::content-home-experiences
 ::
 
-::content-home-experiences
+::content-home-latest-projects
+::
+
+::content-home-latest-posts
 ::
 
 ::content-home-contact

@@ -16,11 +16,11 @@
 
     <div class="flex flex-col gap-1">
 
-      <h2 class="text-start text-xl text-brand-text font-medium">
+      <h2 class="line-clamp-2 text-start">
         {{ project.name }}
       </h2>
 
-      <p class="text-start text-lg text-brand-textGray">
+      <p class="line-clamp-2 text-start text-lg text-brand-textGray">
         {{ project.briefDescription }}
       </p>
 
@@ -36,7 +36,7 @@ const { page } = defineProps<{
 }>()
 
 const { data: projects } = await useLazyAsyncData(
-  'projects',
+  'latest-projects',
   () => queryCollection('projects').order('stem', 'DESC').all(),
   {
     transform: (data) => {

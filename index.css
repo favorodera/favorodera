@@ -1,7 +1,7 @@
 @import '@unocss/reset/tailwind.css';
 
 * {
-  transition: all 500ms ease;
+  transition: all 300ms ease;
 }
 
 html {
@@ -26,19 +26,8 @@ body {
   margin: 0 auto;
 }
 
-a {
-  text-decoration: underline;
-  text-underline-offset: 0.2rem;
-  font-weight: 500;
-  color: #6eb8ff;
-
-  &:hover {
-    text-decoration: none;
-  }
-}
-
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
 }

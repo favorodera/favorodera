@@ -44,5 +44,13 @@ export default defineContentConfig({
         role: z.string(),
       }),
     }),
+    posts: defineCollection({
+      type: 'page',
+      source: 'posts/*.md',
+      schema: z.object({
+        date: z.string(),
+        duration: z.string(),
+      }),
+    }),
   },
 })
