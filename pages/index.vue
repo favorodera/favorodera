@@ -20,4 +20,26 @@ const { data: page } = await useLazyAsyncData(
   'home-page',
   () => queryCollection('homePage').first(),
 )
+
+useSeoMeta({
+  title: 'Home',
+  twitterTitle: 'Favorodera | Home',
+  twitterDescription: 'Frontend Web Developer',
+  description: 'Frontend Web Developer',
+  ogDescription: 'Frontend Web Developer',
+  ogImage: {
+    alt:'Favour Emeka',
+    type:'image/jpeg',
+    url: 'https://favorodera.vercel.app//images/avatar.jpeg',
+    height: '630',
+    width: '1200',
+  },
+  twitterImage: {
+    alt:'Favour Emeka',
+    type:'image/jpeg',
+    url: 'https://favorodera.vercel.app//images/avatar.jpeg',
+    height: '630',
+    width: '1200',
+  }
+})
 </script>
