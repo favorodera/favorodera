@@ -16,9 +16,9 @@
 
     <div class="flex flex-col gap-1">
 
-      <h2 class="line-clamp-2 text-start">
+      <h3 class="line-clamp-2 text-start">
         {{ project.name }}
-      </h2>
+      </h3>
 
       <p class="line-clamp-2 text-start text-[clamp(1rem,1.8vw,1.25rem)] text-brand-textGray">
         {{ project.briefDescription }}

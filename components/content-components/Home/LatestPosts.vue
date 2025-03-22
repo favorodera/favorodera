@@ -2,9 +2,9 @@
 
   <section class="space-y-4">
   
-    <h1>
+    <h2>
       Latest Posts
-    </h1>
+    </h2>
   
     <ContentUtilsPosts page="home" />
   

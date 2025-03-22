@@ -2,9 +2,9 @@
 
   <section class="space-y-4">
   
-    <h1>
+    <h2>
       Tech Stack
-    </h1>
+    </h2>
   
     <section class="w-full flex flex-wrap gap-4">
 

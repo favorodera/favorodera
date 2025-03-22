@@ -14,9 +14,9 @@
     />
   
   
-    <h2 class="line-clamp-2 text-start">
+    <h3 class="line-clamp-2 text-start">
       {{ post.title }}
-    </h2>
+    </h3>
   
   
   </NuxtLink>

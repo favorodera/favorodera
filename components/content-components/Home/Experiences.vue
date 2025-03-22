@@ -2,9 +2,9 @@
 
   <section class="space-y-4">
   
-    <h1>
+    <h2>
       Work Experience
-    </h1>
+    </h2>
   
     <ContentUtilsExperience />
   

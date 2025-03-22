@@ -16,9 +16,9 @@
   
       <div class="flex flex-wrap items-center gap-2">
 
-        <h2 class="text-start">
+        <h3 class="text-start">
           {{ experience.firm }}
-        </h2>
+        </h3>
 
         <span class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs">{{ experience.type }}</span>
         <span class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs">{{ experience.duration }}</span>

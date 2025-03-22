@@ -27,12 +27,18 @@ body {
 }
 
 h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 2.5rem;
+  font-weight: 500;
+}
+
+h2 {
   font-size: clamp(1.3rem, 2vw, 1.5rem);
   line-height: 2rem;
   font-weight: 500;
 }
 
-h2 {
+h3 {
   font-size: clamp(1rem, 1.8vw, 1.25rem);
   line-height: 1.75rem;
   font-weight: 500;

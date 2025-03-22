@@ -1,6 +1,6 @@
 ::content-home-intro-headline
 #myName
-# Favour Emeka
+# **Favour Emeka**
 
 #intro 
 Frontend Web Developer specializing in **Vue.js**, **Nuxt.js**, **TypeScript** and **UnoCSS**. 

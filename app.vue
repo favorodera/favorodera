@@ -18,6 +18,9 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
   twitterSite: '@favorodera',
+  robots: 'index, follow',
+  author: 'Favour Emeka',
+  applicationName: 'Favour Emeka',
 })
 
 </script>
