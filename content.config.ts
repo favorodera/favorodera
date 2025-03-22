@@ -6,6 +6,10 @@ export default defineContentConfig({
       type: 'page',
       source: 'index.md',
     }),
+    projectsPage: defineCollection({
+      type: 'page',
+      source: 'projects/index.md',
+    }),
     stackAndSocials: defineCollection({
       type: 'data',
       source: 'stack-and-socials.json',
@@ -24,10 +28,12 @@ export default defineContentConfig({
     }),
     projects: defineCollection({
       type: 'data',
-      source: 'projects/*.md',
+      source: {
+        include: 'projects/*.md',
+        exclude: ['projects/index.md'],
+      },
       schema: z.object({
         name: z.string(),
-        id: z.string(),
         briefDescription: z.string(),
         icon: z.string(),
       }),

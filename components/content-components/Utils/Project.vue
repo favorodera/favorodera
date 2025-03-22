@@ -1,13 +1,12 @@
 <template>
 
-  <button
+  <NuxtLink
     v-for="(project, index) in projects"
     :key="index"
     type="button"
     class="flex items-center gap-2"
+    :to="project.stem"
   >
-
-    <!-- TODO: Add firm links to button -->
 
     <NuxtIcon
       :name="project.icon"
@@ -26,23 +25,16 @@
 
     </div>
 
-  </button>
+  </NuxtLink>
 
 </template>
 
 <script setup lang="ts">
-const { page } = defineProps<{
-  page: 'home' | 'projects'
+import type { ProjectsCollectionItem } from '@nuxt/content'
+
+defineProps<{
+  projects: ProjectsCollectionItem[] | null
 }>()
 
-const { data: projects } = await useLazyAsyncData(
-  'latest-projects',
-  () => queryCollection('projects').order('stem', 'DESC').all(),
-  {
-    transform: (data) => {
-      if (page === 'home') return data.slice(0, 2)
-    },
-  },
-)
 
 </script>

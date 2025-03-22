@@ -22,23 +22,26 @@
 
       <div class="mt-4 flex items-center gap-4">
 
-        <button
+        <NuxtLink
           type="button"
           class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] hover:b-brand-textGray/70"
+          to="#contact-section"
         >
           <NuxtIcon name="hugeicons:message-01" />
           <span>Let's Talk</span>
 
-        </button>
+        </NuxtLink>
 
-        <button
+        <NuxtLink
           type="button"
           class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] hover:b-brand-textGray/70"
+          to="https://drive.google.com/file/d/1vYbsNMlja9cYNcbQZObdQayLcEuNLoWw/view?usp=sharing"
+          target="_blank"
         >
           <NuxtIcon name="hugeicons:document-attachment" />
           <span>Resume</span>
 
-        </button>
+        </NuxtLink>
 
       </div>
             
@@ -50,8 +53,6 @@
       alt="Avatar"
       preload
     />
-
-    <!-- TODO: Add Navigation and resume links to the buttons -->
 
   </header>
 

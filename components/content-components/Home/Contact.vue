@@ -1,6 +1,9 @@
 <template>
 
-  <section class="space-y-4">
+  <section
+    id="contact-section"
+    class="space-y-4"
+  >
     
     <h2>
       Find or Contact me on
