@@ -27,13 +27,13 @@ body {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
   line-height: 2rem;
   font-weight: 500;
 }
 
 h2 {
-  font-size: 1.25rem;
+  font-size: clamp(1rem, 1.8vw, 1.25rem);
   line-height: 1.75rem;
   font-weight: 500;
 }

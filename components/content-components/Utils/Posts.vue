@@ -10,7 +10,7 @@
   
     <NuxtIcon
       name="hugeicons:notebook-01"
-      class="size-[2.25rem] shrink-0"
+      class="size-[clamp(2rem,5vw,2.25rem)] shrink-0 text-brand-textGray"
     />
   
   

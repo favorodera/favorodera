@@ -45,8 +45,8 @@
     </section>
 
     <NuxtImg
-      src="/images/avatar.jpg"
-      class="size-[clamp(2rem,10vw,3rem)] shrink-0 rounded-full"
+      src="/images/avatar.jpeg"
+      class="size-[3rem] shrink-0 rounded-full"
       loading="lazy"
       alt="Avatar"
     />

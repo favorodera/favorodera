@@ -11,7 +11,7 @@
 
     <NuxtIcon
       :name="project.icon"
-      class="size-[2.25rem] shrink-0"
+      class="size-[clamp(2rem,5vw,2.25rem)] shrink-0 text-brand-textGray"
     />
 
     <div class="flex flex-col gap-1">
@@ -20,7 +20,7 @@
         {{ project.name }}
       </h2>
 
-      <p class="line-clamp-2 text-start text-lg text-brand-textGray">
+      <p class="line-clamp-2 text-start text-[clamp(1rem,1.8vw,1.25rem)] text-brand-textGray">
         {{ project.briefDescription }}
       </p>
 
