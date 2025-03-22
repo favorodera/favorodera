@@ -47,8 +47,8 @@
     <NuxtImg
       src="/images/avatar.jpeg"
       class="size-[3rem] shrink-0 rounded-full"
-      loading="lazy"
       alt="Avatar"
+      preload
     />
 
     <!-- TODO: Add Navigation and resume links to the buttons -->
