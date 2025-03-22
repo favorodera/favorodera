@@ -11,13 +11,13 @@
 <script setup lang="ts">
 useSeoMeta({
   titleTemplate: title => `Favorodera | ${title}`,
-  profileFirstName:'Favour',
-  profileLastName:'Emeka',
-  profileGender:'Male',
-  ogType:'profile',
-  twitterCard:'summary_large_image',
-  twitterCreator:'@favorodera',
-  twitterSite:'@favorodera',
+  profileFirstName: 'Favour',
+  profileLastName: 'Emeka',
+  profileGender: 'Male',
+  ogType: 'profile',
+  twitterCard: 'summary_large_image',
+  twitterCreator: '@favorodera',
+  twitterSite: '@favorodera',
 })
 
 </script>
