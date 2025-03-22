@@ -30,14 +30,14 @@ useSeoMeta({
   ogImage: {
     alt: 'Favour Emeka',
     type: 'image/jpeg',
-    url: 'https://favorodera.vercel.app/images/avatar.jpeg',
+    url: '/avatar.jpeg',
     height: '630',
     width: '1200',
   },
   twitterImage: {
     alt: 'Favour Emeka',
     type: 'image/jpeg',
-    url: 'https://favorodera.vercel.app/images/avatar.jpeg',
+    url: '/avatar.jpeg',
     height: '630',
     width: '1200',
   },

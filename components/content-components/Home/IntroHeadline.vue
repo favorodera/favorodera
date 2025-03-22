@@ -45,7 +45,7 @@
     </section>
 
     <NuxtImg
-      src="/images/avatar.jpeg"
+      src="/avatar.jpeg"
       class="size-[3rem] shrink-0 rounded-full"
       alt="Avatar"
       preload
