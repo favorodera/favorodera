@@ -10,6 +10,10 @@ export default defineContentConfig({
       type: 'page',
       source: 'projects/index.md',
     }),
+    postsPage: defineCollection({
+      type: 'page',
+      source: 'posts/index.md',
+    }),
     stackAndSocials: defineCollection({
       type: 'data',
       source: 'stack-and-socials.json',
@@ -52,7 +56,10 @@ export default defineContentConfig({
     }),
     posts: defineCollection({
       type: 'page',
-      source: 'posts/*.md',
+      source: {
+        include: 'posts/*.md',
+        exclude: ['posts/index.md'],
+      },
       schema: z.object({
         date: z.string(),
         duration: z.string(),

@@ -24,19 +24,11 @@
 </template>
   
 <script setup lang="ts">
-const { page } = defineProps<{
-  page: 'home' | 'posts'
+import type { PostsCollectionItem } from '@nuxt/content'
+
+defineProps<{
+  posts: PostsCollectionItem[] | null
 }>()
-  
-const { data: posts } = await useLazyAsyncData(
-  'latest-posts',
-  () => queryCollection('posts').order('stem', 'DESC').all(),
-  {
-    transform: (data) => {
-      if (page === 'home') return data.slice(0, 2)
-    },
-  },
-)
   
 </script>
   
