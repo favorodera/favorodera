@@ -5,10 +5,14 @@
     <NuxtPage />
 
   </main>
+  
+  <Navigation />
 
 </template>
 
 <script setup lang="ts">
+import Navigation from './components/Navigation.vue'
+
 useSeoMeta({
   titleTemplate: title => `Favorodera | ${title}`,
   profileFirstName: 'Favour',

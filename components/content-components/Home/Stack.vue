@@ -13,7 +13,7 @@
         :key="index"
         :to="item.url"
         target="_blank"
-        class="w-max flex items-center gap-2 rounded-md bg-brand-elevate px-2 py-1 text-brand-text hover:bg-brand-elevate/70"
+        class="w-max flex items-center gap-2 rounded-md bg-brand-elevate px-2 py-1 hover:bg-brand-elevate/70"
       >
 
         <NuxtIcon
