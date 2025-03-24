@@ -2,17 +2,13 @@
 
   <section class="w-full flex flex-auto flex-col gap-4">
 
-    <input
-      id="project-search"
-      type="text"
-      name="project-search"
-      placeholder="Enter Tags or Name"
-      class="w-full border border-brand-textGray rounded-md border-solid bg-transparent px-2 py-1 text-[clamp(1rem,1.8vw,1.25rem)] text-brand-textGray outline-none"
-    >
+    <h1 class="text-start">
+      Projects
+    </h1>
 
     <div
       ref="projectsContainer"
-      class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,15rem),1fr))] flex-auto gap-4"
+      class="grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] flex-auto gap-4"
     >
       <ContentUtilsProject
         :projects="visibleProjects"
@@ -22,7 +18,7 @@
     </div>
 
     <ContentUtilsPaginator
-      v-if="projects && projects.length > 0"
+      v-if="projects"
       :items-per-page="itemsPerPage"
       :total-items="projects.length"
       @page-change="updateVisibleProjects"
@@ -50,7 +46,7 @@ const setupResizeObserver = () => {
   const calculateItemsPerPage = () => {
     const containerWidth = projectsContainer.value!.offsetWidth
     const gap = 16
-    const cardWidth = 272
+    const cardWidth = 290
     const containerHeight = projectsContainer.value!.offsetHeight
     const cardHeight = 90
 
