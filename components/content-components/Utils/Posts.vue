@@ -3,7 +3,6 @@
   <NuxtLink
     v-for="(post, index) in posts"
     :key="index"
-    type="button"
     class="flex items-center gap-2 hover:text-brand-textGray"
     :to="post.path"
   >

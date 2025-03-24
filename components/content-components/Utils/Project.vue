@@ -3,9 +3,14 @@
   <NuxtLink
     v-for="(project, index) in projects"
     :key="index"
-    type="button"
-    class="flex items-center gap-2"
     :to="project.stem"
+    :class="[
+      'flex gap-2',
+      {
+        'rounded-lg bg-brand-elevate p-2  hover:bg-brand-elevate/70 items-start': elevate,
+        'items-center': !elevate,
+      },
+    ]"
   >
 
     <NuxtIcon
@@ -15,11 +20,11 @@
 
     <div class="flex flex-col gap-1">
 
-      <h3 class="line-clamp-2 text-start">
+      <h3 class="line-clamp-2 break-all text-start">
         {{ project.name }}
       </h3>
 
-      <p class="line-clamp-2 text-start text-[clamp(1rem,1.8vw,1.25rem)] text-brand-textGray">
+      <p class="line-clamp-2 text-start text-[clamp(0.8rem,1.8vw,1.1rem)] text-brand-textGray">
         {{ project.briefDescription }}
       </p>
 
@@ -34,6 +39,7 @@ import type { ProjectsCollectionItem } from '@nuxt/content'
 
 defineProps<{
   projects: ProjectsCollectionItem[] | null
+  elevate?: boolean
 }>()
 
 

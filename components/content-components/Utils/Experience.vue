@@ -25,7 +25,7 @@
 
       </div>
   
-      <p class="text-start text-[clamp(1rem,1.8vw,1.25rem)] text-brand-textGray">
+      <p class="text-start text-[clamp(1rem,1.8vw,1.1rem)] text-brand-textGray">
         {{ experience.role }}
       </p>
   
