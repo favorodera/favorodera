@@ -71,6 +71,11 @@
       "name": "Facebook",
       "url": "https://www.facebook.com/favorodera",
       "icon": "simple-icons:facebook"
+    },
+    {
+      "name": "Telegram",
+      "url": "https://t.me/favorodera",
+      "icon": "simple-icons:telegram"
     }
   ]
 }

@@ -23,7 +23,7 @@
           v-for="(value, key) in project.links"
           :key
           :to="value"
-          class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs"
+          class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs capitalize"
         >
           {{ key }}
         </NuxtLink>
