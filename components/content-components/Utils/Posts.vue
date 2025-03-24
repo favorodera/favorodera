@@ -3,12 +3,12 @@
   <NuxtLink
     v-for="(post, index) in posts"
     :key="index"
-    class="flex items-center gap-2 hover:text-brand-textGray"
+    class="w-full flex items-center gap-2 border border-brand-elevate rounded-lg p-2"
     :to="post.path"
   >
   
     <NuxtIcon
-      name="hugeicons:notebook-01"
+      name="hugeicons:paragraph-bullets-point-01"
       class="size-[clamp(2rem,5vw,2.25rem)] shrink-0 text-brand-textGray"
     />
   

@@ -1,16 +1,9 @@
 <template>
 
-  <NuxtLink
+  <div
     v-for="(project, index) in projects"
     :key="index"
-    :to="project.stem"
-    :class="[
-      'flex gap-2',
-      {
-        'rounded-lg bg-brand-elevate p-2  hover:bg-brand-elevate/70 items-start': elevate,
-        'items-center': !elevate,
-      },
-    ]"
+    class="w-full flex items-center gap-2 border border-brand-elevate rounded-lg p-2"
   >
 
     <NuxtIcon
@@ -18,19 +11,32 @@
       class="size-[clamp(2rem,5vw,2.25rem)] shrink-0 text-brand-textGray"
     />
 
-    <div class="flex flex-col gap-1">
+    <div class="w-full flex flex-col gap-1">
 
-      <h3 class="line-clamp-2 break-all text-start">
-        {{ project.name }}
-      </h3>
+      <div class="flex items-center gap-2">
+        
+        <h3 class="line-clamp-2 break-all text-start">
+          {{ project.name }}
+        </h3>
+
+        <NuxtLink
+          v-for="(value, key) in project.links"
+          :key
+          :to="value"
+          class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs"
+        >
+          {{ key }}
+        </NuxtLink>
+
+      </div>
 
       <p class="line-clamp-2 text-start text-[clamp(0.8rem,1.8vw,1.1rem)] text-brand-textGray">
-        {{ project.briefDescription }}
+        {{ project.description }}
       </p>
 
     </div>
 
-  </NuxtLink>
+  </div>
 
 </template>
 
@@ -39,7 +45,6 @@ import type { ProjectsCollectionItem } from '@nuxt/content'
 
 defineProps<{
   projects: ProjectsCollectionItem[] | null
-  elevate?: boolean
 }>()
 
 

@@ -1,6 +1,6 @@
 <template>
 
-  <section class="w-full flex flex-auto flex-col gap-4">
+  <section class="w-full flex flex-auto flex-col justify-between gap-4">
 
     <h1 class="text-start">
       Projects
@@ -8,11 +8,10 @@
 
     <div
       ref="projectsContainer"
-      class="grid grid-cols-[repeat(auto-fill,minmax(15rem,1fr))] flex-auto gap-4"
+      class="flex flex-auto flex-col items-start justify-start gap-4"
     >
       <ContentUtilsProject
         :projects="visibleProjects"
-        elevate
       />
 
     </div>
@@ -38,26 +37,15 @@ const { data: projects } = await useLazyAsyncData(
 const projectsContainer = useTemplateRef('projectsContainer')
 const itemsPerPage = ref(0)
 const visibleProjects = ref<Array<ProjectsCollectionItem>>([])
-let resizeObserver: ResizeObserver
-
-const setupResizeObserver = () => {
+  
+const calculateItemsPerPage = () => {
   if (!projectsContainer.value) return
 
-  const calculateItemsPerPage = () => {
-    const containerWidth = projectsContainer.value!.offsetWidth
-    const gap = 16
-    const cardWidth = 290
-    const containerHeight = projectsContainer.value!.offsetHeight
-    const cardHeight = 90
+  const containerHeight = projectsContainer.value!.offsetHeight
+  const cardHeight = 90
+  const gap = 16
 
-    const cardsPerRow = Math.floor((containerWidth + gap) / (cardWidth + gap))
-    const rowsPerPage = Math.floor((containerHeight + gap) / (cardHeight + gap))
-    itemsPerPage.value = Math.max(1, cardsPerRow * rowsPerPage)
-  }
-
-  resizeObserver = new ResizeObserver(() => calculateItemsPerPage())
-  resizeObserver.observe(projectsContainer.value)
-  calculateItemsPerPage()
+  itemsPerPage.value = Math.max(1, Math.floor((containerHeight + gap) / (cardHeight + gap)))
 }
 
 function updateVisibleProjects({ start, end }: { start: number, end: number }) {
@@ -65,16 +53,15 @@ function updateVisibleProjects({ start, end }: { start: number, end: number }) {
 }
 
 onMounted(() => {
-  setupResizeObserver()
+  calculateItemsPerPage()
   if (projects.value) {
     visibleProjects.value = projects.value.slice(0, itemsPerPage.value)
   }
 })
 
-onUnmounted(() => resizeObserver.disconnect())
-
 watch(projects, (newProjects) => {
   if (newProjects) {
+    calculateItemsPerPage()
     visibleProjects.value = newProjects.slice(0, itemsPerPage.value)
   }
 })

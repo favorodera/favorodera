@@ -38,8 +38,12 @@ export default defineContentConfig({
       },
       schema: z.object({
         name: z.string(),
-        briefDescription: z.string(),
+        description: z.string(),
         icon: z.string(),
+        links: z.object({
+          github: z.string(),
+          demo: z.string(),
+        }),
       }),
     }),
     experiences: defineCollection({
