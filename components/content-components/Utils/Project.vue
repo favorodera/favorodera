@@ -44,7 +44,7 @@
 import type { ProjectsCollectionItem } from '@nuxt/content'
 
 defineProps<{
-  projects: ProjectsCollectionItem[] | null
+  projects: ProjectsCollectionItem[]
 }>()
 
 

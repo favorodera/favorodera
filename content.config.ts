@@ -67,6 +67,7 @@ export default defineContentConfig({
       schema: z.object({
         date: z.string(),
         duration: z.string(),
+        tags: z.array(z.string()),
       }),
     }),
   },

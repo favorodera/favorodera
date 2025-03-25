@@ -1,6 +1,9 @@
 <template>
 
-  <section class="space-y-4">
+  <section
+    v-if="projects && projects.length > 0"
+    class="space-y-4"
+  >
 
     <h2>
       Latest Projects

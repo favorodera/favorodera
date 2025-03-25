@@ -1,5 +1,8 @@
 <template>
-  <section class="w-full flex items-center justify-center gap-5 p-2">
+  <section
+    v-if="totalItems > itemsPerPage && itemsPerPage > 0"
+    class="w-full flex items-center justify-center gap-5 p-2"
+  >
 
     <div class="w-max flex items-center justify-end gap-5">
 

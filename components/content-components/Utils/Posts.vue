@@ -8,17 +8,24 @@
   >
   
     <NuxtIcon
-      name="hugeicons:paragraph-bullets-point-01"
+      name="hugeicons:license"
       class="size-[clamp(2rem,5vw,2.25rem)] shrink-0 text-brand-textGray"
     />
   
-  
-    <h3 class="line-clamp-2 text-start">
-      {{ post.title }}
-    </h3>
-  
+    <div class="w-full flex flex-col gap-1">
+
+      <h3 class="line-clamp-2 text-start">
+        {{ post.title }}
+      </h3>
+
+      <p class="line-clamp-2 text-start text-[clamp(0.8rem,1.8vw,1.1rem)] text-brand-textGray">
+        {{ post.description }}
+      </p>
+
+    </div>
   
   </NuxtLink>
+
   
 </template>
   
@@ -26,7 +33,7 @@
 import type { PostsCollectionItem } from '@nuxt/content'
 
 defineProps<{
-  posts: PostsCollectionItem[] | null
+  posts: PostsCollectionItem[]
 }>()
   
 </script>
