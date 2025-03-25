@@ -20,9 +20,9 @@ const { data: page } = await useLazyAsyncData(
   'projects-page',
   () => queryCollection('projectsPage').first(),
 )
+
+useSeoMeta({
+  title: 'Projects',
+  twitterTitle: 'Projects',
+})
 </script>
-  
-  <style scoped lang="css">
-  
-  </style>
-  

@@ -17,9 +17,42 @@
 
       </h1>
 
-      <p class="text-start text-brand-textGray">
-        {{ page.date }} &centerdot; {{ page.duration }}
-      </p>
+      <div class="w-full flex items-center gap-4">
+
+        <p class="text-start text-brand-textGray">
+          {{ page.date }} &centerdot; {{ page.duration }}
+        </p>
+
+        <button
+          type="button"
+          class="w-max flex items-center gap-2 rounded-md bg-brand-elevate px-1 py-0.5 hover:bg-brand-elevate/70"
+          @click="sharePost"
+        >
+
+          <NuxtIcon
+            name="hugeicons:share-08"
+            class="shrink-0"
+          />
+
+          <span>SHARE</span>
+
+        </button>
+
+        <div
+          v-if="isShareError"
+          class="w-max flex items-center gap-2 rounded-md bg-brand-elevate px-1 py-0.5"
+        >
+
+          <NuxtIcon
+            name="hugeicons:alert-circle"
+            class="shrink-0"
+          />
+
+          <span>SHARE ERROR</span>
+
+        </div>
+
+      </div>
 
     </header>
       
@@ -41,7 +74,27 @@ const { data: page } = await useLazyAsyncData(
   () => queryCollection('posts').path(`/posts/${postID}`).first(),
 )
 
-console.log(page.value?.path, postID)
+const isShareError = ref(false)
+
+useSeoMeta({
+  title: () => `Posts | ${page.value?.title}`,
+  twitterTitle: () => page.value?.title,
+  description: () => page.value?.description,
+  ogDescription: () => page.value?.description,
+  twitterDescription: () => page.value?.description,
+})
+
+const shareDetails = computed(() => {
+  return {
+    title: page.value?.title,
+    text: page.value?.description,
+    url: `https://favorodera.com/posts/${postID}`,
+  }
+})
+
+async function sharePost() {
+  return await navigator.share(shareDetails.value).catch(() => isShareError.value = true)
+}
 </script>
     
 <style lang="css">
