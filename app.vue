@@ -25,16 +25,13 @@ useSeoMeta({
   ogImage: {
     alt: 'Favour Emeka',
     type: 'image/jpeg',
-    url: 'https://favorodera.vercel.app/_vercel/image?url=%2Favatar.jpeg&w=1536&q=100',
+    url: '/avatar.jpeg',
     height: '630',
     width: '1200',
   },
   twitterImage: {
     alt: 'Favour Emeka',
-    type: 'image/jpeg',
-    url: 'https://favorodera.vercel.app/_vercel/image?url=%2Favatar.jpeg&w=1536&q=100',
-    height: '630',
-    width: '1200',
+    url: '/avatar.jpeg',
   },
   profileGender: 'Male',
   ogType: 'profile',
