@@ -75,6 +75,15 @@ Add `pages/index.vue` with:
     <div>
         <h1>Welcome to Nuxt 3</h1>
     </div>
+
+    <ContentUtilsPaginator
+      :items-per-page="itemsPerPage"
+      :total-items="filteredPosts.length"
+      @page-change="updateVisiblePosts"
+    />
+
+  </section>
+
 </template>
 ```
 

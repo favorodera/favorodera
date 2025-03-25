@@ -63,6 +63,31 @@ export default defineNuxtConfig({
     preview: {
       api: 'https://api.nuxt.studio',
     },
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            default: 'ayu-dark',
+            dark: 'ayu-dark',
+            light: 'ayu-dark',
+          },
+          langs: [
+            'vue-html',
+            'bash',
+            'json',
+            'js',
+            'ts',
+            'html',
+            'css',
+            'vue',
+            'shell',
+            'mdc',
+            'md',
+            'yaml',
+          ],
+        },
+      },
+    },
     renderer: {
       anchorLinks: true,
     },
