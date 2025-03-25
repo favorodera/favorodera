@@ -38,20 +38,6 @@
 
         </button>
 
-        <div
-          v-if="isShareError"
-          class="w-max flex items-center gap-2 rounded-md bg-brand-elevate px-1 py-0.5"
-        >
-
-          <NuxtIcon
-            name="hugeicons:alert-circle"
-            class="shrink-0"
-          />
-
-          <span>SHARE ERROR</span>
-
-        </div>
-
       </div>
 
     </header>
@@ -74,8 +60,6 @@ const { data: page } = await useLazyAsyncData(
   () => queryCollection('posts').path(`/posts/${postID}`).first(),
 )
 
-const isShareError = ref(false)
-
 useSeoMeta({
   title: () => `Posts | ${page.value?.title}`,
   twitterTitle: () => page.value?.title,
@@ -93,7 +77,7 @@ const shareDetails = computed(() => {
 })
 
 async function sharePost() {
-  return await navigator.share(shareDetails.value).catch(() => isShareError.value = true)
+  await navigator.share(shareDetails.value)
 }
 </script>
     
