@@ -1,7 +1,7 @@
 ---
 title: "How to setup a Nuxt3 project: A Beginner's Guide"
 date: 20th March, 2025
-duration: 15m
+duration: 10m
 tags: [nuxt, setup]
 ---
 
