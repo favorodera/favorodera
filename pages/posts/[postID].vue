@@ -49,6 +49,35 @@
     />
       
   </main>
+
+  <section
+    v-else
+    class="w-full flex flex-auto flex-col items-center justify-center gap-2"
+  >
+
+    <h2 class="text-center">
+      Post Not Found!
+    </h2>
+
+    <p class="break-all text-center text-brand-textGray">
+      The post you're looking for doesn't exist.
+    </p>
+
+    <NuxtLink
+      to="/posts"
+      class="w-max flex items-center gap-2 rounded-md bg-brand-elevate px-2 py-1 hover:bg-brand-elevate/70"
+    >
+      <NuxtIcon
+        name="i-hugeicons:license"
+        class="shrink-0"
+      />
+
+      <span>POSTS</span>
+
+    </NuxtLink>
+
+
+  </section>
           
 </template>
       
