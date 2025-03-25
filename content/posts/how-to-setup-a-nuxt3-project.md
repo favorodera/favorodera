@@ -8,7 +8,7 @@ tags: [nuxt, setup]
 Nuxt.js has revolutionized Vue.js development with server-side rendering, static site generation, and powerful tooling.
 With Nuxt 3’s release, the framework is faster and more modular than ever. Follow this streamlined guide to launch your first project in minutes.
 
-## 🛠️ Prerequisites
+## 🛠️ **Prerequisites**
 Before diving in, ensure your system has:
 
 - Node.js v18 or newer
@@ -17,7 +17,7 @@ Before diving in, ensure your system has:
 
 ## 🚀 Getting Started
 
-### 1. Create a New Project
+### 1. **Create a New Project**
 
 Open the terminal and run
 
@@ -30,7 +30,7 @@ and follow the prompts.
 
 The necessary dependencies will be installed and the project structure will be created.
 
-### 2. Start the Development Server
+### 2. **Start the Development Server**
 
 Navigate to the project directory 
 
@@ -62,7 +62,7 @@ The development server will start, and you can open your browser to access the a
 
 ![Nuxt Welcome Page](/postsImages/nuxt-welcome-page.png "Nuxt Welcome Page")
 
-## 🚀 Next Steps
+## 🚀 **Next Steps**
 
 Now that you have a Nuxt 3 project up and running, you can begin your development journey.
 
@@ -72,22 +72,15 @@ Add `pages/index.vue` with:
 
 ```vue
 <template>
+
     <div>
         <h1>Welcome to Nuxt 3</h1>
     </div>
 
-    <ContentUtilsPaginator
-      :items-per-page="itemsPerPage"
-      :total-items="filteredPosts.length"
-      @page-change="updateVisiblePosts"
-    />
-
-  </section>
-
 </template>
 ```
 
-### 2. Deploy your app
+### 2. **Deploy your app**
 
 Build for production
 
@@ -98,7 +91,7 @@ npm run build
 Host on platforms like Vercel or Netlify,
 
 
-### 3. Explore Nuxt 3 Modules
+### 3. **Explore Nuxt 3 Modules**
 
 Nuxt 3 comes with a wide range of modules to extend your project's functionality. You can find them in the [Nuxt 3 Module Directory](https://nuxt.com/modules).
 
