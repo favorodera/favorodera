@@ -101,7 +101,7 @@ const shareDetails = computed(() => {
   return {
     title: page.value?.title,
     text: page.value?.description,
-    url: `https://favorodera.com/posts/${postID}`,
+    url: `https://favorodera.vercel.app/posts/${postID}`,
   }
 })
 
