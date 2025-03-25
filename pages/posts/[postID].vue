@@ -5,10 +5,16 @@
     class="w-full flex flex-auto flex-col items-start gap-4"
   >
 
-    <header class="w-full flex flex-col gap-1 ">
+    <header class="w-full flex flex-col gap-1">
 
       <h1 class="text-start">
-        {{ page.title }}
+        
+        <NuxtLink :to="page.path">
+
+          {{ page.title }}
+
+        </NuxtLink>
+
       </h1>
 
       <p class="text-start text-brand-textGray">
@@ -20,7 +26,7 @@
     <ContentRenderer
       :value="page.body"
       tag="section"
-      class="w-full flex flex-auto flex-col items-start justify-center gap-2"
+      class="w-full flex flex-auto flex-col items-start justify-center gap-1"
     />
       
   </main>
@@ -51,31 +57,34 @@ code {
 }
 
 pre {
-  overflow-x: scroll;
+  overflow-x: auto;
   padding: 0.5rem;
-  scrollbar-width: thin;
-  scrollbar-color: #b4b6b8 transparent;
-
+  scrollbar-width: none;
+  margin-bottom: 0.4rem ;
+  
   > code {
     padding: 0;
   }
 }
 
-pre::-webkit-scrollbar-track {
-  background-color: #f5f5f5;
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
 }
 
-pre::-webkit-scrollbar-thumb {
-  background-color: #b4b6b8;
-  border-radius: 0.5rem;
+.linkText {
+  color:#6eb8ff
 }
 
-pre::-webkit-scrollbar {
-  height: 0.25rem;
-}
+p > img:nth-child(1) {
+  background: #27272A;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  margin-top: 0.4rem;
 
-pre::-webkit-scrollbar-button{
-  display: none;
+  >img {
+    border-radius: 500rem;
+  }
 }
 </style>
   

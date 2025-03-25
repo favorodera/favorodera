@@ -25,7 +25,7 @@
 
       <ul
         v-if="isMenuOpen"
-        class="absolute bottom-14 right-0 z-10 flex flex-col gap-2 border border-brand-elevate rounded-3 bg-brand-background p-2"
+        class="absolute bottom-14 right-0 z-10 flex flex-col list-none gap-2 border border-brand-elevate rounded-3 bg-brand-background p-2"
       >
 
         <li
