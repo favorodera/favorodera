@@ -2,8 +2,8 @@
 #myName
 # **Favour Emeka**
 
-#intro 
-Frontend Web Developer specializing in **Vue.js**, **Nuxt.js**, **TypeScript** and **UnoCSS**. 
+#intro
+Frontend Web Developer specializing in **Vue.js**, **Nuxt.js**, **TypeScript** and **UnoCSS**.
 Skilled in building scalable web applications, optimizing development workflows, and delivering high-quality, user-focused solutions.
 ::
 
