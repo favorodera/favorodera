@@ -8,7 +8,7 @@
 
     <div
       ref="projectsContainer"
-      class="flex flex-auto flex-col items-start justify-start gap-4"
+      class="w-full flex flex-auto flex-col items-start justify-start gap-4"
     >
       <ContentUtilsProject
         :projects="visibleProjects"

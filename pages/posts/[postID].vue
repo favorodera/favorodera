@@ -138,8 +138,16 @@ ul {
   list-style-position: inside;
 }
 
-.linkText {
-  color:#6eb8ff
+.postLink {
+  color:#6eb8ff;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &::after {
+    content: '↗'
+  }
 }
 
 p > img:nth-child(1) {

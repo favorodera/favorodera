@@ -31,6 +31,11 @@
       "icon": "simple-icons:nuxtdotjs"
     },
     {
+      "name": "Nuxt Content",
+      "icon": "simple-icons:nuxtdotjs",
+      "url": "https://content.nuxt.com/"
+    },
+    {
       "name": "Pinia",
       "url": "https://pinia.vuejs.org/",
       "icon": "hugeicons:store-03"
@@ -41,20 +46,16 @@
       "icon": "simple-icons:supabase"
     },
     {
-      "name": "Gemini",
-      "url": "https://aistudio.google.com/",
-      "icon": "simple-icons:googlegemini"
-    },
-    {
       "name": "Firebase",
       "icon": "simple-icons:firebase",
       "url": "https://firebase.google.com/"
     },
     {
-      "name": "Nuxt Content",
-      "icon": "simple-icons:nuxtdotjs",
-      "url": "https://content.nuxt.com/"
+      "name": "Gemini",
+      "url": "https://aistudio.google.com/",
+      "icon": "simple-icons:googlegemini"
     }
+    
   ],
   "socials": [
     {

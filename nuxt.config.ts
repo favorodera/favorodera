@@ -84,6 +84,7 @@ export default defineNuxtConfig({
             'mdc',
             'md',
             'yaml',
+            'typescript',
           ],
         },
       },
