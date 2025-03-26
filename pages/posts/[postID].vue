@@ -1,7 +1,7 @@
 <template>
 
   <main
-    v-if="page"
+    v-if="page && status === 'success'"
     class="w-full flex flex-auto flex-col items-start gap-4"
   >
 
@@ -84,7 +84,7 @@
 <script setup lang="ts">
 const { postID } = useRoute().params
 
-const { data: page } = await useLazyAsyncData(
+const { data: page, status } = await useLazyAsyncData(
   `${postID}-post-page`,
   () => queryCollection('posts').path(`/posts/${postID}`).first(),
 )
