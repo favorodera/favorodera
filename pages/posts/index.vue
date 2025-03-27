@@ -23,7 +23,10 @@ const { data: page } = await useLazyAsyncData(
 
 useSeoMeta({
   title: 'Posts',
-  twitterTitle: 'Posts',
+  twitterTitle: 'Favorodera | Posts',
+  description: 'Posts by Favour Emeka',
+  ogDescription: 'Posts by Favour Emeka',
+  twitterDescription: 'Posts by Favour Emeka',
 })
 </script>
     

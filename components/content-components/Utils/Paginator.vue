@@ -102,9 +102,10 @@ function paginate(direction: 'next' | 'prev' | 'start' | 'end') {
       paginator.value.end = perPage
       break
     case 'end':
-      paginator.value.start = total - perPage
+    { const totalPages = Math.ceil(total / perPage)
+      paginator.value.start = (totalPages - 1) * perPage
       paginator.value.end = total
-      break
+      break }
   }
   
   emitPageChange()

@@ -23,6 +23,7 @@
           v-for="(value, key) in project.links"
           :key
           :to="value"
+          target="_blank"
           class="rounded-sm bg-brand-elevate px-1 py-0.5 text-xs capitalize hover:bg-brand-elevate/70"
         >
           {{ key }}

@@ -91,7 +91,7 @@ const { data: page, status } = await useLazyAsyncData(
 
 useSeoMeta({
   title: () => `Posts | ${page.value?.title}`,
-  twitterTitle: () => page.value?.title,
+  twitterTitle: () => `Favorodera | Posts | ${page.value?.title}`,
   description: () => page.value?.description,
   ogDescription: () => page.value?.description,
   twitterDescription: () => page.value?.description,
