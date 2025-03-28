@@ -24,5 +24,7 @@ const { data: page } = await useLazyAsyncData(
 useSeoMeta({
   title: 'Home',
   twitterTitle: 'Favorodera | Home',
+  ogTitle: 'Favorodera | Home',
+  ogUrl: 'https://favorodera.vercel.app/',
 })
 </script>

@@ -93,6 +93,8 @@ const { data: page, status } = await useLazyAsyncData(
 useSeoMeta({
   title: () => `Posts | ${page.value?.title}`,
   twitterTitle: () => `Favorodera | Posts | ${page.value?.title}`,
+  ogTitle: () => `Favorodera | Posts | ${page.value?.title}`,
+  ogUrl: () => `https://favorodera.vercel.app/${page.value?.path}`,
   description: () => page.value?.description,
   ogDescription: () => page.value?.description,
   twitterDescription: () => page.value?.description,

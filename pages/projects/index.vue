@@ -27,5 +27,7 @@ useSeoMeta({
   description: 'Projects by Favour Emeka',
   ogDescription: 'Projects by Favour Emeka',
   twitterDescription: 'Projects by Favour Emeka',
+  ogTitle: 'Favorodera | Projects',
+  ogUrl: 'https://favorodera.vercel.app/projects',
 })
 </script>

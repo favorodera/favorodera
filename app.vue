@@ -35,6 +35,7 @@ useSeoMeta({
   },
   profileGender: 'Male',
   ogType: 'profile',
+  ogSiteName: 'Favour Emeka',
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
   twitterSite: '@favorodera',
