@@ -19,7 +19,7 @@
       class="w-full flex flex-auto flex-col items-start justify-start gap-4"
     >
       <ContentUtilsPosts
-        v-if="filteredPosts.length > 0 && visiblePosts"
+        v-if="filteredPosts.length > 0 && visiblePosts.length"
         :posts="visiblePosts"
       />
 
@@ -27,17 +27,17 @@
         v-else
         class="w-full flex flex-auto flex-col items-center justify-center gap-2"
       >
-
         <NuxtIcon
           name="hugeicons:file-not-found"
           class="size-[clamp(1.2rem,5vw,1.4rem)] shrink-0 text-brand-textGray"
         />
-
+        
         <p class="text-start text-[clamp(0.8rem,1.8vw,1.1rem)] text-brand-textGray">
           No post found
         </p>
 
       </div>
+
     </div>
 
     <ContentUtilsPaginator
@@ -45,12 +45,12 @@
       :total-items="filteredPosts.length"
       @page-change="updateVisiblePosts"
     />
-
+    
   </section>
+
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, ref, watch, computed } from 'vue'
 import type { PostsCollectionItem } from '@nuxt/content'
 
 const { data: posts } = await useLazyAsyncData(
@@ -58,10 +58,12 @@ const { data: posts } = await useLazyAsyncData(
   () => queryCollection('posts').order('stem', 'DESC').all(),
 )
 
-const postsContainer = useTemplateRef('postsContainer')
+const postsContainer = ref<HTMLElement | null>(null)
 const itemsPerPage = ref(0)
-const visiblePosts = ref<Array<PostsCollectionItem>>([])
+const visiblePosts = ref<PostsCollectionItem[]>([])
 const postsQuery = ref('')
+const resizeObserver = ref<ResizeObserver | null>(null)
+
 
 function normalizeSearchText(text: string) {
   return text
@@ -103,19 +105,50 @@ watch(filteredPosts, () => {
 })
 
 onMounted(() => {
+
   nextTick(() => {
-    calculateItemsPerPage()
-    if (posts.value) {
-      updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+
+    requestAnimationFrame(() => {
+
+      calculateItemsPerPage()
+      if (posts.value) {
+        updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+      }
+
+    })
+    if (postsContainer.value) {
+
+      resizeObserver.value = new ResizeObserver(() => {
+
+        requestAnimationFrame(() => {
+          calculateItemsPerPage()
+          updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+        })
+
+      })
+
+      resizeObserver.value.observe(postsContainer.value)
     }
   })
 })
 
+onBeforeUnmount(() => {
+  if (resizeObserver.value && postsContainer.value) {
+    resizeObserver.value.unobserve(postsContainer.value)
+    resizeObserver.value.disconnect()
+  }
+})
+
 watch(posts, (newPosts) => {
   if (newPosts) {
+
     nextTick(() => {
-      calculateItemsPerPage()
-      updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+
+      requestAnimationFrame(() => {
+        calculateItemsPerPage()
+        updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+      })
+
     })
   }
 })

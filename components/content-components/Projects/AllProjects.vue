@@ -20,23 +20,25 @@
       :total-items="projects.length"
       @page-change="updateVisibleProjects"
     />
-
+    
   </section>
+
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, watch, ref } from 'vue'
 import type { ProjectsCollectionItem } from '@nuxt/content'
 
 const { data: projects } = await useLazyAsyncData(
   'all-projects',
   () => queryCollection('projects').order('stem', 'DESC').all(),
 )
-const projectsContainer = useTemplateRef('projectsContainer')
+
+const projectsContainer = ref<HTMLElement | null>(null)
 const itemsPerPage = ref(0)
 const visibleProjects = ref<Array<ProjectsCollectionItem>>([])
+const resizeObserver = ref<ResizeObserver | null>(null)
 
-const calculateItemsPerPage = () => {
+function calculateItemsPerPage() {
   if (!projectsContainer.value) return
 
   const containerHeight = projectsContainer.value.offsetHeight
@@ -50,21 +52,51 @@ function updateVisibleProjects({ start, end }: { start: number, end: number }) {
   visibleProjects.value = projects.value?.slice(start, end) || []
 }
 
+
 onMounted(() => {
+
   nextTick(() => {
-    calculateItemsPerPage()
-    if (projects.value) {
-      visibleProjects.value = projects.value.slice(0, itemsPerPage.value)
+
+    requestAnimationFrame(() => {
+
+      calculateItemsPerPage()
+      if (projects.value) {
+        visibleProjects.value = projects.value.slice(0, itemsPerPage.value)
+      }
+
+    })
+
+    if (projectsContainer.value) {
+
+      resizeObserver.value = new ResizeObserver(() => {
+        requestAnimationFrame(() => {
+          calculateItemsPerPage()
+          updateVisibleProjects({ start: 0, end: itemsPerPage.value })
+        })
+      })
+
+      resizeObserver.value.observe(projectsContainer.value)
     }
   })
 })
 
+onBeforeUnmount(() => {
+  if (resizeObserver.value && projectsContainer.value) {
+    resizeObserver.value.unobserve(projectsContainer.value)
+    resizeObserver.value.disconnect()
+  }
+})
+
 watch(projects, (newProjects) => {
   if (newProjects) {
+
     nextTick(() => {
-      calculateItemsPerPage()
-      visibleProjects.value = newProjects.slice(0, itemsPerPage.value)
+      requestAnimationFrame(() => {
+        calculateItemsPerPage()
+        visibleProjects.value = newProjects.slice(0, itemsPerPage.value)
+      })
     })
+
   }
 })
 </script>
