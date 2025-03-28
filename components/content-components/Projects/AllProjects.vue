@@ -1,5 +1,4 @@
 <template>
-
   <section class="w-full flex flex-auto flex-col justify-between gap-4">
 
     <h1 class="text-start">
@@ -13,7 +12,6 @@
       <ContentUtilsProject
         :projects="visibleProjects"
       />
-
     </div>
 
     <ContentUtilsPaginator
@@ -24,10 +22,10 @@
     />
 
   </section>
-
 </template>
 
 <script setup lang="ts">
+import { nextTick, onMounted, watch, ref } from 'vue'
 import type { ProjectsCollectionItem } from '@nuxt/content'
 
 const { data: projects } = await useLazyAsyncData(
@@ -37,11 +35,11 @@ const { data: projects } = await useLazyAsyncData(
 const projectsContainer = useTemplateRef('projectsContainer')
 const itemsPerPage = ref(0)
 const visibleProjects = ref<Array<ProjectsCollectionItem>>([])
-  
+
 const calculateItemsPerPage = () => {
   if (!projectsContainer.value) return
 
-  const containerHeight = projectsContainer.value!.offsetHeight
+  const containerHeight = projectsContainer.value.offsetHeight
   const cardHeight = 90
   const gap = 16
 
@@ -53,16 +51,20 @@ function updateVisibleProjects({ start, end }: { start: number, end: number }) {
 }
 
 onMounted(() => {
-  calculateItemsPerPage()
-  if (projects.value) {
-    visibleProjects.value = projects.value.slice(0, itemsPerPage.value)
-  }
+  nextTick(() => {
+    calculateItemsPerPage()
+    if (projects.value) {
+      visibleProjects.value = projects.value.slice(0, itemsPerPage.value)
+    }
+  })
 })
 
 watch(projects, (newProjects) => {
   if (newProjects) {
-    calculateItemsPerPage()
-    visibleProjects.value = newProjects.slice(0, itemsPerPage.value)
+    nextTick(() => {
+      calculateItemsPerPage()
+      visibleProjects.value = newProjects.slice(0, itemsPerPage.value)
+    })
   }
 })
 </script>

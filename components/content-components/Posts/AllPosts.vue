@@ -1,5 +1,4 @@
 <template>
-
   <section class="w-full flex flex-auto flex-col justify-between gap-4">
 
     <h1 class="text-start">
@@ -48,10 +47,10 @@
     />
 
   </section>
-
 </template>
 
 <script setup lang="ts">
+import { nextTick, onMounted, ref, watch, computed } from 'vue'
 import type { PostsCollectionItem } from '@nuxt/content'
 
 const { data: posts } = await useLazyAsyncData(
@@ -98,20 +97,26 @@ function updateVisiblePosts({ start, end }: { start: number, end: number }) {
 }
 
 watch(filteredPosts, () => {
-  updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+  nextTick(() => {
+    updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+  })
 })
 
 onMounted(() => {
-  calculateItemsPerPage()
-  if (posts.value) {
-    updateVisiblePosts({ start: 0, end: itemsPerPage.value })
-  }
+  nextTick(() => {
+    calculateItemsPerPage()
+    if (posts.value) {
+      updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+    }
+  })
 })
 
 watch(posts, (newPosts) => {
   if (newPosts) {
-    calculateItemsPerPage()
-    updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+    nextTick(() => {
+      calculateItemsPerPage()
+      updateVisiblePosts({ start: 0, end: itemsPerPage.value })
+    })
   }
 })
 </script>
