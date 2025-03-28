@@ -68,12 +68,12 @@ const emit = defineEmits<{
 
 const paginator = ref({
   start: 0,
-  end: props.itemsPerPage,
+  end: Math.min(props.itemsPerPage, props.totalItems),
 })
 
 watch(() => props.itemsPerPage, (newVal) => {
   paginator.value.start = 0
-  paginator.value.end = newVal
+  paginator.value.end = Math.min(newVal, props.totalItems)
   emitPageChange()
 })
 
@@ -87,25 +87,28 @@ function paginate(direction: 'next' | 'prev' | 'start' | 'end') {
   switch (direction) {
     case 'next':
       if (paginator.value.end < total) {
-        paginator.value.start += perPage
-        paginator.value.end += perPage
+        const newStart = paginator.value.start + perPage
+        paginator.value.start = newStart
+        paginator.value.end = Math.min(newStart + perPage, total)
       }
       break
     case 'prev':
       if (paginator.value.start > 0) {
-        paginator.value.start -= perPage
-        paginator.value.end -= perPage
+        const newStart = Math.max(paginator.value.start - perPage, 0)
+        paginator.value.start = newStart
+        paginator.value.end = newStart + perPage
       }
       break
     case 'start':
       paginator.value.start = 0
-      paginator.value.end = perPage
+      paginator.value.end = Math.min(perPage, total)
       break
-    case 'end':
-    { const totalPages = Math.ceil(total / perPage)
+    case 'end': {
+      const totalPages = Math.ceil(total / perPage)
       paginator.value.start = (totalPages - 1) * perPage
       paginator.value.end = total
-      break }
+      break
+    }
   }
   
   emitPageChange()
