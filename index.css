@@ -58,3 +58,74 @@ h3 {
 .page-leave-from {
   opacity: 1;
 }
+
+
+/* POSTS MARKDOWN STYLES */
+
+#post {
+
+  .shiki {
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.5rem;
+    scrollbar-width: none;
+    margin-bottom: 0.4rem;
+
+    code {
+      padding: 0rem;
+    }
+  }
+
+  .shiki,
+  code {
+    background-color: #27272A;
+    border-radius: 0.375rem;
+  }
+
+  code {
+    color: #b4b6b8;
+    padding: 0.25rem;
+  }
+
+
+  ul {
+    list-style-type: disc;
+    list-style-position: inside;
+  }
+
+  .post-link {
+    color: #6eb8ff;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &::after {
+      content: '↗'
+    }
+  }
+
+  p img:nth-child(1) {
+    background: #27272A;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    margin-top: 0.4rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    
+    &:hover {
+      opacity: 0.8;
+
+      &::after {
+        content: ' #';
+      }
+    }
+  }
+
+}

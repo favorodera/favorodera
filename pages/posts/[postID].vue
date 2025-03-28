@@ -2,6 +2,7 @@
 
   <main
     v-if="page && status === 'success'"
+    id="post"
     class="w-full flex flex-auto flex-col items-start gap-4"
   >
 
@@ -109,56 +110,5 @@ async function sharePost() {
   await navigator.share(shareDetails.value)
 }
 </script>
-    
-<style lang="css">
-code, pre {
-  background-color: #27272A;
-  border-radius: 0.375rem;
-  color: #b4b6b8;
-  width: 100%;
-}
 
-code {
-  padding: 0.25rem;
-}
-
-pre {
-  overflow-x: auto;
-  padding: 0.5rem;
-  scrollbar-width: none;
-  margin-bottom: 0.4rem ;
-  
-  > code {
-    padding: 0;
-  }
-}
-
-ul {
-  list-style-type: disc;
-  list-style-position: inside;
-}
-
-.postLink {
-  color:#6eb8ff;
-
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &::after {
-    content: '↗'
-  }
-}
-
-p > img:nth-child(1) {
-  background: #27272A;
-  padding: 0.5rem;
-  border-radius: 0.375rem;
-  margin-top: 0.4rem;
-
-  >img {
-    border-radius: 500rem;
-  }
-}
-</style>
   
