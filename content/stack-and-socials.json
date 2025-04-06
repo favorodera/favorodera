@@ -16,6 +16,11 @@
       "icon": "simple-icons:typescript"
     },
     {
+      "name": "TailwindCSS",
+      "url":"https://tailwindcss.com/",
+      "icon": "simple-icons:tailwindcss"
+    },
+    {
       "name": "UnoCSS",
       "url": "https://unocss.dev/",
       "icon": "simple-icons:unocss"
