@@ -3,7 +3,7 @@
 # **Favour Emeka**
 
 #intro
-Frontend Developer specializing in **Vue.js**, **Nuxt.js**, and **TypeScript**, focused on building scalable, performant web applications with clean, maintainable code.
+Frontend Web Developer specializing in **Vue.js**, **Nuxt.js**, and **TypeScript**, focused on building scalable, performant web applications with clean, maintainable code.
 ::
 
 ::content-home-stack
