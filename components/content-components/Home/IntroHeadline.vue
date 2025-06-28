@@ -35,7 +35,7 @@
         <NuxtLink
           type="button"
           class="flex items-center gap-2 b b-brand-textGray rounded-md px-2 px-2 py-1 py-1 text-[clamp(0.8rem,2vw,1rem)] hover:b-brand-textGray/70"
-          to="https://rxresu.me/favorodera/favour-chidera-emeka"
+          to="https://drive.google.com/file/d/1825GgdAac9DJt1p__AzQqHQrRVQSEv-e/view?usp=drivesdk"
           target="_blank"
         >
           <NuxtIcon name="hugeicons:document-attachment" />
