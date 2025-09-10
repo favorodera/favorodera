@@ -1,74 +1,54 @@
-import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineCollection, defineContentConfig, z } from '@nuxt/content'
+import { asSeoCollection } from '@nuxtjs/seo/content'
+
+const contactSchema = z.object({
+  label: z.string(),
+  url: z.string(),
+  icon: z.string(),
+})
+
+const workExperienceSchema = z.object({
+  company: z.string(),
+  role: z.string(),
+  startDate: z.string(),
+  endDate: z.string(),
+  description: z.string(),
+  achievements: z.array(z.string()).optional(),
+})
+
+const educationSchema = z.object({
+  degree: z.string(),
+  institution: z.string(),
+  startDate: z.string(),
+  endDate: z.string(),
+})
+
+const projectSchema = z.object({
+  name: z.string(),
+  description: z.string(),
+  technologies: z.array(z.string()),
+  url: z.string(),
+})
 
 export default defineContentConfig({
   collections: {
-    homePage: defineCollection({
-      type: 'page',
-      source: 'index.md',
-    }),
-    projectsPage: defineCollection({
-      type: 'page',
-      source: 'projects/index.md',
-    }),
-    postsPage: defineCollection({
-      type: 'page',
-      source: 'posts/index.md',
-    }),
-    stackAndSocials: defineCollection({
-      type: 'data',
-      source: 'stack-and-socials.json',
-      schema: z.object({
-        stack: z.array(z.object({
-          name: z.string(),
-          icon: z.string(),
-          url: z.string(),
-        })),
-        socials: z.array(z.object({
-          name: z.string(),
-          icon: z.string(),
-          url: z.string(),
-        })),
-      }),
-    }),
-    projects: defineCollection({
-      type: 'data',
-      source: {
-        include: 'projects/*.md',
-        exclude: ['projects/index.md'],
-      },
-      schema: z.object({
-        name: z.string(),
-        description: z.string(),
-        icon: z.string(),
-        links: z.object({
-          github: z.string(),
-          demo: z.string(),
+    index: defineCollection(
+      asSeoCollection({
+        type: 'data',
+        source: 'index.json',
+        schema: z.object({
+          name: z.string().nonempty(),
+          headline: z.string().nonempty(),
+          location: z.string().nonempty(),
+          avatar: z.string().nonempty(),
+          about: z.string().nonempty(),
+          contact: z.array(contactSchema),
+          workExperience: z.array(workExperienceSchema),
+          education: z.array(educationSchema),
+          skills: z.array(z.string()),
+          projects: z.array(projectSchema),
         }),
       }),
-    }),
-    experiences: defineCollection({
-      type: 'page',
-      source: 'experiences/*.md',
-      schema: z.object({
-        name: z.string(),
-        type: z.string(),
-        firm: z.string(),
-        duration: z.string(),
-        icon: z.string(),
-        role: z.string(),
-      }),
-    }),
-    posts: defineCollection({
-      type: 'page',
-      source: {
-        include: 'posts/*.md',
-        exclude: ['posts/index.md'],
-      },
-      schema: z.object({
-        date: z.string(),
-        duration: z.string(),
-        tags: z.array(z.string()),
-      }),
-    }),
+    ),
   },
 })

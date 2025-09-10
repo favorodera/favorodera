@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@source "../../../content";
+
+@theme static {
+  --font-quantico: "Quantico", sans-serif;
+}
+
+:root {
+  --ui-primary: black;
+  --ui-bg: white;
+}
+
+.dark {
+  --ui-primary: white;
+  --ui-bg: #090909;
+}
+
+* {
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+  font-family: var(--font-quantico);
+}
+
+#app {
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 48rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}

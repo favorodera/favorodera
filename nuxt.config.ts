@@ -1,120 +1,51 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite'
+
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/icon',
+    '@nuxt/ui',
     '@nuxt/eslint',
-    '@unocss/nuxt',
-    '@nuxt/content',
-    '@unocss/nuxt',
-    '@nuxt/fonts',
+    '@nuxtjs/seo',
     '@nuxt/image',
+    '@nuxt/content',
   ],
-  ssr: true,
-  components: [
-    {
-      path: '~/components/content-components',
-      global: true,
-      pathPrefix: true,
-      prefix: 'Content',
-    },
-  ],
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   app: {
     rootTag: 'main',
     rootAttrs: {
       id: 'app',
     },
-    head: {
-      htmlAttrs: {
-        lang: 'en',
-      },
-      meta: [
-        { charset: 'utf-8' },
-        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      ],
-      link: [
-        {
-          rel: 'apple-touch-icon',
-          sizes: '180x180',
-          href: '/apple-touch-icon.png',
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '32x32',
-          href: '/favicon-32x32.png',
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          sizes: '16x16',
-          href: '/favicon-16x16.png',
-        },
-        {
-          rel: 'manifest',
-          href: '/site.webmanifest',
-        },
-      ],
-    },
-    pageTransition: { name: 'page', mode: 'out-in' },
   },
-  css: ['~/index.css'],
+  css: ['~/assets/styles/index.css'],
+  site: {
+    url: 'https://resume-favorodera.vercel.app/',
+    name: 'Favour Emeka | Resume',
+  },
   content: {
     preview: {
+      dev: true,
       api: 'https://api.nuxt.studio',
     },
-    build: {
-      markdown: {
-        highlight: {
-          theme: {
-            default: 'ayu-dark',
-            dark: 'ayu-dark',
-            light: 'ayu-dark',
-          },
-          langs: [
-            'vue-html',
-            'bash',
-            'json',
-            'js',
-            'ts',
-            'html',
-            'css',
-            'vue',
-            'shell',
-            'mdc',
-            'md',
-            'yaml',
-            'typescript',
-            'console',
-            
-          ],
-        },
-      },
-    },
-    renderer: {
-      anchorLinks: true,
-    },
   },
-  experimental: {
-    payloadExtraction: true,
+  routeRules: {
+    '/': { prerender: true },
   },
-  compatibilityDate: '2024-11-01',
+  compatibilityDate: '2025-07-15',
+  vite: {
+    plugins: [
+      tailwindcss(),
+    ],
+  },
   eslint: {
     config: {
       stylistic: true,
     },
   },
-  fonts: {
-    provider: 'google',
-    defaults: {
-      weights: [400, 500, 600, 700, 800, 900],
-      styles: ['normal', 'italic'],
-    },
-  },
-  icon: {
-    componentName: 'NuxtIcon',
-  },
-  unocss: {
-    nuxtLayers: true,
+  ogImage: {
+    googleFontMirror: true,
+    fonts: [
+      'Quantico:400',
+      'Quantico:700',
+    ],
   },
 })
