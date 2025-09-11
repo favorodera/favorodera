@@ -18,8 +18,8 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/styles/index.css'],
   site: {
-    url: 'https://resume-favorodera.vercel.app/',
-    name: 'Favour Emeka | Resume',
+    url: 'https://favorodera.vercel.app/',
+    name: 'Favour Emeka',
   },
   content: {
     preview: {
