@@ -36,21 +36,12 @@
       "description": "Delivered high-quality web applications using Vue.js, Nuxt.js, and Typescript, ensuring exceptional user experiences and scalability with 100% client satisfaction."
     }
   ],
-  "education": [
-    {
-      "degree": "Diploma, Frontend Engineering",
-      "institution": "AltSchool Africa",
-      "startDate": "Sep 2023",
-      "endDate": "Sep 2024"
-    }
-  ],
+  "education": [],
   "skills": [
     "Vue.Js",
     "Nuxt.Js",
     "TypeScript",
-    "TailwindCSS",
-    "Supabase",
-    "REST API"
+    "TailwindCSS"
   ],
   "projects": [
     {
@@ -62,6 +53,7 @@
         "TypeScript",
         "TailwindCSS",
         "Nuxt UI",
+        "Pinia",
         "Supabase",
         "Gemini",
         "Vercel AI SDK"
