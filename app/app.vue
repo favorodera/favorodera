@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 useSeoMeta({
-  titleTemplate: '%s %separator Resume',
+  titleTemplate: '%s',
   twitterCard: 'summary_large_image',
   twitterSite: '@favorodera',
   twitterCreator: '@favorodera',
@@ -28,7 +28,7 @@ useHead({
   htmlAttrs: { lang: 'en', dir: 'ltr' },
   link: [
     { rel: 'icon', href: '/avatar.png' },
-    { rel: 'canonical', href: 'https://resume-favorodera.vercel.app/' },
+    { rel: 'canonical', href: 'https://favorodera.vercel.app/' },
   ],
 })
 </script>
