@@ -1,3 +1,4 @@
+<!-- About section for personal description -->
 <template>
   <PageSection title="About">
     <p class="text-sm">

@@ -36,7 +36,7 @@ withDefaults(
   {
     name: 'John Doe',
     headline: 'Crafting digital experiences that inspire.',
-    avatar: 'https://favorodera.vercel.app/avatar.png',
+    avatar: 'https://favorodera.vercel.app/avatar.jpg',
   },
 )
 </script>

@@ -1,3 +1,4 @@
+<!-- Page header for personal info and contact links -->
 <template>
   <header
     aria-labelledby="personal-info-heading"
@@ -109,7 +110,11 @@ defineProps<{
   }[]
 }>()
 
+/**
+ * Triggers download of the resume PDF.
+ */
 function downloadResume() {
+  // Creates and clicks a download link for resume PDF
   const link = document.createElement('a')
   link.href = '/resume.pdf'
   link.download = 'Favour_Emeka_Frontend_Web_Developer_Resume.pdf'

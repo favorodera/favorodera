@@ -27,7 +27,7 @@ useSeoMeta({
 useHead({
   htmlAttrs: { lang: 'en', dir: 'ltr' },
   link: [
-    { rel: 'icon', href: '/avatar.png' },
+    { rel: 'icon', href: '/avatar.jpg' },
     { rel: 'canonical', href: 'https://favorodera.vercel.app/' },
   ],
 })
