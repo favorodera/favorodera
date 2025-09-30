@@ -52,6 +52,22 @@
   ],
   "projects": [
     {
+      "name":"Brainbox",
+      "description":"AI-powered chatbot platform for knowledge and assistance.",
+      "technologies": [
+        "Vue.js",
+        "Nuxt.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Nuxt UI",
+        "Supabase",
+        "Vaxee",
+        "Vercel AI SDK",
+        "Gemini"
+      ],
+      "url": "https://brainboxaichat.vercel.app/" 
+    },
+    {
       "name": "Keepdotdev",
       "description": "Code documentation platform with AI-powered assistance and real-time Markdown preview.",
       "technologies": [
@@ -78,19 +94,6 @@
         "Supabase"
       ],
       "url": "https://examine-app.vercel.app/"
-    },
-    {
-      "name": "Stash",
-      "description": "Productivity hub for centralizing resources with advanced search and file management.",
-      "technologies": [
-        "Vue.js",
-        "Nuxt.js",
-        "TypeScript",
-        "PrimeVue",
-        "UnoCSS",
-        "Supabase"
-      ],
-      "url": "https://stash-tool.vercel.app/"
     }
   ]
 }
