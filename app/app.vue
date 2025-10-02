@@ -1,34 +1,29 @@
 <template>
-  <UApp>
+  <UApp
+    tabindex="-1"
+    :toaster="{
+      expand: false,
+      position: 'top-center',
+      progress: false,
+      duration: 3000,
+    }"
+  >
     <NuxtRouteAnnouncer />
-    <NuxtLoadingIndicator />
-    <NuxtPage />
+    <NuxtLoadingIndicator
+      color="white"
+      error-color="red"
+    />
+
+    <Header />
+    
+    <UMain>
+
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+      
+    </UMain>
+
   </UApp>
+
 </template>
-
-<script lang="ts" setup>
-useSeoMeta({
-  titleTemplate: '%s',
-  twitterCard: 'summary_large_image',
-  twitterSite: '@favorodera',
-  twitterCreator: '@favorodera',
-  colorScheme: 'dark light',
-  author: 'Favour Emeka',
-  themeColor: [
-    { content: '#090909', media: '(prefers-color-scheme: dark)' },
-    { content: 'white', media: '(prefers-color-scheme: light)' },
-  ],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-})
-
-useHead({
-  htmlAttrs: { lang: 'en', dir: 'ltr' },
-  link: [
-    { rel: 'icon', href: '/avatar.jpg' },
-    { rel: 'canonical', href: 'https://favorodera.vercel.app/' },
-  ],
-})
-</script>

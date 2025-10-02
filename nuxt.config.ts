@@ -2,36 +2,61 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
+  extends: ['@favorodera/nuxt-helper'],
   modules: [
     '@nuxt/ui',
+    '@vueuse/nuxt',
     '@nuxt/eslint',
-    '@nuxtjs/seo',
-    '@nuxt/image',
+    '@vaxee/nuxt',
     '@nuxt/content',
   ],
+  imports: {
+    dirs: ['./app/stores'],
+  },
   devtools: { enabled: true },
   app: {
     rootTag: 'main',
+    head: {
+      htmlAttrs: { lang: 'en', dir: 'ltr' },
+    },
     rootAttrs: {
       id: 'app',
     },
+    pageTransition: { name: 'fade-out-in', mode: 'out-in' },
+    layoutTransition: { name: 'fade-out-in', mode: 'out-in' },
   },
   css: ['~/assets/styles/index.css'],
-  site: {
-    url: 'https://favorodera.vercel.app/',
-    name: 'Favour Emeka',
-  },
   content: {
     preview: {
-      dev: true,
       api: 'https://api.nuxt.studio',
     },
+    build: {
+      markdown: {
+        highlight: {
+          theme: {
+            light: 'github-light',
+            default: 'github-dark',
+            dark: 'github-dark',
+            sepia: 'monokai',
+          },
+        },
+      },
+    },
   },
-  routeRules: {
-    '/': { prerender: true },
+  experimental: {
+    viewTransition: true,
   },
   compatibilityDate: '2025-07-15',
   vite: {
+    $server: {
+      build: {
+        rollupOptions: {
+          output: {
+            preserveModules: true,
+          },
+        },
+      },
+    },
     plugins: [
       tailwindcss(),
     ],
@@ -41,11 +66,10 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
-  ogImage: {
-    googleFontMirror: true,
-    fonts: [
-      'Quantico:400',
-      'Quantico:700',
+  icon: {
+    mode: 'svg',
+    customCollections: [
+      { prefix: 'custom', dir: './app/assets/icons' },
     ],
   },
 })
