@@ -1,44 +1,41 @@
 <template>
 
-  <UHeader
-    title=""
-    :ui="{ root: 'border-none', right: 'gap-4' }"
-  >
+  <header class="sticky top-0 z-50 flex h-(--ui-header-height) items-center bg-default/75 backdrop-blur">
 
-    <template #right>
+    <UContainer class="flex items-center justify-end gap-4">
 
-      <ULink
-        v-for="item in navigation[0]"
-        :key="item.to"
+      <UButton
+        v-for="item, index in navigation[0]"
+        :key="index"
         :to="item.to"
         :title="item.label"
-      >
-        <UIcon
-          :name="item.icon"
-          class="size-5"
-        />
-      </ULink>
+        :icon="item.icon"
+        variant="link"
+        color="neutral"
+        class="p-0"
+      />
 
       <USeparator
         orientation="vertical"
-        class="h-6"
+        class="hidden h-6 lg:flex"
         :decorative="false"
       />
       
 
-      <ULink
+      <UButton
         v-for="item, index in navigation[1]"
-        :key="item.to"
+        :key="index"
         :to="item.to"
         :title="item.label"
+        :icon="item.icon"
+        variant="link"
+        color="neutral"
         external
         target="_blank"
-      >
-        <UIcon
-          :name="item.icon"
-          :class="index === 0 ? 'size-4.5' : 'size-4'"
-        />
-      </ULink>
+        size="sm"
+        class="hidden p-0 lg:inline"
+      />
+   
 
       <USeparator
         orientation="vertical"
@@ -46,29 +43,59 @@
         :decorative="false"
       />
 
+      
       <UColorModeButton
         variant="link"
-        class="p-0"
+        class="hidden p-0 lg:flex"
         color="neutral"
       >
         <template #fallback>
           <UButton
-            loading
+            icon="ph:palette-duotone"
             variant="link"
-            class="p-0"
+            class="hidden p-0 lg:flex"
             color="neutral"
           />
         </template>
 
       </UColorModeButton>
 
-    </template>
+      <UDropdownMenu
+        :items="dropdownMenuItems"
+        arrow
+        size="sm"
+        :content="{
+          align: 'end',
+        }"
+        class="lg:hidden "
+      >
 
-  </UHeader>
+        <UButton
+          icon="ph:dots-three-bold"
+          variant="link"
+          color="neutral"
+          class="p-0"
+        />
+
+        <template #color-mode>
+          <UColorModeButton
+            variant="link"
+            class="p-0"
+            color="neutral"
+            :label="useColorMode().preference === 'dark' ? 'Dark Mode' : 'Light Mode'"
+          />
+        </template>
+
+      </UDropdownMenu>
+
+    </UContainer>
+
+  </header>
 
 </template>
 
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
 
 const { owner: { contact } } = useAppConfig()
 
@@ -85,5 +112,23 @@ const navigation = computed(() => ([
   [...contact],
 
 ]))
+
+const dropdownMenuItems = computed<DropdownMenuItem[][]>(() => [
+
+  [
+    ...contact.map(item => ({
+      ...item,
+      target: '_blank',
+    })),
+  ],
+
+  [
+    {
+      slot: 'color-mode' as const,
+      type: 'label',
+    },
+  ],
+
+])
 
 </script>
