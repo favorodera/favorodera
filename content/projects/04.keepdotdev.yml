@@ -1,0 +1,12 @@
+title: Keepdotdev
+description: Code documentation platform with AI-powered assistance and real-time Markdown preview
+url: https://keepdotdev.vercel.app/
+technologies:
+  - Vue.Js
+  - Nuxt.Js
+  - TypeScript
+  - TailwindCSS
+  - Supabase
+  - Pinia
+  - Gemini
+  - Vercel AI SDK

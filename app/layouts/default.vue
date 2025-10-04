@@ -8,7 +8,7 @@
 
       <div class="order-1 max-w-full place-self-start overflow-hidden md:order-0" />
 
-      <div class="flex items-center justify-center gap-2 md:justify-end">
+      <!-- <div class="flex items-center justify-center gap-2 md:justify-end">
 
         <span class="font-light text-muted">Follow me on</span>
 
@@ -29,7 +29,7 @@
 
         </div>
 
-      </div>
+      </div> -->
 
     </div>
 
@@ -38,6 +38,6 @@
 </template>
 
 <script setup lang="ts">
-const { owner: { contact } } = useAppConfig()
+// const { owner: { contact } } = useAppConfig()
 </script>
 

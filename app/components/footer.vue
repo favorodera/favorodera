@@ -1,18 +1,59 @@
 <template>
 
-  <footer class="flex h-(--ui-header-height) items-center px-4 text-center text-xs font-light ">
+  <footer class="flex h-(--ui-header-height) items-center px-4">
 
     <div class="mx-auto flex max-w-screen-lg flex-wrap justify-center gap-4 whitespace-nowrap">
 
-      <ULink
+      <UButton
+        title="Login"
+        variant="link"
+        color="neutral"
+        size="sm"
+        label="Login"
+        :ui="{
+          base: 'p-0',
+          label: 'font-thin',
+        }"
+      />
+
+      <UButton
+        title="Profile"
+        variant="link"
+        color="neutral"
+        size="sm"
+        label="Profile"
+        :ui="{
+          base: 'p-0',
+          label: 'font-thin',
+        }"
+      />
+
+      <UButton
+        title="Logout"
+        variant="link"
+        color="neutral"
+        size="sm"
+        label="Logout"
+        :ui="{
+          base: 'p-0',
+          label: 'font-thin',
+        }"
+      />
+
+      <UButton
         v-for="item, index in footerLinks"
         :key="index"
-        :href="item.to"
-        rel="noopener noreferrer"
+        :to="item.to"
         :title="item.label"
-      >
-        <span>{{ item.label }}</span>
-      </ULink>
+        variant="link"
+        color="neutral"
+        size="sm"
+        :label="item.label"
+        :ui="{
+          base: 'p-0',
+          label: 'font-thin',
+        }"
+      />
 
     </div>
 
