@@ -14,7 +14,21 @@ Favouring simplicity over complexity when designing user experiences, I focus on
 
 ---
 
-## Find Me Online
-::contact
+## Recent Projects
+::home-recent-projects
 ::
-Or send me an email: [favorodera@gmail.com](mailto:favorodera@gmail.com){.text-red}
+
+---
+
+## Latest Articles
+
+
+::home-latest-posts
+::
+
+---
+
+## Find Me Online
+::home-find-me-online
+::
+Or send me an email: [favorodera@gmail.com](mailto:favorodera@gmail.com){title="My Email"}

@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     pageTransition: { name: 'fade-out-in', mode: 'out-in' },
     layoutTransition: { name: 'fade-out-in', mode: 'out-in' },
   },
-  css: ['~/assets/styles/index.css'],
+  css: ['~/assets/styles/index.css', '~/assets/styles/prose.css'],
   content: {
     preview: {
       api: 'https://api.nuxt.studio',
@@ -45,9 +45,6 @@ export default defineNuxtConfig({
         },
       },
     },
-  },
-  experimental: {
-    viewTransition: true,
   },
   compatibilityDate: '2025-07-15',
   vite: {

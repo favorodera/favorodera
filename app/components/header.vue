@@ -17,7 +17,7 @@
 
       <USeparator
         orientation="vertical"
-        class="hidden h-6 sm:flex"
+        class="h-6 max-sm:hidden"
         :decorative="false"
       />
       
@@ -26,14 +26,14 @@
         v-for="item, index in navigation[1]"
         :key="index"
         :to="item.to"
-        :title="item.label"
+        :title="`My ${item.label}`"
         :icon="item.icon"
         variant="link"
         color="neutral"
         external
         target="_blank"
         size="sm"
-        class="hidden p-0 sm:flex"
+        class="p-0 max-sm:hidden"
       />
    
 
@@ -46,14 +46,14 @@
       
       <UColorModeButton
         variant="link"
-        class="hidden p-0 sm:flex"
+        class="p-0 max-sm:hidden"
         color="neutral"
       >
         <template #fallback>
           <UButton
             icon="ph:palette-duotone"
             variant="link"
-            class="hidden p-0 sm:flex"
+            class="p-0 max-sm:hidden"
             color="neutral"
           />
         </template>
@@ -62,9 +62,13 @@
 
       <UDropdownMenu
         :items="dropdownMenuItems"
-        arrow
         :content="{
           align: 'end',
+        }"
+        :ui="{
+          content: 'dark:bg-muted ring-muted',
+          viewport: 'divide-muted',
+          itemLeadingIcon: 'size-5',
         }"
         class="sm:hidden"
       >
@@ -73,7 +77,7 @@
           icon="ph:dots-three-bold"
           variant="link"
           color="neutral"
-          class="p-0"
+          class="p-0 prose"
         />
 
         <template #color-mode>
@@ -102,7 +106,7 @@ const navigation = computed(() => ([
 
   [
     { label: 'Home', to: '/', icon: 'ph:house-duotone' },
-    { label: 'Blog', to: '/blog', icon: 'ph:notebook-duotone' },
+    { label: 'Blog', to: '/posts', icon: 'ph:notebook-duotone' },
     { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle-duotone' },
     { label: 'Ask Me Anything', to: '/ama', icon: 'ph:chat-circle-dots-duotone' },
     { label: 'Resume', to: 'https://resume.favorodera.com', icon: 'ph:file-text-duotone' },

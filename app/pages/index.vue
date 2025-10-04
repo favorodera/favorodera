@@ -1,6 +1,6 @@
 <template>
 
-  <UPage class="max-w-screen-md mx-auto">
+  <UPage class="mx-auto max-w-screen-md">
 
     <template v-if="page">
 

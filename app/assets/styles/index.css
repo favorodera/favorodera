@@ -5,6 +5,7 @@
 @theme {
   --font-sans: "DM Sans", sans-serif;
   --font-mono: "DM Mono", monospace;
+  --font-sofia: "Sofia Sans", sans-serif;
 }
 
 :root {
