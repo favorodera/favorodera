@@ -1,27 +1,23 @@
 <template>
 
-  <UPage>
+  <UPage class="max-w-screen-md mx-auto">
 
-    <UContainer class="py-12">
+    <template v-if="page">
 
-      <template v-if="page">
+      <ContentRenderer :value="page" />
 
-        <ContentRenderer :value="page" />
+    </template>
 
-      </template>
+    <template v-else-if="error">
 
-      <template v-else-if="error">
-
-        <UError
-          :error="{
-            statusCode: error.statusCode,
-            statusMessage: error.statusMessage,
-            message: error.message,
-          }"
-        />
-      </template>
-
-    </UContainer>
+      <UError
+        :error="{
+          statusCode: error.statusCode,
+          statusMessage: error.statusMessage,
+          message: error.message,
+        }"
+      />
+    </template>
 
   </UPage>
 

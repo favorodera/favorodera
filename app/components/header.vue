@@ -2,7 +2,7 @@
 
   <header class="sticky top-0 z-50 flex h-(--ui-header-height) items-center bg-default/75 backdrop-blur">
 
-    <UContainer class="flex items-center justify-end gap-4">
+    <UContainer class="flex max-w-screen-lg items-center justify-end gap-4">
 
       <UButton
         v-for="item, index in navigation[0]"
@@ -17,7 +17,7 @@
 
       <USeparator
         orientation="vertical"
-        class="hidden h-6 lg:flex"
+        class="hidden h-6 sm:flex"
         :decorative="false"
       />
       
@@ -33,7 +33,7 @@
         external
         target="_blank"
         size="sm"
-        class="hidden p-0 lg:inline"
+        class="hidden p-0 sm:flex"
       />
    
 
@@ -46,14 +46,14 @@
       
       <UColorModeButton
         variant="link"
-        class="hidden p-0 lg:flex"
+        class="hidden p-0 sm:flex"
         color="neutral"
       >
         <template #fallback>
           <UButton
             icon="ph:palette-duotone"
             variant="link"
-            class="hidden p-0 lg:flex"
+            class="hidden p-0 sm:flex"
             color="neutral"
           />
         </template>
@@ -63,11 +63,10 @@
       <UDropdownMenu
         :items="dropdownMenuItems"
         arrow
-        size="sm"
         :content="{
           align: 'end',
         }"
-        class="lg:hidden "
+        class="sm:hidden"
       >
 
         <UButton
