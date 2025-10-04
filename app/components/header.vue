@@ -77,7 +77,7 @@
           icon="ph:dots-three-bold"
           variant="link"
           color="neutral"
-          class="p-0 prose"
+          class="p-0"
         />
 
         <template #color-mode>

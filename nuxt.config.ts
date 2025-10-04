@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@vueuse/nuxt',
     '@nuxt/eslint',
-    '@vaxee/nuxt',
     '@nuxt/content',
   ],
   imports: {
