@@ -24,6 +24,8 @@
       
     </UMain>
 
+    <Footer />
+
   </UApp>
 
 </template>

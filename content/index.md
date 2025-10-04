@@ -4,7 +4,7 @@ title: Favour Emeka
 
 # Favour Emeka
 
-Hello — I&apos;m **Favour Emeka**, a frontend web developer based in Nigeria.
+Hello! I&apos;m **Favour Emeka**, a frontend web developer.
 
 I write **Vue**, **Nuxt**, and **TypeScript** to build production-ready frontends that are scalable, maintainable, and focused on delivering real value. I currently work as a freelance frontend developer, shipping applications end-to-end with these core technologies.
 
@@ -17,3 +17,4 @@ Favouring simplicity over complexity when designing user experiences, I focus on
 ## Find Me Online
 ::contact
 ::
+Or send me an email: [favorodera@gmail.com](mailto:favorodera@gmail.com){.text-red}

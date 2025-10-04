@@ -11,7 +11,7 @@
   --default-font-family: var(--font-sans);
   --default-mono-font-family: var(--font-mono);
   --default-transition-duration: 300ms;
-  --ui-container: var(--container-5xl);
+  --ui-container: var(--container-7xl);
   --ui-primary: black;
 }
 

@@ -3,10 +3,10 @@ export default defineAppConfig({
     name: 'Favour Emeka',
     email: 'favorodera@gmail.com',
     contact: [
+      { label: 'GitHub', icon: 'simple-icons:github', to: 'https://github.com/favorodera' },
       { label: 'X(Twitter)', icon: 'simple-icons:x', to: 'https://x.com/favorodera' },
       { label: 'LinkedIn', icon: 'simple-icons:linkedin', to: 'https://linkedin.com/in/favorodera' },
       { label: 'Facebook', icon: 'simple-icons:facebook', to: 'https://facebook.com/favorodera' },
-      { label: 'GitHub', icon: 'simple-icons:github', to: 'https://github.com/favorodera' },
     ],
   },
   ui: {
@@ -14,17 +14,17 @@ export default defineAppConfig({
       // Headings
       h1: {
         slots: {
-          base: 'text-2xl mb-4',
+          base: 'text-xl mb-4',
         },
       },
       h2: {
         slots: {
-          base: 'mb-2 text-xl',
+          base: 'mb-2 text-lg',
         },
       },
       h3: {
         slots: {
-          base: 'text-lg',
+          base: 'text-base',
         },
       },
       h4: {
