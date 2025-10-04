@@ -16,7 +16,6 @@
     "@nuxt/content": "^3.7.1",
     "@nuxt/ui": "^4.0.0",
     "@tailwindcss/vite": "^4.1.14",
-    "@vaxee/nuxt": "^0.12.1",
     "@vueuse/nuxt": "^13.9.0",
     "better-sqlite3": "^12.4.1",
     "nuxt": "^4.1.2",
