@@ -72,4 +72,7 @@ export default defineNuxtConfig({
       { prefix: 'custom', dir: './app/assets/icons' },
     ],
   },
+  seo: {
+    redirectToCanonicalSiteUrl: true,
+  },
 })

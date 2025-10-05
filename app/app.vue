@@ -32,16 +32,15 @@
 
 <script setup lang="ts">
 useSeoMeta({
-  title: 'Favour Emeka',
-  titleTemplate: '%s %separator',
+  titleTemplate: '%s %separator %siteName',
   description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
   ogTitle: 'Favour Emeka',
   ogDescription: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
-  ogImage: '[og:image]',
+  ogImage: 'https://favorodera.vercel.app/avatar.jpg',
   ogUrl: 'https://favorodera.vercel.app/',
   twitterTitle: 'Favour Emeka',
   twitterDescription: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
-  twitterImage: '[twitter:image]',
+  twitterImage: 'https://favorodera.vercel.app/avatar.jpg',
   twitterCard: 'summary_large_image',
   themeColor: [
     { content: '#000000', media: '(prefers-color-scheme: dark)' },

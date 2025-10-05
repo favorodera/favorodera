@@ -51,4 +51,13 @@ const { data: page, error } = await useAsyncData(
   () => queryCollection('posts').where('slug', '=', id).first(),
   { watch: [() => id] },
 )
+
+useSeoMeta({
+  title: () => page.value?.title,
+  description: () => page.value?.description,
+  ogTitle: () => page.value?.title,
+  ogDescription: () => page.value?.description,
+  twitterTitle: () => page.value?.title,
+  twitterDescription: () => page.value?.description,
+})
 </script>
