@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 const { data: projects } = await useAsyncData(
-  'recent-projects',
+  'projects',
   () => queryCollection('projects').all(),
 )
 </script>

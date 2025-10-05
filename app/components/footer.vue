@@ -12,7 +12,7 @@
         label="Login"
         :ui="{
           base: 'p-0',
-          label: 'font-thin',
+          label: 'font-light font-sofia dark:text-muted',
         }"
       />
 
@@ -24,7 +24,7 @@
         label="Profile"
         :ui="{
           base: 'p-0',
-          label: 'font-thin',
+          label: 'font-light font-sofia',
         }"
       />
 
@@ -36,7 +36,7 @@
         label="Logout"
         :ui="{
           base: 'p-0',
-          label: 'font-thin',
+          label: 'font-light font-sofia ',
         }"
       />
 
@@ -51,7 +51,7 @@
         :label="item.label"
         :ui="{
           base: 'p-0',
-          label: 'font-thin',
+          label: 'font-light font-sofia',
         }"
       />
 

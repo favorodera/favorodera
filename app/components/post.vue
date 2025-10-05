@@ -11,7 +11,7 @@
 
       <ULink
         as="h3"
-        :to="`/posts/${post.id}`"
+        :to="`/posts/${post.slug}`"
         class="absolute inset-0 "
       />
     </h3>

@@ -6,16 +6,25 @@
 
       <div class="mb-8">
         <ProseH1 class="mb-0">
-          Projects
+          {{ page.title }}
         </ProseH1>
 
-        <ProseP class="mt-2">
-          A showcase of projects I've created, from open-source to personal work.
-        </ProseP>
+        <NuxtTime
+          class="mt-2 font-sofia text-sm font-light dark:text-muted"
+          :datetime="page.date"
+          year="numeric"
+          month="long"
+          day="numeric"
+        />
 
       </div>
 
       <ContentRenderer :value="page" />
+
+      <Surround
+        path="/posts"
+        text="Back to Posts"
+      />
 
     </template>
 
@@ -35,8 +44,11 @@
 </template>
 
 <script setup lang="ts">
+const { id } = useRoute().params
+
 const { data: page, error } = await useAsyncData(
-  'projects-index',
-  () => queryCollection('projectsIndex').path('/projects').first(),
+  `posts-${id}`,
+  () => queryCollection('posts').where('slug', '=', id).first(),
+  { watch: [() => id] },
 )
 </script>

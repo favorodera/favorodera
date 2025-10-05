@@ -106,8 +106,8 @@ const navigation = computed(() => ([
 
   [
     { label: 'Home', to: '/', icon: 'ph:house-duotone' },
-    { label: 'Blog', to: '/posts', icon: 'ph:notebook-duotone' },
     { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle-duotone' },
+    { label: 'Blog', to: '/posts', icon: 'ph:notebook-duotone' },
     { label: 'Ask Me Anything', to: '/ama', icon: 'ph:chat-circle-dots-duotone' },
     { label: 'Resume', to: 'https://resume.favorodera.com', icon: 'ph:file-text-duotone' },
   ],
