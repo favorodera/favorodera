@@ -6,6 +6,10 @@ export default defineContentConfig({
       source: 'index.md',
       type: 'page',
     }),
+    projectsIndex: defineCollection({
+      source: 'projects/index.md',
+      type: 'page',
+    }),
     projects: defineCollection({
       source: 'projects/*.yml',
       type: 'data',

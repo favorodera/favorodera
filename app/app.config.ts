@@ -18,7 +18,7 @@ export default defineAppConfig({
       h4: { slots: { base: '' } },
       p: { base: 'my-4 dark:text-muted' },
       a: { base: 'border-default font-medium no-underline hover:border-accented dark:text-muted' },
-      strong: { base: 'dark:text-default' },
+      strong: { base: 'text-highlighted' },
       code: { base: 'text-sm' },
       pre: { slots: { base: 'text-default' } },
       ol: { base: 'dark:text-muted' },
@@ -30,9 +30,7 @@ export default defineAppConfig({
       video: { base: 'rounded-lg border border-default dark:border-muted' },
       hr: { base: 'mx-auto my-8 max-w-1/2 border-muted' },
     },
-
     colors: {
-      primary: 'black',
       neutral: 'neutral',
     },
     icons: {
