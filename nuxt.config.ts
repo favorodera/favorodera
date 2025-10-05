@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     pageTransition: { name: 'fade-out-in', mode: 'out-in' },
     layoutTransition: { name: 'fade-out-in', mode: 'out-in' },
   },
-  css: ['~/assets/styles/index.css', '~/assets/styles/prose.css'],
+  css: ['~/assets/styles/index.css'],
   content: {
     preview: {
       api: 'https://api.nuxt.studio',
@@ -63,6 +63,11 @@ export default defineNuxtConfig({
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+  fonts: {
+    defaults: {
+      weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
   icon: {
