@@ -26,12 +26,13 @@ export default defineContentConfig({
     }),
     posts: defineCollection({
       source: {
-        include: 'posts/*.md',
+        include: 'posts/**',
         exclude: ['posts/index.md'],
+        prefix: '/',
       },
       type: 'page',
       schema: z.object({
-        id: z.string(),
+        slug: z.string(),
         title: z.string(),
         description: z.string(),
         date: z.string(),

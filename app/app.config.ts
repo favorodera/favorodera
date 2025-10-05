@@ -12,11 +12,11 @@ export default defineAppConfig({
 
   ui: {
     prose: {
-      h1: { slots: { base: 'text-xl mb-4' } },
-      h2: { slots: { base: 'mb-2 text-lg' } },
+      h1: { slots: { base: 'text-xl mb-8' } },
+      h2: { slots: { base: 'my-2 text-lg' } },
       h3: { slots: { base: 'text-base' } },
       h4: { slots: { base: '' } },
-      p: { base: 'my-4 dark:text-muted' },
+      p: { base: 'my-0 mb-4 dark:text-muted' },
       a: { base: 'border-default font-medium no-underline hover:border-accented dark:text-muted' },
       strong: { base: 'text-highlighted' },
       code: { base: 'text-sm' },
