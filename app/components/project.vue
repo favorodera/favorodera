@@ -11,7 +11,7 @@
         {{ project.title }}
 
         <UIcon
-          name="ph:arrow-square-out-duotone"
+          name="ph:arrow-square-out"
           class="size-4 opacity-0 transition-opacity group-hover:opacity-100 dark:text-muted"
         />
               

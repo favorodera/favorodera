@@ -51,7 +51,7 @@
       >
         <template #fallback>
           <UButton
-            icon="ph:palette-duotone"
+            icon="ph:palette"
             variant="link"
             class="p-0 max-sm:hidden"
             color="neutral"
@@ -105,11 +105,11 @@ const { owner: { contact } } = useAppConfig()
 const navigation = computed(() => ([
 
   [
-    { label: 'Home', to: '/', icon: 'ph:house-duotone' },
-    { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle-duotone' },
-    { label: 'Blog', to: '/posts', icon: 'ph:notebook-duotone' },
-    { label: 'Ask Me Anything', to: '/ama', icon: 'ph:chat-circle-dots-duotone' },
-    { label: 'Resume', to: 'https://resume.favorodera.com', icon: 'ph:file-text-duotone' },
+    { label: 'Home', to: '/', icon: 'ph:house' },
+    { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle' },
+    { label: 'Blog', to: '/posts', icon: 'ph:notebook' },
+    { label: 'Ask Me Anything', to: '/ama', icon: 'ph:chat-circle-dots' },
+    { label: 'Resume', to: 'https://resume.favorodera.com', icon: 'ph:file-text' },
   ],
 
   [...contact],
