@@ -1,23 +1,27 @@
 <template>
 
-  <UPage class="mx-auto max-w-screen-md">
+  <UPage>
 
-    <template v-if="page">
+    <UPageBody>
 
-      <ContentRenderer :value="page" />
+      <template v-if="page">
 
-    </template>
+        <ContentRenderer :value="page" />
 
-    <template v-else-if="error">
+      </template>
 
-      <UError
-        :error="{
-          statusCode: error.statusCode,
-          statusMessage: error.statusMessage,
-          message: error.message,
-        }"
-      />
-    </template>
+      <template v-else-if="error">
+
+        <UError
+          :error="{
+            statusCode: error.statusCode,
+            statusMessage: error.statusMessage,
+            message: error.message,
+          }"
+        />
+      </template>
+
+    </UPageBody>
 
   </UPage>
 
