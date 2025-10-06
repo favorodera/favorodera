@@ -27,8 +27,8 @@ export default defineAppConfig({
       img: { slots: { base: 'rounded-lg border border-default dark:border-muted' } },
       figure: { base: 'rounded-lg bg-elevated dark:bg-muted' },
       figcaption: { base: 'm-0 py-1 text-center' },
-      video: { base: 'rounded-lg border border-default dark:border-muted' },
       hr: { base: 'mx-auto my-8 max-w-1/2 border-muted' },
+      callout: { slots: { icon: 'size-5' } },
     },
     colors: {
       neutral: 'neutral',
@@ -55,5 +55,6 @@ export default defineAppConfig({
     fileUpload: { slots: { base: 'cursor-pointer' } },
     toast: { slots: { root: 'bg-elevated ring-0' } },
     commandPalette: { slots: { item: 'cursor-pointer' } },
+    pageBody: { base: 'px-4 sm:px-6 lg:px-8 py-12 mt-0 max-w-screen-md mx-auto' },
   },
 })

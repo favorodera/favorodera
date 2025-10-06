@@ -1,34 +1,38 @@
 <template>
 
-  <UPage class="mx-auto max-w-screen-md">
+  <UPage>
 
-    <template v-if="page">
+    <UPageBody>
 
-      <div class="mb-8">
-        <ProseH1 class="mb-0">
-          Projects
-        </ProseH1>
+      <template v-if="page">
 
-        <ProseP class="mt-2">
-          A showcase of projects I've created, from open-source to personal work.
-        </ProseP>
+        <div class="mb-8">
 
-      </div>
+          <ProseH1 class="mb-0">
+            Projects
+          </ProseH1>
 
-      <ContentRenderer :value="page" />
+          <ProseP class="mt-2">
+            A showcase of projects I've created, from open-source to personal work.
+          </ProseP>
 
-    </template>
+        </div>
 
-    <template v-else-if="error">
+        <ContentRenderer :value="page" />
+        
+      </template>
 
-      <UError
-        :error="{
-          statusCode: error.statusCode,
-          statusMessage: error.statusMessage,
-          message: error.message,
-        }"
-      />
-    </template>
+      <template v-else-if="error">
+        <UError
+          :error="{
+            statusCode: error.statusCode,
+            statusMessage: error.statusMessage,
+            message: error.message,
+          }"
+        />
+      </template>
+
+    </UPageBody>
 
   </UPage>
 
