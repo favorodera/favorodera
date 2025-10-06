@@ -1,6 +1,6 @@
 <template>
 
-  <div class="flex flex-wrap gap-2">
+  <div class="mb-2 flex flex-wrap gap-2">
 
     <ProseA
       v-for="item, index in contact"

@@ -10,10 +10,7 @@
         color="neutral"
         size="sm"
         label="Login"
-        :ui="{
-          base: 'p-0',
-          label: 'font-light font-sofia dark:text-muted',
-        }"
+        :class="linkClass"
       />
 
       <UButton
@@ -22,10 +19,7 @@
         color="neutral"
         size="sm"
         label="Profile"
-        :ui="{
-          base: 'p-0',
-          label: 'font-light font-sofia',
-        }"
+        :class="linkClass"
       />
 
       <UButton
@@ -34,10 +28,7 @@
         color="neutral"
         size="sm"
         label="Logout"
-        :ui="{
-          base: 'p-0',
-          label: 'font-light font-sofia ',
-        }"
+        :class="linkClass"
       />
 
       <UButton
@@ -49,10 +40,7 @@
         color="neutral"
         size="sm"
         :label="item.label"
-        :ui="{
-          base: 'p-0',
-          label: 'font-light font-sofia',
-        }"
+        :class="linkClass"
       />
 
     </div>
@@ -62,6 +50,8 @@
 </template>
 
 <script setup lang="ts">
+
+const linkClass = 'p-0 font-sofia font-light'
 
 const footerLinks = ref([
   { label: 'Terms of Use', to: '/terms-of-use' },

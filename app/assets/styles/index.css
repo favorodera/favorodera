@@ -14,10 +14,12 @@
   --default-transition-duration: 300ms;
   --ui-container: var(--container-7xl);
   --ui-primary: black;
+  --ui-bg: white;
 }
 
 .dark {
   --ui-primary: white;
+  --ui-bg: black;
 }
 
 * {
