@@ -3,7 +3,14 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
   extends: ['@favorodera/nuxt-helper'],
-  modules: ['@nuxt/ui', '@vueuse/nuxt', '@nuxt/eslint', '@nuxt/content', '@nuxtjs/seo'],
+  modules: [
+    '@nuxt/ui',
+    '@vueuse/nuxt',
+    '@nuxt/eslint',
+    '@nuxt/content',
+    '@nuxtjs/seo',
+    '@nuxt/image',
+  ],
   imports: {
     dirs: ['./app/stores'],
   },

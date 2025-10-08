@@ -12,12 +12,11 @@ export default defineAppConfig({
 
   ui: {
     prose: {
-      h1: { slots: { base: 'text-xl mb-8' } },
-      h2: { slots: { base: 'my-2 text-lg' } },
-      h3: { slots: { base: 'text-base' } },
-      h4: { slots: { base: '' } },
-      p: { base: 'my-0 mb-4 dark:text-muted' },
-      a: { base: 'border-accented hover:border-primary text-muted font-medium' },
+      h1: { slots: { base: 'text-2xl ' } },
+      h2: { slots: { base: 'text-xl' } },
+      h3: { slots: { base: 'text-lg' } },
+      h4: { slots: { base: 'text-base' } },
+      p: { base: 'dark:text-muted' },
       strong: { base: 'text-default' },
       figure: { base: 'rounded-lg' },
       ul: { base: 'dark:text-muted' },
@@ -72,6 +71,7 @@ export default defineAppConfig({
       upload: 'ph:upload',
       warning: 'ph:warning',
     },
+    pageHeader: { slots: { root: 'border-none', title: 'text-2xl sm:text-2xl', description: 'mt-5 text-base' } },
     formField: { slots: { label: 'font-medium' } },
     button: { slots: { base: 'cursor-pointer' } },
     checkbox: { slots: { root: 'cursor-pointer' } },
@@ -88,6 +88,5 @@ export default defineAppConfig({
     fileUpload: { slots: { base: 'cursor-pointer' } },
     toast: { slots: { root: 'bg-elevated ring-0' } },
     commandPalette: { slots: { item: 'cursor-pointer' } },
-    pageBody: { base: 'px-4 sm:px-6 lg:px-8 py-12 mt-0 max-w-screen-md mx-auto' },
   },
 })
