@@ -1,10 +1,3 @@
 title: Resume Analyser
-description: An AI-powered tool that provides instant feedback on resume compatibility with Applicant Tracking Systems (ATS), smart content analysis, and an interactive chat interface for personalized career guidance.
+description: AI resume analysis for ATS and career tips.
 url: https://resume-ai-analyser.vercel.app/
-technologies:
-  - Vue.Js
-  - Nuxt.Js
-  - TypeScript
-  - UnoCSS
-  - Pinia
-  - Gemini
