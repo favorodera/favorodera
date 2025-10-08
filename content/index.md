@@ -1,10 +1,9 @@
----
-title: Favour Emeka
----
+::u-avatar{:ui='{"root":"mb-8"}' src="/avatar.jpg" alt="Favour Emeka" size="3xl"}
+::
 
-# Favour Emeka
+# Hello!
 
-Hello! I&apos;m **Favour Emeka**, a frontend web developer.
+I&apos;m **Favour**, a frontend web developer.
 
 I write **Vue**, **Nuxt**, and **TypeScript** to build production-ready frontends that are scalable, maintainable, and focused on delivering real value. I currently work as a freelance frontend developer, shipping applications end-to-end with these core technologies.
 
@@ -12,23 +11,24 @@ I&apos;m passionate about web technologies and love sharing insights and collabo
 
 Favouring simplicity over complexity when designing user experiences, I focus on details to deliver products that satisfy both clients and users.
 
----
+<!--  -->
 
-## Recent Projects
-::home-recent-projects
-::
+## [FIND ME ON]{class="text-sm text-muted"}
 
----
-
-## Latest Articles
-
-
-::home-latest-posts
-::
-
----
-
-## Find Me Online
-::home-find-me-online
+::home-find-me-on
 ::
 Or send me an email: [favorodera@gmail.com](mailto:favorodera@gmail.com){title="My Email"}
+
+<!--  -->
+
+## [FEATURED PROJECTS]{class="text-sm text-muted"}
+
+::home-featured-projects
+::
+
+<!--  -->
+
+## [RECENT ARTICLES]{class="text-sm text-muted"}
+
+::home-recent-articles
+::

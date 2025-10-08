@@ -14,7 +14,7 @@
       error-color="red"
     />
 
-    <Header />
+    <AppHeader />
     
     <UMain>
 
@@ -24,7 +24,7 @@
       
     </UMain>
 
-    <Footer />
+    <AppFooter />
 
   </UApp>
 

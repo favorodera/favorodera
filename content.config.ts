@@ -2,12 +2,8 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-    home: defineCollection({
+    homeIndex: defineCollection({
       source: 'index.md',
-      type: 'page',
-    }),
-    projectsIndex: defineCollection({
-      source: 'projects/index.md',
       type: 'page',
     }),
     projects: defineCollection({
@@ -17,17 +13,20 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         url: z.string(),
-        technologies: z.array(z.string()),
+        thumbnail: z.object({
+          light: z.string(),
+          dark: z.string(),
+        }).optional(),
       }),
     }),
-    postsIndex: defineCollection({
-      source: 'posts/index.md',
+    articlesIndex: defineCollection({
+      source: 'articles/index.md',
       type: 'page',
     }),
-    posts: defineCollection({
+    articles: defineCollection({
       source: {
-        include: 'posts/**',
-        exclude: ['posts/index.md'],
+        include: 'articles/**',
+        exclude: ['articles/index.md'],
         prefix: '/',
       },
       type: 'page',

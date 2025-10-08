@@ -4,41 +4,25 @@
 
     <UContainer>
 
-      <template v-if="projects">
+      <template v-if="articles">
 
         <UPageHeader
-          title="Projects"
-          description="Explore a curated selection of my open-source, collaborative, and personal projects, each reflecting my passion for building useful and creative solutions."
+          title="Articles"
+          description="Browse a curated collection of my articles on web development, programming, and technology, sharing insights, tutorials, and personal experiences."
         />
 
-
         <UPageBody>
-
-          <ol
-            class="space-y-4"
-          >
-
+          <ol class="space-y-8">
             <li
-              v-for="project, index in projects"
+              v-for="article, index in articles"
               :key="index"
             >
-
-              <AppProjectCard
-                :project="project"
-              />
-
+              <AppArticleCard :article="article" />
             </li>
-
             <li>
-
               <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
-
             </li>
-
-
           </ol>
-         
-
         </UPageBody>
 
       </template>
@@ -58,10 +42,11 @@
 </template>
 
 <script setup lang="ts">
-const { data: projects, error } = await useAsyncData(
-  'projects',
-  () => queryCollection('projects')
-    .select('title', 'description', 'url', 'thumbnail')
+const { data: articles, error } = await useAsyncData(
+  'recent-articles',
+  () => queryCollection('articles')
+    .order('id', 'DESC')
+    .select('title', 'date', 'slug', 'description')
     .all(),
 )
 </script>

@@ -1,25 +1,26 @@
 <template>
-
+  
   <UPage>
 
     <UPageBody>
 
-      <template v-if="page">
+      <UContainer>
 
-        <ContentRenderer :value="page" />
-
-      </template>
-
-      <template v-else-if="error">
+        <ContentRenderer
+          v-if="page"
+          :value="page"
+        />
 
         <UError
+          v-else
           :error="{
-            statusCode: error.statusCode,
-            statusMessage: error.statusMessage,
-            message: error.message,
+            statusCode: error?.statusCode || 500,
+            statusMessage: error?.statusMessage || 'Internal Server Error',
+            message: error?.message || 'Something went wrong!',
           }"
         />
-      </template>
+
+      </UContainer>
 
     </UPageBody>
 
@@ -29,7 +30,7 @@
 
 <script setup lang="ts">
 const { data: page, error } = await useAsyncData(
-  'home',
-  () => queryCollection('home').path('/').first(),
+  'homeIndex',
+  () => queryCollection('homeIndex').path('/').first(),
 )
 </script>
