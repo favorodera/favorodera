@@ -57,7 +57,8 @@
 const { data: projects, error } = await useAsyncData(
   'projects',
   () => queryCollection('projects')
-    .select('title', 'description', 'url', 'thumbnail')
+    .select('title', 'description', 'url', 'thumbnail', 'id')
+    .order('id', 'DESC')
     .all(),
 )
 </script>

@@ -36,8 +36,9 @@
 const { data: projects } = await useAsyncData(
   'recent-projects',
   () => queryCollection('projects')
-    .select('title', 'description', 'url', 'thumbnail')
+    .select('title', 'description', 'url', 'thumbnail', 'id')
     .limit(2)
+    .order('id', 'DESC')
     .all(),
 )
 </script>
