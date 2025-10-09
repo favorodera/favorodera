@@ -71,9 +71,10 @@ const navigation = computed(() => ([
 
   { label: 'Home', to: '/', icon: 'ph:house-duotone' },
   { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle-duotone' },
+  { label: 'Toolbox', to: '/toolbox', icon: 'ph:toolbox-duotone' },
   { label: 'Articles', to: '/articles', icon: 'ph:notebook-duotone' },
-  { label: 'Resume', to: 'https://resume.favorodera.com', icon: 'ph:read-cv-logo-duotone' },
   { label: 'Bookmarks', to: '/bookmarks', icon: 'ph:bookmark-duotone' },
+  { label: 'Resume', to: '/resume', icon: 'ph:read-cv-logo-duotone' },
 
 ]))
 

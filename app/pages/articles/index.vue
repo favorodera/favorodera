@@ -43,7 +43,7 @@
 
 <script setup lang="ts">
 const { data: articles, error } = await useAsyncData(
-  'recent-articles',
+  'articles',
   () => queryCollection('articles')
     .order('id', 'DESC')
     .select('title', 'date', 'slug', 'description')
