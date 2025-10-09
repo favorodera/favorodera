@@ -32,7 +32,20 @@
     <div class="flex aspect-square w-10 shrink-0 items-center overflow-hidden rounded-md border border-dashed border-default p-1 group-hover:border-accented">
 
       <NuxtImg
+        v-if="project.thumbnail"
         :src="project.thumbnail || '/image-broken-dark.png'"
+        :alt="project.title"
+        fit="cover"
+        loading="lazy"
+        class="rounded-sm"
+        width="100"
+        height="100"
+      />
+
+      <UColorModeImage
+        v-else
+        light="/image-broken-dark.png"
+        dark="/image-broken-light.png"
         :alt="project.title"
         fit="cover"
         loading="lazy"

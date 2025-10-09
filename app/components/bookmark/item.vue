@@ -12,7 +12,7 @@
     <div class="flex aspect-square w-10 items-center justify-center rounded-md border border-dashed border-default p-1">
 
       <NuxtImg
-        :src="getThumbnail(url).dark"
+        :src="getThumbnail(url)"
         :alt="title"
         fit="cover"
         loading="lazy"
