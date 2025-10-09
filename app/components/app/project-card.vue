@@ -31,9 +31,8 @@
 
     <div class="flex aspect-square w-10 shrink-0 items-center overflow-hidden rounded-md border border-dashed border-default p-1 group-hover:border-accented">
 
-      <UColorModeImage
-        :light="project.thumbnail?.dark || '/image-broken-dark.png'"
-        :dark="project.thumbnail?.light || '/image-broken-light.png'"
+      <NuxtImg
+        :src="project.thumbnail || '/image-broken-dark.png'"
         :alt="project.title"
         fit="cover"
         loading="lazy"

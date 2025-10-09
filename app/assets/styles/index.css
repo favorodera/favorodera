@@ -4,13 +4,10 @@
 
 @theme {
   --font-sans: "DM Sans", sans-serif;
-  --font-sofia: "Sofia Sans", sans-serif;
-  --font-mono: "DM Mono", monospace;
 }
 
 :root {
   --default-font-family: var(--font-sans);
-  --default-mono-font-family: var(--font-mono);
   --default-transition-duration: 300ms;
   --ui-container: var(--container-3xl);
   --ui-primary: black;

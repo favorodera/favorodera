@@ -8,45 +8,41 @@
 
         <UPageHeader
           title="Toolbox"
-          description="An overview of my skills, tools and technologies i use."
+          description="An overview of the tools and technologies i use."
         />
 
 
         <UPageBody>
 
-          <div class="space-y-16">
+
+          <ul
+            v-for="box, key in toolbox.boxes"
+            :key
+            class="space-y-4"
+          >
+
+            <li>
+
+              <ToolboxHeader :title="useChangeCase(String(key), 'capitalCase').value" />
+
+            </li>
 
 
-            <ul
-              v-for="box, key in toolbox.boxes"
-              :key
-              class="space-y-4"
+            <li
+              v-for="item, index in box"
+              :key="index"
             >
-
-              <li>
-
-                <ToolboxHeader :title="useChangeCase(String(key), 'capitalCase').value" />
-
-              </li>
-
-
-              <li
-                v-for="item, index in box"
-                :key="index"
-              >
             
-                <ToolboxItem v-bind="item" />
+              <ToolboxItem v-bind="item" />
             
-              </li>
+            </li>
 
 
-            </ul>
+          </ul>
 
 
-            <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
+          <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
 
-
-          </div>
          
         </UPageBody>
 

@@ -11,19 +11,21 @@
 
     <div class="flex aspect-square w-10 items-center justify-center rounded-md border border-dashed border-default p-1">
 
-      <UIcon
-        :name="icon || 'ph:toolbox'"
-        mode="css"
-        class="size-full shrink-0"
+      <NuxtImg
+        :src="getThumbnail(url).dark"
+        :alt="title"
+        fit="cover"
+        loading="lazy"
+        class="rounded-sm"
+        width="100"
+        height="100"
       />
 
     </div>
 
-
     <h3>
-      {{ name }}
+      {{ title }}
     </h3>
-
 
   </ULink>
 
@@ -32,9 +34,8 @@
 
 <script setup lang="ts">
 defineProps<{
-  name: string
+  title: string
   description?: string
-  icon?: string
   url: string
 }>()
 </script>
