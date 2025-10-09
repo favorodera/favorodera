@@ -21,7 +21,7 @@
     
         <UIcon
           :name="item.icon"
-          class="size-5"
+          class="size-5.5"
         />
 
       </ULink>
@@ -74,7 +74,7 @@ const navigation = computed(() => ([
   { label: 'Toolbox', to: '/toolbox', icon: 'ph:toolbox-duotone' },
   { label: 'Articles', to: '/articles', icon: 'ph:notebook-duotone' },
   { label: 'Bookmarks', to: '/bookmarks', icon: 'ph:bookmark-duotone' },
-  { label: 'Resume', to: '/resume', icon: 'ph:read-cv-logo-duotone' },
+  // { label: 'Resume', to: '/resume', icon: 'ph:read-cv-logo-duotone' },
 
 ]))
 

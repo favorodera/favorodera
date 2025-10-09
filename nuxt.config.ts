@@ -2,7 +2,6 @@
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineNuxtConfig({
-  extends: ['@favorodera/nuxt-helper'],
   modules: [
     '@nuxt/ui',
     '@vueuse/nuxt',
@@ -51,6 +50,12 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+  runtimeConfig: {
+    public: {
+      logoDotDev: '',
+    },
+    logoDotDev: '',
   },
   compatibilityDate: '2025-07-15',
   vite: {

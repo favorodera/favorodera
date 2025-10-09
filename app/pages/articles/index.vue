@@ -13,16 +13,18 @@
 
         <UPageBody>
           <ol class="space-y-8">
+
             <li
               v-for="article, index in articles"
               :key="index"
             >
               <AppArticleCard :article="article" />
             </li>
-            <li>
-              <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
-            </li>
+            
           </ol>
+
+          <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
+
         </UPageBody>
 
       </template>
