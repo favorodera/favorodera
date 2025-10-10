@@ -40,5 +40,16 @@ export default defineContentConfig({
         })),
       }),
     }),
+    toolkit: defineCollection({
+      source: 'toolkit.json',
+      type: 'data',
+      schema: z.object({
+        toolkit: z.array(z.object({
+          label: z.string(),
+          icon: z.string(),
+          url: z.string(),
+        })),
+      }),
+    }),
   },
 })

@@ -18,7 +18,7 @@
           <ul class="space-y-4">
 
             <li
-              v-for="bookmark, index in bookmarks.bookmarks"
+              v-for="bookmark, index in bookmarks"
               :key="index"
             >
 
@@ -56,6 +56,9 @@
 const { data: bookmarks, error } = await useAsyncData(
   'bookmarks',
   () => queryCollection('bookmarks').first(),
+  {
+    transform: bookmarks => bookmarks?.bookmarks,
+  },
 )
 </script>
 

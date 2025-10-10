@@ -17,7 +17,7 @@ export default defineAppConfig({
       h3: { slots: { base: 'text-lg' } },
       h4: { slots: { base: 'text-base' } },
       p: { base: 'dark:text-muted' },
-      strong: { base: 'text-default' },
+      strong: { base: 'text-highlighted' },
       figure: { base: 'rounded-lg' },
       ul: { base: 'dark:text-muted' },
       ol: { base: 'dark:text-muted' },

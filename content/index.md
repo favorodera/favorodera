@@ -20,6 +20,13 @@ Favouring simplicity over complexity when designing user experiences, I focus on
 
 <!--  -->
 
+## [TOOLKIT]{.text-sm}
+
+::home-toolkit
+::
+
+<!--  -->
+
 ## [RECENT PROJECTS]{.text-sm}
 
 ::home-recent-projects

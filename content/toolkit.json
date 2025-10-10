@@ -1,0 +1,55 @@
+{
+  "toolkit": [
+    {
+      "label": "Vue.Js",
+      "icon": "logos:vue",
+      "url": "https://vuejs.org/"
+    },
+    {
+      "label": "Nuxt.Js",
+      "icon": "logos:nuxt-icon",
+      "url": "https://nuxt.com/"
+    },
+    {
+      "label": "TypeScript",
+      "icon": "logos:typescript-icon",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "label": "Tailwind CSS",
+      "icon": "logos:tailwindcss-icon",
+      "url": "https://tailwindcss.com/"
+    },
+    {
+      "label": "Nuxt UI",
+      "icon": "logos:nuxt-icon",
+      "url": "https://ui.nuxt.com/"
+    },
+    {
+      "label": "Motion One",
+      "icon": "ph:wrench",
+      "url": "https://motion.dev/"
+    },
+    {
+      "label": "Pinia",
+      "icon": "logos:pinia",
+      "url": "https://pinia.vuejs.org/"
+    },
+    {
+      "label": "Vaxee",
+      "icon": "ph:wrench",
+      "url": "https://vaxee.letstri.dev/"
+    },
+    {
+      "label": "Supabase",
+      "icon": "logos:supabase-icon",
+      "url": "https://supabase.com/"
+    },
+    {
+      "label": "Nuxt Content",
+      "icon": "logos:nuxt-icon",
+      "url": "https://content.nuxt.com/"
+    }
+   
+  ]
+}
