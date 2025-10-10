@@ -19,6 +19,7 @@
     <UMain>
 
       <NuxtLayout>
+        <Analytics />
         <NuxtPage />
       </NuxtLayout>
       
@@ -31,6 +32,8 @@
 </template>
 
 <script setup lang="ts">
+import { Analytics } from '@vercel/analytics/nuxt'
+
 useSeoMeta({
   titleTemplate: '%s %separator %siteName',
   description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
