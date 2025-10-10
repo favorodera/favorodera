@@ -24,6 +24,7 @@
             >
 
               <AppProjectCard
+                header-as="h2"
                 :project="project"
               />
 

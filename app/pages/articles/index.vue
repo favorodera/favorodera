@@ -18,7 +18,10 @@
               v-for="article, index in articles"
               :key="index"
             >
-              <AppArticleCard :article="article" />
+              <AppArticleCard
+                header-as="h2"
+                :article="article"
+              />
             </li>
             
           </ol>

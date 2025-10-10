@@ -10,11 +10,12 @@
 
     <div class="max-w-sm">
 
-      <h3
-        class="font-semibold tracking-tight group-hover:text-secondary"
+      <component
+        :is="headerAs"
+        class="font-medium tracking-tight group-hover:text-secondary"
       >
         {{ project.title }}
-      </h3>
+      </component>
 
       <p
         class="text-sm text-muted"
@@ -51,8 +52,10 @@
 <script setup lang="ts">
 import type { ProjectsCollectionItem } from '@nuxt/content'
 
-defineProps<{
+withDefaults(defineProps<{
   project: Pick<ProjectsCollectionItem, 'title' | 'description' | 'url' | 'thumbnail'>
-}>()
+  headerAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+}>(), {
+  headerAs: 'h3',
+})
 </script>
-

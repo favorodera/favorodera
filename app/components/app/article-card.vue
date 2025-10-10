@@ -31,11 +31,12 @@
 
       </div>
 
-      <h3
-        class="font-semibold tracking-tight group-hover:text-secondary"
+      <component
+        :is="headerAs"
+        class="font-medium tracking-tight group-hover:text-secondary"
       >
         {{ article.title }}
-      </h3>
+      </component>
 
       <p
         class="mt-2 text-sm text-muted"
@@ -52,9 +53,12 @@
 <script setup lang="ts">
 import type { ArticlesCollectionItem } from '@nuxt/content'
 
-defineProps<{
+withDefaults(defineProps<{
   article: Pick<ArticlesCollectionItem, 'slug' | 'title' | 'description' | 'date'>
-}>()
+  headerAs?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+}>(), {
+  headerAs: 'h3',
+})
 </script>
 
 <style scoped>

@@ -5,13 +5,13 @@
     :to="url"
     external
     active
-    class="flex flex-col justify-between gap-x-4 gap-y-2 rounded-md p-2 transition-all hover:bg-muted/50 sm:flex-row sm:items-center"
+    class="group flex flex-col justify-between gap-x-4 gap-y-2 rounded-md p-2 transition-all hover:bg-muted/50 sm:flex-row sm:items-center"
     :title="description"
   >
 
-    <h3 class="line-clamp-1 flex-1">
+    <h2 class="line-clamp-1 flex-1 font-medium tracking-tight group-hover:text-secondary">
       {{ title }}
-    </h3>
+    </h2>
 
     <span class="line-clamp-1 text-xs text-muted">{{ url }}</span>
 
