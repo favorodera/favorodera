@@ -42,6 +42,22 @@
        
           <ContentRenderer :value="page" />
 
+          <div class="flex items-center justify-end">
+
+            <UButton
+              label="Share"
+              color="neutral"
+              variant="link"
+              icon="ph:share"
+              @click="share({
+                title: page.title,
+                url: `https://favorodera.vercel.app/articles/${id}`,
+                text: page.description,
+              })"
+            />
+
+          </div>
+
           <AppSurround :left="{ path: '/articles', text: 'Back to Articles' }" />
 
         </UPageBody>
@@ -96,6 +112,8 @@ useSeoMeta({
   twitterTitle: () => page.value?.title,
   twitterDescription: () => page.value?.description,
 })
+
+const { share } = useShare()
 </script>
 
 <style scoped>

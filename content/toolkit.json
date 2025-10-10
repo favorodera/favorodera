@@ -26,11 +26,6 @@
       "url": "https://ui.nuxt.com/"
     },
     {
-      "label": "Motion One",
-      "icon": "ph:wrench",
-      "url": "https://motion.dev/"
-    },
-    {
       "label": "Pinia",
       "icon": "logos:pinia",
       "url": "https://pinia.vuejs.org/"

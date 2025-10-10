@@ -28,16 +28,23 @@
 
     <template #right>
 
-      <UColorModeButton
-        variant="link"
-        class="p-0"
+      <UButton
+        icon="ph:read-cv-logo"
         color="neutral"
+        variant="ghost"
+        title="Read My Resume"
+        @click="downloadResume"
+      />
+
+      <UColorModeButton
+        variant="ghost"
+        color="neutral"
+        title="Toggle Color Mode"
       >
         <template #fallback>
           <UButton
             icon="ph:palette"
             variant="link"
-            class="p-0"
             color="neutral"
           />
         </template>
@@ -69,8 +76,16 @@ const navigation = computed(() => ([
   { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle-duotone' },
   { label: 'Articles', to: '/articles', icon: 'ph:notebook-duotone' },
   { label: 'Bookmarks', to: '/bookmarks', icon: 'ph:bookmark-duotone' },
-  // { label: 'Resume', to: '/resume', icon: 'ph:read-cv-logo-duotone' },
-
 ]))
 
+function downloadResume() {
+  const link = document.createElement('a')
+  link.href = '/resume.pdf'
+  link.download = 'Favour_Emeka_Frontend_Web_Developer_Resume.pdf'
+    
+  document.body.appendChild(link)
+  link.click()
+    
+  document.body.removeChild(link)
+}
 </script>
