@@ -1,4 +1,6 @@
 title: Keepdotdev
 description: AI-powered code docs with live Markdown preview.
 url: https://keepdotdev.vercel.app/
-thumbnail: https://api.iconify.design/lucide:library-big.svg?color=%23999999
+thumbnail:
+   light: https://api.iconify.design/lucide:library-big.svg?color=%23ffffff
+   dark: https://api.iconify.design/lucide:library-big.svg?color=%23000000

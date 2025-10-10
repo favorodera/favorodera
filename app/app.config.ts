@@ -24,9 +24,11 @@ export default defineAppConfig({
       figcaption: { base: 'm-0 py-1 text-center' },
       hr: { base: 'mx-auto my-8 max-w-1/2' },
       callout: { slots: { icon: 'size-5' } },
+      a: { base: 'hover:border-secondary' },
     },
     colors: {
       neutral: 'neutral',
+      secondary: 'teal',
     },
     icons: {
       light: 'ph:sun',

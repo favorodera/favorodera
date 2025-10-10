@@ -20,23 +20,21 @@ Favouring simplicity over complexity when designing user experiences, I focus on
 
 <!--  -->
 
-## [FIND ME ON]{.text-sm.text-muted}
+## [RECENT PROJECTS]{.text-sm}
 
-::home-find-me-on
-::
-
-Or send me an email: [favorodera@gmail.com](mailto\:favorodera@gmail.com "My Email")
-
-<!--  -->
-
-## [FEATURED PROJECTS]{.text-sm.text-muted}
-
-::home-featured-projects
+::home-recent-projects
 ::
 
 <!--  -->
 
-## [RECENT ARTICLES]{.text-sm.text-muted}
+## [RECENT ARTICLES]{.text-sm}
 
 ::home-recent-articles
+::
+
+<!--  -->
+
+## [FIND ME ON]{.text-sm}
+
+::home-find-me-on
 ::

@@ -14,7 +14,7 @@
 
         <UPageBody>
 
-          <ol
+          <ul
             class="space-y-8"
           >
 
@@ -30,7 +30,7 @@
             </li>
 
 
-          </ol>
+          </ul>
 
           <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
          

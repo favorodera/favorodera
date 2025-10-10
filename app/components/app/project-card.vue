@@ -11,7 +11,7 @@
     <div class="max-w-sm">
 
       <h3
-        class="text-sm font-medium group-hover:text-teal-600"
+        class="font-semibold tracking-tight group-hover:text-secondary"
       >
         {{ project.title }}
       </h3>
@@ -29,23 +29,11 @@
       :ui="{ root: 'flex-1', border: 'group-hover:border-accented' }"
     />
 
-    <div class="flex aspect-square w-10 shrink-0 items-center overflow-hidden rounded-md border border-dashed border-default p-1 group-hover:border-accented">
-
-      <NuxtImg
-        v-if="project.thumbnail"
-        :src="project.thumbnail || '/image-broken-dark.png'"
-        :alt="project.title"
-        fit="cover"
-        loading="lazy"
-        class="rounded-sm"
-        width="100"
-        height="100"
-      />
+    <div class="flex aspect-square w-8 shrink-0 items-center overflow-hidden rounded-md border border-dashed border-default p-1 group-hover:border-accented">
 
       <UColorModeImage
-        v-else
-        light="/image-broken-dark.png"
-        dark="/image-broken-light.png"
+        :light="project.thumbnail?.dark || '/image-broken-dark.png'"
+        :dark="project.thumbnail?.light || '/image-broken-light.png'"
         :alt="project.title"
         fit="cover"
         loading="lazy"

@@ -2,7 +2,7 @@
   <UHeader
     title=""
     :ui="{
-      center: 'hidden sm:flex',
+      center: 'hidden sm:flex gap-4',
       root: 'border-none',
       toggle: 'sm:hidden',
       content: 'sm:hidden',
@@ -10,23 +10,20 @@
     }"
   >
 
-    <UContainer class="flex max-w-screen-lg items-center justify-end gap-4">
 
-      <ULink
-        v-for="item, index in navigation"
-        :key="index"
-        :to="item.to"
-        :title="item.label"
-      >
+    <ULink
+      v-for="item, index in navigation"
+      :key="index"
+      :to="item.to"
+      :title="item.label"
+    >
     
-        <UIcon
-          :name="item.icon"
-          class="size-5.5"
-        />
+      <UIcon
+        :name="item.icon"
+        class="size-5.5"
+      />
 
-      </ULink>
-
-    </UContainer>
+    </ULink>
  
 
     <template #right>
@@ -66,12 +63,10 @@
 </template>
 
 <script setup lang="ts">
-
 const navigation = computed(() => ([
 
   { label: 'Home', to: '/', icon: 'ph:house-duotone' },
   { label: 'Projects', to: '/projects', icon: 'ph:brackets-angle-duotone' },
-  { label: 'Toolbox', to: '/toolbox', icon: 'ph:toolbox-duotone' },
   { label: 'Articles', to: '/articles', icon: 'ph:notebook-duotone' },
   { label: 'Bookmarks', to: '/bookmarks', icon: 'ph:bookmark-duotone' },
   // { label: 'Resume', to: '/resume', icon: 'ph:read-cv-logo-duotone' },

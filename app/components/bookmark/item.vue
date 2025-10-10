@@ -5,27 +5,15 @@
     :to="url"
     external
     active
-    class="flex items-center gap-4 rounded-md p-2 transition-all hover:bg-muted/50"
+    class="flex flex-col justify-between gap-x-4 gap-y-2 rounded-md p-2 transition-all hover:bg-muted/50 sm:flex-row sm:items-center"
     :title="description"
   >
 
-    <div class="flex aspect-square w-10 items-center justify-center rounded-md border border-dashed border-default p-1">
-
-      <NuxtImg
-        :src="getThumbnail(url)"
-        :alt="title"
-        fit="cover"
-        loading="lazy"
-        class="rounded-sm"
-        width="100"
-        height="100"
-      />
-
-    </div>
-
-    <h3>
+    <h3 class="line-clamp-1 flex-1">
       {{ title }}
     </h3>
+
+    <span class="line-clamp-1 text-xs text-muted">{{ url }}</span>
 
   </ULink>
 

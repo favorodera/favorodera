@@ -13,7 +13,10 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         url: z.string(),
-        thumbnail: z.string().optional(),
+        thumbnail: z.object({
+          light: z.string().optional(),
+          dark: z.string().optional(),
+        }).optional(),
       }),
     }),
     articles: defineCollection({
@@ -24,22 +27,6 @@ export default defineContentConfig({
         title: z.string(),
         description: z.string(),
         date: z.string(),
-      }),
-    }),
-    toolbox: defineCollection({
-      source: 'toolbox.json',
-      type: 'data',
-      schema: z.object({
-        boxes: z.record(
-          z.string(),
-          z.array(z.object({
-            name: z.string(),
-            description: z.string().optional(),
-            url: z.string(),
-            icon: z.string().optional(),
-          }),
-          ),
-        ),
       }),
     }),
     bookmarks: defineCollection({

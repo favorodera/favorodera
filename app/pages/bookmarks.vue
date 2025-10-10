@@ -8,7 +8,7 @@
     
         <UPageHeader
           title="Bookmarks"
-          description="Cool and awesome stuffs I&apos;ve found on the internet."
+          description="Cool and awesome stuffs I&apos;ve found on the internet. You might like them too!"
         />
 
 
@@ -23,23 +23,6 @@
             >
 
               <BookmarkItem v-bind="bookmark" />
-
-            </li>
-
-            <li class="flex justify-end">
-
-              <ULink
-                to="https://logo.dev"
-                external
-                target="_blank"
-                active
-                class="text-xs font-medium text-muted"
-              >
-                Logos by Logo.dev <UIcon
-                  name="ph:arrow-up-right-thin"
-                  class="ml-0.5 inline-block align-text-bottom"
-                />
-              </ULink>
 
             </li>
 

@@ -32,7 +32,7 @@
       </div>
 
       <h3
-        class="text-base  font-semibold tracking-tight group-hover:text-teal-600"
+        class="font-semibold tracking-tight group-hover:text-secondary"
       >
         {{ article.title }}
       </h3>

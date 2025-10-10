@@ -1,39 +1,45 @@
 <template>
 
-  <ol class="space-y-5">
+  <div class="space-y-2">
 
-    <li
-      v-for="item, index in contact"
-      :key="index"
-    >
-      <ULink
-        :to="item.to"
-        target="_blank"
-        active
-        external
-        class="group flex items-end gap-4 **:transition-all hover:text-toned"
-        :title="`My ${item.label}`"
+    <ol class="flex flex-wrap items-center gap-4">
+
+      <li
+        v-for="item, index in owner.contact"
+        :key="index"
       >
-        <span class="min-w-fit text-sm">
+        <ProseA
+          :href="item.to"
+          target="_blank"
+          active
+          external
+          class="w-fit shrink-0 text-sm"
+          :title="`My ${item.label}`"
+        >
+
+          <Icon
+            :name="item.icon"
+            class="mr-0.5 inline-block h-lh w-4 align-text-bottom"
+          />
           {{ item.label }}
-        </span>
 
-        <USeparator
-          type="dashed"
-          :ui="{ border: 'group-hover:border-accented' }"
-        />
+        </ProseA>
 
-        <Icon
-          :name="item.icon"
-          class="size-5 shrink-0"
-        />
-      </ULink>
-    
-    </li>
+      </li>
 
-  </ol>
+    </ol>
+
+    <p class="dark:text-muted">
+      Or send me an email: <ProseA :href="`mailto:${owner.email}`">
+        {{ owner.email }}
+      </ProseA>
+    </p>
+
+  </div>
+
+ 
 </template>
 
 <script lang="ts" setup>
-const { owner: { contact } } = useAppConfig()
+const { owner } = useAppConfig()
 </script>

@@ -1,4 +1,6 @@
 title: Brainbox
 description: AI-powered assistant chatbot.
 url: https://brainboxaichat.vercel.app/
-thumbnail: https://api.iconify.design/tabler:brand-metabrainz.svg?color=%23999999
+thumbnail:
+   light: https://api.iconify.design/tabler:brand-metabrainz.svg?color=%23ffffff
+   dark: https://api.iconify.design/tabler:brand-metabrainz.svg?color=%23000000

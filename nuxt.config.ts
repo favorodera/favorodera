@@ -51,11 +51,6 @@ export default defineNuxtConfig({
       },
     },
   },
-  runtimeConfig: {
-    public: {
-      logoDotDev: '',
-    },
-  },
   compatibilityDate: '2025-07-15',
   vite: {
     $server: {
