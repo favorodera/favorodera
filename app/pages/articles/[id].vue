@@ -58,7 +58,9 @@
 
           </div>
 
-          <AppSurround :left="{ path: '/articles', text: 'Back to Articles' }" />
+          <AppSurround
+            v-bind="surroundingsComputed"
+          />
 
         </UPageBody>
 
@@ -94,15 +96,40 @@
 </template>
 
 <script setup lang="ts">
-const { id } = useRoute().params
+const { id } = useRoute('articles-id').params
 
 const { data: page, error } = await useAsyncData(
   `articles-${id}`,
   () => queryCollection('articles')
     .where('slug', '=', id)
     .first(),
-  { watch: [() => id] },
+  {
+    watch: [() => id],
+  },
 )
+
+const { data: surroundings } = await useAsyncData(
+  `content-surroundings-${id}`,
+  () => queryCollectionItemSurroundings(
+    'articles',
+    `/articles/${id.split('-')[0]}`,
+    {
+      fields: ['slug'],
+    },
+  ),
+)
+
+const surroundingsComputed = computed(() => {
+  const left = surroundings.value && surroundings.value[0]
+    ? { path: `/articles/${surroundings.value[0].slug}`, text: 'Previous Article' }
+    : { path: '/articles', text: 'To Articles' }
+  
+  const right = surroundings.value && surroundings.value[1]
+    ? { path: `/articles/${surroundings.value[1].slug}`, text: 'Next Article' }
+    : undefined
+
+  return { left, right }
+})
 
 useSeoMeta({
   title: () => page.value?.title,

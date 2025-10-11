@@ -26,7 +26,7 @@
             
           </ol>
 
-          <AppSurround :left="{ path: '/', text: 'Back to Home' }" />
+          <AppSurround :left="{ path: '/', text: 'To Home' }" />
 
         </UPageBody>
 

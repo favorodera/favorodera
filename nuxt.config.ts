@@ -51,6 +51,9 @@ export default defineNuxtConfig({
       },
     },
   },
+  experimental: {
+    typedPages: true,
+  },
   compatibilityDate: '2025-07-15',
   vite: {
     $server: {

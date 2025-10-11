@@ -21,6 +21,7 @@
       <NuxtLayout>
         <Analytics />
         <NuxtPage />
+        <AppScrollToTop />
       </NuxtLayout>
       
     </UMain>
