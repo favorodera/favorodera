@@ -18,9 +18,9 @@
         color="neutral"
         variant="link"
         trailing
-        icon="ph:arrow-right"
+        icon="ph:caret-right"
         active
-        :ui="{ trailingIcon: 'size-4' }"
+        :ui="{ base: 'p-0', trailingIcon: 'size-4' }"
       />
 
     </li>

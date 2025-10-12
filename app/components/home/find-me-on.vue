@@ -2,7 +2,7 @@
 
   <div class="space-y-2">
 
-    <ol class="flex flex-wrap items-center gap-4">
+    <ul class="flex flex-wrap items-center gap-4">
 
       <li
         v-for="item, index in owner.contact"
@@ -27,7 +27,7 @@
 
       </li>
 
-    </ol>
+    </ul>
 
     <p class="dark:text-muted">
       Or send me an email: <ProseA :href="`mailto:${owner.email}`">

@@ -1,6 +1,6 @@
 <template>
  
-  <ol class="space-y-4">
+  <ul class="space-y-4">
 
     <li
       v-for="project, index in projects"
@@ -21,14 +21,14 @@
         color="neutral"
         variant="link"
         trailing
-        icon="ph:arrow-right"
+        icon="ph:caret-right"
         active
-        :ui="{ trailingIcon: 'size-4' }"
+        :ui="{ base: 'p-0', trailingIcon: 'size-4' }"
       />
+      
     </li>
-     
 
-  </ol>
+  </ul>
     
 </template>
 

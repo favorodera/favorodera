@@ -27,6 +27,10 @@ export default defineNuxtConfig({
     url: 'https://favorodera.vercel.app/',
     name: 'Favour Emeka',
   },
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+  },
   content: {
     preview: {
       api: 'https://api.nuxt.studio',
