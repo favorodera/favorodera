@@ -1,6 +1,6 @@
 <template>
  
-  <ul class="space-y-4">
+  <ul class="space-y-8">
 
     <li
       v-for="project, index in projects"

@@ -12,7 +12,7 @@
         />
 
         <UPageBody>
-          <ol class="space-y-8">
+          <ul class="space-y-8">
 
             <li
               v-for="article, index in articles"
@@ -24,7 +24,7 @@
               />
             </li>
             
-          </ol>
+          </ul>
 
           <AppSurround :left="{ path: '/', text: 'To Home' }" />
 
