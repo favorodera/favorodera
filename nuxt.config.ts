@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
+import { definePerson } from 'nuxt-schema-org/schema'
 
 export default defineNuxtConfig({
   modules: [
@@ -26,6 +27,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://favorodera.vercel.app/',
     name: 'Favour Emeka',
+    description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
   },
   colorMode: {
     preference: 'dark',
@@ -88,6 +90,29 @@ export default defineNuxtConfig({
     customCollections: [
       { prefix: 'custom', dir: './app/assets/icons' },
     ],
+  },
+  schemaOrg: {
+    identity: definePerson({
+      name: 'Favour Emeka',
+      givenName: 'Favour',
+      familyName: 'Emeka',
+      additionalName: 'Chidera',
+      alternateName: 'Emeka Favour',
+
+      image: '/avatar.png',
+      description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
+      jobTitle: 'Frontend Web Developer',
+
+      email: 'favorodera@gmail.com',
+      url: 'https://favorodera.vercel.app/',
+      sameAs: [
+        'https://x.com/favorodera',
+        'https://github.com/favorodera',
+        'https://linkedin.com/in/favorodera',
+        'https://facebook.com/favorodera',
+      ],
+      gender: 'male',
+    }),
   },
   seo: {
     redirectToCanonicalSiteUrl: true,

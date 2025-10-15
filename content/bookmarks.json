@@ -11,6 +11,10 @@
     {
       "url": "https://imzbf.github.io/md-editor-v3/en-US",
       "title": "Markdown Editor Library for Vue"
+    },
+    {
+      "title": "Open Graph Image Generator",
+      "url": "https://ogimage.click/"
     }
   ]
 }

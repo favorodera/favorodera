@@ -138,11 +138,10 @@ useSeoMeta({
   ogDescription: () => page.value?.description,
   twitterTitle: () => page.value?.title,
   twitterDescription: () => page.value?.description,
+  ogImage: 'https://favorodera.vercel.app/blog.png',
+  twitterImage: 'https://favorodera.vercel.app/blog.png',
 })
 
 const { share } = useShare()
 </script>
 
-<style scoped>
-
-</style>
