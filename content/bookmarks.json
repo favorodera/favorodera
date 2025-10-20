@@ -15,6 +15,10 @@
     {
       "title": "Open Graph Image Generator",
       "url": "https://ogimage.click/"
+    },
+    {
+      "url": "https://www.ray.so/#code=&theme=vercel&padding=16&language=&width=null&darkMode=true&background=true",
+      "title": "Code screenshoter"
     }
   ]
 }
