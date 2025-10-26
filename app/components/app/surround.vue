@@ -10,6 +10,7 @@
       icon="ph:caret-left"
       active
       :ui="{ base: 'p-0 place-self-start', leadingIcon: 'size-4' }"
+      :title="left.title"
     />
 
 
@@ -23,6 +24,7 @@
       icon="ph:caret-right"
       active
       :ui="{ base: 'p-0 place-self-end', trailingIcon: 'size-4' }"
+      :title="right.title"
     />
 
   </div>
@@ -34,10 +36,12 @@ defineProps<{
   right?: {
     text: string
     path: string
+    title?: string
   }
   left: {
     text: string
     path: string
+    title?: string
   }
 }>()
 

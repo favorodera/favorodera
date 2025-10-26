@@ -40,11 +40,11 @@ useSeoMeta({
   description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
   ogTitle: 'Favour Emeka',
   ogDescription: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
-  ogImage: 'https://favorodera.vercel.app/avatar.jpg',
+  ogImage: 'https://favorodera.vercel.app/_vercel/image?url=%2Favatar.jpg&w=320&q=100',
   ogUrl: 'https://favorodera.vercel.app/',
   twitterTitle: 'Favour Emeka',
   twitterDescription: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
-  twitterImage: 'https://favorodera.vercel.app/avatar.jpg',
+  twitterImage: 'https://favorodera.vercel.app/_vercel/image?url=%2Favatar.jpg&w=320&q=100',
   twitterCard: 'summary_large_image',
   themeColor: [
     { content: '#000000', media: '(prefers-color-scheme: dark)' },

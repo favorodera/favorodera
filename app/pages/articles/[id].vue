@@ -121,11 +121,11 @@ const { data: surroundings } = await useAsyncData(
 
 const surroundingsComputed = computed(() => {
   const left = surroundings.value && surroundings.value[0]
-    ? { path: `/articles/${surroundings.value[0].slug}`, text: 'Previous Article' }
+    ? { path: `/articles/${surroundings.value[0].slug}`, text: 'Previous Article', title: surroundings.value[0].title }
     : { path: '/articles', text: 'To Articles' }
   
   const right = surroundings.value && surroundings.value[1]
-    ? { path: `/articles/${surroundings.value[1].slug}`, text: 'Next Article' }
+    ? { path: `/articles/${surroundings.value[1].slug}`, text: 'Next Article', title: surroundings.value[1].title }
     : undefined
 
   return { left, right }
@@ -138,8 +138,6 @@ useSeoMeta({
   ogDescription: () => page.value?.description,
   twitterTitle: () => page.value?.title,
   twitterDescription: () => page.value?.description,
-  ogImage: 'https://favorodera.vercel.app/blog.png',
-  twitterImage: 'https://favorodera.vercel.app/blog.png',
 })
 
 const { share } = useShare()

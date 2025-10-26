@@ -97,7 +97,7 @@ export default defineNuxtConfig({
       givenName: 'Favour',
       familyName: 'Emeka',
       additionalName: 'Chidera',
-      alternateName: 'Emeka Favour',
+      alternateName: 'favorodera',
 
       image: '/avatar.png',
       description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
