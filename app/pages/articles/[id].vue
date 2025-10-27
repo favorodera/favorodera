@@ -135,11 +135,6 @@ const surroundingsComputed = computed(() => {
   return { left, right }
 })
 
-defineOgImageComponent('Blog', {
-  title: () => page.value?.title,
-  description: () => page.value?.description,
-})
-
 useSeoMeta({
   title: () => page.value?.title,
   description: () => page.value?.description,
