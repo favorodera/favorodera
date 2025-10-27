@@ -14,19 +14,13 @@
       error-color="red"
     />
 
-    <AppHeader />
-    
-    <UMain>
 
-      <NuxtLayout>
-        <Analytics />
-        <NuxtPage />
-        <AppScrollToTop />
-      </NuxtLayout>
-      
-    </UMain>
+    <NuxtLayout>
+      <Analytics />
+      <NuxtPage />
+      <AppScrollToTop />
+    </NuxtLayout>
 
-    <AppFooter />
 
   </UApp>
 

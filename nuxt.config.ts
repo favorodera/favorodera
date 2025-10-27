@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
   ],
   devtools: { enabled: true },
+
   app: {
     rootTag: 'main',
     rootAttrs: {
@@ -20,16 +21,15 @@ export default defineNuxtConfig({
     pageTransition: { name: 'fade-out-in', mode: 'out-in' },
     layoutTransition: { name: 'fade-out-in', mode: 'out-in' },
   },
+
   css: ['~/assets/styles/index.css'],
+
   site: {
     url: 'https://favorodera.vercel.app/',
     name: 'Favour Emeka',
     description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
   },
-  colorMode: {
-    preference: 'dark',
-    fallback: 'dark',
-  },
+
   content: {
     preview: {
       api: 'https://api.nuxt.studio',
@@ -54,9 +54,11 @@ export default defineNuxtConfig({
       },
     },
   },
+
   experimental: {
     typedPages: true,
   },
+
   compatibilityDate: '2025-07-15',
   vite: {
     $server: {
@@ -72,18 +74,35 @@ export default defineNuxtConfig({
       tailwindcss(),
     ],
   },
+
   eslint: {
     config: {
       stylistic: true,
     },
   },
+  
   fonts: {
     defaults: {
       weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
+
   icon: {
     mode: 'svg',
+  },
+
+  ogImage: {
+    fonts: [
+      'DM+Sans:100',
+      'DM+Sans:200',
+      'DM+Sans:300',
+      'DM+Sans:400',
+      'DM+Sans:500',
+      'DM+Sans:600',
+      'DM+Sans:700',
+      'DM+Sans:800',
+      'DM+Sans:900',
+    ],
   },
   schemaOrg: {
     identity: definePerson({
@@ -104,10 +123,12 @@ export default defineNuxtConfig({
         'https://github.com/favorodera',
         'https://linkedin.com/in/favorodera',
         'https://facebook.com/favorodera',
+        'https://wa.me/+2348024383756',
       ],
       gender: 'male',
     }),
   },
+  
   seo: {
     redirectToCanonicalSiteUrl: true,
   },

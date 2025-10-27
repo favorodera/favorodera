@@ -8,14 +8,21 @@
 
 :root {
   --default-font-family: var(--font-sans);
+
   --default-transition-duration: 300ms;
+
   --ui-container: var(--container-3xl);
+
   --ui-primary: black;
+  
   --ui-bg: white;
+
+  --ui-header-height: --spacing(12);
 }
 
 .dark {
   --ui-primary: white;
+
   --ui-bg: black;
 }
 
@@ -23,9 +30,6 @@
   scroll-behavior: smooth;
 }
 
-::-ms-reveal {
-  display: none;
-}
 
 .fade-out-in-enter-active,
 .fade-out-in-leave-active {

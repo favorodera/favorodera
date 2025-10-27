@@ -96,6 +96,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  layout: 'blog-post',
+})
+
 const { id } = useRoute('articles-id').params
 
 const { data: page, error } = await useAsyncData(
@@ -129,6 +133,11 @@ const surroundingsComputed = computed(() => {
     : undefined
 
   return { left, right }
+})
+
+defineOgImageComponent('Blog', {
+  title: () => page.value?.title,
+  description: () => page.value?.description,
 })
 
 useSeoMeta({

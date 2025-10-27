@@ -2,7 +2,7 @@
 
   <div class="space-y-2">
 
-    <ul class="flex flex-wrap items-center gap-4">
+    <ul class="flex flex-wrap items-center gap-x-4 gap-y-2">
 
       <li
         v-for="item, index in owner.contact"
