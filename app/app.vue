@@ -65,5 +65,8 @@ useHead({
     { rel: 'icon', href: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
     { rel: 'icon', href: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
   ],
+  meta: [
+    { name: 'google-site-verification', content: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM' },
+  ],
 })
 </script>

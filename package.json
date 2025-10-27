@@ -16,6 +16,7 @@
     "@nuxt/content": "^3.7.1",
     "@nuxt/image": "^1.11.0",
     "@nuxt/ui": "^4.0.0",
+    "@nuxtjs/seo": "^3.2.2",
     "@tailwindcss/vite": "^4.1.14",
     "@vercel/analytics": "^1.5.0",
     "@vueuse/nuxt": "^13.9.0",
@@ -23,7 +24,6 @@
     "change-case": "^5.4.4",
     "nuxt": "^4.1.2",
     "tailwindcss": "^4.1.14",
-    "@nuxtjs/seo": "^3.2.2",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1"
   },

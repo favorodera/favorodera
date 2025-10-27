@@ -11,9 +11,6 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/image',
   ],
-  imports: {
-    dirs: ['./app/stores'],
-  },
   devtools: { enabled: true },
   app: {
     rootTag: 'main',
@@ -87,9 +84,6 @@ export default defineNuxtConfig({
   },
   icon: {
     mode: 'svg',
-    customCollections: [
-      { prefix: 'custom', dir: './app/assets/icons' },
-    ],
   },
   schemaOrg: {
     identity: definePerson({
