@@ -24,6 +24,11 @@
       "title": "Ray.so",
       "url": "https://www.ray.so/#code=&theme=vercel&padding=16&language=&width=null&darkMode=true&background=true",
       "description": "Takes beautiful screenshots of your code"
+    },
+    {
+      "url": "https://www.landingfolio.com/",
+      "title": "LandingFolio",
+      "description": "Webpage components and design inspirations"
     }
   ]
 }
