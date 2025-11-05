@@ -1,0 +1,6 @@
+title: Nuxt Request
+description: Reactive $fetch wrapper for client-side data fetching
+url: https://github.com/favorodera/nuxt-request
+thumbnail:
+  light: https://api.iconify.design/logos:npm-icon.svg
+  dark: https://api.iconify.design/logos:npm-icon.svg
