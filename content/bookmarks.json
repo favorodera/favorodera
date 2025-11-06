@@ -11,7 +11,7 @@
       "description": "Provides free brand and company logos"
     },
     {
-      "title": "md-editor-v3",
+      "title": "Md Editor",
       "url": "https://imzbf.github.io/md-editor-v3/en-US",
       "description": "A Markdown editor component for Vue.js"
     },
@@ -29,6 +29,11 @@
       "url": "https://www.landingfolio.com/",
       "title": "LandingFolio",
       "description": "Webpage components and design inspirations"
+    },
+    {
+      "title": "Bazaar",
+      "description": "AI video generator for creating software demo videos",
+      "url": "https://bazaar.it/"
     }
   ]
 }
