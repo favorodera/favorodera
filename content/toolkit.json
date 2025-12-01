@@ -21,35 +21,14 @@
       "url": "https://tailwindcss.com/"
     },
     {
-      "label": "Nuxt UI",
-      "icon": "logos:nuxt-icon",
-      "url": "https://ui.nuxt.com/"
-    },
-    {
-      "label":"Motion",
-      "icon":"ph:wrench",
-      "url":"https://motion.unovue.com/"
-    },
-    {
       "label": "Pinia",
       "icon": "logos:pinia",
       "url": "https://pinia.vuejs.org/"
-    },
-    {
-      "label": "Vaxee",
-      "icon": "ph:wrench",
-      "url": "https://vaxee.letstri.dev/"
-    },
-    {
-      "label": "Supabase",
-      "icon": "logos:supabase-icon",
-      "url": "https://supabase.com/"
-    },
-    {
-      "label": "Nuxt Content",
-      "icon": "logos:nuxt-icon",
-      "url": "https://content.nuxt.com/"
     }
-   
+    {
+      "label": "Motion",
+      "icon": "ph:wrench",
+      "url": "https://motion.unovue.com/"
+    }
   ]
 }
