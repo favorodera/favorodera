@@ -10,7 +10,7 @@ src: /avatar.jpg
 
 # Hello!
 
-I'm **Favour**, a frontend web developer.
+I'm **Favour Emeka**, a frontend web developer.
 
 I write **Vue**, **Nuxt**, and **TypeScript** to build production-ready frontends that are scalable, maintainable, and focused on delivering real value. I currently work as a freelance frontend developer, shipping applications end-to-end with these core technologies.
 
