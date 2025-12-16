@@ -80,7 +80,7 @@ const navigation = computed(() => ([
 
 function downloadResume() {
   const link = document.createElement('a')
-  link.href = '/resume.pdf'
+  link.href = '/Favour_Emeka_Frontend_Web_Developer_Resume.pdf'
   link.download = 'Favour_Emeka_Frontend_Web_Developer_Resume.pdf'
     
   document.body.appendChild(link)
@@ -89,3 +89,4 @@ function downloadResume() {
   document.body.removeChild(link)
 }
 </script>
+
