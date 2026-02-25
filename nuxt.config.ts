@@ -5,11 +5,16 @@ import { definePerson } from 'nuxt-schema-org/schema'
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
+    '@nuxtjs/color-mode',
+    '@nuxt/fonts',
     '@nuxt/content',
+    'nuxt-studio',
     '@nuxtjs/seo',
     '@nuxt/a11y',
-    'nuxt-studio',
-    '@nuxtjs/color-mode',
+    '@pinia/nuxt',
+    '@pinia/colada-nuxt',
+    '@nuxt/icon',
+    '@favorodera/nuxt-app-utils',
   ],
 
   devtools: { enabled: true },
@@ -85,6 +90,12 @@ export default defineNuxtConfig({
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       tailwindcss() as any,
     ],
+    optimizeDeps: {
+      include: [
+        // '@vercel/analytics/nuxt',
+        'zod',
+      ],
+    },
   },
 
   eslint: {

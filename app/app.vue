@@ -14,7 +14,10 @@ useHead({
 
   <div>
 
-    <NuxtPage />
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+
     <Analytics />
 
   </div>

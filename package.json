@@ -14,18 +14,26 @@
     "stage": "nuxt typecheck && pnpm lint && nuxt prepare && nuxt build"
   },
   "dependencies": {
+    "@favorodera/nuxt-app-utils": "^1.0.0",
     "@nuxt/content": "^3.11.2",
+    "@nuxt/fonts": "^0.14.0",
+    "@nuxt/icon": "^2.2.1",
     "@nuxtjs/color-mode": "^4.0.0",
     "@nuxtjs/seo": "^3.4.0",
+    "@pinia/colada": "^0.21.5",
+    "@pinia/colada-nuxt": "^0.3.1",
+    "@pinia/nuxt": "^0.11.3",
     "@tailwindcss/vite": "^4.2.1",
     "@vercel/analytics": "^1.6.1",
     "better-sqlite3": "^12.6.2",
     "nuxt": "^4.3.1",
     "nuxt-schema-org": "^5.0.10",
     "nuxt-studio": "1.3.3",
+    "pinia": "^3.0.4",
     "tailwindcss": "^4.2.1",
     "vue": "^3.5.29",
-    "vue-router": "^5.0.3"
+    "vue-router": "^5.0.3",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@favorodera/nuxt-eslint-config": "^1.1.0",
