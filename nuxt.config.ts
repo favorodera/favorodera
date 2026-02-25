@@ -4,52 +4,71 @@ import { definePerson } from 'nuxt-schema-org/schema'
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/ui',
-    '@vueuse/nuxt',
     '@nuxt/eslint',
     '@nuxt/content',
     '@nuxtjs/seo',
-    '@nuxt/image',
+    '@nuxt/a11y',
+    'nuxt-studio',
+    '@nuxtjs/color-mode',
   ],
+
   devtools: { enabled: true },
 
   app: {
-    rootTag: 'main',
-    rootAttrs: {
-      id: 'app',
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+      meta: [
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1',
+        },
+      ],
     },
     pageTransition: { name: 'fade-out-in', mode: 'out-in' },
     layoutTransition: { name: 'fade-out-in', mode: 'out-in' },
   },
 
-  css: ['~/assets/styles/index.css'],
+  css: ['~/assets/css/app.css'],
 
   site: {
     url: 'https://favorodera.vercel.app/',
     name: 'Favour Emeka',
-    description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
+    description: 'Frontend Engineer',
+    indexable: true,
+  },
+
+  colorMode: {
+    classSuffix: '',
   },
 
   content: {
-    preview: {
-      api: 'https://api.nuxt.studio',
-    },
     renderer: {
       anchorLinks: false,
     },
     build: {
       markdown: {
         toc: {
-          depth: 1,
-          searchDepth: 1,
+          depth: 0,
         },
-        highlight: {
-          theme: {
-            light: 'github-light',
-            default: 'github-dark',
-            dark: 'github-dark',
-            sepia: 'monokai',
-          },
+        contentHeading: false,
+      },
+    },
+  },
+
+  appConfig: {
+    icon: {
+      mode: 'svg',
+    },
+  },
+
+  runtimeConfig: {
+    studio: {
+      auth: {
+        github: {
+          clientId: '',
+          clientSecret: '',
         },
       },
     },
@@ -60,18 +79,11 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-07-15',
+
   vite: {
-    $server: {
-      build: {
-        rollupOptions: {
-          output: {
-            preserveModules: true,
-          },
-        },
-      },
-    },
     plugins: [
-      tailwindcss(),
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      tailwindcss() as any,
     ],
   },
 
@@ -80,56 +92,48 @@ export default defineNuxtConfig({
       stylistic: true,
     },
   },
-  
+
   fonts: {
     defaults: {
       weights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
   },
 
-  icon: {
-    mode: 'svg',
-  },
-
-  ogImage: {
-    fonts: [
-      'DM+Sans:100',
-      'DM+Sans:200',
-      'DM+Sans:300',
-      'DM+Sans:400',
-      'DM+Sans:500',
-      'DM+Sans:600',
-      'DM+Sans:700',
-      'DM+Sans:800',
-      'DM+Sans:900',
-    ],
-  },
   schemaOrg: {
     identity: definePerson({
       name: 'Favour Emeka',
       givenName: 'Favour',
       familyName: 'Emeka',
       additionalName: 'Chidera',
-      alternateName: 'favorodera',
+      alternateName: 'Favour Chidera Emeka',
 
       image: '/avatar.png',
-      description: 'Frontend Web Developer specializing in Vue.js, Nuxt.js and Typescript.',
-      jobTitle: 'Frontend Web Developer',
+      description: 'Frontend Engineer',
+      jobTitle: 'Frontend Engineer',
 
       email: 'favorodera@gmail.com',
       url: 'https://favorodera.vercel.app/',
       sameAs: [
         'https://x.com/favorodera',
         'https://github.com/favorodera',
-        'https://linkedin.com/in/favorodera',
         'https://facebook.com/favorodera',
         'https://wa.me/+2348024383756',
       ],
       gender: 'male',
     }),
   },
-  
+
   seo: {
     redirectToCanonicalSiteUrl: true,
+  },
+
+  studio: {
+    route: '/_studio',
+    repository: {
+      provider: 'github',
+      owner: 'favorodera',
+      repo: 'favorodera',
+      branch: 'main',
+    },
   },
 })

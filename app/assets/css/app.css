@@ -1,0 +1,121 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.985 0.002 90);
+  --foreground: oklch(0.145 0.015 260);
+  --primary: oklch(0.55 0.18 250);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.94 0.006 260);
+  --secondary-foreground: oklch(0.2 0.015 260);
+  --muted: oklch(0.95 0.004 260);
+  --muted-foreground: oklch(0.45 0.015 260);
+  --accent: oklch(0.93 0.02 250);
+  --accent-foreground: oklch(0.35 0.06 250);
+  --font-sans: 'Instrument Sans', sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --radius: 0.125rem;
+  --tracking-normal: -0.01em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: oklch(0.145 0.005 285);
+  --foreground: oklch(0.93 0.005 260);
+  --primary: oklch(0.62 0.17 250);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.22 0.01 270);
+  --secondary-foreground: oklch(0.88 0.005 260);
+  --muted: oklch(0.22 0.008 275);
+  --muted-foreground: oklch(0.55 0.012 260);
+  --accent: oklch(0.2 0.03 250);
+  --accent-foreground: oklch(0.62 0.17 250);
+  --border: oklch(0.26 0.01 270);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: calc(var(--radius) - 1px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50 scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased tracking-normal;
+  }
+
+  h1 {
+    @apply scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance;
+  }
+
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  }
+
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  p {
+    @apply leading-7 not-first:mt-6;
+  }
+
+  ul,
+  ol {
+    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  }
+
+  .large {
+    @apply text-lg font-semibold;
+  }
+
+  .small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .muted {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .fade-out-in-enter-active,
+  .fade-out-in-leave-active {
+    transition: all 300ms ease;
+  }
+
+  .fade-out-in-enter-from,
+  .fade-out-in-leave-to {
+    opacity: 0;
+  }
+
+  .fade-out-in-enter-to,
+  .fade-out-in-leave-from {
+    opacity: 1;
+  }
+}
