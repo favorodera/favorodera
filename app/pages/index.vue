@@ -9,7 +9,7 @@ const { data: page } = await useAsyncData('home', () => queryCollection('home').
     :value="page"
     tag="section"
     class="w-full max-w-3xl"
-    
+    aria-label="index page"
   />
 
   <Empty
