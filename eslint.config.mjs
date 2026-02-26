@@ -18,4 +18,7 @@ export default withNuxt()
   })
   .overrideRules({
     'better-tailwindcss/no-unregistered-classes': 'off',
+    'better-tailwindcss/no-unknown-classes': ['error', {
+      detectComponentClasses: true,
+    }],
   })

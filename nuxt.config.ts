@@ -65,6 +65,9 @@ export default defineNuxtConfig({
           clientSecret: '',
         },
       },
+      ai: {
+        apiKey: '',
+      },
     },
   },
 
@@ -142,6 +145,14 @@ export default defineNuxtConfig({
       owner: 'favorodera',
       repo: 'favorodera',
       branch: 'main',
+    },
+    ai: {
+      context: {
+        title: 'Favour Emeka',
+        description: 'Frontend Engineer',
+        style: 'Technical, concise, and detailed',
+        tone: 'Professional yet approachable',
+      },
     },
   },
 })

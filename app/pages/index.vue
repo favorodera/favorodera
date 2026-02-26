@@ -13,9 +13,14 @@ const { data: page } = await useAsyncData('home', () => queryCollection('home').
 
   <Empty
     v-else
-    title="No home page found"
-    description="No home page found"
-    icon="i-lucide-home"
+    title="404"
+    description="Page not found"
+    :actions="[
+      {
+        label: 'Refresh page',
+        onClick: () => reloadNuxtApp(),
+      },
+    ]"
   />
 
 </template>
