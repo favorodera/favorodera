@@ -11,7 +11,6 @@ export default defineNuxtConfig({
     'nuxt-studio',
     '@nuxtjs/seo',
     '@nuxt/a11y',
-    '@nuxt/icon',
   ],
 
   devtools: { enabled: true },
@@ -25,6 +24,33 @@ export default defineNuxtConfig({
         {
           name: 'viewport',
           content: 'width=device-width, initial-scale=1',
+        },
+        {
+          charset: 'utf-8',
+        },
+      ],
+      link: [
+        {
+          rel: 'icon',
+          href: '/favicon.ico',
+          sizes: '48x48',
+        },
+        {
+          rel: 'icon',
+          href: '/favicon-32x32.png',
+          sizes: '32x32',
+          type: 'image/png',
+        },
+        {
+          rel: 'icon',
+          href: '/favicon-16x16.png',
+          sizes: '16x16',
+          type: 'image/png',
+        },
+        {
+          rel: 'apple-touch-icon',
+          href: '/apple-touch-icon.png',
+          sizes: '180x180',
         },
       ],
     },
@@ -51,12 +77,6 @@ export default defineNuxtConfig({
     },
   },
 
-  appConfig: {
-    icon: {
-      mode: 'svg',
-    },
-  },
-
   runtimeConfig: {
     studio: {
       auth: {
@@ -65,14 +85,12 @@ export default defineNuxtConfig({
           clientSecret: '',
         },
       },
-      ai: {
-        apiKey: '',
-      },
     },
   },
 
   routeRules: {
     '/': { prerender: true },
+    '/projects': { prerender: true },
   },
 
   experimental: {
@@ -144,14 +162,6 @@ export default defineNuxtConfig({
       owner: 'favorodera',
       repo: 'favorodera',
       branch: 'main',
-    },
-    ai: {
-      context: {
-        title: 'Favour Emeka',
-        description: 'Frontend Developer',
-        style: 'Technical, concise, and detailed',
-        tone: 'Professional yet approachable',
-      },
     },
   },
 })
