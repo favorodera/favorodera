@@ -8,7 +8,8 @@ const { data: page } = await useAsyncData('home', () => queryCollection('home').
     v-if="page"
     :value="page"
     tag="section"
-    class="w-full max-w-6xl"
+    class="w-full max-w-3xl"
+    
   />
 
   <Empty

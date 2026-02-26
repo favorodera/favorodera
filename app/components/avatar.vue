@@ -3,7 +3,7 @@
   <div
     aria-label="avatar container"
     class="
-      grid size-18 grid-cols-1 place-items-center rounded-full border-2
+      mb-8 grid size-18 grid-cols-1 place-items-center rounded-full border-2
       border-border
     "
   >

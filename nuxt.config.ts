@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   site: {
     url: 'https://favorodera.vercel.app/',
     name: 'Favour Emeka',
-    description: 'Frontend Engineer',
+    description: 'Frontend Developer',
     indexable: true,
   },
 
@@ -88,7 +88,6 @@ export default defineNuxtConfig({
     ],
     optimizeDeps: {
       include: [
-        // '@vercel/analytics/nuxt',
         'zod',
       ],
     },
@@ -114,9 +113,9 @@ export default defineNuxtConfig({
       additionalName: 'Chidera',
       alternateName: 'Favour Chidera Emeka',
 
-      image: '/avatar.png',
-      description: 'Frontend Engineer',
-      jobTitle: 'Frontend Engineer',
+      image: 'https://github.com/favorodera.png',
+      description: 'Frontend Developer',
+      jobTitle: 'Frontend Developer',
 
       email: 'favorodera@gmail.com',
       url: 'https://favorodera.vercel.app/',
@@ -149,7 +148,7 @@ export default defineNuxtConfig({
     ai: {
       context: {
         title: 'Favour Emeka',
-        description: 'Frontend Engineer',
+        description: 'Frontend Developer',
         style: 'Technical, concise, and detailed',
         tone: 'Professional yet approachable',
       },
