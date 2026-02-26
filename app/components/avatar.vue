@@ -3,7 +3,7 @@
   <div
     aria-label="avatar container"
     class="
-      mb-8 grid size-18 grid-cols-1 place-items-center rounded-full border-2
+      mb-8 grid size-16 grid-cols-1 place-items-center rounded-full border-2
       border-border
     "
   >
@@ -12,8 +12,8 @@
       src="https://github.com/favorodera.png"
       alt="Avatar"
       loading="lazy"
-      height="72px"
-      width="72px"
+      height="48px"
+      width="48px"
       class="rounded-full object-cover"
     >
 

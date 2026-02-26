@@ -11,5 +11,14 @@ description: Frontend Developer
 [A Nigeria-based frontend developer who builds with Vue, Nuxt, and TypeScript.
 I care about clean interfaces and writing code that actually works.]{class="mt-4"}
 
+---
+
 ::home-projects-section
 ::
+
+---
+
+::home-contact-section
+::
+
+Or send me a [Mail](mailto:favorodera@gmail.com)

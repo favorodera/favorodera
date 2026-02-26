@@ -5,25 +5,13 @@
   --background: oklch(0.9900 0 0);
   --foreground: oklch(0 0 0);
 
-  --primary: oklch(0 0 0);
-  --primary-foreground: oklch(1 0 0);
-
-  --secondary: oklch(0.9400 0 0);
-  --secondary-foreground: oklch(0 0 0);
-
   --muted: oklch(0.9700 0 0);
   --muted-foreground: oklch(0.4400 0 0);
-
-  --accent: oklch(0.9400 0 0);
-  --accent-foreground: oklch(0 0 0);
 
   --border: oklch(0.9200 0 0);
 
   --font-sans: 'Space Grotesk', sans-serif;
   --font-serif: Georgia, serif;
-  --font-mono: 'JetBrains Mono', monospace;
-
-  --radius: 0.5rem;
 
   --tracking-normal: 0em;
   --spacing: 0.25rem;
@@ -33,17 +21,8 @@
   --background: oklch(0 0 0);
   --foreground: oklch(1 0 0);
 
-  --primary: oklch(1 0 0);
-  --primary-foreground: oklch(0 0 0);
-
-  --secondary: oklch(0.2500 0 0);
-  --secondary-foreground: oklch(1 0 0);
-
   --muted: oklch(0.2300 0 0);
   --muted-foreground: oklch(0.7200 0 0);
-
-  --accent: oklch(0.3200 0 0);
-  --accent-foreground: oklch(1 0 0);
 
   --border: oklch(0.2600 0 0);
 }
@@ -52,47 +31,17 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
 
   --color-border: var(--border);
 
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-serif: var(--font-serif);
-
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
 }
 
 @layer components {
-  .large {
-    @apply text-lg font-semibold;
-  }
-
-  .small {
-    @apply text-sm font-medium leading-none;
-  }
-
-  .muted {
-    @apply text-sm text-muted-foreground;
-  }
-
-  .button {
-    @apply inline-flex cursor-pointer shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none [&_svg]:pointer-events-none [&_svg]:shrink-0 h-9 px-4 py-2 has-[>svg]:px-3 [&_svg:not([class*='size-'])]:size-4;
-  }
-
   .fade-out-in-enter-active,
   .fade-out-in-leave-active {
     transition: all 300ms ease;
@@ -130,16 +79,19 @@
     @apply scroll-m-20 text-xl font-semibold tracking-tight;
   }
 
-  h4 {
-    @apply scroll-m-20 text-lg font-semibold tracking-tight;
-  }
-
   p {
     @apply leading-7 not-first:mt-4;
   }
 
-  ul,
-  ol {
-    @apply my-6 ml-6 list-disc [&>li]:mt-2;
+  a {
+    @apply w-fit text-muted-foreground transition-colors duration-300 hover:text-foreground
+  }
+
+  ul {
+    @apply my-6 [&>li]:mt-2 list-none;
+  }
+
+  hr {
+    @apply mx-auto my-12 border-t border-muted max-w-3xs;
   }
 }

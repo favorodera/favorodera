@@ -12,7 +12,7 @@
 
     <slot />
 
-    <footer />
+    <Footer />
 
   </section>
 

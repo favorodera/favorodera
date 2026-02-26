@@ -26,7 +26,7 @@ const { data: projects } = await useAsyncData('projects', () => queryBuilder.val
     target="_blank"
     class="
       group
-      **:transition-all **:duration-300 **:ease-in-out
+      *:transition-all *:duration-300 *:ease-in-out
     "
   >
 
@@ -37,23 +37,12 @@ const { data: projects } = await useAsyncData('projects', () => queryBuilder.val
       "
     >
       {{ project.name }}
-
-      <span
-        class="
-          opacity-0
-          group-hover:opacity-100
-        "
-        aria-hidden
-      >
-        &nearr;
-      </span>
-
     </h3>
 
     <p
       class="
-        mt-0 text-sm text-muted-foreground/80
-        group-hover:text-muted-foreground
+        mt-0 text-sm text-muted-foreground
+        group-hover:text-foreground
       "
     >
       {{ project.description }}
