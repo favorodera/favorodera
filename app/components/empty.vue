@@ -2,7 +2,7 @@
 defineProps<{
   title: string
   description: string
-  actions?: {
+  actions: {
     label: string
     onClick: () => void
   }[]
@@ -26,7 +26,6 @@ defineProps<{
     </p>
 
     <menu
-      v-if="actions"
       class="grid auto-rows-min grid-cols-2 gap-4"
     >
 
