@@ -68,6 +68,10 @@ export default defineNuxtConfig({
     },
   },
 
+  routeRules: {
+    '/': { prerender: true },
+  },
+
   experimental: {
     typedPages: true,
   },
@@ -125,6 +129,10 @@ export default defineNuxtConfig({
 
   seo: {
     redirectToCanonicalSiteUrl: true,
+  },
+
+  sitemap: {
+    zeroRuntime: true,
   },
 
   studio: {
