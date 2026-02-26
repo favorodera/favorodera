@@ -11,10 +11,7 @@ export default defineNuxtConfig({
     'nuxt-studio',
     '@nuxtjs/seo',
     '@nuxt/a11y',
-    '@pinia/nuxt',
-    '@pinia/colada-nuxt',
     '@nuxt/icon',
-    '@favorodera/nuxt-app-utils',
   ],
 
   devtools: { enabled: true },
@@ -51,14 +48,6 @@ export default defineNuxtConfig({
   content: {
     renderer: {
       anchorLinks: false,
-    },
-    build: {
-      markdown: {
-        toc: {
-          depth: 0,
-        },
-        contentHeading: false,
-      },
     },
   },
 

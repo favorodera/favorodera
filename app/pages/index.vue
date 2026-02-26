@@ -1,16 +1,14 @@
 <script setup lang="ts">
-const { state } = useQuery({
-  key: ['home'],
-  query: async () => queryCollection('home').first(),
-})
+const { data: page } = await useAsyncData('home', () => queryCollection('home').first())
 </script>
 
 <template>
 
   <ContentRenderer
-    v-if="state.data"
-    :value="state.data"
+    v-if="page"
+    :value="page"
     tag="section"
+    class="w-full max-w-6xl"
   />
 
   <Empty

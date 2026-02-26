@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@favorodera/nuxt-app-utils':
-        specifier: ^1.0.0
-        version: 1.0.0(magicast@0.5.2)(zod@4.3.6)
       '@nuxt/content':
         specifier: ^3.11.2
         version: 3.11.2(@valibot/to-json-schema@1.5.0(valibot@1.2.0(typescript@5.9.3)))(better-sqlite3@12.6.2)(magicast@0.5.2)(valibot@1.2.0(typescript@5.9.3))
@@ -26,15 +23,6 @@ importers:
       '@nuxtjs/seo':
         specifier: ^3.4.0
         version: 3.4.0(@unhead/vue@2.1.7(vue@3.5.29(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.6.2))(ioredis@5.9.3)(magicast@0.5.2)(rollup@4.59.0)(unhead@2.1.7)(unstorage@1.17.4(db0@0.3.4(better-sqlite3@12.6.2))(ioredis@5.9.3))(vite@7.3.1(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))(zod@4.3.6)
-      '@pinia/colada':
-        specifier: ^0.21.5
-        version: 0.21.5(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.29(typescript@5.9.3))
-      '@pinia/colada-nuxt':
-        specifier: ^0.3.1
-        version: 0.3.1(@pinia/colada@0.21.5(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.29(typescript@5.9.3)))(magicast@0.5.2)
-      '@pinia/nuxt':
-        specifier: ^0.11.3
-        version: 0.11.3(magicast@0.5.2)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))
       '@tailwindcss/vite':
         specifier: ^4.2.1
         version: 4.2.1(vite@7.3.1(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(yaml@2.8.2))
@@ -53,9 +41,6 @@ importers:
       nuxt-studio:
         specifier: 1.3.3
         version: 1.3.3(db0@0.3.4(better-sqlite3@12.6.2))(ioredis@5.9.3)(magicast@0.5.2)(vue@3.5.29(typescript@5.9.3))
-      pinia:
-        specifier: ^3.0.4
-        version: 3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       tailwindcss:
         specifier: ^4.2.1
         version: 4.2.1
@@ -72,6 +57,9 @@ importers:
       '@favorodera/nuxt-eslint-config':
         specifier: ^1.1.0
         version: 1.1.0
+      '@iconify-json/proicons':
+        specifier: ^1.2.19
+        version: 1.2.19
       '@nuxt/a11y':
         specifier: 1.0.0-alpha.1
         version: 1.0.0-alpha.1(magicast@0.5.2)(vite@7.3.1(@types/node@25.3.0)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(yaml@2.8.2))
@@ -502,15 +490,6 @@ packages:
     resolution: {integrity: sha512-bIZEUzOI1jkhviX2cp5vNyXQc6olzb2ohewQubuYlMXZ2Q/XjBO0x0XhGPvc9fjSIiUN0vw+0hq53BJ4eQSJKQ==}
     engines: {node: ^20.19.0 || ^22.13.0 || >=24}
 
-  '@favorodera/nuxt-app-utils@1.0.0':
-    resolution: {integrity: sha512-6UdIlcmL6p4eIpRK83mNXJiZxzVBVuXamHu5kSyuDC+RXeeHDdn0VSCoeaeXAwwXJmXxXy11pEU/uZkTBfQm6A==}
-    engines: {node: '>=24.0.0'}
-    peerDependencies:
-      zod: ^4.3.6
-    peerDependenciesMeta:
-      zod:
-        optional: true
-
   '@favorodera/nuxt-eslint-config@1.1.0':
     resolution: {integrity: sha512-6Sj9fyJrAGv/6pTAyTUjORCIqFIOyVbPUVqOpfL/L73i+nW4zuBAIv4CPRPm0E/XiOIBuzc+0ZsdQJAOIChNVQ==}
 
@@ -535,6 +514,9 @@ packages:
 
   '@iconify-json/lucide@1.2.94':
     resolution: {integrity: sha512-P54R7gqZs3t1GZQmzW2WkXIkGb9RPCq77iCb7IDU94IIsVegzuSQg52hSTjhvDKRXGUDc1HdwOBIuqg3iLIluw==}
+
+  '@iconify-json/proicons@1.2.19':
+    resolution: {integrity: sha512-OPE9a1ZSTlW24dekf5yaP+C+U8a60t1FZF4FVbvroKeMqGly6VG5WdEjnCDbzMePIZEdUhy5ZbdEm1sc+WSHBg==}
 
   '@iconify/collections@1.0.654':
     resolution: {integrity: sha512-xpxyDlrndFo7z6tRyybLA8U/fzX5b+EZThqqudjbfDRknLWpjQykefbCZLFvp/XMRJCWk75JN0jFtG1Cw+Dbsw==}
@@ -1240,21 +1222,11 @@ packages:
     resolution: {integrity: sha512-tmmZ3lQxAe/k/+rNnXQRawJ4NjxO2hqiOLTHvWchtGZULp4RyFeh6aU4XdOYBFe2KE1oShQTv4AblOs2iOrNnQ==}
     engines: {node: '>= 10.0.0'}
 
-  '@pinia/colada-nuxt@0.3.1':
-    resolution: {integrity: sha512-JqByosIs2nNEV74fYqj89f5NJKPBPmEKVxuVXnh1PWt1dbC3B7hKx8SqkXJctk17aU9qxGxoq5Yx0paHPAMCNw==}
-    peerDependencies:
-      '@pinia/colada': '>=0.21.2'
-
   '@pinia/colada@0.21.5':
     resolution: {integrity: sha512-oWKFUXCE/mibRqeJtWmI37hGnlXk6te7j1XHML/pi2RkUCNl4GWxHYc3Q8cmEuWtuoynvWByiAZhnvthLp+3UA==}
     peerDependencies:
       pinia: ^2.2.6 || ^3.0.0
       vue: ^3.5.17
-
-  '@pinia/nuxt@0.11.3':
-    resolution: {integrity: sha512-7WVNHpWx4qAEzOlnyrRC88kYrwnlR/PrThWT0XI1dSNyUAXu/KBv9oR37uCgYkZroqP5jn8DfzbkNF3BtKvE9w==}
-    peerDependencies:
-      pinia: ^3.0.4
 
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
@@ -6083,14 +6055,6 @@ snapshots:
       '@eslint/core': 1.1.0
       levn: 0.4.1
 
-  '@favorodera/nuxt-app-utils@1.0.0(magicast@0.5.2)(zod@4.3.6)':
-    dependencies:
-      '@nuxt/kit': 4.3.1(magicast@0.5.2)
-    optionalDependencies:
-      zod: 4.3.6
-    transitivePeerDependencies:
-      - magicast
-
   '@favorodera/nuxt-eslint-config@1.1.0': {}
 
   '@fingerprintjs/botd@2.0.0': {}
@@ -6107,6 +6071,10 @@ snapshots:
   '@humanwhocodes/retry@0.4.3': {}
 
   '@iconify-json/lucide@1.2.94':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/proicons@1.2.19':
     dependencies:
       '@iconify/types': 2.0.0
 
@@ -7081,24 +7049,11 @@ snapshots:
       '@parcel/watcher-win32-ia32': 2.5.6
       '@parcel/watcher-win32-x64': 2.5.6
 
-  '@pinia/colada-nuxt@0.3.1(@pinia/colada@0.21.5(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.29(typescript@5.9.3)))(magicast@0.5.2)':
-    dependencies:
-      '@nuxt/kit': 4.3.1(magicast@0.5.2)
-      '@pinia/colada': 0.21.5(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.29(typescript@5.9.3))
-    transitivePeerDependencies:
-      - magicast
-
   '@pinia/colada@0.21.5(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))(vue@3.5.29(typescript@5.9.3))':
     dependencies:
       pinia: 3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
       vue: 3.5.29(typescript@5.9.3)
-
-  '@pinia/nuxt@0.11.3(magicast@0.5.2)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3)))':
-    dependencies:
-      '@nuxt/kit': 4.3.1(magicast@0.5.2)
-      pinia: 3.0.4(typescript@5.9.3)(vue@3.5.29(typescript@5.9.3))
-    transitivePeerDependencies:
-      - magicast
+    optional: true
 
   '@pkgjs/parseargs@0.11.0':
     optional: true
@@ -7829,6 +7784,7 @@ snapshots:
   '@vue/devtools-api@7.7.9':
     dependencies:
       '@vue/devtools-kit': 7.7.9
+    optional: true
 
   '@vue/devtools-api@8.0.6':
     dependencies:
@@ -7855,6 +7811,7 @@ snapshots:
       perfect-debounce: 1.0.0
       speakingurl: 14.0.1
       superjson: 2.2.6
+    optional: true
 
   '@vue/devtools-kit@8.0.6':
     dependencies:
@@ -7869,6 +7826,7 @@ snapshots:
   '@vue/devtools-shared@7.7.9':
     dependencies:
       rfdc: 1.4.1
+    optional: true
 
   '@vue/devtools-shared@8.0.6':
     dependencies:
@@ -10784,7 +10742,8 @@ snapshots:
 
   pathe@2.0.3: {}
 
-  perfect-debounce@1.0.0: {}
+  perfect-debounce@1.0.0:
+    optional: true
 
   perfect-debounce@2.1.0: {}
 
@@ -10802,6 +10761,7 @@ snapshots:
       vue: 3.5.29(typescript@5.9.3)
     optionalDependencies:
       typescript: 5.9.3
+    optional: true
 
   pkg-types@1.3.1:
     dependencies:

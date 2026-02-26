@@ -6,13 +6,14 @@ useHead({
     { name: 'google-site-verification', content: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM' },
   ],
 })
-
-  
 </script>
 
 <template>
 
-  <div>
+  <div
+    aria-label="app"
+    class="grid min-h-dvh w-full grid-cols-1 grid-rows-[1fr]"
+  >
 
     <NuxtLayout>
       <NuxtPage />
