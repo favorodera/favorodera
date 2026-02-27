@@ -42,7 +42,7 @@ const { data: projects } = await useAsyncData('projects', () => queryBuilder.val
 
     <p
       class="
-        mt-0 line-clamp-2 truncate text-sm text-muted-foreground
+        mt-0 text-sm text-muted-foreground
         group-hover:text-foreground
       "
     >
