@@ -1,24 +1,41 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
 
-defineProps<{
+const props = defineProps<{
   error: NuxtError
 }>()
 
-useSeoMeta({
-  title: 'Page not found',
-  description: 'We are sorry but this page could not be found.',
-})
+const normalizedError = computed(() => ({
+  status: props.error.status?.toString() || '500',
+  statusText: props.error.statusText || 'Internal Server Error',
+}))
 
-useHead({
-  htmlAttrs: {
-    lang: 'en',
-  },
+useSeoMeta({
+  title: () => normalizedError.value.status,
+  description: () => normalizedError.value.statusText,
 })
 </script>
 
 <template>
-  <UApp>
-    <UError :error="error" />
-  </UApp>
+  <div
+    aria-label="app"
+    class="grid min-h-dvh w-full grid-cols-1 grid-rows-[1fr]"
+  >
+  
+    <NuxtLayout name="default">
+
+      <Empty
+        :title="normalizedError.status"
+        :description="normalizedError.statusText"
+        :actions="[
+          {
+            label: 'Go back home',
+            onClick: () => navigateTo('/'),
+          },
+        ]"
+      />
+
+    </NuxtLayout>
+  
+  </div>
 </template>

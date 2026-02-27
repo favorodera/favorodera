@@ -1,54 +1,25 @@
-import { defineContentConfig, defineCollection, z } from '@nuxt/content'
+import { defineContentConfig, defineCollection } from '@nuxt/content'
+import { z } from 'zod'
 
 export default defineContentConfig({
   collections: {
-    homeIndex: defineCollection({
+    home: defineCollection({
       source: 'index.md',
       type: 'page',
     }),
-    projects: defineCollection({
-      source: 'projects/*.yml',
+
+    projectsMd: defineCollection({
+      source: 'projects/index.md',
+      type: 'page',
+    }),
+
+    projectsJson: defineCollection({
+      source: 'projects/*.json',
       type: 'data',
       schema: z.object({
-        title: z.string(),
+        name: z.string(),
         description: z.string(),
         url: z.string(),
-        thumbnail: z.object({
-          light: z.string().optional(),
-          dark: z.string().optional(),
-        }).optional(),
-      }),
-    }),
-    articles: defineCollection({
-      source: 'articles/*.md',
-      type: 'page',
-      schema: z.object({
-        slug: z.string(),
-        title: z.string(),
-        description: z.string(),
-        date: z.string(),
-      }),
-    }),
-    bookmarks: defineCollection({
-      source: 'bookmarks.json',
-      type: 'data',
-      schema: z.object({
-        bookmarks: z.array(z.object({
-          title: z.string(),
-          url: z.string(),
-          description: z.string().optional(),
-        })),
-      }),
-    }),
-    toolkit: defineCollection({
-      source: 'toolkit.json',
-      type: 'data',
-      schema: z.object({
-        toolkit: z.array(z.object({
-          label: z.string(),
-          icon: z.string(),
-          url: z.string(),
-        })),
       }),
     }),
   },

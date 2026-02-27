@@ -1,19 +1,24 @@
+// @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
-import config from '@favorodera/nuxt-eslint-config'
-import { dirname } from 'path'
-import { fileURLToPath } from 'url'
-import tailwind from 'eslint-plugin-tailwindcss'
+import favoroderaConfig from '@favorodera/nuxt-eslint-config'
+import betterTailwind from 'eslint-plugin-better-tailwindcss'
 
-const urlToPath = fileURLToPath(import.meta.url)
-const dir = dirname(urlToPath)
-
-export default withNuxt(config).append(
-  tailwind.configs['flat/recommended'],
-  {
+export default withNuxt()
+  .append(favoroderaConfig)
+  .append({
+    plugins: {
+      'better-tailwindcss': betterTailwind,
+    },
+    rules: { ...betterTailwind.configs['recommended-error'].rules },
     settings: {
-      tailwindcss: {
-        config: `${dir}/app/assets/styles/index.css`,
+      'better-tailwindcss': {
+        entryPoint: './app/assets/css/app.css',
       },
     },
-  },
-)
+  })
+  .overrideRules({
+    'better-tailwindcss/no-unregistered-classes': 'off',
+    'better-tailwindcss/no-unknown-classes': ['error', {
+      detectComponentClasses: true,
+    }],
+  })

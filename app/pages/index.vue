@@ -1,36 +1,27 @@
+<script setup lang="ts">
+const { data: page } = await useAsyncData('home', () => queryCollection('home').first())
+</script>
+
 <template>
-  
-  <UPage>
 
-    <UPageBody>
+  <ContentRenderer
+    v-if="page"
+    :value="page"
+    tag="section"
+    class="w-full max-w-3xl"
+    aria-label="index page"
+  />
 
-      <UContainer>
-
-        <ContentRenderer
-          v-if="page"
-          :value="page"
-        />
-
-        <UError
-          v-else
-          :error="{
-            statusCode: error?.statusCode || 500,
-            statusMessage: error?.statusMessage || 'Internal Server Error',
-            message: error?.message || 'Something went wrong!',
-          }"
-        />
-
-      </UContainer>
-
-    </UPageBody>
-
-  </UPage>
+  <Empty
+    v-else
+    title="404"
+    description="Page not found"
+    :actions="[
+      {
+        label: 'Refresh page',
+        onClick: () => reloadNuxtApp(),
+      },
+    ]"
+  />
 
 </template>
-
-<script setup lang="ts">
-const { data: page, error } = await useAsyncData(
-  'homeIndex',
-  () => queryCollection('homeIndex').path('/').first(),
-)
-</script>
