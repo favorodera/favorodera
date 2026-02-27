@@ -77,17 +77,6 @@ export default defineNuxtConfig({
     },
   },
 
-  runtimeConfig: {
-    studio: {
-      auth: {
-        github: {
-          clientId: '',
-          clientSecret: '',
-        },
-      },
-    },
-  },
-
   routeRules: {
     '/': { prerender: true },
     '/projects': { prerender: true },
@@ -98,6 +87,13 @@ export default defineNuxtConfig({
   },
 
   compatibilityDate: '2025-07-15',
+
+  nitro: {
+    prerender: {
+      routes: ['/', '/projects'],
+      crawlLinks: true,
+    },
+  },
 
   vite: {
     plugins: [
@@ -156,12 +152,6 @@ export default defineNuxtConfig({
   },
 
   studio: {
-    route: '/_studio',
-    repository: {
-      provider: 'github',
-      owner: 'favorodera',
-      repo: 'favorodera',
-      branch: 'main',
-    },
+    route: '/studio',
   },
 })
