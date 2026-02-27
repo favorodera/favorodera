@@ -72,6 +72,10 @@ export default defineNuxtConfig({
   },
 
   content: {
+    preview: {
+      api: 'https://api.nuxt.studio',
+      dev: true,
+    },
     renderer: {
       anchorLinks: false,
     },
@@ -153,5 +157,11 @@ export default defineNuxtConfig({
 
   studio: {
     route: '/studio',
+    repository: {
+      provider: 'github',
+      owner: 'favorodera',
+      repo: 'favorodera',
+      branch: 'main',
+    },
   },
 })
