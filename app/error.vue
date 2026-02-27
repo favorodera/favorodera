@@ -1,13 +1,18 @@
 <script setup lang="ts">
 import type { NuxtError } from '#app'
 
-defineProps<{
+const props = defineProps<{
   error: NuxtError
 }>()
 
+const normalizedError = computed(() => ({
+  status: props.error.status?.toString() || '500',
+  statusText: props.error.statusText || 'Internal Server Error',
+}))
+
 useSeoMeta({
-  title: 'Page not found',
-  description: 'We are sorry but this page could not be found.',
+  title: () => normalizedError.value.status,
+  description: () => normalizedError.value.statusText,
 })
 </script>
 
@@ -20,8 +25,8 @@ useSeoMeta({
     <NuxtLayout name="default">
 
       <Empty
-        :title="error.status?.toString() || '500'"
-        :description="error.statusText || 'Internal Server Error'"
+        :title="normalizedError.status"
+        :description="normalizedError.statusText"
         :actions="[
           {
             label: 'Go back home',
