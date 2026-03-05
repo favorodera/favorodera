@@ -9,7 +9,7 @@ const { data: page } = await useAsyncData('projectsMd', () => queryCollection('p
     :value="page"
     tag="section"
     class="w-full max-w-3xl"
-    aria-label="index page"
+    aria-label="Projects"
   />
 
   <Empty

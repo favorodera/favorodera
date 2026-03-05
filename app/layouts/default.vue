@@ -1,7 +1,7 @@
 <template>
   
-  <section
-    aria-label="layout"
+  <main
+    id="main-content"
     class="
       grid size-full grid-cols-1 grid-rows-[1fr_auto] justify-items-center
       gap-12 p-4
@@ -14,6 +14,6 @@
 
     <Footer />
 
-  </section>
+  </main>
 
 </template>

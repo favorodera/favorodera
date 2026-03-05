@@ -2,12 +2,12 @@
 
   <section
     class="grid grid-cols-1 gap-3"
-    aria-label="projects section"
+    aria-label="Featured projects"
   >
     <h2>Projects</h2>
 
     <div
-      aria-label="projects container"
+      role="presentation"
       class="grid grid-cols-1 gap-3"
     >
 

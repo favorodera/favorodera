@@ -12,33 +12,38 @@ const socials = [
 
   <section
     class="grid grid-cols-1"
-    aria-label="contact section"
+    aria-label="Contact"
   >
     <h2 class="text-lg">
       Find me on
     </h2>
 
-    <ul
-      aria-label="socials container"
+    <nav
+      aria-label="Social media links"
       class="my-0 flex flex-wrap items-center justify-start gap-3"
     >
 
-      <li
-        v-for="social in socials"
-        :key="social.label"
-      >
-        <NuxtLink
-          :to="social.url"
-          class="
-            w-fit text-sm text-muted-foreground transition-colors duration-300
-            hover:text-foreground
-          "
+      <ul class="my-0 flex flex-wrap items-center justify-start gap-3">
+        <li
+          v-for="social in socials"
+          :key="social.label"
         >
-          {{ social.label }}
-        </NuxtLink>
-      </li>
+          <NuxtLink
+            :to="social.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="
+              w-fit text-sm text-muted-foreground transition-colors duration-300
+              hover:text-foreground
+            "
+          >
+            {{ social.label }}
+            <span class="sr-only">(opens in a new tab)</span>
+          </NuxtLink>
+        </li>
+      </ul>
   
-    </ul>
+    </nav>
 
   </section>
 

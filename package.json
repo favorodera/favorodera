@@ -5,13 +5,11 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "hot:dev": "pnpm cleanup && pnpm dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "cleanup": "nuxt cleanup",
-    "lint": "eslint . --fix",
-    "stage": "nuxt typecheck && pnpm lint && nuxt prepare && nuxt build"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@nuxt/content": "^3.11.2",
@@ -31,7 +29,6 @@
   },
   "devDependencies": {
     "@favorodera/nuxt-eslint-config": "^1.1.0",
-    "@nuxt/a11y": "1.0.0-alpha.1",
     "@nuxt/eslint": "^1.15.2",
     "eslint": "^10.0.2",
     "eslint-plugin-better-tailwindcss": "^4.3.0",

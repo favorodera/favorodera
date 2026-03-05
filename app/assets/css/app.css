@@ -55,8 +55,61 @@
 }
 
 @layer components {
-   .button {
-    @apply inline-flex cursor-pointer shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none [&_svg]:pointer-events-none [&_svg]:shrink-0 h-9 px-4 py-2 has-[>svg]:px-3 [&_svg:not([class*='size-'])]:size-4;
+  .button {
+    @apply inline-flex cursor-pointer shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none h-9 px-4 py-2;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  .skip-link {
+    position: absolute;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .skip-link:focus-visible {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 50;
+    padding: 0.5rem 1rem;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    background-color: var(--background);
+    color: var(--foreground);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+    font-size: 0.875rem;
+    font-weight: 500;
   }
 
   .fade-out-in-enter-active,
@@ -84,6 +137,14 @@
     @apply bg-background text-foreground antialiased tracking-normal;
   }
 
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+    border-radius: var(--radius);
+  }
+
   h1 {
     @apply scroll-m-20 text-start text-3xl font-extrabold tracking-tight text-balance;
   }
@@ -109,6 +170,6 @@
   }
 
   hr {
-    @apply mx-auto my-12 border-t border-muted max-w-3xs;
+    @apply mx-auto my-8 border-t border-border max-w-3xs;
   }
 }

@@ -28,15 +28,20 @@ useHead({
 <template>
 
   <div
-    aria-label="app"
     class="grid min-h-dvh w-full grid-cols-1 grid-rows-[1fr]"
   >
 
+    <a
+      href="#main-content"
+      class="skip-link"
+    >
+      Skip to main content
+    </a>
+
     <NuxtLayout>
       <NuxtPage />
+      <Analytics />
     </NuxtLayout>
-
-    <Analytics />
 
   </div>
 

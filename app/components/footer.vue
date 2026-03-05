@@ -1,6 +1,7 @@
 <template>
 
   <footer
+    aria-label="Site footer"
     class="
       flex w-full max-w-3xl flex-wrap items-center justify-between gap-3
       border-t border-muted pt-4 text-sm text-muted-foreground

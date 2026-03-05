@@ -10,10 +10,9 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-studio',
     '@nuxtjs/seo',
-    '@nuxt/a11y',
   ],
 
-  devtools: { enabled: true },
+  devtools: false,
 
   app: {
     head: {

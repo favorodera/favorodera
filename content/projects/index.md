@@ -3,9 +3,12 @@ title: Projects
 description: Projects I build and maintain.
 ---
 
-[Back](/){class="block mb-8"}
+[Back](/)
 
-# [Projects]
+::br
+::
+
+# Projects
 
 [Projects I build and maintain.]{class="text-muted-foreground"}
 

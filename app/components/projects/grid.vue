@@ -1,14 +1,13 @@
 <template>
 
-  <section
+  <div
+    role="region"
     class="grid grid-cols-1 gap-3"
-    aria-label="projects grid"
+    aria-label="All projects"
   >
     
-    <ProjectCards
-      :limit="2"
-    />
+    <ProjectCards />
 
-  </section>
+  </div>
 
 </template>

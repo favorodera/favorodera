@@ -11,6 +11,9 @@ defineProps<{
 
 <template>
   <section
+    role="status"
+    aria-live="polite"
+    :aria-label="title"
     class="
       grid auto-rows-min grid-cols-1 grid-rows-3 place-items-center gap-1
       self-center p-4 text-center
@@ -26,6 +29,7 @@ defineProps<{
     </p>
 
     <menu
+      aria-label="Available actions"
       class="grid auto-rows-min grid-cols-2 gap-4"
     >
 

@@ -18,22 +18,26 @@ useSeoMeta({
 
 <template>
   <div
-    aria-label="app"
     class="grid min-h-dvh w-full grid-cols-1 grid-rows-[1fr]"
   >
   
     <NuxtLayout name="default">
 
-      <Empty
-        :title="normalizedError.status"
-        :description="normalizedError.statusText"
-        :actions="[
-          {
-            label: 'Go back home',
-            onClick: () => navigateTo('/'),
-          },
-        ]"
-      />
+      <div
+        role="alert"
+        aria-live="assertive"
+      >
+        <Empty
+          :title="normalizedError.status"
+          :description="normalizedError.statusText"
+          :actions="[
+            {
+              label: 'Go back home',
+              onClick: () => navigateTo('/'),
+            },
+          ]"
+        />
+      </div>
 
     </NuxtLayout>
   
