@@ -19,7 +19,10 @@ const { data: projects } = await useAsyncData('projects', () => queryBuilder.val
 
 <template>
 
-  <nav aria-label="Projects list">
+  <nav
+    aria-label="Projects list"
+    class="grid grid-cols-1 gap-3"
+  >
 
     <NuxtLink
       v-for="project in projects"
