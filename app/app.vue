@@ -7,7 +7,7 @@ useSeoMeta({
   ogTitle: 'Favour Emeka',
   ogDescription: 'Frontend Developer',
   ogImage: {
-    url: 'https://myopengraph.vercel.app/api/bd9686a9-86b0-49f0-91eb-96645db5e055',
+    url: 'https://myopengraph.vercel.app/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
     width: 1200,
     height: 630,
     alt: 'Favour Emeka',
@@ -16,7 +16,7 @@ useSeoMeta({
   twitterTitle: 'Favour Emeka',
   twitterDescription: 'Frontend Developer',
   twitterImage: {
-    url: 'https://myopengraph.vercel.app/api/bd9686a9-86b0-49f0-91eb-96645db5e055',
+    url: 'https://myopengraph.vercel.app/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
     width: 1200,
     height: 630,
     alt: 'Favour Emeka',
