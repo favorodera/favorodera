@@ -166,5 +166,7 @@ export default defineNuxtConfig({
 
   sitemap: {
     zeroRuntime: true,
+    excludeAppSources: true,
+    urls: ['/'],
   },
 })
