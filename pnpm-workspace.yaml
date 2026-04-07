@@ -7,9 +7,6 @@ ignoredBuiltDependencies:
   - esbuild
   - unrs-resolver
   - vue-demi
-
-onlyBuiltDependencies:
-  - better-sqlite3
   - sharp
 
 nodeOptions: '--max_old_space_size=4096'

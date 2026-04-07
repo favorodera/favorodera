@@ -1,27 +1,36 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('home', () => queryCollection('home').first())
+/**
+ * Homepage — composes the full single-page portfolio layout.
+ *
+ * Section order:
+ *  1. Header  — hero: avatar, bio, CTAs
+ *  2. Projects — shipped projects list with expand/collapse
+ *  3. Toolkit  — technology tags
+ *  4. Timeline — experience & education tabs
+ *  5. Contact  — social links
+ *  6. Footer   — copyright + theme toggle
+ */
 </script>
 
 <template>
+  <!-- Root page container — child of <main id="main"> in app.vue -->
+  <div>
+    <!-- Hero  -->
+    <Header />
 
-  <ContentRenderer
-    v-if="page"
-    :value="page"
-    tag="section"
-    class="w-full max-w-3xl"
-    aria-label="Home"
-  />
+    <!-- Projects list  -->
+    <Projects />
 
-  <Empty
-    v-else
-    title="404"
-    description="Page not found"
-    :actions="[
-      {
-        label: 'Refresh page',
-        onClick: () => reloadNuxtApp(),
-      },
-    ]"
-  />
+    <!-- Tech stack badges  -->
+    <Toolkit />
 
+    <!-- Experience / Education timeline  -->
+    <Timeline />
+
+    <!-- Contact channels  -->
+    <Contact />
+
+    <!-- Footer: copyright + theme toggle  -->
+    <Footer />
+  </div>
 </template>

@@ -1,0 +1,20 @@
+{
+  "$schema": "./schemas/projects.json",
+  "items": [
+    {
+      "name": "Zod SQLite",
+      "description": "Generate type-safe SQLite table schemas directly from your existing Zod validation schemas — no duplication, no drift.",
+      "url": "https://github.com/favorodera/zod-sqlite"
+    },
+    {
+      "name": "NotForm",
+      "description": "Schema-based form validation for Vue 3 built around the Composition API, compatible with any standard-schema compliant validator.",
+      "url": "https://notform-docs.vercel.app"
+    },
+    {
+      "name": "MyOpenGraph",
+      "description": "An API-first OG image generator that renders dynamic, edge-cached PNGs from HTML templates via a single embeddable URL.",
+      "url": "https://www.myopengraph.com"
+    }
+  ]
+}

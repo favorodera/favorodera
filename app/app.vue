@@ -1,58 +1,57 @@
 <script setup lang="ts">
-import { Analytics } from '@vercel/analytics/nuxt'
-
 useSeoMeta({
-  titleTemplate: '%s %separator %siteName',
-  description: 'Frontend Developer',
-  ogTitle: 'Favour Emeka',
-  ogDescription: 'Frontend Developer',
-  ogImage: {
-    url: 'https://myopengraph.vercel.app/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
-    width: 1200,
-    height: 630,
-    alt: 'Favour Emeka',
-  },
-  ogUrl: 'https://favorodera.vercel.app/',
-  twitterTitle: 'Favour Emeka',
-  twitterDescription: 'Frontend Developer',
-  twitterImage: {
-    url: 'https://myopengraph.vercel.app/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
-    width: 1200,
-    height: 630,
-    alt: 'Favour Emeka',
-  },
-  twitterCard: 'summary_large_image',
-  twitterSite: '@favorodera',
-  twitterCreator: '@favorodera',
-  colorScheme: 'dark light',
-  appleMobileWebAppStatusBarStyle: 'black-translucent',
-})
-
-useHead({
-  meta: [
-    { name: 'google-site-verification', content: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM' },
-  ],
+  title: 'Favour Emeka — Frontend Engineer',
+  description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+  ogTitle: 'Favour Emeka — Frontend Engineer',
+  ogDescription: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+  ogImage: 'https://github.com/favorodera.png',
+  ogUrl: 'https://favorodera.vercel.app',
+  twitterCard: 'summary',
+  twitterTitle: 'Favour Emeka — Frontend Engineer',
+  twitterDescription: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+  twitterImage: 'https://github.com/favorodera.png',
 })
 </script>
 
 <template>
-
+  <!--
+    Root app shell — provides the skip-link and the centred max-w-xl column.
+    NuxtPage renders the active page (pages/index.vue) inside <main>.
+  -->
   <div
-    class="grid min-h-dvh w-full grid-cols-1 grid-rows-[1fr]"
+    class="
+      grid min-h-dvh w-full grid-cols-1 grid-rows-[1fr] place-content-center
+    "
   >
 
-    <a
-      href="#main-content"
-      class="skip-link"
+    <!-- Skip-to-content link: visible only on keyboard focus (sr-only + focus:not-sr-only) -->
+    <NuxtLink
+      to="#main"
+      class="
+        sr-only
+        focus:not-sr-only focus:absolute focus:z-100 focus:rounded-md
+        focus:bg-primary focus:px-4 focus:py-2.5 focus:text-sm focus:font-medium
+        focus:text-primary-foreground focus:shadow-md focus:outline-none
+        focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
+        focus-visible:ring-offset-background
+      "
     >
       Skip to main content
-    </a>
+    </NuxtLink>
 
-    <NuxtLayout>
+    <!-- Main content column — max-width constrained and horizontally padded -->
+    <main
+      id="main"
+      class="
+        relative mx-auto grid size-full max-w-xl grid-cols-1 grid-rows-[1fr]
+        place-content-center px-4 pt-9 pb-14
+        md:px-6 md:pt-11 md:pb-16
+      "
+    >
+      <!-- Announces route changes to screen readers -->
+      <NuxtRouteAnnouncer />
       <NuxtPage />
-      <Analytics />
-    </NuxtLayout>
+    </main>
 
   </div>
-
 </template>

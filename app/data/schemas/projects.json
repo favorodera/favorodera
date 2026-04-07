@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://favorodera.dev/schemas/projects.json",
+  "title": "Projects",
+  "description": "Root object wrapping the list of projects displayed on the portfolio.",
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference — used by editors for validation and IntelliSense."
+    },
+    "items": {
+      "type": "array",
+      "description": "Ordered list of projects. Newest / most prominent first.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the project.",
+            "examples": ["MyOpenGraph"]
+          },
+          "description": {
+            "type": "string",
+            "description": "Short summary of what the project does.",
+            "examples": ["An API-first OG image generator."]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "URL to the project — live site or repository.",
+            "examples": ["https://www.myopengraph.com"]
+          }
+        }
+      }
+    }
+  }
+}

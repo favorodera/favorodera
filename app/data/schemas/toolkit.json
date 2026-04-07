@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://favorodera.dev/schemas/toolkit.json",
+  "title": "Toolkit",
+  "description": "Root object wrapping the languages, frameworks, and tools used day to day.",
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference — used by editors for validation and IntelliSense."
+    },
+    "items": {
+      "type": "array",
+      "description": "Ordered list of tools and technologies.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["name", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Display name of the tool or technology.",
+            "examples": ["Vue.Js", "TypeScript"]
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "Official website or documentation URL.",
+            "examples": ["https://vuejs.org/"]
+          }
+        }
+      }
+    }
+  }
+}

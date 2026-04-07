@@ -1,52 +1,111 @@
 <script setup lang="ts">
+/** Nuxt color-mode composable — provides `.preference` (system | light | dark). */
 const colorMode = useColorMode()
 
+/**
+ * Available theme options shown in the radio button group.
+ * Each entry maps a preference value to its Hugeicons icon name.
+ */
+const themeOptions = [
+  { value: 'system', icon: 'hugeicons:computer' },
+  { value: 'light', icon: 'hugeicons:sun-01' },
+  { value: 'dark', icon: 'hugeicons:moon-01' },
+]
+
+/** Two-way computed that reads and writes `colorMode.preference`. */
 const theme = computed({
-  get: () => colorMode.value,
-  set: (value: string) => {
+  get() {
+    return colorMode.preference
+  },
+  set(value: string) {
     colorMode.preference = value
   },
 })
 </script>
 
 <template>
+  <footer class="mt-14">
 
-  <footer
-    aria-label="Site footer"
-    class="
-      flex w-full max-w-3xl flex-col flex-wrap items-center justify-between
-      gap-3 border-t border-muted pt-4 text-sm text-muted-foreground
-      sm:flex-row
-    "
-  >
-
-    <p>2023 - Present</p>
-
-    <p class="mt-0">
-      Favour Emeka
-    </p>
-
-    <ColorScheme
-      placeholder="..."
-      tag="span"
-      class="animate-pulse text-muted-foreground"
-      aria-label="Awaiting color scheme"
+    <!-- Top rule — fades in on scroll  -->
+    <Motion
+      as-child
+      :initial="{ opacity: 0 }"
+      :while-in-view="{ opacity: 1 }"
+      :transition="{ duration: 0.3, ease: [0.25, 0, 0, 1] }"
+      :in-view-options="{ once: true }"
+      class="bg-border/40"
     >
-      <button
-        v-if="!colorMode.forced"
-        :aria-label="`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`"
+      <Separator />
+    </Motion>
+
+    <!-- Footer content: copyright + theme toggle  -->
+    <Motion
+      :initial="{ opacity: 0, y: 8 }"
+      :while-in-view="{ opacity: 1, y: 0 }"
+      :transition="{ duration: 0.35, delay: 0.16, ease: [0.25, 0, 0, 1] }"
+      :in-view-options="{ once: true }"
+      class="flex flex-wrap items-center justify-between gap-5 py-6"
+      as="div"
+    >
+
+      <!-- Copyright notice -->
+      <p
         class="
-          mt-0 cursor-pointer text-sm text-muted-foreground transition-colors
-          duration-300
-          hover:text-foreground
+          min-w-0 shrink-0 text-[11px] leading-relaxed font-medium tracking-wide
+          text-foreground/90
         "
-        @click="theme = theme === 'dark' ? 'light' : 'dark'"
       >
-        {{ theme === 'dark' ? 'Light' : 'Dark' }}
-      </button>
-    
-    </ColorScheme>
+        © 2024 - {{ new Date().getFullYear() }} Favour Emeka
+      </p>
+
+      <!--
+        ColorScheme wrapper suppresses hydration mismatch on first paint.
+        The theme radio group is only rendered client-side after hydration.
+      -->
+      <ColorScheme
+        placeholder="..."
+        tag="span"
+      >
+        <!-- Theme radio group: system / light / dark -->
+        <div
+          role="radiogroup"
+          class="
+            inline-flex w-fit gap-px rounded-sm border border-border/45
+            bg-muted/15 p-px
+          "
+          aria-label="Color theme"
+        >
+
+          <button
+            v-for="option in themeOptions"
+            :key="option.value"
+            role="radio"
+            :aria-checked="theme === option.value"
+            :aria-label="`Use ${option.value} theme`"
+            type="button"
+            :class="{
+              'bg-background text-foreground shadow-sm dark:bg-background/80': theme === option.value,
+              'text-muted-foreground': theme !== option.value,
+            }"
+            class="
+              inline-flex size-6 cursor-pointer items-center justify-center
+              rounded-[3px] transition-[color,background-color,box-shadow]
+              outline-none
+              hover:text-foreground
+              focus-visible:ring-1 focus-visible:ring-ring/40
+              focus-visible:ring-offset-1 focus-visible:ring-offset-background
+            "
+            @click="theme = option.value"
+          >
+            <Icon
+              :name="option.icon"
+              class="size-3 shrink-0"
+            />
+          </button>
+
+        </div>
+      </ColorScheme>
+    </Motion>
 
   </footer>
-
 </template>
