@@ -62,7 +62,6 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
-    '/sitemap.xml': { prerender: true },
   },
 
   compatibilityDate: '2025-05-15',
@@ -71,7 +70,6 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
-        'sitemap.xml',
       ],
       crawlLinks: true,
     },
@@ -166,8 +164,9 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    sources: [
-      'https://favorodera.vercel.app/sitemap.xml',
+    enabled: false,
+    urls: [
+      '/',
     ],
     zeroRuntime: true,
     strictNuxtContentPaths: true,
