@@ -68,7 +68,10 @@ const { profile: { socials } } = useAppConfig()
             hover:text-foreground
           "
         >
-          <Icon :name="social.icon" />
+          <Icon
+            :name="social.icon"
+            class="size-3 shrink-0"
+          />
           {{ key }}
         </NuxtLink>
       </div>
