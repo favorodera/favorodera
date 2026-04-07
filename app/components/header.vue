@@ -28,17 +28,12 @@ const fade = (delay: number) => ({
 </script>
 
 <template>
-  <header
-    aria-label="Hero section"
-    class="space-y-5"
-  >
+  <header class="space-y-5">
 
     <!-- ── Avatar + name / role / location ───────────────────────────────────── -->
     <Motion
       v-bind="fade(0)"
       as="div"
-      role="group"
-      aria-label="Avatar, name, role and location"
       class="
         flex gap-4
         sm:items-start
@@ -72,11 +67,7 @@ const fade = (delay: number) => ({
       </Avatar>
 
       <!-- Name, role and location text block -->
-      <div
-        class="min-w-0 space-y-2"
-        role="group"
-        aria-label="Name, Role and Location"
-      >
+      <div class="min-w-0 space-y-2">
         <h1
           class="
             text-2xl font-normal tracking-tight
@@ -138,8 +129,6 @@ const fade = (delay: number) => ({
     <Motion
       v-bind="fade(0.24)"
       as="div"
-      role="group"
-      aria-label="Action Buttons and Links"
       class="
         flex flex-col gap-2.5
         sm:flex-row sm:flex-wrap sm:items-center
@@ -147,11 +136,7 @@ const fade = (delay: number) => ({
     >
 
       <!-- Primary + secondary action buttons -->
-      <div
-        class="flex flex-wrap gap-2"
-        role="group"
-        aria-label="Action Buttons"
-      >
+      <div class="flex flex-wrap gap-2">
         <Button
           size="sm"
           as-child

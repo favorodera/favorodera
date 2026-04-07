@@ -20,7 +20,7 @@ defineProps<{
 <template>
   <section
     class="mt-10 scroll-mt-4"
-    :aria-label="label"
+    :aria-labelledby="`${label.toLowerCase()}-title`"
   >
 
     <!-- Animated separator rule above each section -->
@@ -43,8 +43,6 @@ defineProps<{
       :transition="{ duration: 0.3, ease: [0.25, 0, 0, 1] }"
       :in-view-options="{ once: true, margin: '-20px' }"
       class="mb-5 space-y-2"
-      role="group"
-      :aria-label="`${label} section header`"
     >
 
       <div
@@ -56,7 +54,7 @@ defineProps<{
         <!--
           Decorative uppercase label tag.
           aria-hidden because the parent <section> already carries the same
-          text as its aria-label.
+          text as its aria-label (now via aria-labelledby).
         -->
         <p
           aria-hidden="true"
@@ -74,6 +72,7 @@ defineProps<{
 
       <!-- Section subtitle / description -->
       <h2
+        :id="`${label.toLowerCase()}-title`"
         class="
           text-sm/relaxed font-normal tracking-tight text-muted-foreground
           md:text-base/relaxed

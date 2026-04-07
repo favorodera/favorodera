@@ -61,7 +61,6 @@ const { profile: { socials } } = useAppConfig()
           external
           target="_blank"
           :to="social.url"
-          :aria-label="`${key} profile`"
           class="
             inline-flex cursor-pointer items-center gap-1 tracking-normal
             text-muted-foreground uppercase underline-offset-2 transition-colors

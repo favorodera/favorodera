@@ -12,7 +12,10 @@ const toolkit = data.items
   >
 
     <!-- Staggered technology badge list -->
-    <ul class="flex flex-wrap gap-2">
+    <ul
+      class="flex flex-wrap gap-2"
+      role="list"
+    >
 
       <Motion
         v-for="tool, index in toolkit"

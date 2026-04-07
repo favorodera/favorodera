@@ -66,21 +66,21 @@ const theme = computed({
         placeholder="..."
         tag="span"
       >
-        <!-- Theme radio group: system / light / dark -->
-        <div
-          role="radiogroup"
+        <!-- Theme selection: system / light / dark -->
+        <fieldset
           class="
             inline-flex w-fit gap-px rounded-sm border border-border/45
             bg-muted/15 p-px
           "
-          aria-label="Color theme"
         >
+          <legend class="sr-only">
+            Color theme
+          </legend>
 
           <button
             v-for="option in themeOptions"
             :key="option.value"
-            role="radio"
-            :aria-checked="theme === option.value"
+            :aria-pressed="theme === option.value"
             :aria-label="`Use ${option.value} theme`"
             type="button"
             :class="{
@@ -103,7 +103,7 @@ const theme = computed({
             />
           </button>
 
-        </div>
+        </fieldset>
       </ColorScheme>
     </Motion>
 

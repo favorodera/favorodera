@@ -77,11 +77,7 @@ const [DefineProjectItem, ReuseProjectItem] = createReusableTemplate({
           </span>
 
           <!-- Project name + description -->
-          <div
-            class="min-w-0 flex-1 space-y-1.5"
-            role="group"
-            :aria-label="`${name} details`"
-          >
+          <div class="min-w-0 flex-1 space-y-1.5">
 
             <h3
               class="
@@ -116,7 +112,7 @@ const [DefineProjectItem, ReuseProjectItem] = createReusableTemplate({
         v-model:open="isOpen"
       >
 
-        <ul>
+        <ul role="list">
 
           <!-- Top rule — fades in when the list scrolls into view -->
           <Motion
