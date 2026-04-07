@@ -6,7 +6,7 @@ useSeoMeta({
   ogDescription: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
   ogImage: 'https://github.com/favorodera.png',
   ogUrl: 'https://favorodera.vercel.app',
-  twitterCard: 'summary',
+  twitterCard: 'summary_large_image',
   twitterTitle: 'Favour Emeka — Frontend Engineer',
   twitterDescription: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
   twitterImage: 'https://github.com/favorodera.png',
