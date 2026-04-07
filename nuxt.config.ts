@@ -155,7 +155,7 @@ export default defineNuxtConfig({
   },
 
   seo: {
-    // redirectToCanonicalSiteUrl: true,
+    redirectToCanonicalSiteUrl: true,
   },
 
   shadcn: {
@@ -164,7 +164,7 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    enabled: false,
+    // enabled: false,
     urls: [
       '/',
     ],
