@@ -61,13 +61,17 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/sitemap.xml': { prerender: true },
   },
 
   compatibilityDate: '2025-05-15',
 
   nitro: {
-    routeRules: {
-      '/': { prerender: true },
+    prerender: {
+      routes: [
+        '/',
+        'sitemap.xml',
+      ],
     },
   },
   vite: {
@@ -161,6 +165,9 @@ export default defineNuxtConfig({
 
   sitemap: {
     zeroRuntime: true,
-    sources: ['/'],
+    excludeAppSources: [
+      '@nuxt/content@v2:urls',
+      '@nuxt/content@v2:urls',
+    ],
   },
 })
