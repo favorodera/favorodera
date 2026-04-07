@@ -72,6 +72,7 @@ export default defineNuxtConfig({
         '/',
         'sitemap.xml',
       ],
+      crawlLinks: true,
     },
   },
   vite: {
@@ -165,9 +166,5 @@ export default defineNuxtConfig({
 
   sitemap: {
     zeroRuntime: true,
-    excludeAppSources: [
-      '@nuxt/content@v2:urls',
-      '@nuxt/content@v2:urls',
-    ],
   },
 })
