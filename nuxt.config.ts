@@ -49,7 +49,7 @@ export default defineNuxtConfig({
   css: ['./app/css/index.css'],
 
   site: {
-    url: 'https://favorodera.vercel.app',
+    // url: 'https://favorodera.vercel.app',
     name: 'Favour Emeka',
     description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
     indexable: true,
@@ -62,6 +62,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
+    '/sitemap.xml': { prerender: true },
   },
 
   compatibilityDate: '2025-05-15',
@@ -70,6 +71,7 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
+        'sitemap.xml',
       ],
       crawlLinks: true,
     },
