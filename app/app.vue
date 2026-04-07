@@ -1,14 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
   title: 'Favour Emeka — Frontend Engineer',
-  description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+  description: 'Frontend engineer based in Nigeria building interfaces that hold up at scale.',
   ogTitle: 'Favour Emeka — Frontend Engineer',
-  ogDescription: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+  ogDescription: 'Frontend engineer based in Nigeria building interfaces that hold up at scale.',
   ogImage: 'https://github.com/favorodera.png',
   ogUrl: 'https://favorodera.vercel.app',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Favour Emeka — Frontend Engineer',
-  twitterDescription: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+  twitterDescription: 'Frontend engineer based in Nigeria building interfaces that hold up at scale.',
   twitterImage: 'https://github.com/favorodera.png',
 })
 </script>

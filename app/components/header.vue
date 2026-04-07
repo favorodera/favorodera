@@ -97,7 +97,7 @@ const fade = (delay: number) => ({
         md:text-base/relaxed
       "
     >
-      Based in Nigeria, I build developer tooling and production interfaces that hold up at scale.
+      Based in Nigeria, I build frontend interfaces that hold up at scale.
     </Motion>
 
     <!-- Bio paragraph 2: currently working on (latest project) -->
