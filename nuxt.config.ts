@@ -4,13 +4,13 @@ import { definePerson } from 'nuxt-schema-org/schema'
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxtjs/seo',
     '@nuxt/fonts',
     '@nuxtjs/color-mode',
     'shadcn-nuxt',
     '@nuxt/icon',
     '@vercel/analytics',
     'motion-v/nuxt',
+    '@nuxtjs/seo',
   ],
 
   // Explicit component resolution path (app-layer components directory)
@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     name: 'Favour Emeka',
     description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
     indexable: true,
+    defaultLocale: 'en',
   },
 
   colorMode: {
@@ -61,7 +62,6 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { prerender: true },
-    '/sitemap.xml': { prerender: true },
   },
 
   compatibilityDate: '2025-05-15',
@@ -70,7 +70,6 @@ export default defineNuxtConfig({
     prerender: {
       routes: [
         '/',
-        'sitemap.xml',
       ],
       crawlLinks: true,
     },
@@ -166,7 +165,6 @@ export default defineNuxtConfig({
 
   sitemap: {
     zeroRuntime: true,
-    excludeAppSources: true,
-    urls: ['/'],
+    strictNuxtContentPaths: true,
   },
 })
