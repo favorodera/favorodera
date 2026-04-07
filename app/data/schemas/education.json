@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://favorodera.dev/schemas/education.json",
+  "title": "Education",
+  "description": "Root object wrapping education entries displayed on the timeline.",
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference — used by editors for validation and IntelliSense."
+    },
+    "items": {
+      "type": "array",
+      "description": "Ordered list of education entries. Newest first.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["institution", "period", "certification", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "institution": {
+            "type": "string",
+            "description": "Name of the school or institution.",
+            "examples": ["Alt School Africa"]
+          },
+          "period": {
+            "type": "string",
+            "description": "Human-readable date range for the programme.",
+            "examples": ["Aug 2023 - Aug 2024"]
+          },
+          "certification": {
+            "type": "string",
+            "description": "Degree, diploma, or certificate awarded.",
+            "examples": ["Diploma in Frontend Engineering"]
+          },
+          "url": {
+            "description": "URL to the institution website, or null when not available.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "Institution website URL."
+              },
+              {
+                "type": "null",
+                "description": "Null when no URL is available."
+              }
+            ],
+            "examples": ["https://altschoolafrica.com/", null]
+          }
+        }
+      }
+    }
+  }
+}

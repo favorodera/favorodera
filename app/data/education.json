@@ -1,0 +1,11 @@
+{
+  "$schema": "./schemas/education.json",
+  "items": [
+    {
+      "institution": "Alt School Africa",
+      "period": "Aug 2023 - Aug 2024",
+      "certification": "Diploma in Frontend Engineering",
+      "url": "https://altschoolafrica.com/"
+    }
+  ]
+}

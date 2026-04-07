@@ -1,0 +1,33 @@
+{
+  "$schema": "./schemas/toolkit.json",
+  "items": [
+    {
+      "name": "Vue.Js",
+      "url": "https://vuejs.org/"
+    },
+    {
+      "name": "Nuxt.Js",
+      "url": "https://nuxt.com/"
+    },
+    {
+      "name": "TypeScript",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "TailwindCSS",
+      "url": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Pinia",
+      "url": "https://pinia.vuejs.org/"
+    },
+    {
+      "name": "Pinia Colada",
+      "url": "https://pinia-colada.esm.dev/"
+    },
+    {
+      "name": "Motion",
+      "url": "https://motion.unovue.com/"
+    }
+  ]
+}

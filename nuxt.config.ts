@@ -1,15 +1,21 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from '@tailwindcss/vite'
 import { definePerson } from 'nuxt-schema-org/schema'
 
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxtjs/color-mode',
     '@nuxt/fonts',
-    '@nuxt/content',
-    'nuxt-studio',
+    '@nuxtjs/color-mode',
+    'shadcn-nuxt',
+    '@nuxt/icon',
+    '@vercel/analytics',
+    'motion-v/nuxt',
     '@nuxtjs/seo',
+  ],
+
+  // Explicit component resolution path (app-layer components directory)
+  components: [
+    './components',
   ],
 
   devtools: false,
@@ -19,6 +25,7 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en',
       },
+
       meta: [
         {
           name: 'viewport',
@@ -28,84 +35,56 @@ export default defineNuxtConfig({
           charset: 'utf-8',
         },
       ],
+
       link: [
-        {
-          rel: 'icon',
-          href: '/favicon.ico',
-          sizes: '48x48',
-        },
-        {
-          rel: 'icon',
-          href: '/favicon-32x32.png',
-          sizes: '32x32',
-          type: 'image/png',
-        },
-        {
-          rel: 'icon',
-          href: '/favicon-16x16.png',
-          sizes: '16x16',
-          type: 'image/png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          href: '/apple-touch-icon.png',
-          sizes: '180x180',
-        },
+        // Favicon set — covers all major browsers and Apple devices
+        { rel: 'icon', href: '/favicon.ico', sizes: '48x48' },
+        { rel: 'icon', href: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+        { rel: 'icon', href: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png', sizes: '180x180' },
       ],
     },
-    pageTransition: { name: 'fade-out-in', mode: 'out-in' },
-    layoutTransition: { name: 'fade-out-in', mode: 'out-in' },
   },
 
-  css: ['~/assets/css/app.css'],
+  css: ['./app/css/index.css'],
 
   site: {
-    url: 'https://favorodera.vercel.app/',
+    url: 'https://favorodera.vercel.app',
     name: 'Favour Emeka',
-    description: 'Frontend Developer',
+    description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
     indexable: true,
+    defaultLocale: 'en',
   },
 
   colorMode: {
     classSuffix: '',
   },
 
-  content: {
-    preview: {
-      api: 'https://api.nuxt.studio',
-      dev: true,
-    },
-    renderer: {
-      anchorLinks: false,
-    },
-  },
-
   routeRules: {
     '/': { prerender: true },
-    '/projects': { prerender: true },
   },
 
-  experimental: {
-    typedPages: true,
-  },
-
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2025-05-15',
 
   nitro: {
     prerender: {
-      routes: ['/', '/projects'],
+      routes: [
+        '/',
+      ],
       crawlLinks: true,
     },
   },
-
   vite: {
     plugins: [
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      tailwindcss() as any,
+      tailwindcss(),
     ],
     optimizeDeps: {
       include: [
-        'zod',
+        'class-variance-authority',
+        'reka-ui',
+        '@vueuse/core',
+        'clsx',
+        'tailwind-merge',
       ],
     },
   },
@@ -122,6 +101,14 @@ export default defineNuxtConfig({
     },
   },
 
+  icon: {
+    mode: 'svg',
+  },
+
+  ogImage: {
+    enabled: false,
+  },
+
   schemaOrg: {
     identity: definePerson({
       name: 'Favour Emeka',
@@ -131,36 +118,57 @@ export default defineNuxtConfig({
       alternateName: 'Favour Chidera Emeka',
 
       image: 'https://github.com/favorodera.png',
-      description: 'Frontend Developer',
-      jobTitle: 'Frontend Developer',
+      description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
+      jobTitle: 'Frontend Engineer',
 
       email: 'favorodera@gmail.com',
-      url: 'https://favorodera.vercel.app/',
+      url: 'https://favorodera.vercel.app',
+
+      // Related profiles — used by Google to consolidate identity across platforms
       sameAs: [
         'https://x.com/favorodera',
         'https://github.com/favorodera',
+        'https://linkedin.com/in/faorodera',
         'https://facebook.com/favorodera',
         'https://wa.me/+2348024383756',
       ],
+
       gender: 'male',
+
+      // E-E-A-T signals — helps Google understand expertise and authority
+      knowsAbout: [
+        'Frontend Engineering',
+        'Vue.js',
+        'Nuxt.js',
+        'TypeScript',
+        'TailwindCSS',
+        'Developer Tooling',
+        'Web Performance',
+      ],
+
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        'name': 'Alt School Africa',
+        'url': 'https://altschoolafrica.com/',
+      },
     }),
   },
 
   seo: {
-    redirectToCanonicalSiteUrl: true,
+    // redirectToCanonicalSiteUrl: true,
+  },
+
+  shadcn: {
+    prefix: '', // no component prefix — use bare shadcn names
+    componentDir: '@/components/shadcn',
   },
 
   sitemap: {
+    enabled: false,
+    urls: [
+      '/',
+    ],
     zeroRuntime: true,
-  },
-
-  studio: {
-    route: '/studio',
-    repository: {
-      provider: 'github',
-      owner: 'favorodera',
-      repo: 'favorodera',
-      branch: 'main',
-    },
+    strictNuxtContentPaths: true,
   },
 })

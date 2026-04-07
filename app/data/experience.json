@@ -1,0 +1,11 @@
+{
+  "$schema": "./schemas/experience.json",
+  "items": [
+    {
+      "period": "Jan 2025 - Present",
+      "role": "Frontend Engineer",
+      "company": "Freelance",
+      "url": null
+    }
+  ]
+}

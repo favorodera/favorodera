@@ -1,5 +1,0 @@
-{
-  "name": "Zod SQLite",
-  "description": "Generate type-safe SQLite table schemas from Zod validation schemas.",
-  "url": "https://github.com/favorodera/zod-sqlite"
-}

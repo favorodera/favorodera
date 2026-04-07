@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://favorodera.dev/schemas/experience.json",
+  "title": "Experience",
+  "description": "Root object wrapping work experience entries displayed on the timeline.",
+  "type": "object",
+  "required": ["items"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference — used by editors for validation and IntelliSense."
+    },
+    "items": {
+      "type": "array",
+      "description": "Ordered list of work experience entries. Newest first.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["period", "role", "company", "url"],
+        "additionalProperties": false,
+        "properties": {
+          "period": {
+            "type": "string",
+            "description": "Human-readable date range for the role.",
+            "examples": ["Jan 2025 - Present", "Mar 2023 - Dec 2024"]
+          },
+          "role": {
+            "type": "string",
+            "description": "Job title or role held.",
+            "examples": ["Frontend Engineer"]
+          },
+          "company": {
+            "type": "string",
+            "description": "Company or organization name.",
+            "examples": ["Freelance", "Acme Corp"]
+          },
+          "url": {
+            "description": "URL to the company website, or null when not available.",
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri",
+                "description": "Company website URL."
+              },
+              {
+                "type": "null",
+                "description": "Null when no URL is available."
+              }
+            ],
+            "examples": ["https://acme.com", null]
+          }
+        }
+      }
+    }
+  }
+}
