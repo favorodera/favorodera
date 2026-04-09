@@ -7,7 +7,7 @@ export default defineAppConfig({
   profile: {
     name: 'Favour Emeka',
     initials: 'FE',
-    role: 'Frontend Engineer',
+    role: 'Frontend Developer',
     location: 'Nigeria',
     avatar: 'https://github.com/favorodera.png',
     socials: {

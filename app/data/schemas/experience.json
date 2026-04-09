@@ -29,7 +29,7 @@
           "role": {
             "type": "string",
             "description": "Job title or role held.",
-            "examples": ["Frontend Engineer"]
+            "examples": ["Frontend Developer"]
           },
           "company": {
             "type": "string",

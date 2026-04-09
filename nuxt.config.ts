@@ -118,8 +118,8 @@ export default defineNuxtConfig({
       alternateName: 'Favour Chidera Emeka',
 
       image: 'https://github.com/favorodera.png',
-      description: 'Frontend engineer based in Nigeria building developer tooling and production interfaces that hold up at scale.',
-      jobTitle: 'Frontend Engineer',
+      description: 'Frontend developer based in Nigeria building interfaces that hold up at scale.',
+      jobTitle: 'Frontend Developer',
 
       email: 'favorodera@gmail.com',
       url: 'https://favorodera.vercel.app',
@@ -137,7 +137,7 @@ export default defineNuxtConfig({
 
       // E-E-A-T signals — helps Google understand expertise and authority
       knowsAbout: [
-        'Frontend Engineering',
+        'Frontend Development',
         'Vue.js',
         'Nuxt.js',
         'TypeScript',
