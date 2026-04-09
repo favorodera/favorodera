@@ -4,12 +4,12 @@ useSeoMeta({
   description: 'Frontend engineer based in Nigeria building interfaces that hold up at scale.',
   ogTitle: 'Favour Emeka — Frontend Engineer',
   ogDescription: 'Frontend engineer based in Nigeria building interfaces that hold up at scale.',
-  ogImage: 'https://github.com/favorodera.png',
+  ogImage: 'https://myopengraph.com/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
   ogUrl: 'https://favorodera.vercel.app',
   twitterCard: 'summary_large_image',
   twitterTitle: 'Favour Emeka — Frontend Engineer',
   twitterDescription: 'Frontend engineer based in Nigeria building interfaces that hold up at scale.',
-  twitterImage: 'https://github.com/favorodera.png',
+  twitterImage: 'https://myopengraph.com/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
 })
 </script>
 
