@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import data from '~/data/projects.json'
-
-/**
- * Picks the most recent project (index 0) to surface in the hero bio line.
- * Returns `undefined` if the projects list is empty.
- */
-const latestProject = data.items.at(-1)
-
 /** Profile data from app.config.ts — drives the avatar, name, role, and CTAs. */
 const { profile } = useAppConfig()
 
@@ -100,9 +92,8 @@ const fade = (delay: number) => ({
       Based in Nigeria, I build frontend interfaces that hold up at scale.
     </Motion>
 
-    <!-- Bio paragraph 2: currently working on (latest project) -->
+    <!-- Bio paragraph 2 -->
     <Motion
-      v-if="latestProject"
       v-bind="fade(0.16)"
       as="p"
       class="
@@ -110,22 +101,10 @@ const fade = (delay: number) => ({
         md:text-base/relaxed
       "
     >
-      Currently working on <NuxtLink
-        :to="latestProject.url"
-        target="_blank"
-        external
-        class="
-          text-sm/relaxed text-foreground underline decoration-primary/30
-          underline-offset-[3px] transition-colors
-          hover:decoration-primary/55
-          md:text-base/relaxed
-        "
-      >
-        {{ latestProject.name }}
-      </NuxtLink> — {{ latestProject.description }}
+      I care about the gap between good enough and production-ready — and I'm open to the right opportunities.
     </Motion>
 
-    <!-- CTA buttons + availability note -->
+    <!-- CTA buttons -->
     <Motion
       v-bind="fade(0.24)"
       as="div"
@@ -166,16 +145,6 @@ const fade = (delay: number) => ({
           </NuxtLink>
         </Button>
       </div>
-
-      <!-- Availability status note -->
-      <p
-        class="
-          text-xs/tight text-muted-foreground
-          sm:pl-1
-        "
-      >
-        Open to aligned conversations
-      </p>
 
     </Motion>
 
