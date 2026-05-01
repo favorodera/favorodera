@@ -20,7 +20,7 @@ export default defineAppConfig({
         icon: 'hugeicons:github',
       },
       linkedin: {
-        url: 'https://linkedin.com/in/faorodera',
+        url: 'https://linkedin.com/in/favorodera',
         icon: 'hugeicons:linkedin-01',
       },
       x: {
