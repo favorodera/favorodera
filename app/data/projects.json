@@ -15,11 +15,6 @@
       "name": "MyOpenGraph",
       "description": "An API-first OG image generator that renders dynamic, edge-cached PNGs from HTML templates via a single embeddable URL.",
       "url": "https://www.myopengraph.com"
-    },
-    {
-      "name": "usePromise",
-      "description": "A Vue composable for managing async operations with reactive state, cancellation, and race-condition safety.",
-      "url": "https://github.com/favorodera/use-promise"
     }
   ]
 }
