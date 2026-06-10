@@ -20,6 +20,10 @@ Type-safe SQLite schemas from Zod — define schemas once, get typed table defin
 Vue composable for async operations — reactive state, cancellation, and race-condition safety.  
 [GitHub](https://github.com/favorodera/use-promise)
 
+### ESLint Config
+Opinionated, type-safe flat ESLint configuration factory for Vue, TypeScript, Tailwind, and more.  
+[GitHub](https://github.com/favorodera/eslint-config)
+
 ---
 
 [X](https://x.com/favorodera) · [Portfolio](https://favorodera.vercel.app) · [Email](mailto:favorodera@gmail.com)
