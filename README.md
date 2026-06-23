@@ -1,6 +1,6 @@
 `> pnpm dev`
 
-### CentoUI (In development)
+### CentoUI
 Vue components for elegant interfaces — accessible, copy-paste, variant-driven component library for Vue and Nuxt.  
 [Preview](https://centoui-preview.vercel.app) · [GitHub](https://github.com/favorodera/centoui)
 
