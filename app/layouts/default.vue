@@ -1,15 +1,15 @@
 <template>
   <div
     class="
-      max-inline-2xl mx-auto px-6 py-12 grid grid-rows-[auto_1fr_auto]
-      min-block-full inline-full
+      max-inline-2xl mx-auto px-6 grid grid-rows-[auto_1fr_auto] min-block-full
+      inline-full relative
 
-      sm:px-8 sm:py-16
-
-      md:py-20
+      sm:px-8
     "
   >
-    <header>
+    <header
+      class="bg-background sticky inset-bs-0 section-padding"
+    >
       <AppNav />
     </header>
 
@@ -21,7 +21,9 @@
       <slot />
     </main>
 
-    <footer class="py-8 text-center text-sm text-muted-foreground">
+    <footer
+      class="text-center text-sm text-muted-foreground section-padding"
+    >
       © 2026 Favour Emeka
     </footer>
   </div>

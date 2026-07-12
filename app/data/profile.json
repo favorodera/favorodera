@@ -1,0 +1,17 @@
+{
+  "name": "Favour Emeka",
+  "role": "Frontend Engineer",
+  "email": "favorodera@gmail.com",
+  "bio": "I'm a frontend developer working with Vue, Nuxt, and TypeScript — building everything from the design system layer to the product that ships on top of it. I care about clean component APIs, sensible state management, and code that holds up as a product grows.",
+  "avatar": "https://avatars.githubusercontent.com/favorodera?v=4",
+  "socials": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/favorodera" 
+    },
+    {
+      "label": "X",
+      "href": "https://x.com/favorodera" 
+    }
+  ]
+}

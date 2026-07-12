@@ -6,7 +6,12 @@
   --font-mono: 'Space Mono', monospace;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+@layer base {
+  html {
+    @apply **:scroll-smooth scroll-smooth scroll-pt-20 scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent;
+  }
+}
+
+@utility section-padding {
+  @apply pbs-12 sm:pbs-16 md:pbs-20;
 }

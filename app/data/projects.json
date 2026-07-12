@@ -1,0 +1,28 @@
+[
+  {
+    "name": "CentoUI",
+    "description": "Copy-paste Vue component library with a single-file theme and a CLI-first workflow.",
+    "href": "https://centoui-storybook.vercel.app/"
+  },
+  {
+    "name": "NotForm",
+    "description": "Type-safe form state and validation for Vue and Nuxt, with a minimal composable API.",
+    "href": "https://notformdocs.vercel.app"
+  },
+  {
+    "name": "Zod SQLite",
+    "year": "2025",
+    "description": "Generate type-safe SQLite table schemas straight from Zod validation schemas.",
+    "href": "https://github.com/favorodera/zod-sqlite"
+  },
+  {
+    "name": "usePromise",
+    "description": "Vue composable for async work — reactive state, cancellation, and race-condition safety.",
+    "href": "https://github.com/favorodera/use-promise"
+  },
+  {
+    "name": "eslint-config",
+    "description": "Opinionated, type-safe flat ESLint factory for Vue, TypeScript, and Tailwind.",
+    "href": "https://github.com/favorodera/eslint-config"
+  }
+]
