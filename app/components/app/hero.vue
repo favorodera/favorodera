@@ -26,7 +26,7 @@ import profile from '~/data/profile.json'
 
       <Separator orientation="vertical" />
 
-      <p class="">
+      <p>
         AVAILABLE
       </p>
     </div>
