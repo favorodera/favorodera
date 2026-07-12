@@ -6,7 +6,7 @@ const sectionVariants: Options['variants'] = {
   hidden: {},
   visible: {
     transition: {
-      delayChildren: 0.05,
+      delayChildren: 0.02,
       staggerChildren: 0.08,
       when: 'beforeChildren',
     },
@@ -14,18 +14,14 @@ const sectionVariants: Options['variants'] = {
 }
 
 const childVariants: Options['variants'] = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.5,
-      ease: [
-        0.16,
-        1,
-        0.3,
-        1,
-      ],
-      type: 'tween',
+      damping: 20,
+      mass: 0.8,
+      stiffness: 140,
+      type: 'spring',
     },
     y: 0,
   },
@@ -38,7 +34,8 @@ const childVariants: Options['variants'] = {
     as="section"
     class="section-padding space-y-6"
     initial="hidden"
-    animate="visible"
+    while-in-view="visible"
+    :viewport="{ once: true, amount: 0.3 }"
     :variants="sectionVariants"
   >
     <h1 class="sr-only">
