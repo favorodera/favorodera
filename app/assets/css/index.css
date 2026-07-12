@@ -1,0 +1,12 @@
+@import "./centoui.css";
+
+@theme inline {
+  --font-sans: 'Bricolage Grotesque', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
