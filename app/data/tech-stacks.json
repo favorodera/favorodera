@@ -3,5 +3,7 @@
   "Nuxt",
   "TypeScript",
   "Tailwind CSS",
-  "Motion"
+  "Motion",
+  "Pinia",
+  "REST"
 ]

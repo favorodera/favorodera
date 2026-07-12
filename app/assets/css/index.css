@@ -8,7 +8,8 @@
 
 @layer base {
   html {
-    @apply **:scroll-smooth scroll-smooth scroll-pt-20 scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent;
+    @apply **:scroll-smooth scroll-smooth scroll-pt-20 scrollbar-thin;
+    @apply scrollbar-thumb-muted scrollbar-track-transparent selection:bg-foreground selection:text-background;
   }
 }
 

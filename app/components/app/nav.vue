@@ -12,6 +12,8 @@ const breadcrumbs = [
       flex items-center justify-end gap-x-4 mbe-14 max-block-5
 
       sm:mbe-16
+
+      **:uppercase **:font-normal **:text-xs
     "
   >
     <ul class="items-center gap-x-4 flex max-block-5">
@@ -23,7 +25,6 @@ const breadcrumbs = [
           <Button
             as-child
             variant="link"
-            class="uppercase font-normal text-xs"
           >
             <NuxtLink :to="crumb.path">
               {{ crumb.label }}
@@ -43,24 +44,21 @@ const breadcrumbs = [
       orientation="vertical"
     />
 
-    <ColorScheme>
-      <Button
-        variant="link"
-        square
-        aria-label="Toggle color mode"
+    <ColorScheme
+      placeholder="THEMING..."
+      tag="span"
+      class="text-muted-foreground"
+    >
+      <button
         class="
-          min-block-5 inline-5
+          transition-colors duration-300
 
           hover:text-muted-foreground
         "
         @click="$colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark'"
       >
-        <Icon :name="$colorMode.value === 'dark' ? 'hugeicons:sun-02' : 'hugeicons:moon-02'" />
-      </Button>
-
-      <template #placeholder>
-        <div class="min-block-5 inline-5 bg-muted rounded-sm" />
-      </template>
+        {{ $colorMode.value }}
+      </button>
     </ColorScheme>
   </nav>
 </template>
