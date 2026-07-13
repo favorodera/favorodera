@@ -51,7 +51,9 @@ const breadcrumbs = [
     >
       <button
         class="
-          transition-colors duration-300
+          transition-colors duration-300 outline-none
+
+          focus-visible:ring-2 focus-visible:ring-ring
 
           hover:text-muted-foreground
         "

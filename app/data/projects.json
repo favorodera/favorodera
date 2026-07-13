@@ -2,12 +2,22 @@
   {
     "name": "CentoUI",
     "description": "Copy-paste Vue component library with a single-file theme and a CLI-first workflow.",
-    "href": "https://centoui-storybook.vercel.app/"
+    "href": "https://github.com/favorodera/centoui"
   },
   {
     "name": "NotForm",
     "description": "Type-safe form state and validation for Vue and Nuxt, with a minimal composable API.",
     "href": "https://notformdocs.vercel.app"
+  },
+  {
+    "name": "MyOpenGraph",
+    "description": "Design and generate OG images via a simple URL API.",
+    "href": "https://www.myopengraph.com"
+  },
+  {
+    "name": "eslint-config",
+    "description": "Opinionated, type-safe flat ESLint configuration factory for Vue, TypeScript, Tailwind, and more.",
+    "href": "https://github.com/favorodera/eslint-config"
   },
   {
     "name": "Zod SQLite",
@@ -19,10 +29,5 @@
     "name": "usePromise",
     "description": "Vue composable for async work — reactive state, cancellation, and race-condition safety.",
     "href": "https://github.com/favorodera/use-promise"
-  },
-  {
-    "name": "eslint-config",
-    "description": "Opinionated, type-safe flat ESLint factory for Vue, TypeScript, and Tailwind.",
-    "href": "https://github.com/favorodera/eslint-config"
   }
 ]

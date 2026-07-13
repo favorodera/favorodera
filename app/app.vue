@@ -19,8 +19,11 @@ useSeoMeta({
       to="#main"
       class="
         fixed inset-bs-4 inset-s-4 -translate-y-[calc(100%+1rem)] z-50
+        outline-none
 
         focus:translate-y-0
+
+        focus-visible:ring-2 focus-visible:ring-ring
       "
     >
       Skip to main content
