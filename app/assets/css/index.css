@@ -3,12 +3,11 @@
 @theme inline {
   --font-sans: 'Bricolage Grotesque', sans-serif;
   --font-serif: 'Instrument Serif', serif;
-  --font-mono: 'Space Mono', monospace;
 }
 
 @layer base {
   html {
-    @apply **:scroll-smooth scroll-smooth scroll-pt-20 scrollbar-thin;
+    @apply **:scroll-smooth scroll-smooth scroll-pt-40 scrollbar-thin **:tracking-wide;
     @apply scrollbar-thumb-muted scrollbar-track-transparent selection:bg-foreground selection:text-background;
   }
 }

@@ -26,6 +26,7 @@
     "@tailwindcss/vite": "^4.3.2",
     "@takumi-rs/core": "2.0.0-rc.16",
     "@vueuse/core": "^14.3.0",
+    "centoui": "^1.11.1",
     "centoui-nuxt": "^1.11.1",
     "install": "^0.13.0",
     "motion-v": "^2.3.0",

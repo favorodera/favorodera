@@ -14,7 +14,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-inline-dvw min-block-dvh grid">
+  <div class="min-inline-full min-block-dvh grid">
     <NuxtLink
       to="#main"
       class="

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const breadcrumbs = [
   { label: 'About', path: '#about' },
-  { label: 'Work', path: '#work' },
+  { label: 'Work', path: '#projects' },
   { label: 'Contact', path: '#contact' },
 ]
 </script>

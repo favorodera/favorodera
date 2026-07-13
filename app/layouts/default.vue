@@ -8,7 +8,7 @@
     "
   >
     <header
-      class="bg-background sticky inset-bs-0 section-padding"
+      class="bg-background sticky inset-bs-0 section-padding z-50"
     >
       <AppNav />
     </header>
