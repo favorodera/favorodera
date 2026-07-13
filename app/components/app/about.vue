@@ -16,16 +16,9 @@ import techStacks from '~/data/tech-stacks.json'
       Building interfaces that feel right
     </h1>
 
-    <div
-      class="flex items-center gap-4 text-sm uppercase"
-    >
-      <p class="text-muted-foreground">
-        {{ profile.role }}
-      </p>
-
-      <Separator orientation="vertical" />
-      <p>AVAILABLE</p>
-    </div>
+    <p class="text-muted-foreground text-sm uppercase">
+      {{ profile.role }}
+    </p>
 
     <p>
       {{ profile.bio }}

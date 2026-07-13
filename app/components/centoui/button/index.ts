@@ -85,7 +85,7 @@ export const buttonVariants = tv({
       },
       link: {
         root: `
-          px-0 text-primary underline-offset-4
+          px-0 text-primary underline-offset-4 min-block-auto overflow-visible
 
           hover:underline
         `,

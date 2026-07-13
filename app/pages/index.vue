@@ -2,5 +2,6 @@
   <div>
     <AppAbout />
     <AppProjects />
+    <AppContact />
   </div>
 </template>

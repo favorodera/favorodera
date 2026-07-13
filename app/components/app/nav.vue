@@ -9,14 +9,14 @@ const breadcrumbs = [
 <template>
   <nav
     class="
-      flex items-center justify-end gap-x-4 mbe-14 max-block-5
+      flex items-center justify-end gap-x-4 mbe-14
 
       sm:mbe-16
 
       **:uppercase **:font-normal **:text-xs
     "
   >
-    <ul class="items-center gap-x-4 flex max-block-5">
+    <ul class="items-center gap-x-4 flex">
       <template
         v-for="(crumb, index) in breadcrumbs"
         :key="index"

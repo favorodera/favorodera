@@ -22,9 +22,15 @@
     </main>
 
     <footer
-      class="text-center text-sm text-muted-foreground section-padding"
+      class="
+        text-sm text-muted-foreground py-8 border-bs mbs-12
+
+        sm:py-12 sm:mbs-16
+
+        md:mbs-20
+      "
     >
-      © 2026 Favour Emeka
+      © 2024 - {{ new Date().getFullYear() }} Favour Emeka
     </footer>
   </div>
 </template>

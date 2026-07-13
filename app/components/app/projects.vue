@@ -36,10 +36,10 @@ const visibleProjects = computed(() => {
           target="_blank"
           rel="noopener noreferrer"
           class="
-            flex flex-col gap-1 transition-[opacity,filter] py-6 group/project
+            flex flex-col gap-1 transition-[opacity,filter] py-8 group/project
             border-be duration-300 outline-none
 
-            sm:py-8
+            sm:py-12
 
             group-hover/projects:blur-[1px] group-hover/projects:opacity-95
 
