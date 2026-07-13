@@ -37,15 +37,13 @@ const visibleProjects = computed(() => {
           rel="noopener noreferrer"
           class="
             flex flex-col gap-1 transition-[opacity,filter] py-8 group/project
-            border-be duration-300 outline-none
+            border-be duration-300 on-focus-visible
 
             sm:py-12
 
             group-hover/projects:blur-[1px] group-hover/projects:opacity-95
 
             hover:opacity-100 hover:blur-none
-
-            focus-visible:ring-2 focus-visible:ring-ring
           "
           :class="{
             'pbs-0 sm:pbs-0': index === 0
@@ -68,19 +66,17 @@ const visibleProjects = computed(() => {
       </li>
     </ul>
 
-    <button
+    <Button
       v-if="projects.length > INITIAL_VISIBLE_PROJECTS_COUNT"
+      size="sm"
       class="
-        text-xs text-muted-foreground transition-colors justify-self-center
-        duration-300 inline-fit uppercase outline-none
-
-        focus-visible:ring-2 focus-visible:ring-ring
+        text-muted-foreground justify-self-center
 
         hover:text-foreground
       "
       @click="showAllProjects = !showAllProjects"
     >
       {{ showAllProjects ? 'See less' : `See more [${projects.length - INITIAL_VISIBLE_PROJECTS_COUNT}]` }}
-    </button>
+    </Button>
   </section>
 </template>

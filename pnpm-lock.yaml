@@ -8,18 +8,9 @@ importers:
 
   .:
     dependencies:
-      '@iconify-vue/hugeicons':
-        specifier: ^1.0.16
-        version: 1.0.16(vue@3.5.39(typescript@6.0.3))
-      '@iconify/vue':
-        specifier: ^5.0.1
-        version: 5.0.1(vue@3.5.39(typescript@6.0.3))
       '@nuxt/fonts':
         specifier: ^0.14.0
         version: 0.14.0(db0@0.3.4)(esbuild@0.28.1)(ioredis@5.11.1)(magicast@0.5.3)(rollup@4.62.2)(vite@7.3.6(@types/node@26.1.1)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.49.0)(yaml@2.9.0))
-      '@nuxt/icon':
-        specifier: ^2.3.1
-        version: 2.3.1(magicast@0.5.3)(vite@7.3.6(@types/node@26.1.1)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.49.0)(yaml@2.9.0))(vue@3.5.39(typescript@6.0.3))
       '@nuxtjs/color-mode':
         specifier: ^4.0.1
         version: 4.0.1(magicast@0.5.3)
@@ -41,9 +32,6 @@ importers:
       centoui-nuxt:
         specifier: ^1.11.1
         version: 1.11.1(centoui@1.11.1(chokidar@5.0.0)(dotenv@17.4.2)(giget@3.3.0)(jiti@2.7.0)(magicast@0.5.3)(vue@3.5.39(typescript@6.0.3)))(chokidar@5.0.0)(dotenv@17.4.2)(giget@3.3.0)(jiti@2.7.0)(magicast@0.5.3)(nuxt@4.4.8(@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7))(@parcel/watcher@2.5.6)(@types/node@26.1.1)(@vue/compiler-sfc@3.5.39)(cac@6.7.14)(db0@0.3.4)(esbuild@0.28.1)(eslint@10.6.0(jiti@2.7.0))(ioredis@5.11.1)(lightningcss@1.32.0)(magicast@0.5.3)(optionator@0.9.4)(rollup-plugin-visualizer@7.0.1(rollup@4.62.2))(rollup@4.62.2)(srvx@0.11.21)(terser@5.49.0)(typescript@6.0.3)(vite@7.3.6(@types/node@26.1.1)(jiti@2.7.0)(lightningcss@1.32.0)(terser@5.49.0)(yaml@2.9.0))(vue-tsc@3.3.7(typescript@6.0.3))(yaml@2.9.0))
-      install:
-        specifier: ^0.13.0
-        version: 0.13.0
       motion-v:
         specifier: ^2.3.0
         version: 2.3.0(@vueuse/core@14.3.0(vue@3.5.39(typescript@6.0.3)))(vue@3.5.39(typescript@6.0.3))
@@ -749,16 +737,8 @@ packages:
   '@iconify-json/carbon@1.2.24':
     resolution: {integrity: sha512-b7u/eTWE3xFa7UXlRJBSEm6At1y6+F0P3imBEip5/8QeRzouxVjBf80Y2xnu1GYsFo9MYlHA0bZfxxMd5givfw==}
 
-  '@iconify-vue/hugeicons@1.0.16':
-    resolution: {integrity: sha512-4WzJL9hvRHFk40S+Bfxugj7hf+YjiuyL02VCIrQlChNOH5V/or7PlFW750mkE+D492uW+Ebqc/A+5u0aemLD2Q==}
-
   '@iconify/collections@1.0.708':
     resolution: {integrity: sha512-9C1wW0tb8VVdsbAdfZfEYklxE2p+jz9Qrm6Lfx/+lWS8i0QiOJ5QtOoZScvs2MwVpJsViw4VeMcpQU0+eQJrHg==}
-
-  '@iconify/css-vue@1.0.2':
-    resolution: {integrity: sha512-KXG9zXTMmJLi1AF2ket+YWUGdSqFvIMSnCO789uOVpba6SZhqeUttu0JIaEcq2dNlt4oonwdtMyerkpRkAFYhw==}
-    peerDependencies:
-      vue: '>=3.0.0'
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -4556,10 +4536,6 @@ packages:
     resolution: {integrity: sha512-QQnnxNyfvmHFIsj7gkPcYymR8Jdw/o7mp5ZFihxn6h8Ci6fh3Dx4E1gPjpQEpIuPo9XVNY/ZUwh4BPMjGyL01g==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  install@0.13.0:
-    resolution: {integrity: sha512-zDml/jzr2PKU9I8J/xyZBQn8rPCAY//UOYNmR01XwNwyfhEWObo2SWfSl1+0tm1u6PhxLwDnfsT/6jB7OUxqFA==}
-    engines: {node: '>= 0.10'}
-
   ioredis@5.11.1:
     resolution: {integrity: sha512-ehuGcf94bQXhfagULNXrJdfnWO38v070jxSx/qE87Kjzmu2fU7ro5EFAb+OPituLqgfyuQaym5DlrNydW2sJ9A==}
     engines: {node: '>=12.22.0'}
@@ -7403,20 +7379,9 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-vue/hugeicons@1.0.16(vue@3.5.39(typescript@6.0.3))':
-    dependencies:
-      '@iconify/css-vue': 1.0.2(vue@3.5.39(typescript@6.0.3))
-    transitivePeerDependencies:
-      - vue
-
   '@iconify/collections@1.0.708':
     dependencies:
       '@iconify/types': 2.0.0
-
-  '@iconify/css-vue@1.0.2(vue@3.5.39(typescript@6.0.3))':
-    dependencies:
-      '@iconify/types': 2.0.0
-      vue: 3.5.39(typescript@6.0.3)
 
   '@iconify/types@2.0.0': {}
 
@@ -11295,8 +11260,6 @@ snapshots:
   inherits@2.0.4: {}
 
   ini@4.1.1: {}
-
-  install@0.13.0: {}
 
   ioredis@5.11.1:
     dependencies:

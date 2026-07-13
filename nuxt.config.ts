@@ -9,7 +9,6 @@ export default defineNuxtConfig({
 
   modules: [
     'centoui-nuxt',
-    '@nuxt/icon',
     '@nuxtjs/color-mode',
 
     '@nuxt/fonts',
@@ -121,19 +120,10 @@ export default defineNuxtConfig({
     },
   },
 
-  icon: {
-    componentName: 'NuxtIcon',
-    customCollections: [
-      {
-        dir: './app/assets/icons',
-        prefix: 'custom',
-      },
-    ],
-    mode: 'svg',
-    provider: 'iconify',
-  },
-
   vite: {
+    optimizeDeps: {
+      include: ['@unhead/schema-org/vue'],
+    },
     plugins: [tailwindcss()],
   },
 

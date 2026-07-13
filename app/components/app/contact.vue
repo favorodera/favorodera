@@ -31,45 +31,47 @@ import profile from '~/data/profile.json'
       Have a project in mind, or just want to chat? I'm always open to interesting opportunities and conversations.
     </p>
 
-    <NuxtLink
-      :href="`mailto:${profile.email}`"
-      target="_blank"
-      rel="noopener noreferrer"
-      :aria-label="`Email ${profile.email}`"
+    <Button
+      as-child
+      variant="link"
       class="
-        underline-offset-4 font-serif text-2xl decoration-1 outline-none
-        inline-fit
-
-        hover:underline
+        font-serif text-2xl inline-fit capitalize
 
         sm:text-3xl
-
-        focus-visible:ring-2 focus-visible:ring-ring
       "
     >
-      Send me a Mail
-    </NuxtLink>
+      <NuxtLink
+        :href="`mailto:${profile.email}`"
+        target="_blank"
+        rel="noopener noreferrer"
+        :aria-label="`Email ${profile.email}`"
+      >
+        Send me a Mail
+      </NuxtLink>
+    </Button>
 
     <ul class="flex gap-8 items-center flex-wrap">
       <li
         v-for="social, index in profile.socials"
         :key="index"
       >
-        <NuxtLink
-          :href="social.href"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Button
+          as-child
+          variant="link"
           class="
-            underline-offset-4 uppercase text-sm text-muted-foreground
-            duration-300 outline-none
+            text-muted-foreground
 
-            hover:underline hover:text-foreground
-
-            focus-visible:ring-2 focus-visible:ring-ring
+            hover:text-foreground
           "
         >
-          {{ social.label }}
-        </NuxtLink>
+          <NuxtLink
+            :href="social.href"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ social.label }}
+          </NuxtLink>
+        </Button>
       </li>
     </ul>
   </section>

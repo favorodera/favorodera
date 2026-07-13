@@ -1,43 +1,109 @@
 <script setup lang="ts">
-const breadcrumbs = [
+import { createReusableTemplate } from '@vueuse/core'
+import { buttonVariants } from '../centoui/button'
+
+const navLinks = [
   { label: 'About', path: '#about' },
   { label: 'Work', path: '#projects' },
   { label: 'Contact', path: '#contact' },
 ]
+
+const [
+  DefineLinks,
+  ReuseLinks,
+] = createReusableTemplate<{ separatorOrientation?: 'vertical' }>()
+
+const isOpen = ref(false)
 </script>
 
 <template>
+  <!-- Reusable nav links -->
+  <DefineLinks v-slot="{ separatorOrientation }">
+    <template
+      v-for="link, index in navLinks"
+      :key="index"
+    >
+      <li class="flex">
+        <Button
+          as-child
+          size="sm"
+          variant="link"
+          class="
+            inline-full justify-start py-3
+
+            sm:py-0 sm:justify-center sm:inline-auto
+          "
+        >
+          <NuxtLink
+            :to="link.path"
+
+            @click="isOpen = false"
+          >
+            {{ link.label }}
+          </NuxtLink>
+        </Button>
+      </li>
+
+      <Separator
+        v-if="index < navLinks.length - 1"
+        as="li"
+        :orientation="separatorOrientation"
+      />
+    </template>
+  </DefineLinks>
+
   <nav
     class="
-      flex items-center justify-end gap-x-4 mbe-14
+      relative grid grid-cols-[1fr_auto_auto] items-center gap-4 mbe-14
 
-      sm:mbe-16
-
-      **:uppercase **:font-normal **:text-xs
+      sm:mbe-16 sm:flex sm:items-center sm:justify-end
     "
   >
-    <ul class="items-center gap-x-4 flex">
-      <template
-        v-for="(crumb, index) in breadcrumbs"
-        :key="index"
-      >
-        <li>
-          <Button
-            as-child
-            variant="link"
-          >
-            <NuxtLink :to="crumb.path">
-              {{ crumb.label }}
-            </NuxtLink>
-          </Button>
-        </li>
+    <!-- Desktop navigation -->
+    <ul
+      class="
+        hidden items-center gap-x-4
 
-        <Separator
-          v-if="index < breadcrumbs.length - 1"
-          as="li"
-          orientation="vertical"
-        />
-      </template>
+        sm:flex
+      "
+    >
+      <ReuseLinks separator-orientation="vertical" />
+    </ul>
+
+    <!-- Mobile menu button -->
+    <Button
+      size="sm"
+      class="
+        col-start-2
+
+        hover:text-muted-foreground
+
+        sm:hidden
+      "
+      @click="isOpen = !isOpen"
+    >
+      {{ isOpen ? 'Close' :'' }} Menu
+    </Button>
+
+    <!-- Mobile navigation -->
+    <ul
+      v-show="isOpen"
+      class="
+        absolute inset-bs-full p-6 inset-x-0 z-50 grid gap-2 bg-background
+        inset-s-1/2 -translate-x-1/2 inline-screen
+
+        sm:hidden sm:px-8
+      "
+    >
+      <Separator
+        as="li"
+      />
+
+      <ReuseLinks />
+
+      <Separator
+        as="li"
+      />
     </ul>
 
     <Separator
@@ -47,20 +113,25 @@ const breadcrumbs = [
     <ColorScheme
       placeholder="THEMING..."
       tag="span"
-      class="text-muted-foreground"
+      :class="buttonVariants()
+        .root({
+          size:'sm',
+          class:'text-muted-foreground col-start-4 sm:col-auto'
+        })"
     >
-      <button
+      <Button
+        size="sm"
         class="
-          transition-colors duration-300 outline-none
-
-          focus-visible:ring-2 focus-visible:ring-ring
+          col-start-4
 
           hover:text-muted-foreground
+
+          sm:col-auto
         "
         @click="$colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark'"
       >
         {{ $colorMode.value }}
-      </button>
+      </Button>
     </ColorScheme>
   </nav>
 </template>
