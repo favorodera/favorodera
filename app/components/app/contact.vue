@@ -72,10 +72,7 @@ import profile from '~/data/profile.json'
           rel="noopener noreferrer"
           :aria-label="`Send me a Mail via ${profile.email}`"
         >
-          <AppScrambleText
-            init-text="Send me a Mail"
-            reveal-text="favorodera@gmail.com"
-          />
+          Send me a Mail
         </NuxtLink>
       </Button>
     </Motion>

@@ -13,7 +13,7 @@ import techStacks from '~/data/tech-stacks.json'
     "
   >
     <h1 class="sr-only">
-      Building interfaces that feel right
+      Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.
     </h1>
 
     <Motion
@@ -38,13 +38,17 @@ import techStacks from '~/data/tech-stacks.json'
         {{ profile.bio }}
       </Motion>
 
+      <span
+        class="min-inline-1.5 inline-block"
+        aria-hidden="true"
+      />
+
       <Motion
         as="span"
         :initial="{ opacity: 0, x: -10 }"
         :while-in-view="{ opacity: 1, x: 0 }"
         :transition="{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }"
         :in-view-options="{ once: true, margin: '-50px' }"
-        class="ms-1.5"
       >
         <Button
           as-child
