@@ -1,15 +1,15 @@
 <script setup lang="ts">
 useSeoMeta({
-  description: 'Favour Emeka — Frontend Engineer building accessible, type-safe interface systems for Vue and Nuxt.',
-  ogDescription: 'Frontend Engineer building accessible, type-safe interface systems for Vue and Nuxt.',
+  description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
+  ogDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
   ogImage: 'https://myopengraph.com/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
-  ogTitle: 'Favour Emeka — Frontend Engineer',
+  ogTitle: 'Favour Emeka | Frontend Engineer',
   ogUrl: 'https://favorodera.vercel.app',
-  title: 'Favour Emeka — Frontend Engineer',
+  title: 'Favour Emeka | Frontend Engineer',
   twitterCard: 'summary_large_image',
-  twitterDescription: 'Frontend Engineer building accessible, type-safe interface systems for Vue and Nuxt.',
+  twitterDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
   twitterImage: 'https://myopengraph.com/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
-  twitterTitle: 'Favour Emeka — Frontend Engineer',
+  twitterTitle: 'Favour Emeka | Frontend Engineer',
 })
 </script>
 

@@ -42,7 +42,7 @@ export default defineNuxtConfig({
       givenName: 'Favour',
       name: 'Favour Emeka',
 
-      description: 'Frontend Engineer.',
+      description: 'Favour Emeka is a frontend engineer building accessible, type-safe interface systems with Vue, Nuxt, and TypeScript, and the creator of open-source developer tools including CentoUI and NotForm.',
       image: 'https://github.com/favorodera.png',
       jobTitle: 'Frontend Developer',
 
@@ -61,12 +61,11 @@ export default defineNuxtConfig({
 
       knowsAbout: [
         'Frontend Development',
+        'Web Development',
         'Vue.js',
         'Nuxt.js',
         'TypeScript',
         'TailwindCSS',
-        'Developer Tooling',
-        'Web Performance',
       ],
 
       alumniOf: {
@@ -149,7 +148,7 @@ export default defineNuxtConfig({
 
   site: {
     defaultLocale: 'en',
-    description: 'Frontend Engineer.',
+    description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
     indexable: true,
     name: 'Favour Emeka',
     url: 'https://favorodera.vercel.app',
