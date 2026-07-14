@@ -16,6 +16,11 @@
     <main
       id="main"
       tabindex="-1"
+      class="
+        outline-none
+
+        focus:ring-2 focus:ring-ring
+      "
     >
       <NuxtRouteAnnouncer />
       <slot />

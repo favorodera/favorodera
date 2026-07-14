@@ -22,6 +22,25 @@ import techStacks from '~/data/tech-stacks.json'
 
     <p class="font-thin tracking-wider leading-relaxed">
       {{ profile.bio }}
+      
+      <Button
+        as-child
+        size="sm"
+        variant="link"
+        class="
+          text-muted-foreground underline
+
+          hover:text-foreground
+        "
+      >
+        <NuxtLink
+          :href="profile.resume"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Resume
+        </NuxtLink>
+      </Button>
     </p>
 
     <ul class="flex flex-wrap gap-4">

@@ -54,9 +54,9 @@ const isOpen = ref(false)
 
   <nav
     class="
-      relative grid grid-cols-[1fr_auto_auto] items-center gap-4 mbe-14
+      relative grid grid-cols-[1fr_auto_auto] items-center gap-4 mbe-13 pbe-1
 
-      sm:mbe-16 sm:flex sm:items-center sm:justify-end
+      sm:mbe-15 sm:flex sm:items-center sm:justify-end
     "
   >
     <!-- Desktop navigation -->
@@ -93,6 +93,8 @@ const isOpen = ref(false)
         inset-s-1/2 -translate-x-1/2 inline-screen
 
         sm:hidden sm:px-8
+
+        focus-within:ring-2 focus-within:ring-ring
       "
     >
       <Separator
