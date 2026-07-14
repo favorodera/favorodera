@@ -22,7 +22,7 @@ import techStacks from '~/data/tech-stacks.json'
 
     <p class="font-thin tracking-wider leading-relaxed">
       {{ profile.bio }}
-      
+
       <Button
         as-child
         size="sm"

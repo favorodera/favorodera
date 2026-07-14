@@ -9,7 +9,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   size: 'md',
 })
 
-const delegatedProps = reactiveOmit(props, 'class', 'size','variant')
+const delegatedProps = reactiveOmit(props, 'class', 'size', 'variant')
 
 const forwardedProps = useForwardProps(delegatedProps)
 
