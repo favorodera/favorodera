@@ -7,10 +7,10 @@ export const buttonVariants = tv({
   },
   slots: {
     root: `
-      relative inline-flex items-center shrink-0 cursor-default border
+      relative inline-flex items-center shrink-0 cursor-pointer border
       border-transparent font-normal outline-none select-none justify-center
-      transition-all group/button duration-300 px-0 text-primary
-      underline-offset-4 min-block-auto decoration-1 uppercase
+      transition-all group/button duration-300 text-primary underline-offset-4
+      min-block-auto decoration-1 uppercase
 
       active:not-aria-[haspopup]:not-data-spin-button:translate-y-px
 

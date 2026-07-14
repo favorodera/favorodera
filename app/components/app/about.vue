@@ -20,7 +20,7 @@ import techStacks from '~/data/tech-stacks.json'
       {{ profile.role }}
     </p>
 
-    <p>
+    <p class="font-thin tracking-wider leading-relaxed">
       {{ profile.bio }}
     </p>
 
@@ -29,7 +29,7 @@ import techStacks from '~/data/tech-stacks.json'
         v-for="(techStackName, index) in techStacks"
         :key="index"
         class="
-          text-muted-foreground text-sm font-mono uppercase transition-colors
+          text-muted-foreground text-xs uppercase transition-colors
           cursor-default duration-300
 
           hover:text-foreground

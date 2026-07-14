@@ -37,13 +37,15 @@ const visibleProjects = computed(() => {
           rel="noopener noreferrer"
           class="
             flex flex-col gap-1 transition-[opacity,filter] py-8 group/project
-            border-be duration-300 on-focus-visible
+            border-be duration-300 outline-none
 
             sm:py-12
 
             group-hover/projects:blur-[1px] group-hover/projects:opacity-95
 
             hover:opacity-100 hover:blur-none
+
+            focus-visible:ring-2 focus-visible:ring-ring
           "
           :class="{
             'pbs-0 sm:pbs-0': index === 0
