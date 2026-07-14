@@ -24,7 +24,7 @@ import profile from '~/data/profile.json'
         lg:text-6xl
       "
     >
-      Let's work together
+      Let's work together!
     </h3>
 
     <p class="text-[15px] text-muted-foreground">
