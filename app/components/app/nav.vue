@@ -85,31 +85,89 @@ const isOpen = ref(false)
       "
       @click="isOpen = !isOpen"
     >
-      {{ isOpen ? 'Close' :'' }} Menu
+      <AnimatePresence mode="wait">
+        <Motion
+          v-if="isOpen"
+          key="close-label"
+          as="span"
+          class="inline-block me-1"
+          :initial="{
+            y: '-100%',
+            opacity: 0
+          }"
+          :animate="{
+            y: '0%',
+            opacity: 1,
+            transition: {
+              duration: 0.3,
+              ease: 'easeOut'
+            }
+          }"
+          :exit="{
+            y: '-100%',
+            opacity: 0,
+            transition: {
+              duration: 0.2,
+              ease: 'easeIn'
+            }
+          }"
+        >
+          Close
+        </Motion>
+      </AnimatePresence>
+
+      Menu
     </Button>
 
     <!-- Mobile navigation -->
-    <ul
-      v-show="isOpen"
-      class="
-        absolute inset-bs-full p-6 inset-x-0 z-50 grid gap-2 bg-background
-        inset-s-1/2 -translate-x-1/2 inline-screen
+    <AnimatePresence>
+      <Motion
+        v-show="isOpen"
+        as="ul"
+        :initial="{
+          opacity: 0,
+          y: -24,
+          scale: 0.96,
+          filter: 'blur(8px)'
+        }"
+        :animate="{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          filter: 'blur(0px)',
+          transition: {
+            duration: 0.4,
+            ease: [0.22, 1, 0.36, 1]
+          }
+        }"
+        :exit="{
+          opacity: 0,
+          y: -16,
+          scale: 0.98,
+          filter: 'blur(4px)',
+          transition: {
+            duration: 0.25,
+            ease: 'easeIn'
+          }
+        }"
+        class="
+          absolute inset-bs-full p-6 inset-x-0 z-50 grid gap-2 bg-background
+          inset-s-1/2 -translate-x-1/2 inline-screen origin-[top_center]
 
-        sm:hidden sm:px-8
+          sm:hidden sm:px-8
+        "
+      >
+        <li>
+          <Separator />
+        </li>
 
-        focus-within:ring-2 focus-within:ring-ring
-      "
-    >
-      <li>
-        <Separator />
-      </li>
+        <ReuseLinks />
 
-      <ReuseLinks />
-
-      <li>
-        <Separator />
-      </li>
-    </ul>
+        <li>
+          <Separator />
+        </li>
+      </Motion>
+    </AnimatePresence>
 
     <Separator
       orientation="vertical"
@@ -127,7 +185,7 @@ const isOpen = ref(false)
       <Button
         size="sm"
         class="
-          col-start-4
+          col-start-4 min-block-full overflow-hidden perspective-normal
 
           hover:text-muted-foreground
 
@@ -135,7 +193,46 @@ const isOpen = ref(false)
         "
         @click="$colorMode.preference = $colorMode.value === 'dark' ? 'light' : 'dark'"
       >
-        {{ $colorMode.value }}
+        <AnimatePresence mode="wait">
+          <Motion
+            :key="$colorMode.value"
+            as="span"
+            class="block will-change-transform min-inline-[35px]"
+            style="
+          transform-style: preserve-3d;
+          backface-visibility: hidden;
+          transform-origin: center;
+        "
+            :initial="{
+              rotateX: -90,
+              y: '100%',
+              opacity: 0,
+              filter: 'blur(4px)',
+            }"
+            :animate="{
+              rotateX: 0,
+              y: '0%',
+              opacity: 1,
+              filter: 'blur(0px)',
+              transition: {
+                duration: 0.4,
+                ease: 'easeOut',
+              },
+            }"
+            :exit="{
+              rotateX: 90,
+              y: '-100%',
+              opacity: 0,
+              filter: 'blur(4px)',
+              transition: {
+                duration: 0.3,
+                ease: 'easeIn'
+              },
+            }"
+          >
+            {{ $colorMode.value }}
+          </Motion>
+        </AnimatePresence>
       </Button>
     </ColorScheme>
   </nav>
