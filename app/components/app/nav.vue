@@ -44,11 +44,14 @@ const isOpen = ref(false)
         </Button>
       </li>
 
-      <Separator
+      <li
         v-if="index < navLinks.length - 1"
-        as="li"
-        :orientation="separatorOrientation"
-      />
+        class="self-stretch"
+      >
+        <Separator
+          :orientation="separatorOrientation"
+        />
+      </li>
     </template>
   </DefineLinks>
 
@@ -97,15 +100,15 @@ const isOpen = ref(false)
         focus-within:ring-2 focus-within:ring-ring
       "
     >
-      <Separator
-        as="li"
-      />
+      <li>
+        <Separator />
+      </li>
 
       <ReuseLinks />
 
-      <Separator
-        as="li"
-      />
+      <li>
+        <Separator />
+      </li>
     </ul>
 
     <Separator
