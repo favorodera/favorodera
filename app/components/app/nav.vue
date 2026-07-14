@@ -90,7 +90,7 @@ const isOpen = ref(false)
           v-if="isOpen"
           key="close-label"
           as="span"
-          class="inline-block me-1"
+          class="inline-block me-1.5"
           :initial="{
             y: '-100%',
             opacity: 0
@@ -198,11 +198,11 @@ const isOpen = ref(false)
             :key="$colorMode.value"
             as="span"
             class="block will-change-transform min-inline-[35px]"
-            style="
-          transform-style: preserve-3d;
-          backface-visibility: hidden;
-          transform-origin: center;
-        "
+            :style="{
+              transformStyle: 'preserve-3d',
+              backfaceVisibility: 'hidden',
+              transformOrigin: 'center'
+            }"
             :initial="{
               rotateX: -90,
               y: '100%',

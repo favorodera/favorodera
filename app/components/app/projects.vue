@@ -7,7 +7,6 @@ const showAllProjects = ref(false)
 
 const visibleProjects = computed(() => {
   if (showAllProjects.value) return projects
-
   return projects.slice(0, INITIAL_VISIBLE_PROJECTS_COUNT)
 })
 </script>
@@ -21,14 +20,26 @@ const visibleProjects = computed(() => {
       sm:gap-8
     "
   >
-    <h2 class="text-sm text-muted-foreground">
+    <Motion
+      as="h2"
+      :initial="{ opacity: 0, x: -20 }"
+      :while-in-view="{ opacity: 1, x: 0 }"
+      :transition="{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }"
+      :in-view-options="{ once: true, margin: '-50px' }"
+      class="text-sm text-muted-foreground"
+    >
       FEATURED PROJECTS [{{ projects.length }}]
-    </h2>
+    </Motion>
 
     <ul class="group/projects">
-      <li
+      <Motion
         v-for="project, index in visibleProjects"
         :key="index"
+        as="li"
+        :initial="{ opacity: 0, y: 40 }"
+        :while-in-view="{ opacity: 1, y: 0 }"
+        :transition="{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }"
+        :in-view-options="{ once: true, margin: '-60px' }"
       >
         <NuxtLink
           external
@@ -47,9 +58,7 @@ const visibleProjects = computed(() => {
 
             focus-visible:ring-2 focus-visible:ring-ring
           "
-          :class="{
-            'pbs-0 sm:pbs-0': index === 0
-          }"
+          :class="{ 'pbs-0 sm:pbs-0': index === 0 }"
         >
           <h3
             class="
@@ -65,20 +74,29 @@ const visibleProjects = computed(() => {
             {{ project.description }}
           </p>
         </NuxtLink>
-      </li>
+      </Motion>
     </ul>
 
-    <Button
+    <Motion
       v-if="projects.length > INITIAL_VISIBLE_PROJECTS_COUNT"
-      size="sm"
-      class="
-        text-muted-foreground justify-self-center
-
-        hover:text-foreground
-      "
-      @click="showAllProjects = !showAllProjects"
+      as="div"
+      :initial="{ opacity: 0, scale: 0.95 }"
+      :while-in-view="{ opacity: 1, scale: 1 }"
+      :transition="{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }"
+      :in-view-options="{ once: true }"
+      class="justify-self-center"
     >
-      {{ showAllProjects ? 'See less' : `See more [${projects.length - INITIAL_VISIBLE_PROJECTS_COUNT}]` }}
-    </Button>
+      <Button
+        size="sm"
+        class="
+          text-muted-foreground
+
+          hover:text-foreground
+        "
+        @click="showAllProjects = !showAllProjects"
+      >
+        {{ showAllProjects ? 'See less' : `See more [${projects.length - INITIAL_VISIBLE_PROJECTS_COUNT}]` }}
+      </Button>
+    </Motion>
   </section>
 </template>
