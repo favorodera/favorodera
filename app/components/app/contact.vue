@@ -44,7 +44,7 @@ import profile from '~/data/profile.json'
         :href="`mailto:${profile.email}`"
         target="_blank"
         rel="noopener noreferrer"
-        :aria-label="`Email ${profile.email}`"
+        :aria-label="`Send me a Mail via ${profile.email}`"
       >
         Send me a Mail
       </NuxtLink>
