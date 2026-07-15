@@ -107,7 +107,7 @@ export default defineNuxtConfig({
     prerender: {
       crawlLinks: true,
       routes: [
-        '/',
+        // '/',
         '/sitemap.xml',
         '/robots.txt',
       ],
