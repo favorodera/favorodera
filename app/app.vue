@@ -5,7 +5,6 @@ useSeoMeta({
   description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
   googleSiteVerification: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
   ogDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
-  ogImage: 'https://myopengraph.com/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
   ogTitle: 'Favour Emeka | Frontend Engineer',
   ogUrl: 'https://favorodera.vercel.app',
   themeColor: [
@@ -18,15 +17,15 @@ useSeoMeta({
       media: '(prefers-color-scheme: dark)',
     },
   ],
-  title: 'Favour Emeka | Frontend Engineer',
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
   twitterDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
-  twitterImage: 'https://myopengraph.com/api/v1/render/bd9686a9-86b0-49f0-91eb-96645db5e055',
   twitterSite: '@favorodera',
   twitterTitle: 'Favour Emeka | Frontend Engineer',
   viewport: 'width=device-width, initial-scale=1',
 })
+
+defineOgImage('Image.takumi')
 </script>
 
 <template>

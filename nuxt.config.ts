@@ -1,6 +1,18 @@
 import tailwindcss from '@tailwindcss/vite'
 import { definePerson } from 'nuxt-schema-org/schema'
 
+const fontWeights = [
+  100,
+  200,
+  300,
+  400,
+  500,
+  600,
+  700,
+  800,
+  900,
+]
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
@@ -110,19 +122,18 @@ export default defineNuxtConfig({
   },
 
   fonts: {
-    defaults: {
-      weights: [
-        100,
-        200,
-        300,
-        400,
-        500,
-        600,
-        700,
-        800,
-        900,
-      ],
-    },
+    families: [
+      {
+        global: true,
+        name: 'Bricolage Grotesque',
+        weights: fontWeights,
+      },
+      {
+        global: true,
+        name: 'Instrument Serif',
+        weights: fontWeights,
+      },
+    ],
   },
 
   sitemap: {
@@ -133,7 +144,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
     indexable: true,
-    name: 'Favour Emeka',
+    name: 'Favour Emeka | Frontend Engineer',
     url: 'https://favorodera.vercel.app',
   },
 
