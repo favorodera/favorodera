@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import profile from '~/data/profile.json'
-import '../../assets/css/index.css?raw'
-
-defineOptions({
-  inheritAttrs: false,
-})
 </script>
 
 <template>
