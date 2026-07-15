@@ -5,8 +5,6 @@ import projects from '~/data/projects.json'
 
 const INITIAL_VISIBLE_PROJECTS_COUNT = 5
 
-const showAllProjects = ref(false)
-
 const initialProjects = computed(() => projects.slice(0, INITIAL_VISIBLE_PROJECTS_COUNT))
 const remainingProjects = computed(() => projects.slice(INITIAL_VISIBLE_PROJECTS_COUNT))
 
@@ -103,7 +101,7 @@ const [
     </Motion>
 
     <CollapsibleRoot
-      v-model:open="showAllProjects"
+      v-slot="{open}"
       class="
         grid gap-6
 
@@ -141,20 +139,20 @@ const [
           :variants="projectItemAnimationVariant"
           :transition="{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }"
           initial="initial"
-          animate="animate"
-          exit="initial"
-          as-child
+          while-in-view="animate"
+          :in-view-options="{ once: true, margin: '-60px' }"
+          class="flex"
         >
-          <CollapsibleTrigger >
+          <CollapsibleTrigger as-child>
             <Button
               size="sm"
               class="
-                text-muted-foreground justify-self-center
+                text-muted-foreground mx-auto
 
                 hover:text-foreground
               "
             >
-              {{ showAllProjects ? 'See less' : `See more [${remainingProjects.length}]` }}
+              See {{ open ? 'less' : `more [${remainingProjects.length}]` }}
             </Button>
           </CollapsibleTrigger>
         </Motion>
