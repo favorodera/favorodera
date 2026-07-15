@@ -30,10 +30,6 @@ export default defineNuxtConfig({
     classSuffix: '',
   },
 
-  routeRules: {
-    '/': { prerender: true },
-  },
-
   schemaOrg: {
     identity: definePerson({
       additionalName: 'Chidera',
@@ -84,24 +80,11 @@ export default defineNuxtConfig({
         lang: 'en',
       },
 
-      meta: [
-        {
-          content: 'width=device-width, initial-scale=1',
-          name: 'viewport',
-        },
-        {
-          charset: 'utf8',
-        },
-        {
-          content: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
-          name: 'google-site-verification',
-        },
-
-      ],
-
       link: [
         { href: '/favicon.ico', rel: 'icon', sizes: '48x48' },
-        { href: '/favicon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
+        { href: '/icon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
+        { href: '/icon-192x192.png', rel: 'icon', sizes: '192x192', type: 'image/png' },
+        { href: '/icon-512x512.png', rel: 'icon', sizes: '512x512', type: 'image/png' },
         { href: '/favicon-16x16.png', rel: 'icon', sizes: '16x16', type: 'image/png' },
         { href: '/apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180' },
       ],

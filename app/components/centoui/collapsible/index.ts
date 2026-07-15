@@ -12,9 +12,9 @@ export const collapsibleVariants = tv({
     content: `
       overflow-hidden group/collapsible-content
 
-      data-[state=closed]:animate-collapsible-up
+      data-[state=closed]:animate-[collapsible-up_0.5s_cubic-bezier(0.32,0,0.67,0)]
 
-      data-[state=open]:animate-collapsible-down
+      data-[state=open]:animate-[collapsible-down_0.7s_cubic-bezier(0.22,1,0.36,1)]
     `,
     root: 'group/collapsible-root',
     trigger: 'group/collapsible-trigger',

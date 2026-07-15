@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { createReusableTemplate } from '@vueuse/core'
 import { tv } from 'tailwind-variants'
 import projects from '~/data/projects.json'
 
@@ -35,9 +36,53 @@ const projectItemStyleVariants = tv({
     `,
   },
 })
+
+const [
+  DefineProjectItem,
+  ReuseProjectItem,
+] = createReusableTemplate<{
+  isFirst?: boolean
+  isFromInitialBlock?: boolean
+  project: typeof projects[number]
+}>()
 </script>
 
 <template>
+  <DefineProjectItem v-slot="{ project, isFirst, isFromInitialBlock }">
+    <Motion
+      as="li"
+      :variants="projectItemAnimationVariant"
+      :transition="{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }"
+      initial="initial"
+      while-in-view="animate"
+      :in-view-options="{
+        once: true,
+        ...isFromInitialBlock ? {
+          margin: '-60px',
+        }:{
+          margin: '-40px',
+          amount: 0.2
+        }
+      }"
+    >
+      <NuxtLink
+        external
+        :href="project.href"
+        target="_blank"
+        rel="noopener noreferrer"
+        :class="projectItemStyleVariants().root({ class: isFirst ? 'pbs-0 sm:pbs-0' : '' })"
+      >
+        <h3 :class="projectItemStyleVariants().title()">
+          {{ project.name }}
+        </h3>
+
+        <p :class="projectItemStyleVariants().description()">
+          {{ project.description }}
+        </p>
+      </NuxtLink>
+    </Motion>
+  </DefineProjectItem>
+
   <section
     id="projects"
     class="
@@ -65,86 +110,55 @@ const projectItemStyleVariants = tv({
         sm:gap-8
       "
     >
-      <MotionConfig :transition="{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }">
-        <ul class="group/projects">
-          <!-- Always visible -->
-          <Motion
-            v-for="(project, index) in initialProjects"
-            :key="project.name"
-            as="li"
-            :variants="projectItemAnimationVariant"
-            initial="initial"
-            while-in-view="animate"
-            :in-view-options="{ once: true, margin: '-60px' }"
+      <ul class="group/projects">
+        <!-- Always visible -->
+        <ReuseProjectItem
+          v-for="project, index in initialProjects"
+          :key="project.name"
+          :project="project"
+          :is-first="index === 0"
+          :is-from-initial-block="true"
+        />
+
+        <!-- Collapsible remainder -->
+        <li class="grid gap-0">
+          <CollapsibleContent
+            as="ul"
+            class="grid gap-0"
           >
-            <NuxtLink
-              external
-              :href="project.href"
-              target="_blank"
-              rel="noopener noreferrer"
-              :class="projectItemStyleVariants().root({class: index === 0 ? 'pbs-0 sm:pbs-0' : ''})"
-            >
-              <h3 :class="projectItemStyleVariants().title()">
-                {{ project.name }}
-              </h3>
+            <ReuseProjectItem
+              v-for="project in remainingProjects"
+              :key="project.name"
+              :project="project"
+            />
+          </CollapsibleContent>
+        </li>
+      </ul>
 
-              <p :class="projectItemStyleVariants().description()">
-                {{ project.description }}
-              </p>
-            </NuxtLink>
-          </Motion>
-
-          <!-- Collapsible remainder -->
-          <li class="grid gap-0">
-            <CollapsibleContent
-              as="ul"
-              class="grid gap-0"
-            >
-              <Motion
-                v-for="(project) in remainingProjects"
-                :key="project.name"
-                as="li"
-                :variants="projectItemAnimationVariant"
-                initial="initial"
-                while-in-view="animate"
-                :in-view-options="{ once: true, margin: '-60px' }"
-              >
-                <NuxtLink
-                  external
-                  :href="project.href"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  :class="projectItemStyleVariants().root()"
-                >
-                  <h3 :class="projectItemStyleVariants().title()">
-                    {{ project.name }}
-                  </h3>
-
-                  <p :class="projectItemStyleVariants().description()">
-                    {{ project.description }}
-                  </p>
-                </NuxtLink>
-              </Motion>
-            </CollapsibleContent>
-          </li>
-        </ul>
-      </MotionConfig>
-
-      <CollapsibleTrigger
-        v-if="projects.length > INITIAL_VISIBLE_PROJECTS_COUNT"
-        as-child
-      >
-        <Button
-          size="sm"
-          class="
-            text-muted-foreground justify-self-center
-
-            hover:text-foreground
-          "
+      <AnimatePresence>
+        <Motion
+          v-if="projects.length > INITIAL_VISIBLE_PROJECTS_COUNT"
+          :variants="projectItemAnimationVariant"
+          :transition="{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }"
+          initial="initial"
+          animate="animate"
+          exit="initial"
+          as-child
         >
-          {{ showAllProjects ? 'See less' : `See more [${remainingProjects.length}]` }}
-        </Button>
-      </CollapsibleTrigger>
+          <CollapsibleTrigger >
+            <Button
+              size="sm"
+              class="
+                text-muted-foreground justify-self-center
+
+                hover:text-foreground
+              "
+            >
+              {{ showAllProjects ? 'See less' : `See more [${remainingProjects.length}]` }}
+            </Button>
+          </CollapsibleTrigger>
+        </Motion>
+      </AnimatePresence>
     </CollapsibleRoot>
   </section>
 </template>
