@@ -100,7 +100,7 @@ const isOpen = ref(false)
             opacity: 1,
             transition: {
               duration: 0.3,
-              ease: 'easeOut'
+              ease: [0.22, 1, 0.36, 1]
             }
           }"
           :exit="{
@@ -108,7 +108,7 @@ const isOpen = ref(false)
             opacity: 0,
             transition: {
               duration: 0.2,
-              ease: 'easeIn'
+              ease: [0.32, 0, 0.67, 0]
             }
           }"
         >
@@ -147,7 +147,7 @@ const isOpen = ref(false)
           filter: 'blur(4px)',
           transition: {
             duration: 0.25,
-            ease: 'easeIn'
+            ease: [0.32, 0, 0.67, 0]
           }
         }"
         class="
@@ -216,7 +216,7 @@ const isOpen = ref(false)
               filter: 'blur(0px)',
               transition: {
                 duration: 0.4,
-                ease: 'easeOut',
+                ease: [0.22, 1, 0.36, 1],
               },
             }"
             :exit="{
@@ -226,7 +226,7 @@ const isOpen = ref(false)
               filter: 'blur(4px)',
               transition: {
                 duration: 0.3,
-                ease: 'easeIn'
+                ease: [0.32, 0, 0.67, 0],
               },
             }"
           >
