@@ -7,11 +7,15 @@
       sm:px-8
     "
   >
-    <header
+    <Motion
+      as="header"
+      :initial="{ y: -40, opacity: 0, filter: 'blur(8px)' }"
+      :animate="{ y: 0, opacity: 1, filter: 'blur(0px)' }"
+      :transition="{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }"
       class="bg-background sticky inset-bs-0 section-padding z-50"
     >
       <AppNav />
-    </header>
+    </Motion>
 
     <main
       id="main"
@@ -22,7 +26,12 @@
       <slot />
     </main>
 
-    <footer
+    <Motion
+      as="footer"
+      :initial="{ y: 60, opacity: 0, filter: 'blur(6px)' }"
+      :while-in-view="{ y: 0, opacity: 1, filter: 'blur(0px)' }"
+      :transition="{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }"
+      :in-view-options="{ once: true, margin: '-15px' }"
       class="
         text-sm text-muted-foreground py-8 border-bs mbs-12
 
@@ -32,6 +41,6 @@
       "
     >
       © 2024 - {{ new Date().getFullYear() }} Favour Emeka
-    </footer>
+    </Motion>
   </div>
 </template>
