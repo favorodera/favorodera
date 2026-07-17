@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="block-full inline-full">
     <AppAbout />
     <AppProjects />
     <AppContact />
