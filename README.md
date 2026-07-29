@@ -1,9 +1,5 @@
 `> pnpm dev`
 
-### CentoUI
-Vue components for elegant interfaces — accessible, copy-paste, variant-driven component library for Vue and Nuxt.  
-[Storybook](https://centoui-storybook.vercel.app) · [GitHub](https://github.com/favorodera/centoui)
-
 ### NotForm
 Form validation and state management for Vue and Nuxt — type-safe composable API with minimal boilerplate.  
 [Docs](https://notformdocs.vercel.app) · [GitHub](https://github.com/favorodera/notform)

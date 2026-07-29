@@ -1,10 +1,5 @@
 [
   {
-    "name": "CentoUI",
-    "description": "Copy-paste Vue component library with a single-file theme and a CLI-first workflow.",
-    "href": "https://github.com/favorodera/centoui"
-  },
-  {
     "name": "NotForm",
     "description": "Type-safe form state and validation for Vue and Nuxt, with a minimal composable API.",
     "href": "https://notformdocs.vercel.app"
