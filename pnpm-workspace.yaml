@@ -8,10 +8,6 @@ allowBuilds:
   unrs-resolver: true
   vue-demi: true
 
-minimumReleaseAgeExclude:
-  - centoui-cli@1.11.1
-  - centoui-nuxt@1.11.1
-  - centoui@1.11.1
 shellEmulator: true
 
 
