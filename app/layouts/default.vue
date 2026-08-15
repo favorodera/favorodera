@@ -31,7 +31,7 @@
       :initial="{ y:0, opacity: 0, filter: 'blur(6px)' }"
       :while-in-view="{ y:0, opacity: 1, filter: 'blur(0px)' }"
       :transition="{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }"
-      :in-view-options="{ once: false, margin: '-15px' }"
+      :in-view-options="{ once: true, margin: '-15px' }"
       class="
         text-sm text-muted-foreground py-8 border-bs mbs-12
 
