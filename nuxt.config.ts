@@ -1,28 +1,21 @@
 import tailwindcss from '@tailwindcss/vite'
 import { definePerson } from 'nuxt-schema-org/schema'
 
-const fontWeights = [
-  100,
-  200,
-  300,
-  400,
-  500,
-  600,
-  700,
-  800,
-  900,
-]
+const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
 
-  devtools: false,
+  devtools: { enabled: false },
 
   modules: [
-    'centoui-nuxt',
+    '@nuxt/content',
+    
     '@nuxtjs/color-mode',
-
+    'reka-ui/nuxt',
+    '@nuxt/icon',
+    '@nuxt/image',
     '@nuxt/fonts',
     'motion-v/nuxt',
 
@@ -40,6 +33,27 @@ export default defineNuxtConfig({
 
   colorMode: {
     classSuffix: '',
+  },
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+
+      link: [
+        { href: '/favicon.ico', rel: 'icon', sizes: '48x48' },
+        { href: '/icon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
+        { href: '/icon-192x192.png', rel: 'icon', sizes: '192x192', type: 'image/png' },
+        { href: '/icon-512x512.png', rel: 'icon', sizes: '512x512', type: 'image/png' },
+        { href: '/favicon-16x16.png', rel: 'icon', sizes: '16x16', type: 'image/png' },
+        { href: '/apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180' },
+      ],
+    },
+  },
+
+  experimental: {
+    viewTransition: true,
   },
 
   schemaOrg: {
@@ -84,43 +98,6 @@ export default defineNuxtConfig({
     }),
   },
 
-  css: ['~/assets/css/index.css'],
-
-  app: {
-    head: {
-      htmlAttrs: {
-        lang: 'en',
-      },
-
-      link: [
-        { href: '/favicon.ico', rel: 'icon', sizes: '48x48' },
-        { href: '/icon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
-        { href: '/icon-192x192.png', rel: 'icon', sizes: '192x192', type: 'image/png' },
-        { href: '/icon-512x512.png', rel: 'icon', sizes: '512x512', type: 'image/png' },
-        { href: '/favicon-16x16.png', rel: 'icon', sizes: '16x16', type: 'image/png' },
-        { href: '/apple-touch-icon.png', rel: 'apple-touch-icon', sizes: '180x180' },
-      ],
-    },
-  },
-
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: [
-        '/',
-        '/sitemap.xml',
-        '/robots.txt',
-      ],
-    },
-  },
-
-  vite: {
-    optimizeDeps: {
-      include: ['@unhead/schema-org/vue'],
-    },
-    plugins: [tailwindcss()],
-  },
-
   fonts: {
     families: [
       {
@@ -150,5 +127,22 @@ export default defineNuxtConfig({
 
   ogImage: {
     zeroRuntime: true,
+  },
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: [
+        '/',
+        '/sitemap.xml',
+        '/robots.txt',
+      ],
+    },
+  },
+
+  css: ['~/assets/css/index.css'],
+
+  vite: {
+    plugins: [tailwindcss()],
   },
 })

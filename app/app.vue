@@ -29,14 +29,13 @@ defineOgImage('Image.takumi')
 </script>
 
 <template>
-  <div class="min-inline-full min-block-dvh grid">
+  <div class="min-block-dvh min-inline-full">
     <NuxtLink
       to="#main"
       class="
-        fixed inset-bs-4 inset-s-4 -translate-y-[calc(100%+1rem)] z-50
-        outline-none
+        fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
 
-        focus:translate-y-0 focus:ring-2 focus:ring-ring
+        focus:translate-y-0
       "
     >
       Skip to main content
