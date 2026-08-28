@@ -3,44 +3,17 @@ import { definePerson } from 'nuxt-schema-org/schema'
 
 const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
+const seoDescription = 'Frontend engineer building fast, quiet interfaces with Vue, Nuxt & TypeScript. Creator of NotForm, and other open-source tools for developers.'
+const seoTitle = 'Favour Emeka | Frontend Engineer · Vue, Nuxt, TypeScript'
+const siteUrl = 'https://favorodera.vercel.app'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-
-  devtools: { enabled: false },
-
-  modules: [
-    '@nuxt/content',
-    
-    '@nuxtjs/color-mode',
-    'reka-ui/nuxt',
-    '@nuxt/icon',
-    '@nuxt/image',
-    '@nuxt/fonts',
-    'motion-v/nuxt',
-
-    '@nuxtjs/seo',
-    '@vercel/analytics',
-
-    '@nuxt/eslint',
-  ],
-
-  eslint: {
-    config: {
-      standalone: false,
-    },
-  },
-
-  colorMode: {
-    classSuffix: '',
-  },
-
   app: {
     head: {
       htmlAttrs: {
         lang: 'en',
       },
-
       link: [
         { href: '/favicon.ico', rel: 'icon', sizes: '48x48' },
         { href: '/icon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
@@ -51,84 +24,51 @@ export default defineNuxtConfig({
       ],
     },
   },
-
+  appConfig: {
+    seoDescription,
+    seoTitle,
+    siteUrl,
+  },
+  colorMode: {
+    classSuffix: '',
+  },
+  compatibilityDate: '2025-07-15',
+  css: ['~/assets/css/index.css'],
+  devtools: { enabled: false },
+  eslint: {
+    config: {
+      standalone: false,
+    },
+  },
   experimental: {
     viewTransition: true,
   },
-
-  schemaOrg: {
-    identity: definePerson({
-      additionalName: 'Chidera',
-      alternateName: 'Favour Chidera Emeka',
-      familyName: 'Emeka',
-      givenName: 'Favour',
-      name: 'Favour Emeka',
-
-      description: 'Favour Emeka is a frontend engineer building accessible, type-safe interface systems with Vue, Nuxt, and TypeScript, and the creator of open-source developer tools including CentoUI and NotForm.',
-      image: 'https://github.com/favorodera.png',
-      jobTitle: 'Frontend Developer',
-
-      email: 'favorodera@gmail.com',
-      url: 'https://favorodera.vercel.app',
-
-      sameAs: [
-        'https://x.com/favorodera',
-        'https://github.com/favorodera',
-        'https://linkedin.com/in/faorodera',
-        'https://facebook.com/favorodera',
-        'https://wa.me/+2348024383756',
-      ],
-
-      gender: 'male',
-
-      knowsAbout: [
-        'Frontend Development',
-        'Web Development',
-        'Vue.js',
-        'Nuxt.js',
-        'TypeScript',
-        'TailwindCSS',
-      ],
-
-      alumniOf: {
-        '@type': 'EducationalOrganization',
-        'name': 'Alt School Africa',
-        'url': 'https://altschoolafrica.com/',
-      },
-    }),
-  },
-
   fonts: {
     families: [
       {
         global: true,
-        name: 'Bricolage Grotesque',
+        name: 'Geist',
         weights: fontWeights,
       },
       {
         global: true,
-        name: 'Instrument Serif',
+        name: 'Geist Mono',
         weights: fontWeights,
       },
     ],
   },
-
-  sitemap: {
-    zeroRuntime: true,
-  },
-
-  site: {
-    defaultLocale: 'en',
-    description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
-    indexable: true,
-    name: 'Favour Emeka | Frontend Engineer',
-    url: 'https://favorodera.vercel.app',
-  },
-
-  ogImage: {
-    zeroRuntime: true,
-  },
-
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/color-mode',
+    'reka-ui/nuxt',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/fonts',
+    'motion-v/nuxt',
+    '@nuxtjs/seo',
+    '@vercel/analytics',
+    '@nuxt/eslint',
+  ],
   nitro: {
     prerender: {
       crawlLinks: true,
@@ -139,9 +79,58 @@ export default defineNuxtConfig({
       ],
     },
   },
-
-  css: ['~/assets/css/index.css'],
-
+  ogImage: {
+    zeroRuntime: true,
+  },
+  schemaOrg: {
+    identity: definePerson({
+      additionalName: 'Chidera',
+      alternateName: 'Favour Chidera Emeka',
+      alumniOf: {
+        '@type': 'EducationalOrganization',
+        'name': 'Alt School Africa',
+        'url': 'https://altschoolafrica.com/',
+      },
+      description: 'Frontend engineer and open-source creator building type-safe interfaces and developer tools with Vue, Nuxt, and TypeScript. Creator of NotForm, and other open-source tools for developers.',
+      email: 'favorodera@gmail.com',
+      familyName: 'Emeka',
+      gender: 'male',
+      givenName: 'Favour',
+      image: 'https://github.com/favorodera.png',
+      jobTitle: 'Frontend Engineer',
+      knowsAbout: [
+        'Frontend Development',
+        'Vue.js',
+        'Nuxt.js',
+        'TypeScript',
+        'Tailwind CSS',
+        'Open Source Software',
+        'Form Validation',
+        'SQLite',
+        'Zod',
+        'Developer Tooling',
+      ],
+      name: 'Favour Emeka',
+      sameAs: [
+        'https://x.com/favorodera',
+        'https://github.com/favorodera',
+        'https://linkedin.com/in/faorodera',
+        'https://facebook.com/favorodera',
+        'https://wa.me/+2348024383756',
+      ],
+      url: siteUrl,
+    }),
+  },
+  site: {
+    defaultLocale: 'en',
+    description: seoDescription,
+    indexable: true,
+    name: seoTitle,
+    url: siteUrl,
+  },
+  sitemap: {
+    zeroRuntime: true,
+  },
   vite: {
     plugins: [tailwindcss()],
   },

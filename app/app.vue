@@ -1,27 +1,19 @@
 <script setup lang="ts">
+const appConfig = useAppConfig()
+
 useSeoMeta({
   charset: 'utf8',
   colorScheme: 'dark light',
-  description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
+  description: () => appConfig.seoDescription,
   googleSiteVerification: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
-  ogDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
-  ogTitle: 'Favour Emeka | Frontend Engineer',
-  ogUrl: 'https://favorodera.vercel.app',
-  themeColor: [
-    {
-      content: '#ffffff',
-      media: '(prefers-color-scheme: light)',
-    },
-    {
-      content: '#070707',
-      media: '(prefers-color-scheme: dark)',
-    },
-  ],
+  ogDescription: () => appConfig.seoDescription,
+  ogTitle: () => appConfig.seoTitle,
+  ogUrl: () => appConfig.siteUrl,
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
-  twitterDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
+  twitterDescription: () => appConfig.seoDescription,
   twitterSite: '@favorodera',
-  twitterTitle: 'Favour Emeka | Frontend Engineer',
+  twitterTitle: () => appConfig.seoTitle,
   viewport: 'width=device-width, initial-scale=1',
 })
 
