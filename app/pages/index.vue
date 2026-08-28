@@ -1,6 +1,6 @@
 <template>
   <div class="block-full inline-full">
-    <header />
+    <Header />
 
     <main
       class="

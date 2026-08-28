@@ -3,10 +3,6 @@ import { definePerson } from 'nuxt-schema-org/schema'
 
 const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
-const seoDescription = 'Frontend engineer building fast, quiet interfaces with Vue, Nuxt & TypeScript. Creator of NotForm, and other open-source tools for developers.'
-const seoTitle = 'Favour Emeka | Frontend Engineer · Vue, Nuxt, TypeScript'
-const siteUrl = 'https://favorodera.vercel.app'
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -24,11 +20,6 @@ export default defineNuxtConfig({
       ],
     },
   },
-  appConfig: {
-    seoDescription,
-    seoTitle,
-    siteUrl,
-  },
   colorMode: {
     classSuffix: '',
   },
@@ -39,9 +30,6 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
-  },
-  experimental: {
-    viewTransition: true,
   },
   fonts: {
     families: [
@@ -118,15 +106,15 @@ export default defineNuxtConfig({
         'https://facebook.com/favorodera',
         'https://wa.me/+2348024383756',
       ],
-      url: siteUrl,
+      url: 'https://favorodera.vercel.app',
     }),
   },
   site: {
     defaultLocale: 'en',
-    description: seoDescription,
+    description: 'Frontend engineer building fast, quiet interfaces with Vue, Nuxt & TypeScript. Creator of NotForm, and other open-source tools for developers.',
     indexable: true,
-    name: seoTitle,
-    url: siteUrl,
+    name: 'Favour Emeka | Frontend Engineer',
+    url: 'https://favorodera.vercel.app',
   },
   sitemap: {
     zeroRuntime: true,

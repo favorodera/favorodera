@@ -5,8 +5,8 @@ import profile from '~/data/profile.json'
 <template>
   <div
     class="
-      min-block-full inline-full flex flex-col gap-4 items-center justify-center
-      bg-[#070707] text-[#ffffff] px-24 py-20
+      flex flex-col items-center justify-center gap-4 bg-[#070707] px-24 py-20
+      text-[#ffffff] inline-full min-block-full
     "
   >
     <h1
@@ -22,7 +22,7 @@ import profile from '~/data/profile.json'
       :style="{
         fontFamily: `Bricolage Grotesque', sans-serif`
       }"
-      class="text-4xl uppercase tracking-widest"
+      class="text-4xl tracking-widest uppercase"
     >
       [ {{ profile.role }} ]
     </span>

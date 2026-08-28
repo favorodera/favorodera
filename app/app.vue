@@ -1,20 +1,10 @@
 <script setup lang="ts">
-const appConfig = useAppConfig()
-
 useSeoMeta({
-  charset: 'utf8',
   colorScheme: 'dark light',
-  description: () => appConfig.seoDescription,
   googleSiteVerification: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
-  ogDescription: () => appConfig.seoDescription,
-  ogTitle: () => appConfig.seoTitle,
-  ogUrl: () => appConfig.siteUrl,
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
-  twitterDescription: () => appConfig.seoDescription,
   twitterSite: '@favorodera',
-  twitterTitle: () => appConfig.seoTitle,
-  viewport: 'width=device-width, initial-scale=1',
 })
 
 defineOgImage('Image.takumi')
