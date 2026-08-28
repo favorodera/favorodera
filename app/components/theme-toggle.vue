@@ -98,7 +98,8 @@ const theme = useTheme()
           }"
           as="span"
           class="
-            block text-center font-mono text-xs uppercase will-change-transform
+            block text-center font-mono text-[10px] tracking-[0.18em] uppercase
+            will-change-transform
           "
         >
           {{ theme.label.value }}

@@ -1,0 +1,13 @@
+{
+  "name": "Favour Emeka",
+  "initials": "FE",
+  "displayName": ["Favour", "Emeka"],
+  "roleLine": ["Frontend Engineer", "Vue / Nuxt", "Open to work"],
+  "bio": [
+    "I build fast, quiet interfaces — mostly Vue, Nuxt, and TypeScript, with a bias toward less UI and more clarity.",
+    "Currently shipping open source tooling and design systems for small product teams."
+  ],
+  "portrait": "./portrait.png",
+  "location": "Lagos, Nigeria",
+  "timezone": "Africa/Lagos"
+}

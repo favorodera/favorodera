@@ -8,7 +8,9 @@
 
         sm:px-8
       "
-    />
+    >
+      <Masthead />
+    </main>
 
     <footer />
   </div>

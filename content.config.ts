@@ -1,18 +1,22 @@
 import { defineCollection, defineContentConfig } from '@nuxt/content'
 import { z } from 'zod'
 
-const ProjectSchema = z.object({
-  date: z.string().optional(),
-  description: z.string().min(1, 'Description is required'),
-  image: z.string().optional(),
-  title: z.string().min(1, 'Title is required'),
+const profileSchema = z.object({
+  bio: z.array(z.string()),
+  displayName: z.array(z.string()),
+  initials: z.string(),
+  location: z.string(),
+  name: z.string().min(1),
+  portrait: z.string(),
+  roleLine: z.array(z.string()),
+  timezone: z.string(),
 })
 
 export default defineContentConfig({
   collections: {
-    project: defineCollection({
-      schema: ProjectSchema,
-      source: 'projects/**',
+    profile: defineCollection({
+      schema: profileSchema,
+      source: 'profile.json',
       type: 'data',
     }),
   },
