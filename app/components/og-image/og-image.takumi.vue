@@ -5,7 +5,7 @@ import profile from '#data/profile.json'
 <template>
   <div
     :style="{
-      fontFamily: `'Geist Mono', monospace`,
+      fontFamily: `'Geist', sans-serif`,
     }"
     data-theme="dark"
     class="
@@ -13,10 +13,17 @@ import profile from '#data/profile.json'
       border-border bg-background p-10 text-center block-full inline-full
     "
   >
-    <Icon
-      name="custom:logo"
-      class="shrink-0 text-foreground block-12 inline-12"
-    />
+    <div
+      class="overflow-hidden bg-muted block-24 inline-24"
+    >
+      <NuxtImg
+        :src="profile.portrait"
+        :alt="`Portrait of ${profile.name}`"
+        height="100%"
+        width="100%"
+        class="object-cover grayscale block-full inline-full"
+      />
+    </div>
 
     <div class="text-5xl tracking-tight text-foreground">
       {{ profile.name }}

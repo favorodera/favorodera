@@ -37,6 +37,7 @@
     "@tailwindcss/vite": "^4.3.3",
     "@vercel/analytics": "^2.0.1",
     "eslint": "^10.9.1",
+    "nuxtseo-layer-devtools": "^5.3.14",
     "tailwindcss": "^4.3.3",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.11"
