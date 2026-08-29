@@ -13,7 +13,14 @@ const motion = motionUtils()
 </script>
 
 <template>
-  <div class="flex items-center gap-4">
+  <Motion
+    as="div"
+    class="flex items-center gap-4"
+    :variants="motion.sectionVariants"
+    initial="hidden"
+    while-in-view="visible"
+    :in-view-options="motion.IN_VIEW_OPTIONS"
+  >
     <h2
       :id="props.id"
       class="
@@ -34,7 +41,8 @@ const motion = motionUtils()
       :variants="motion.fadeVariants"
       as="span"
       initial="hidden"
-      animate="visible"
+      while-in-view="visible"
+      :in-view-options="motion.IN_VIEW_OPTIONS"
       class="
         flex-none font-mono text-[10px] tracking-[0.18em] text-muted-foreground
         uppercase
@@ -42,5 +50,5 @@ const motion = motionUtils()
     >
       <slot name="trailing" />
     </Motion>
-  </div>
+  </Motion>
 </template>

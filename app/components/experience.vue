@@ -26,9 +26,10 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
         as="li"
         :layout="true"
         :variants="motion.fadeVariants"
-        initial="hidden"
-        while-in-view="visible"
-        :in-view-options="motion.IN_VIEW_OPTIONS"
+        :initial="index < VISIBLE_EXPERIENCE_COUNT ? 'hidden' : false"
+        :while-in-view="index < VISIBLE_EXPERIENCE_COUNT ? 'visible' : undefined"
+        :in-view-options="index < VISIBLE_EXPERIENCE_COUNT ? motion.IN_VIEW_OPTIONS_LATE : undefined"
+        :animate="index >= VISIBLE_EXPERIENCE_COUNT ? 'visible' : undefined"
         :transition="{
           ...motion.spring,
           delay: index < VISIBLE_EXPERIENCE_COUNT ? 0 : (index - VISIBLE_EXPERIENCE_COUNT) * motion.STAGGER
@@ -94,7 +95,7 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
     :variants="motion.sectionVariants"
     initial="hidden"
     while-in-view="visible"
-    :in-view-options="motion.IN_VIEW_OPTIONS"
+    :in-view-options="motion.IN_VIEW_OPTIONS_EARLY"
     class="
       pbs-24
 
@@ -131,14 +132,16 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
               :animate="open ? 'open' : 'closed'"
               :variants="motion.collapsibleVariants"
               initial="closed"
-              class="divide-y divide-border overflow-hidden"
+              class="divide-y divide-border"
             >
-              <ReuseExperienceItem
-                v-for="item, index in remainingExperience"
-                :key="item.id"
-                :item="item"
-                :index="visibleExperience.length + index"
-              />
+              <AnimatePresence mode="popLayout">
+                <ReuseExperienceItem
+                  v-for="item, index in remainingExperience"
+                  :key="item.id"
+                  :item="item"
+                  :index="visibleExperience.length + index"
+                />
+              </AnimatePresence>
             </Motion>
           </CollapsibleContent>
         </li>
@@ -149,7 +152,7 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
         :variants="motion.fadeVariants"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="motion.IN_VIEW_OPTIONS"
+        :in-view-options="motion.IN_VIEW_OPTIONS_LATE"
         :transition="motion.ease"
         class="flex items-center justify-between pbs-4"
       >

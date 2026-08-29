@@ -7,12 +7,8 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
 </script>
 
 <template>
-  <Motion
+  <section
     aria-labelledby="name"
-    as="section"
-    initial="hidden"
-    animate="visible"
-    :variants="motion.sectionVariants"
     class="
       pbs-16
 
@@ -28,9 +24,13 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
     >
       <Motion
         as-child
-        :variants="motion.frameVariants"
+        :variants="{
+          hidden: { clipPath: 'inset(100% 100% 0% 0%)' },
+          visible: { clipPath: 'inset(0% 0% 0% 0%)', transition: motion.ease },
+        }"
         initial="hidden"
-        animate="visible"
+        while-in-view="visible"
+        :in-view-options="{ once: true }"
         class="
           relative flex-none overflow-hidden bg-muted block-22 inline-18
 
@@ -64,21 +64,52 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           sm:text-[3.75rem]
         "
       >
-        <MotionMaskLine>
-          {{ profile.displayName[0] }}
-        </MotionMaskLine>
+        <Motion
+          as="span"
+          class="block overflow-hidden"
+          initial="hidden"
+          while-in-view="visible"
+          :in-view-options="{ once: true }"
+          :variants="{ hidden: {}, visible: {} }"
+        >
+          <Motion
+            as="span"
+            class="block"
+            :variants="{
+              hidden: { x: '-115%' },
+              visible: { x: '0%', transition: motion.ease },
+            }"
+          >
+            {{ profile.displayName[0] }}
+          </Motion>
+        </Motion>
 
-        <MotionMaskLine class="text-muted-foreground">
-          {{ profile.displayName.slice(1).join(' ') }}
-        </MotionMaskLine>
+        <Motion
+          as="span"
+          class="block overflow-hidden"
+          initial="hidden"
+          while-in-view="visible"
+          :in-view-options="{ once: true }"
+          :variants="{ hidden: {}, visible: {} }"
+        >
+          <Motion
+            as="span"
+            class="block text-muted-foreground"
+            :variants="{
+              hidden: { x: '-115%' },
+              visible: {
+                x: '0%',
+                transition: { ...motion.ease, delay: motion.STAGGER },
+              },
+            }"
+          >
+            {{ profile.displayName.slice(1).join(' ') }}
+          </Motion>
+        </Motion>
       </h1>
     </div>
 
-    <Motion
-      as="p"
-      :variants="motion.rowVariants"
-      initial="hidden"
-      animate="visible"
+    <p
       class="
         mbs-7 flex flex-col items-start gap-x-2 gap-y-1 font-mono text-[10px]
         tracking-[0.18em] text-muted-foreground uppercase
@@ -86,9 +117,21 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         sm:flex-row sm:items-center
       "
     >
-      <span
+      <Motion
         v-for="(item, index) in profile.roleLine"
         :key="item"
+        as="span"
+        :variants="{
+          hidden: { opacity: 0, y: 6 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { ...motion.ease, delay: index * motion.STAGGER },
+          },
+        }"
+        initial="hidden"
+        while-in-view="visible"
+        :in-view-options="{ once: true }"
         class="flex items-center gap-2"
       >
         <span
@@ -96,8 +139,8 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           class="max-sm:hidden"
         >|</span>
         {{ item }}
-      </span>
-    </Motion>
+      </Motion>
+    </p>
 
     <div
       class="
@@ -108,22 +151,34 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
     >
       <Motion
         as="p"
-        :variants="motion.rowVariants"
         initial="hidden"
-        animate="visible"
+        while-in-view="visible"
+        :in-view-options="{ once: true }"
+        :variants="{
+          hidden: { opacity: 0, y: 6 },
+          visible: { opacity: 1, y: 0, transition: motion.ease },
+        }"
       >
         {{ profile.bio[0] }}
       </Motion>
 
       <Motion
         as="p"
-        :variants="motion.rowVariants"
         initial="hidden"
-        animate="visible"
+        while-in-view="visible"
+        :in-view-options="{ once: true }"
+        :variants="{
+          hidden: { opacity: 0, y: 6 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { ...motion.ease, delay: motion.STAGGER },
+          },
+        }"
         class="text-muted-foreground"
       >
         {{ profile.bio[1] }}
       </Motion>
     </div>
-  </Motion>
+  </section>
 </template>

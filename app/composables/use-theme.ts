@@ -12,6 +12,7 @@ function prefersReducedMotion() {
  */
 export default function useTheme() {
   const colorMode = useColorMode()
+  const motion = motionUtils()
 
   const ariaLabel = computed(() => (
     colorMode.value === 'dark'
@@ -62,8 +63,8 @@ export default function useTheme() {
           ],
         },
         {
-          duration: 620,
-          easing: 'cubic-bezier(0.22, 1, 0.36, 1)',
+          duration: motion.DURATION * 1000,
+          easing: `cubic-bezier(${motion.EASE.join(', ')})`,
           pseudoElement: '::view-transition-new(root)',
         },
       )
