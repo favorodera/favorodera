@@ -30,7 +30,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         }"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true }"
+        :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
         class="
           relative flex-none overflow-hidden bg-muted block-22 inline-18
 
@@ -69,7 +69,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           class="block overflow-hidden"
           initial="hidden"
           while-in-view="visible"
-          :in-view-options="{ once: true }"
+          :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
           :variants="{ hidden: {}, visible: {} }"
         >
           <Motion
@@ -89,7 +89,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           class="block overflow-hidden"
           initial="hidden"
           while-in-view="visible"
-          :in-view-options="{ once: true }"
+          :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
           :variants="{ hidden: {}, visible: {} }"
         >
           <Motion
@@ -131,7 +131,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         }"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true }"
+        :in-view-options="{ once: true, margin: '-20px 0px -20px 0px' }"
         class="flex items-center gap-2"
       >
         <span
@@ -153,7 +153,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         as="p"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true }"
+        :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
         :variants="{
           hidden: { opacity: 0, y: 6 },
           visible: { opacity: 1, y: 0, transition: motion.ease },
@@ -166,7 +166,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         as="p"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true }"
+        :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
         :variants="{
           hidden: { opacity: 0, y: 6 },
           visible: {

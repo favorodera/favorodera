@@ -26,7 +26,7 @@ const motion = motionUtils()
     }"
     initial="hidden"
     while-in-view="visible"
-    :in-view-options="{ once: true, margin: '-20px 0px 0px 0px' }"
+    :in-view-options="{ once: true, margin: '-10px 0px -10px 0px' }"
   >
     <h2
       :id="props.id"
