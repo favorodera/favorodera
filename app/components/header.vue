@@ -14,9 +14,9 @@
         sm:px-8
       "
     >
-    <ColorScheme>
-      <ThemeToggle />
-    </ColorScheme>
+      <ColorScheme>
+        <ThemeToggle />
+      </ColorScheme>
     </div>
   </header>
 </template>

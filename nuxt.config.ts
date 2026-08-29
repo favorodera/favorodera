@@ -1,13 +1,13 @@
 import tailwindcss from '@tailwindcss/vite'
-import { definePerson } from 'nuxt-schema-org/schema'
 import { fileURLToPath } from 'node:url'
+import { definePerson } from 'nuxt-schema-org/schema'
 
 const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
-    '#data': fileURLToPath(new URL('./data', import.meta.url)),
+    '#data': fileURLToPath(new URL('data', import.meta.url)),
   },
   app: {
     head: {
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       link: [
-        { href: '/favicon.ico', rel: 'icon', type:'image/x-icon' },
+        { href: '/favicon.ico', rel: 'icon', type: 'image/x-icon' },
         { href: '/icon-32x32.png', rel: 'icon', sizes: '32x32', type: 'image/png' },
         { href: '/icon-192x192.png', rel: 'icon', sizes: '192x192', type: 'image/png' },
         { href: '/icon-512x512.png', rel: 'icon', sizes: '512x512', type: 'image/png' },
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   css: ['~/assets/css/index.css'],
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   eslint: {
     config: {
       standalone: false,

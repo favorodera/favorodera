@@ -1,30 +1,29 @@
 <script setup lang="ts">
-import profile from '~/data/profile.json'
+import profile from '#data/profile.json'
 </script>
 
 <template>
   <div
+    :style="{
+      fontFamily: `'Geist Mono', monospace`,
+    }"
+    data-theme="dark"
     class="
-      flex flex-col items-center justify-center gap-4 bg-[#070707] px-24 py-20
-      text-[#ffffff] inline-full min-block-full
+      relative flex flex-col items-center justify-center gap-2 border
+      border-border bg-background p-10 text-center block-full inline-full
     "
   >
-    <h1
-      :style="{
-        fontFamily: `Instrument Serif', serif`
-      }"
-      class="font-serif text-9xl leading-none"
-    >
-      {{ profile.name }}
-    </h1>
+    <Icon
+      name="custom:logo"
+      class="shrink-0 text-foreground block-12 inline-12"
+    />
 
-    <span
-      :style="{
-        fontFamily: `Bricolage Grotesque', sans-serif`
-      }"
-      class="text-4xl tracking-widest uppercase"
-    >
-      [ {{ profile.role }} ]
-    </span>
+    <div class="text-5xl tracking-tight text-foreground">
+      {{ profile.name }}
+    </div>
+
+    <div class="text-3xl tracking-wide text-muted-foreground">
+      {{ profile.roleLine[0] }}
+    </div>
   </div>
 </template>
