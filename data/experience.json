@@ -1,0 +1,50 @@
+[
+  {
+    "id": "freelance",
+    "from": "2024",
+    "to": "Present",
+    "role": "Frontend Engineer",
+    "company": "Freelance",
+    "note": "Nuxt applications and design systems for early-stage product teams, from first commit to production."
+  },
+  {
+    "id": "oss",
+    "from": "2023",
+    "to": "Present",
+    "role": "Maintainer",
+    "company": "Open Source",
+    "note": "Nuxt modules and Vue composables used across side projects and small studios."
+  },
+  {
+    "id": "flutterwave-internship",
+    "from": "2025",
+    "to": "Present",
+    "role": "Frontend Engineer",
+    "company": "Flutterwave",
+    "note": "An internship at Flutterwave focused on building and shipping features for Flutterwave's payment products."
+  },
+  {
+    "id": "flutterwave-fulltime",
+    "from": "2025",
+    "to": "Present",
+    "role": "Frontend Engineer",
+    "company": "Flutterwave",
+    "note": "A fulltime role at Flutterwave focused on building and shipping features for Flutterwave's payment products."
+  },
+  {
+    "id": "flutterwave-fulltim",
+    "from": "2025",
+    "to": "Present",
+    "role": "Frontend Engineer",
+    "company": "Flutterwave",
+    "note": "A fulltime role at Flutterwave focused on building and shipping features for Flutterwave's payment products."
+  },
+  {
+    "id": "fluterwave-fulltime",
+    "from": "2025",
+    "to": "Present",
+    "role": "Frontend Engineer",
+    "company": "Flutterwave",
+    "note": "A fulltime role at Flutterwave focused on building and shipping features for Flutterwave's payment products."
+  }
+]

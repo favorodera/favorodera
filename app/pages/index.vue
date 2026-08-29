@@ -9,7 +9,8 @@
         sm:px-8
       "
     >
-      <Masthead />
+      <Hero />
+      <Experience />
     </main>
 
     <footer />

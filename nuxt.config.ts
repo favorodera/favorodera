@@ -1,10 +1,14 @@
 import tailwindcss from '@tailwindcss/vite'
 import { definePerson } from 'nuxt-schema-org/schema'
+import { fileURLToPath } from 'node:url'
 
 const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  alias: {
+    '#data': fileURLToPath(new URL('./data', import.meta.url)),
+  },
   app: {
     head: {
       htmlAttrs: {
@@ -46,7 +50,6 @@ export default defineNuxtConfig({
     ],
   },
   modules: [
-    '@nuxt/content',
     '@nuxtjs/color-mode',
     'reka-ui/nuxt',
     '@nuxt/icon',

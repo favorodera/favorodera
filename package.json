@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@iconify-json/tabler": "^1.2.38",
-    "@nuxt/content": "^3.15.2",
     "@nuxt/fonts": "^0.14.0",
     "@nuxt/icon": "^2.5.1",
     "@nuxt/image": "^2.1.0",
@@ -30,8 +29,7 @@
     "nuxt-schema-org": "^6.3.1",
     "reka-ui": "^2.10.4",
     "vue": "^3.5.41",
-    "vue-router": "^5.2.0",
-    "zod": "^4.4.3"
+    "vue-router": "^5.2.0"
   },
   "devDependencies": {
     "@favorodera/eslint-config": "^1.1.2",

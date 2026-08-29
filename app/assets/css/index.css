@@ -86,6 +86,8 @@
 
   --font-sans: 'Geist', sans-serif;
   --font-mono: 'Geist Mono', monospace;
+
+  --breakpoint-xs: 30rem;
 }
 
 @layer base {
