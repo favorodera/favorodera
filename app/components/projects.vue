@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { createReusableTemplate } from '@vueuse/core'
-import experience from '#data/experience.json'
+import projects from '#data/projects.json'
 
-const VISIBLE_EXPERIENCE_COUNT = 3
+const VISIBLE_PROJECTS_COUNT = 3
 const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 
 const motion = motionUtils()
 
-const visibleExperience = computed(() => experience.slice(0, VISIBLE_EXPERIENCE_COUNT))
-const remainingExperience = computed(() => experience.slice(VISIBLE_EXPERIENCE_COUNT))
+const visibleProjects = computed(() => projects.slice(0, VISIBLE_PROJECTS_COUNT))
+const remainingProjects = computed(() => projects.slice(VISIBLE_PROJECTS_COUNT))
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -22,17 +22,17 @@ const itemVariants = {
   }),
 }
 
-const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
+const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
   index: number
   isLast: boolean
-  item: typeof experience[number]
+  item: typeof projects[number]
 }>({
   inheritAttrs: false,
 })
 </script>
 
 <template>
-  <DefineExperienceItem v-slot="{ item, index, isLast }">
+  <DefineProjectsItem v-slot="{ item, index, isLast }">
     <Motion
       :key="item.id"
       as="li"
@@ -42,58 +42,63 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
       while-in-view="visible"
       :in-view-options
       :index
-      class="
-        py-5
-
-        sm:grid sm:grid-cols-[6.5rem_1fr] sm:items-start sm:gap-x-6
-      "
-      :class="{
-        'border-be border-border':!isLast ,
-      }"
     >
-      <p
+      <NuxtLink
         class="
-          flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em]
-          text-muted-foreground uppercase
+          group block py-5 outline-none
 
-          sm:pbs-1
+          focus-visible:ring-1 focus-visible:ring-ring
         "
+        :class="{
+          'border-be border-border':!isLast ,
+        }"
+        :to="item.url"
+        target="_blank"
+        rel="noopener noreferrer"
+        external
       >
-        {{ item.from }} - {{ item.to }}
-      </p>
+        <div class="flex items-baseline justify-between gap-4">
+          <h3
+            class="
+              text-[0.95rem] leading-snug transition-transform
 
-      <div
-        class="
-          mbs-2
+              group-hover:translate-x-1
 
-          sm:mbs-0
-        "
-      >
-        <h3
-          class="
-            text-[0.95rem] leading-snug
+              sm:text-base
+            "
+            :style="motion.easeCSS"
+          >
+            {{ item.title }}
+          </h3>
 
-            sm:text-base
-          "
-        >
-          {{ item.role }}
-        </h3>
+          <Icon
+            name="tabler:arrow-up-right"
+            class="
+              flex-none text-muted-foreground opacity-0
+              transition-[translate,opacity] block-3.5 inline-3.5
+
+              group-hover:translate-x-0.5 group-hover:opacity-100
+
+              group-focus-visible:opacity-100
+            "
+            :style="motion.easeCSS"
+          />
+        </div>
 
         <p
           class="
-            mbs-1.5 font-mono text-[10px] tracking-[0.14em]
-            text-muted-foreground uppercase
-          "
-        >
-          {{ item.company }}
-        </p>
+            mbs-1.5 text-sm/relaxed text-muted-foreground transition-transform
+            max-inline-[52ch]
 
-        <p class="mbs-3 text-sm/relaxed text-muted-foreground max-inline-[54ch]">
-          {{ item.note }}
+            group-hover:translate-x-1
+          "
+          :style="motion.easeCSS"
+        >
+          {{ item.description }}
         </p>
-      </div>
+      </NuxtLink>
     </Motion>
-  </DefineExperienceItem>
+  </DefineProjectsItem>
 
   <section
     aria-labelledby="experience-heading"
@@ -109,7 +114,7 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
       title="Experience"
     >
       <template #trailing>
-        {{ String(experience.length).padStart(2, '0') }}
+        {{ String(projects.length).padStart(2, '0') }}
       </template>
     </SectionHeading>
 
@@ -119,12 +124,12 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
     >
       <ul>
         <!-- Always visible -->
-        <ReuseExperienceItem
-          v-for="item, index in visibleExperience"
+        <ReuseProjectsItem
+          v-for="item, index in visibleProjects"
           :key="item.id"
           :item="item"
           :index="index"
-          :is-last="index === visibleExperience.length - 1"
+          :is-last="index === visibleProjects.length - 1"
         />
 
         <!-- Collapsible remainder -->
@@ -143,12 +148,12 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
               initial="closed"
               class="overflow-hidden"
             >
-              <ReuseExperienceItem
-                v-for="item, index in remainingExperience"
+              <ReuseProjectsItem
+                v-for="item, index in remainingProjects"
                 :key="item.id"
                 :item="item"
-                :index="visibleExperience.length + index"
-                :is-last="index === remainingExperience.length - 1"
+                :index="visibleProjects.length + index"
+                :is-last="index === remainingProjects.length - 1"
               />
             </Motion>
           </CollapsibleContent>
@@ -156,7 +161,7 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
       </ul>
 
       <Motion
-        v-if="remainingExperience.length > 0"
+        v-if="remainingProjects.length > 0"
         as="div"
         initial="hidden"
         while-in-view="visible"

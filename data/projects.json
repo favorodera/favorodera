@@ -1,0 +1,76 @@
+[
+  {
+    "id": "nuxt-seo-kit",
+    "title": "nuxt-meta-kit",
+    "description": "Zero-config Nuxt module for metadata, sitemaps and social cards, generated at build time.",
+    "tags": [
+      "Nuxt",
+      "Open source",
+      "TypeScript"
+    ],
+    "url": "https://github.com/favorodera"
+  },
+  {
+    "id": "vue-primitives",
+    "title": "vue-primitives",
+    "description": "Unstyled, accessible Vue 3 building blocks — dialogs, popovers, comboboxes — under 8kb.",
+    "tags": [
+      "Vue",
+      "Open source",
+      "TypeScript"
+    ],
+    "url": "https://github.com/favorodera"
+  },
+  {
+    "id": "composed",
+    "title": "composed",
+    "description": "A small library of typed Vue composables for state, storage, media queries and async work.",
+    "tags": [
+      "Vue",
+      "TypeScript",
+      "Open source"
+    ],
+    "url": "https://github.com/favorodera"
+  },
+  {
+    "id": "ledger",
+    "title": "Ledger",
+    "description": "Nuxt content-driven writing site with local-first drafts and instant search.",
+    "tags": [
+      "Nuxt",
+      "Vue"
+    ],
+    "url": "https://github.com/favorodera"
+  },
+  {
+    "id": "stack",
+    "title": "stack-cli",
+    "description": "Scaffolds an opinionated Nuxt project — linting, testing and CI wired on the first run.",
+    "tags": [
+      "Tooling",
+      "TypeScript",
+      "Open source"
+    ],
+    "url": "https://github.com/favorodera"
+  },
+  {
+    "id": "tokens",
+    "title": "tokens-bridge",
+    "description": "Turns design tokens into typed Tailwind and CSS variable output in one command.",
+    "tags": [
+      "Tooling",
+      "TypeScript"
+    ],
+    "url": "https://github.com/favorodera"
+  },
+  {
+    "id": "atlas",
+    "title": "Atlas Dashboard",
+    "description": "Analytics dashboard in Nuxt with streamed server data and offline-tolerant charts.",
+    "tags": [
+      "Nuxt",
+      "TypeScript"
+    ],
+    "url": "https://github.com/favorodera"
+  }
+]

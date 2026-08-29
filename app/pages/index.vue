@@ -11,6 +11,7 @@
     >
       <Hero />
       <Experience />
+      <Projects />
     </main>
 
     <footer />

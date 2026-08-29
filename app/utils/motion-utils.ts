@@ -1,4 +1,5 @@
 import type { Transition } from 'motion-v'
+import type { CSSProperties } from 'vue'
 
 /**
  * Core motion utilities with global timing constants and easing functions.
@@ -36,6 +37,12 @@ export default function motionUtils() {
   const DURATION = 0.6
 
   /**
+   * Standard duration for ease-based animations in milliseconds.
+   * Used as the base timing for most transitions to ensure consistency.
+   */
+  const DURATION_MS = DURATION * 1000
+
+  /**
    * Stagger interval between animated children in seconds.
    * Creates a cascading effect when multiple elements animate in sequence.
    */
@@ -47,6 +54,16 @@ export default function motionUtils() {
    * controlled motion is desired.
    */
   const ease: Transition = { duration: DURATION, ease: EASE }
+
+  /**
+   * CSS properties for ease-based animations.
+   * Use this for most fade, slide, and scale animations where a smooth
+   * controlled motion is desired.
+   */
+  const easeCSS: Pick<CSSProperties, 'transitionDuration' | 'transitionTimingFunction'> = {
+    transitionDuration: `${DURATION * 1000}ms`,
+    transitionTimingFunction: `cubic-bezier(${EASE.join(', ')})`,
+  }
 
   /**
    * Spring transition with bouncy, natural physics.
@@ -69,11 +86,13 @@ export default function motionUtils() {
   return {
     // Constants
     DURATION,
+    DURATION_MS,
     EASE,
     STAGGER,
 
     // Transitions
     ease,
+    easeCSS,
     spring,
   }
 }
