@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import profile from '#data/profile.json'
 
+const inViewOptions = { margin: '-20px 0px -20px 0px', once: true } as const
+
 const motion = motionUtils()
 
 const nuxtImageComponent = resolveComponent('NuxtImg')
@@ -30,7 +32,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         }"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
+        :in-view-options
         class="
           relative flex-none overflow-hidden bg-muted block-22 inline-18
 
@@ -69,7 +71,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           class="block overflow-hidden"
           initial="hidden"
           while-in-view="visible"
-          :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
+          :in-view-options
           :variants="{ hidden: {}, visible: {} }"
         >
           <Motion
@@ -89,7 +91,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           class="block overflow-hidden"
           initial="hidden"
           while-in-view="visible"
-          :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
+          :in-view-options
           :variants="{ hidden: {}, visible: {} }"
         >
           <Motion
@@ -131,7 +133,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         }"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true, margin: '-20px 0px -20px 0px' }"
+        :in-view-options
         class="flex items-center gap-2"
       >
         <span
@@ -153,7 +155,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         as="p"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
+        :in-view-options
         :variants="{
           hidden: { opacity: 0, y: 6 },
           visible: { opacity: 1, y: 0, transition: motion.ease },
@@ -166,14 +168,10 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         as="p"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="{ once: true,margin: '-20px 0px -20px 0px' }"
+        :in-view-options
         :variants="{
           hidden: { opacity: 0, y: 6 },
-          visible: {
-            opacity: 1,
-            y: 0,
-            transition: { ...motion.ease, delay: motion.STAGGER },
-          },
+          visible: {opacity: 1,y: 0,transition: { ...motion.ease, delay: motion.STAGGER },},
         }"
         class="text-muted-foreground"
       >

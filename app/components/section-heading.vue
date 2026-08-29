@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { stagger } from 'motion-v'
+import { Motion, stagger } from 'motion-v'
 
 const slots = defineSlots<{
   trailing: () => void
@@ -28,6 +28,7 @@ const motion = motionUtils()
     while-in-view="visible"
     :in-view-options="{ once: true, margin: '-10px 0px -10px 0px' }"
   >
+    <!-- Left Hand: Index & Title -->
     <h2
       :id="props.id"
       class="
@@ -35,9 +36,7 @@ const motion = motionUtils()
         uppercase
       "
     >
-      <span
-        class="block overflow-hidden"
-      >
+      <span class="block overflow-hidden">
         <Motion
           as="span"
           class="block"
@@ -52,6 +51,7 @@ const motion = motionUtils()
       </span>
     </h2>
 
+    <!-- Center Line Layout Divider -->
     <Motion
       as="div"
       aria-hidden="true"
@@ -62,19 +62,24 @@ const motion = motionUtils()
       }"
     />
 
-    <Motion
+    <!-- Right Hand Side: Animated Trailing Slot Content -->
+    <span
       v-if="slots.trailing"
-      as="span"
-      :variants="{
-        hidden: { y: '115%' },
-        visible: { y: '0%', transition: motion.ease },
-      }"
-      class="
-        flex-none font-mono text-[10px] tracking-[0.18em] text-muted-foreground
-        uppercase
-      "
+      class="block overflow-hidden"
     >
-      <slot name="trailing" />
-    </Motion>
+      <Motion
+        as="span"
+        class="
+          block flex-none font-mono text-[10px] tracking-[0.18em]
+          text-muted-foreground uppercase
+        "
+        :variants="{
+          hidden: { y: '115%' },
+          visible: { y: '0%', transition: motion.ease },
+        }"
+      >
+        <slot name="trailing" />
+      </Motion>
+    </span>
   </Motion>
 </template>

@@ -3,15 +3,28 @@ import { createReusableTemplate } from '@vueuse/core'
 import experience from '#data/experience.json'
 
 const VISIBLE_EXPERIENCE_COUNT = 3
+const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 
 const motion = motionUtils()
 
 const visibleExperience = computed(() => experience.slice(0, VISIBLE_EXPERIENCE_COUNT))
-
 const remainingExperience = computed(() => experience.slice(VISIBLE_EXPERIENCE_COUNT))
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 16 },
+  visible: (index: number) => ({
+    opacity: 1,
+    transition: {
+      ...motion.spring,
+      delay: index * motion.STAGGER,
+    },
+    y: 0,
+  }),
+}
 
 const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
   index: number
+  isLast: boolean
   item: typeof experience[number]
 }>({
   inheritAttrs: false,
@@ -19,83 +32,71 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
 </script>
 
 <template>
-  <DefineExperienceItem v-slot="{ item, index }">
-    <AnimatePresence mode="popLayout">
-      <Motion
-        :key="item.id"
-        as="li"
-        :layout="true"
-        :variants="motion.fadeVariants"
-        :initial="index < VISIBLE_EXPERIENCE_COUNT ? 'hidden' : false"
-        :while-in-view="index < VISIBLE_EXPERIENCE_COUNT ? 'visible' : undefined"
-        :in-view-options="index < VISIBLE_EXPERIENCE_COUNT ? motion.IN_VIEW_OPTIONS_LATE : undefined"
-        :animate="index >= VISIBLE_EXPERIENCE_COUNT ? 'visible' : undefined"
-        :transition="{
-          ...motion.spring,
-          delay: index < VISIBLE_EXPERIENCE_COUNT ? 0 : (index - VISIBLE_EXPERIENCE_COUNT) * motion.STAGGER
-        }"
-        class="
-          py-5
+  <DefineExperienceItem v-slot="{ item, index, isLast }">
+    <Motion
+      :key="item.id"
+      as="li"
+      :layout="true"
+      :variants="itemVariants"
+      initial="hidden"
+      while-in-view="visible"
+      :in-view-options
+      :index
+      class="
+        py-5
 
-          sm:grid sm:grid-cols-[6.5rem_1fr] sm:items-start sm:gap-x-6
+        sm:grid sm:grid-cols-[6.5rem_1fr] sm:items-start sm:gap-x-6
+      "
+      :class="{
+        'border-be border-border':!isLast ,
+      }"
+    >
+      <p
+        class="
+          flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em]
+          text-muted-foreground uppercase
+
+          sm:pbs-1
         "
       >
+        {{ item.from }} - {{ item.to }}
+      </p>
+
+      <div
+        class="
+          mbs-2
+
+          sm:mbs-0
+        "
+      >
+        <h3
+          class="
+            text-[0.95rem] leading-snug
+
+            sm:text-base
+          "
+        >
+          {{ item.role }}
+        </h3>
+
         <p
           class="
-            flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em]
+            mbs-1.5 font-mono text-[10px] tracking-[0.14em]
             text-muted-foreground uppercase
-
-            sm:pbs-1
           "
         >
-          {{ item.from }} - {{ item.to }}
+          {{ item.company }}
         </p>
 
-        <div
-          class="
-            mbs-2
-
-            sm:mbs-0
-          "
-        >
-          <h3
-            class="
-              text-[0.95rem] leading-snug
-
-              sm:text-base
-            "
-          >
-            {{ item.role }}
-          </h3>
-
-          <p
-            class="
-              mbs-1.5 font-mono text-[10px] tracking-[0.14em]
-              text-muted-foreground uppercase
-            "
-          >
-            {{ item.company }}
-          </p>
-
-          <p
-            class="
-              mbs-3 text-sm/relaxed text-muted-foreground max-inline-[54ch]
-            "
-          >
-            {{ item.note }}
-          </p>
-        </div>
-      </Motion>
-    </AnimatePresence>
+        <p class="mbs-3 text-sm/relaxed text-muted-foreground max-inline-[54ch]">
+          {{ item.note }}
+        </p>
+      </div>
+    </Motion>
   </DefineExperienceItem>
 
-  <Motion
-    as="section"
+  <section
     aria-labelledby="experience-heading"
-    :variants="motion.sectionVariants"
-    initial="hidden"
-    while-in-view="visible"
-    :in-view-options="motion.IN_VIEW_OPTIONS_EARLY"
     class="
       pbs-24
 
@@ -106,19 +107,24 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
       id="experience-heading"
       index="01"
       title="Experience"
-    />
+    >
+      <template #trailing>
+        {{ String(experience.length).padStart(2, '0') }}
+      </template>
+    </SectionHeading>
 
     <CollapsibleRoot
       v-slot="{ open }"
       class="mbs-5"
     >
-      <ul class="divide-y divide-border">
+      <ul>
         <!-- Always visible -->
         <ReuseExperienceItem
           v-for="item, index in visibleExperience"
           :key="item.id"
           :item="item"
           :index="index"
+          :is-last="index === visibleExperience.length - 1"
         />
 
         <!-- Collapsible remainder -->
@@ -130,18 +136,20 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
             <Motion
               as="ul"
               :animate="open ? 'open' : 'closed'"
-              :variants="motion.collapsibleVariants"
+              :variants="{
+                open: { height: 'auto', opacity: 1, transition: motion.ease },
+                closed: { height: 0, opacity: 0, transition: motion.ease },
+              }"
               initial="closed"
-              class="divide-y divide-border"
+              class="overflow-hidden"
             >
-              <AnimatePresence mode="popLayout">
-                <ReuseExperienceItem
-                  v-for="item, index in remainingExperience"
-                  :key="item.id"
-                  :item="item"
-                  :index="visibleExperience.length + index"
-                />
-              </AnimatePresence>
+              <ReuseExperienceItem
+                v-for="item, index in remainingExperience"
+                :key="item.id"
+                :item="item"
+                :index="visibleExperience.length + index"
+                :is-last="index === remainingExperience.length - 1"
+              />
             </Motion>
           </CollapsibleContent>
         </li>
@@ -149,39 +157,33 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
 
       <Motion
         v-if="remainingExperience.length > 0"
-        :variants="motion.fadeVariants"
+        as="div"
         initial="hidden"
         while-in-view="visible"
-        :in-view-options="motion.IN_VIEW_OPTIONS_LATE"
-        :transition="motion.ease"
-        class="flex items-center justify-between pbs-4"
+        :in-view-options
+        :variants="itemVariants"
+        :transition="motion.spring"
+        class="flex items-center justify-end border-bs border-border pbs-4"
       >
-        <span
-          aria-hidden="true"
-          class="
-            font-mono text-[10px] tracking-[0.18em] text-muted-foreground
-            uppercase
-          "
-        >
-          {{ String(experience.length).padStart(2, '0') }}
-        </span>
-
         <CollapsibleTrigger as-child>
           <button
             class="
-              border-be border-transparent pbe-0.5 font-mono text-[10px]
-              tracking-[0.18em] text-muted-foreground uppercase
-              transition-colors outline-none
+              p-0.5 font-mono text-[10px] tracking-[0.18em]
+              text-muted-foreground uppercase transition-colors outline-none
 
-              hover:border-foreground hover:text-foreground
+              hover:text-foreground
 
               focus-visible:ring-1 focus-visible:ring-ring
             "
+            :style="{
+              transitionDuration: `${motion.DURATION * 1000}ms`,
+              transitionTimingFunction: `cubic-bezier(${motion.EASE.join(', ')})`,
+            }"
           >
             See {{ open ? 'less' : `all` }}
           </button>
         </CollapsibleTrigger>
       </Motion>
     </CollapsibleRoot>
-  </Motion>
+  </section>
 </template>
