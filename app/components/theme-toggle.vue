@@ -109,31 +109,29 @@ async function toggleTheme(event: PointerEvent) {
 </template>
 
 <style lang="css">
-/* Reset default browser view-transition animations on the root element
-   so Nuxt's route transitions don't interfere with our theme reveal */
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
-}
+  /* Reset default browser view-transition animations on the root element */
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
 
-/* Keep the outgoing (old) snapshot behind the incoming one */
-::view-transition-old(root) {
-  z-index: 1;
-}
+  /* Keep the outgoing (old) snapshot behind the incoming one */
+  ::view-transition-old(root) {
+    z-index: 1;
+  }
 
-/* Bring the incoming (new) snapshot to the front so the
-   clip-path circle expands to reveal it over the old snapshot */
-::view-transition-new(root) {
-  z-index: 999;
-}
+  /* Bring the incoming (new) snapshot to the front so the clip-path circle expands to reveal it over the old snapshot */
+  ::view-transition-new(root) {
+    z-index: 999;
+  }
 
-/* Crossfade fallback — used when:
-   - The browser doesn't support View Transitions API
-   - The user prefers reduced motion (handled in JS before startViewTransition is called) */
-.theme-crossfade,
-.theme-crossfade * {
-  transition: background-color v-bind(transitionDuration) v-bind(transitionTimingFunction), color v-bind(transitionDuration) v-bind(transitionTimingFunction),
-    border-color v-bind(transitionDuration) v-bind(transitionTimingFunction), fill v-bind(transitionDuration) v-bind(transitionTimingFunction);
-}
+  /* Crossfade fallback when the browser doesn't support View Transitions API or the user prefers reduced motion (handled in JS before startViewTransition is called) */
+  .theme-crossfade,
+  .theme-crossfade * {
+    transition: background-color v-bind(transitionDuration) v-bind(transitionTimingFunction),
+      color v-bind(transitionDuration) v-bind(transitionTimingFunction),
+      border-color v-bind(transitionDuration) v-bind(transitionTimingFunction),
+      fill v-bind(transitionDuration) v-bind(transitionTimingFunction);
+  }
 </style>
