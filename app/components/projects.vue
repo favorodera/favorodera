@@ -147,7 +147,7 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
       title="Work"
     >
       <template #trailing>
-        {{ String(projects.length).padStart(2, '0') }}
+        {{ String(visibleProjects.length + remainingProjects.length).padStart(2, '0') }}
       </template>
     </SectionHeading>
 
