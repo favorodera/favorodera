@@ -20,8 +20,8 @@ export default function useTheme() {
       : 'Switch to dark theme'
   ))
 
-  const label = computed(() => (
-    colorMode.value === 'dark' ? 'Dark' : 'Light'
+  const value = computed(() => (
+    colorMode.value === 'dark' ? 'dark' : 'light'
   ))
 
   /**
@@ -75,7 +75,7 @@ export default function useTheme() {
 
   return {
     ariaLabel,
-    label,
     toggle,
+    value,
   }
 }
