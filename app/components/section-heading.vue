@@ -39,7 +39,7 @@ const motion = motionUtils()
       <span class="block overflow-hidden">
         <Motion
           as="span"
-          class="block"
+          class="block tabular-nums"
           :variants="{
             hidden: { y: '115%' },
             visible: { y: '0%', transition: motion.ease },
@@ -71,7 +71,7 @@ const motion = motionUtils()
         as="span"
         class="
           block flex-none font-mono text-[10px] tracking-[0.18em]
-          text-muted-foreground uppercase
+          text-muted-foreground uppercase tabular-nums
         "
         :variants="{
           hidden: { y: '115%' },

@@ -1,76 +1,51 @@
 [
   {
-    "id": "nuxt-seo-kit",
-    "title": "nuxt-meta-kit",
-    "description": "Zero-config Nuxt module for metadata, sitemaps and social cards, generated at build time.",
+    "id": "notform",
+    "title": "NotForm",
+    "description": "Type-safe form validation and state management for Vue and Nuxt with minimal boilerplate",
     "tags": [
-      "Nuxt",
-      "Open source",
-      "TypeScript"
-    ],
-    "url": "https://github.com/favorodera"
-  },
-  {
-    "id": "vue-primitives",
-    "title": "vue-primitives",
-    "description": "Unstyled, accessible Vue 3 building blocks — dialogs, popovers, comboboxes — under 8kb.",
-    "tags": [
-      "Vue",
-      "Open source",
-      "TypeScript"
-    ],
-    "url": "https://github.com/favorodera"
-  },
-  {
-    "id": "composed",
-    "title": "composed",
-    "description": "A small library of typed Vue composables for state, storage, media queries and async work.",
-    "tags": [
-      "Vue",
-      "TypeScript",
       "Open source"
     ],
-    "url": "https://github.com/favorodera"
+    "url": "https://notformdocs.vercel.app"
   },
   {
-    "id": "ledger",
-    "title": "Ledger",
-    "description": "Nuxt content-driven writing site with local-first drafts and instant search.",
-    "tags": [
-      "Nuxt",
-      "Vue"
-    ],
-    "url": "https://github.com/favorodera"
-  },
-  {
-    "id": "stack",
-    "title": "stack-cli",
-    "description": "Scaffolds an opinionated Nuxt project — linting, testing and CI wired on the first run.",
+    "id": "distkit",
+    "title": "DistKit",
+    "description": "Minimal registry and CLI for distributing open code — fork it and build your own",
     "tags": [
       "Tooling",
-      "TypeScript",
       "Open source"
     ],
-    "url": "https://github.com/favorodera"
+    "url": "https://github.com/favorodera/distkit"
   },
   {
-    "id": "tokens",
-    "title": "tokens-bridge",
-    "description": "Turns design tokens into typed Tailwind and CSS variable output in one command.",
+    "id": "zod-sqlite",
+    "title": "Zod-SQLite",
+    "description": "Generate type-safe SQLite table schemas from Zod validation schemas with zero runtime overhead",
     "tags": [
       "Tooling",
-      "TypeScript"
+      "Open source"
     ],
-    "url": "https://github.com/favorodera"
+    "url": "https://github.com/favorodera/zod-sqlite"
   },
   {
-    "id": "atlas",
-    "title": "Atlas Dashboard",
-    "description": "Analytics dashboard in Nuxt with streamed server data and offline-tolerant charts.",
+    "id": "eslint-config",
+    "title": "@favorodera/eslint-config",
+    "description": "Opinionated, type-safe flat ESLint configuration factory for Vue, TypeScript, and Tailwind",
     "tags": [
-      "Nuxt",
-      "TypeScript"
+      "Tooling",
+      "Open source"
     ],
-    "url": "https://github.com/favorodera"
+    "url": "https://github.com/favorodera/eslint-config"
+  },
+  {
+    "id": "use-promise",
+    "title": "@favorodera/use-promise",
+    "description": "Vue composable for async operations with reactive state, cancellation, and race-condition safety",
+    "tags": [
+      "Tooling",
+      "Open source"
+    ],
+    "url": "https://github.com/favorodera/use-promise"
   }
 ]

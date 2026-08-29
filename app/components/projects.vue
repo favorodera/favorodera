@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { createReusableTemplate } from '@vueuse/core'
+import { stagger } from 'motion-v'
 import projects from '#data/projects.json'
 
 const VISIBLE_PROJECTS_COUNT = 3
@@ -7,8 +8,40 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 
 const motion = motionUtils()
 
-const visibleProjects = computed(() => projects.slice(0, VISIBLE_PROJECTS_COUNT))
-const remainingProjects = computed(() => projects.slice(VISIBLE_PROJECTS_COUNT))
+const projectsTabFilterModel = ref('all')
+
+const projectsTags = computed(() => {
+  const tags = new Set<string>(['all'])
+
+  for (const project of projects) {
+    for (const tag of project.tags) {
+      tags.add(tag)
+    }
+  }
+
+  return [...tags].toSorted((tagA, tagB) => tagA.localeCompare(tagB))
+})
+
+const visibleProjects = computed(() => {
+  const filter = projectsTabFilterModel.value
+
+  if (filter === 'all') {
+    return projects.slice(0, VISIBLE_PROJECTS_COUNT)
+  }
+
+  return projects
+    .filter(project => project.tags.includes(filter))
+    .slice(0, VISIBLE_PROJECTS_COUNT)
+})
+const remainingProjects = computed(() => {
+  const filter = projectsTabFilterModel.value
+
+  if (filter === 'all') {
+    return projects.slice(VISIBLE_PROJECTS_COUNT)
+  }
+
+  return projects.filter(project => project.tags.includes(filter)).slice(VISIBLE_PROJECTS_COUNT)
+})
 
 const itemVariants = {
   hidden: { opacity: 0, y: 16 },
@@ -50,7 +83,7 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
           focus-visible:ring-1 focus-visible:ring-ring
         "
         :class="{
-          'border-be border-border':!isLast ,
+          'border-be':!isLast ,
         }"
         :to="item.url"
         target="_blank"
@@ -101,7 +134,7 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
   </DefineProjectsItem>
 
   <section
-    aria-labelledby="experience-heading"
+    aria-labelledby="work-heading"
     class="
       pbs-24
 
@@ -109,14 +142,87 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
     "
   >
     <SectionHeading
-      id="experience-heading"
-      index="01"
-      title="Experience"
+      id="work-heading"
+      index="02"
+      title="Work"
     >
       <template #trailing>
         {{ String(projects.length).padStart(2, '0') }}
       </template>
     </SectionHeading>
+
+    <TabsRoot
+      v-model:model-value="projectsTabFilterModel"
+      as-child
+    >
+      <Motion
+        as="div"
+        initial="hidden"
+        while-in-view="visible"
+        :in-view-options
+        :variants="{
+          hidden: { opacity: 0, y: 16 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { ...motion.spring, delayChildren: stagger(motion.STAGGER) },
+          },
+        }"
+        class="overflow-hidden border-be py-5"
+      >
+        <TabsList
+          class="
+            relative -mx-6 flex scroll-fade-e scrollbar-none gap-5
+            overflow-x-auto px-6 scroll-fade-12
+
+            sm:mx-0 sm:px-0
+          "
+          aria-label="Filter projects by tag"
+        >
+          <TabsTrigger
+            v-for="tag in projectsTags"
+            :key="tag"
+            :value="tag"
+            as-child
+          >
+            <Motion
+              as="button"
+              :variants="{
+                hidden: { opacity: 0, x: -12 },
+                visible: { opacity: 1, x: 0, transition: motion.ease },
+              }"
+              class="
+                relative flex-none font-mono text-[10px] tracking-[0.18em]
+                uppercase transition-colors outline-none
+
+                focus-visible:ring-1 focus-visible:ring-ring
+
+                data-[state=active]:text-foreground
+
+                data-[state=inactive]:text-muted-foreground
+
+                data-[state=inactive]:hover:text-foreground
+              "
+              :style="motion.easeCSS"
+            >
+              {{ tag }}
+
+              <Motion
+                v-if="tag === projectsTabFilterModel"
+                as="span"
+                layout-id="work-tabs-underline"
+                :transition="motion.spring"
+                aria-hidden="true"
+                class="
+                  absolute inset-s-0 inset-be-0 rounded-full bg-primary block-px
+                  inline-full
+                "
+              />
+            </Motion>
+          </TabsTrigger>
+        </TabsList>
+      </Motion>
+    </TabsRoot>
 
     <CollapsibleRoot
       v-slot="{ open }"
@@ -129,7 +235,11 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
           :key="item.id"
           :item="item"
           :index="index"
-          :is-last="index === visibleProjects.length - 1"
+          :is-last="
+            index === visibleProjects.length - 1
+              ? !(open && remainingProjects.length > 0)
+              : false
+          "
         />
 
         <!-- Collapsible remainder -->

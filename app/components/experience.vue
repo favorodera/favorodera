@@ -124,7 +124,11 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
           :key="item.id"
           :item="item"
           :index="index"
-          :is-last="index === visibleExperience.length - 1"
+          :is-last="
+            index === visibleExperience.length - 1
+              ? !(open && remainingExperience.length > 0)
+              : false
+          "
         />
 
         <!-- Collapsible remainder -->
