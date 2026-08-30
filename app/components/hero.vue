@@ -104,6 +104,9 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           <Motion
             as="p"
             :variants="motion.fadeInFromTop"
+            :class="{
+              'text-foreground':index===1
+            }"
           >
             {{ item }}
           </Motion>
