@@ -52,7 +52,6 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/color-mode',
     'reka-ui/nuxt',
-    '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/fonts',
     'motion-v/nuxt',

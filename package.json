@@ -18,16 +18,13 @@
     "ready": "pnpm install && pnpm lint && pnpm typecheck && pnpm build"
   },
   "dependencies": {
-    "@iconify-json/tabler": "^1.2.38",
     "@nuxt/fonts": "^0.14.0",
-    "@nuxt/icon": "^2.5.1",
     "@nuxt/image": "^2.1.0",
     "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/seo": "^5.3.14",
     "@takumi-rs/core": "^2.12.0",
     "@vueuse/core": "^14.4.0",
     "@vueuse/nuxt": "^14.4.0",
-    "better-sqlite3": "^13.0.3",
     "motion-v": "^2.4.0",
     "nuxt": "^4.5.2",
     "nuxt-schema-org": "^6.3.1",

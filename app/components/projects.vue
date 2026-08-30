@@ -104,8 +104,7 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
             {{ item.title }}
           </h3>
 
-          <Icon
-            name="tabler:arrow-up-right"
+          <IconsArrowUpRight
             class="
               flex-none text-muted-foreground opacity-0
               transition-[translate,opacity] block-3.5 inline-3.5
