@@ -11,11 +11,6 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
 <template>
   <section
     aria-labelledby="name"
-    class="
-      pbs-16
-
-      sm:pbs-24
-    "
   >
     <div
       class="

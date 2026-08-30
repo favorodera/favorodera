@@ -97,11 +97,6 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
 
   <section
     aria-labelledby="experience-heading"
-    class="
-      pbs-24
-
-      sm:pbs-32
-    "
   >
     <SectionHeading
       id="experience-heading"

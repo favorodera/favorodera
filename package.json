@@ -30,8 +30,7 @@
     "nuxt-schema-org": "^6.3.1",
     "reka-ui": "^2.10.4",
     "shadcn-vue": "^2.8.2",
-    "vue": "^3.5.41",
-    "vue-router": "^5.2.0"
+    "vue": "^3.5.41"
   },
   "devDependencies": {
     "@favorodera/eslint-config": "^1.1.2",

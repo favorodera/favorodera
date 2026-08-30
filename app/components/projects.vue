@@ -134,11 +134,6 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
 
   <section
     aria-labelledby="work-heading"
-    class="
-      pbs-24
-
-      sm:pbs-32
-    "
   >
     <SectionHeading
       id="work-heading"

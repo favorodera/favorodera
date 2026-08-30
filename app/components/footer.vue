@@ -5,13 +5,7 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 </script>
 
 <template>
-  <footer
-    class="
-      mx-auto px-6 pbs-24 pbe-20 inline-full max-inline-2xl
-
-      sm:px-8 sm:pbs-32
-    "
-  >
+  <footer>
     <Motion
       as="div"
       initial="hidden"

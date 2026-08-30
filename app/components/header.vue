@@ -4,19 +4,10 @@
 
 <template>
   <header
-    class="inline-full"
+    class="flex items-center justify-end inline-full"
   >
-    <div
-      class="
-        mx-auto flex items-center justify-end px-6 text-muted-foreground
-        block-14 inline-full max-inline-2xl
-
-        sm:px-8
-      "
-    >
-      <ColorScheme>
-        <ThemeToggle />
-      </ColorScheme>
-    </div>
+    <ColorScheme>
+      <ThemeToggle />
+    </ColorScheme>
   </header>
 </template>

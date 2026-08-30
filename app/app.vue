@@ -11,7 +11,14 @@ defineOgImage('Image.takumi')
 </script>
 
 <template>
-  <div class="min-block-dvh min-inline-full">
+  <div
+    class="
+      mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
+      max-inline-2xl min-block-dvh
+
+      sm:gap-32 sm:px-8
+    "
+  >
     <NuxtLink
       to="#main"
       class="
@@ -23,8 +30,22 @@ defineOgImage('Image.takumi')
       Skip to main content
     </NuxtLink>
 
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
+    <Header />
+
+    <main
+      id="main"
+      class="
+        grid grid-cols-1 gap-24
+
+        sm:gap-32
+      "
+    >
+      <Hero />
+      <Experience />
+      <Projects />
+      <Contact />
+    </main>
+
+    <Footer />
   </div>
 </template>

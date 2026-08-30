@@ -14,11 +14,6 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 <template>
   <section
     aria-labelledby="contact-heading"
-    class="
-      pbs-24
-
-      sm:pbs-32
-    "
   >
     <SectionHeading
       id="contact-heading"
