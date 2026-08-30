@@ -2,8 +2,20 @@
   "email": "favorodera@gmail.com",
   "invitation": "Available for frontend work and collaborations.",
   "links": [
-    { "id": "github", "label": "GitHub", "url": "https://github.com/favorodera" },
-    { "id": "x", "label": "X", "url": "https://x.com/favorodera" },
-    { "id": "linkedin", "label": "LinkedIn", "url": "https://linkedin.com/in/favorodera" }
+    {
+      "id": "github",
+      "label": "GitHub",
+      "url": "https://github.com/favorodera" 
+    },
+    {
+      "id": "x",
+      "label": "X",
+      "url": "https://x.com/favorodera" 
+    },
+    {
+      "id": "linkedin",
+      "label": "LinkedIn",
+      "url": "https://linkedin.com/in/favorodera" 
+    }
   ]
 }

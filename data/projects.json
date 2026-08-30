@@ -3,9 +3,7 @@
     "id": "notform",
     "title": "NotForm",
     "description": "Type-safe form validation and state management for Vue and Nuxt with minimal boilerplate",
-    "tags": [
-      "Open source"
-    ],
+    "tags": ["Open source"],
     "url": "https://notformdocs.vercel.app"
   },
   {
