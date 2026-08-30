@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import profile from '#data/profile.json'
 
-const inViewOptions = { margin: '-20px 0px -20px 0px', once: true } as const
-
 const motion = motionUtils()
 
 const nuxtImageComponent = resolveComponent('NuxtImg')
@@ -112,6 +110,31 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           </Motion>
         </template>
       </div>
+    </Motion>
+
+    <!-- Bio -->
+    <Motion
+      :variants="motion.containerVariants"
+      initial="hidden"
+      while-in-view="visible"
+      :in-view-options="{ once: true, margin: '-10% 0% -10% 0%' }"
+      class="
+        mbs-6 space-y-1.5 overflow-hidden text-[0.95rem] leading-relaxed
+
+        sm:text-base
+      "
+    >
+      <Motion
+        v-for="item, index in profile.bio"
+        :key="index"
+        as="p"
+        :variants="motion.fadeInFromTop"
+        :class="{
+          'text-muted-foreground':index===1
+        }"
+      >
+        {{ item }}
+      </Motion>
     </Motion>
   </Motion>
 </template>
