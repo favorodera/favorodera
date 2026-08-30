@@ -95,19 +95,13 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
     </Motion>
   </DefineExperienceItem>
 
-  <section
-    aria-labelledby="experience-heading"
+  <Section
+    :leading="{
+      index:'01',
+      title:'Experience'
+    }"
+    :trailing="String(experience.length).padStart(2, '0')"
   >
-    <SectionHeading
-      id="experience-heading"
-      index="01"
-      title="Experience"
-    >
-      <template #trailing>
-        {{ String(experience.length).padStart(2, '0') }}
-      </template>
-    </SectionHeading>
-
     <CollapsibleRoot
       v-slot="{ open }"
       class="mbs-5"
@@ -181,5 +175,5 @@ const [DefineExperienceItem, ReuseExperienceItem] = createReusableTemplate<{
         </CollapsibleTrigger>
       </Motion>
     </CollapsibleRoot>
-  </section>
+  </Section>
 </template>

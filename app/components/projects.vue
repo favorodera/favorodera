@@ -132,19 +132,13 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
     </Motion>
   </DefineProjectsItem>
 
-  <section
-    aria-labelledby="work-heading"
+  <Section
+    :leading="{
+      index: '02',
+      title: 'Work',
+    }"
+    :trailing="String(visibleProjects.length + remainingProjects.length).padStart(2, '0')"
   >
-    <SectionHeading
-      id="work-heading"
-      index="02"
-      title="Work"
-    >
-      <template #trailing>
-        {{ String(visibleProjects.length + remainingProjects.length).padStart(2, '0') }}
-      </template>
-    </SectionHeading>
-
     <TabsRoot
       v-model:model-value="projectsTabFilterModel"
       as-child
@@ -291,5 +285,5 @@ const [DefineProjectsItem, ReuseProjectsItem] = createReusableTemplate<{
         </CollapsibleTrigger>
       </Motion>
     </CollapsibleRoot>
-  </section>
+  </Section>
 </template>

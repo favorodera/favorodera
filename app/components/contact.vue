@@ -12,15 +12,12 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 </script>
 
 <template>
-  <section
-    aria-labelledby="contact-heading"
+  <Section
+    :leading="{
+      index:'03',
+      title:'Contact'
+    }"
   >
-    <SectionHeading
-      id="contact-heading"
-      index="03"
-      title="Contact"
-    />
-
     <Motion
       as="p"
       class="
@@ -142,5 +139,5 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
         </NuxtLink>
       </Motion>
     </ul>
-  </section>
+  </Section>
 </template>
