@@ -85,14 +85,29 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
       <!-- Role and availability -->
       <div
         class="
-          col-span-full row-start-2 flex flex-col items-start gap-x-2 gap-y-1
+          col-span-full row-start-2 flex items-end gap-2 overflow-hidden
           text-2xs
-
-          sm:flex-row sm:items-center
         "
       >
-        <p>{{ profile.role }}</p>
-        <p>{{ profile.availability }}</p>
+        <template
+          v-for="item, index in [profile.role, profile.availability]"
+          :key="index"
+        >
+          <Motion
+            v-if="index > 0"
+            as="span"
+            :variants="motion.fadeInFromTop"
+          >
+            |
+          </Motion>
+
+          <Motion
+            as="p"
+            :variants="motion.fadeInFromTop"
+          >
+            {{ item }}
+          </Motion>
+        </template>
       </div>
     </Motion>
   </Motion>
