@@ -4,7 +4,7 @@
 
     <main
       class="
-        mx-auto px-6 pbe-20 inline-full max-inline-2xl
+        mx-auto px-6 inline-full max-inline-2xl
 
         sm:px-8
       "
@@ -12,8 +12,9 @@
       <Hero />
       <Experience />
       <Projects />
+      <Contact />
     </main>
 
-    <footer />
+    <Footer />
   </div>
 </template>

@@ -139,6 +139,7 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
         <span
           v-if="index > 0"
           class="max-sm:hidden"
+          aria-hidden="true"
         >|</span>
         {{ item }}
       </Motion>
