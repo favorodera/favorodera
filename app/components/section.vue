@@ -30,8 +30,6 @@ const motion = motionUtils()
   >
     <!-- Heading -->
     <Motion
-      as="div"
-      :aria-labelledby="ariaLabel"
       :variants="motion.containerVariants"
       initial="hidden"
       while-in-view="visible"
@@ -62,7 +60,7 @@ const motion = motionUtils()
       <Motion
         as-child
         class="flex-1 origin-left bg-border block-px"
-        :variants="motion.scaleInFromLeft"
+        :variants="motion.scaleInX"
       >
         <Separator />
       </Motion>

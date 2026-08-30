@@ -76,9 +76,8 @@ async function toggleTheme(event: PointerEvent) {
     type="button"
     :aria-label="ariaLabel"
     class="
-      group flex items-center gap-1 rounded-full border p-1 outline-none
-
-      hover:text-foreground
+      group grid grid-cols-1 place-items-center rounded-full border p-1
+      outline-none
 
       focus-visible:ring-1 focus-visible:ring-ring
     "
@@ -98,8 +97,9 @@ async function toggleTheme(event: PointerEvent) {
       <AnimatePresence mode="wait">
         <Motion
           :key="colorModeValue"
-          :initial="{ x: '-100%' }"
-          :animate="{ x: '0%', transition: motion.ease }"
+          :variants="motion.fadeInFromLeft"
+          initial="hidden"
+          animate="visible"
           as="span"
           class="absolute inset-0 bg-foreground"
         />

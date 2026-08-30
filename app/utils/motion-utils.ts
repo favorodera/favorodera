@@ -31,53 +31,84 @@ export default function motionUtils() {
    * Standard ease transition using the shared {@linkcode EASE} curve and {@linkcode DURATION}.
    * This is for most fade, slide, and scale animations
    */
-  const ease: Transition = { duration: DURATION, ease: EASE }
+  const ease = { duration: DURATION, ease: EASE } satisfies Transition
 
   /** {@linkcode ease} normalized as CSS properties */
-  const easeCSS: Pick<CSSProperties, 'transitionDuration' | 'transitionTimingFunction'> = {
+  const easeCSS = {
     transitionDuration: `${DURATION * 1000}ms`,
     transitionTimingFunction: `cubic-bezier(${EASE.join(', ')})`,
-  }
+  } satisfies Pick<CSSProperties, 'transitionDuration' | 'transitionTimingFunction'>
 
   /**
    * Spring transition for smooth, snappy animations with slight bounce.
    * This is for interactive elements and list items
    */
-  const spring: Transition = {
+  const spring = {
     damping: 36,
     mass: 0.9,
     stiffness: 420,
     type: 'spring',
-  }
+  } satisfies Transition
 
   /** Fade-in and slide-up effect for elements that enter from the bottom */
-  const fadeInFromBottom: MotionProps['variants'] = {
+  const fadeInFromBottom = {
     hidden: { opacity: 0, y: '110%' },
     visible: { opacity: 1, transition: ease, y: '0%' },
-  }
+  } satisfies MotionProps['variants']
+
+  /** Fade-in and slide-left effect for elements that enter from the left */
+  const fadeInFromLeft = {
+    hidden: { opacity: 0, x: '-110%' },
+    visible: { opacity: 1, transition: ease, x: '0%' },
+  } satisfies MotionProps['variants']
+
+  /** Fade-in and slide-top effect for elements that enter from the top */
+  const fadeInFromTop = {
+    hidden: { opacity: 0, y: '-110%' },
+    visible: { opacity: 1, transition: ease, y: '0%' },
+  } satisfies MotionProps['variants']
 
   /**
    * Container variants - for parent sections
    * This staggers the children animations
    */
-  const containerVariants: MotionProps['variants'] = {
+  const containerVariants = {
     hidden: {},
     visible: {
       transition: { delayChildren: stagger(STAGGER) },
     },
-  }
+  } satisfies MotionProps['variants']
 
   /** Empty variants for elements that don't need any animation */
-  const emptyVariants: MotionProps['variants'] = {
+  const emptyVariants = {
     hidden: {},
     visible: {},
-  }
+  } satisfies MotionProps['variants']
 
-  /** Scale-in and fade-up effect for elements that enter from the left */
-  const scaleInFromLeft: MotionProps['variants'] = {
+  /**
+   * Scale-in and fade-in effect along the horizontal axis.
+   *
+   * Direction depends entirely on the consuming element's `transform-origin`
+   * — this variant only drives `scaleX`, it does not set an origin itself.
+   * Pair with a CSS class like `origin-left` or `origin-right` to control
+   * which edge it grows from (defaults to center if unset).
+   */
+  const scaleInX = {
     hidden: { opacity: 0, scaleX: 0 },
     visible: { opacity: 1, scaleX: 1, transition: ease },
-  }
+  } satisfies MotionProps['variants']
+
+  /**
+   * Wipe-reveal effect that grows diagonally from the bottom-left corner.
+   *
+   * Uses `clipPath: inset()` to collapse the element to a single point at
+   * its bottom-left corner, then expands the clip rectangle outward to
+   * reveal the full element toward the top-right.
+   */
+  const clipInFromBottomLeft = {
+    hidden: { clipPath: 'inset(100% 100% 0% 0%)', opacity: 0 },
+    visible: { clipPath: 'inset(0% 0% 0% 0%)', opacity: 1, transition: ease },
+  } satisfies MotionProps['variants']
 
   return {
     // Constants
@@ -92,9 +123,12 @@ export default function motionUtils() {
     spring,
 
     // Variants
+    clipInFromBottomLeft,
     containerVariants,
     emptyVariants,
     fadeInFromBottom,
-    scaleInFromLeft,
+    fadeInFromLeft,
+    fadeInFromTop,
+    scaleInX,
   }
 }
