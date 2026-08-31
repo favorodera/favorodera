@@ -2,13 +2,10 @@
 import { useClipboard } from '@vueuse/core'
 import contact from '#data/contact.json'
 
-const motion = motionUtils()
 const clipboard = useClipboard({
   legacy: true,
   source: contact.email,
 })
-
-const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
 </script>
 
 <template>
@@ -18,28 +15,15 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
       title:'Contact'
     }"
   >
-    <Motion
-      as="p"
+    <p
       class="
         mbs-6 text-[0.95rem] leading-relaxed text-muted-foreground
-        max-inline-[42ch]
 
         sm:text-base
       "
-      :variants="{
-        hidden: { opacity: 0, y: 16 },
-        visible: {
-          opacity: 1,
-          transition: motion.ease,
-          y: 0,
-        },
-      }"
-      initial="hidden"
-      while-in-view="visible"
-      :in-view-options
     >
       {{ contact.invitation }}
-    </Motion>
+    </p>
 
     <div class="mbs-3 flex flex-wrap items-baseline gap-x-4 gap-y-2">
       <button
@@ -54,40 +38,24 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
         "
         @click="clipboard.copy()"
       >
-        <Motion
-          as="span"
-          class="block overflow-hidden"
-          initial="hidden"
-          while-in-view="visible"
-          :in-view-options
-          :variants="{ hidden: {}, visible: {} }"
-        >
-          <Motion
-            as="span"
-            class="
-              block border-be border-border pbe-1 transition-colors
+        <span
+          class="
+            block border-be pbe-1 transition-colors
 
-              group-hover:border-foreground
-            "
-            :variants="{
-              hidden: { y: '-115%' },
-              visible: { y: '0%', transition: motion.ease },
-            }"
-            :style="motion.easeCSS"
-          >
-            {{ contact.email }}
-          </Motion>
-        </Motion>
+            group-hover:border-foreground
+          "
+        >
+          {{ contact.email }}
+        </span>
       </button>
 
       <span
         aria-hidden="true"
-        class="
-          font-mono text-[10px] tracking-[0.18em] text-muted-foreground
-          uppercase transition-opacity
-        "
-        :class="{ 'opacity-100': clipboard.copied.value, 'opacity-0': !clipboard.copied.value }"
-        :style="motion.easeCSS"
+        class="text-2xs transition-opacity"
+        :class="{
+          'opacity-100': clipboard.copied.value,
+          'opacity-0': !clipboard.copied.value
+        }"
       >
         Copied
       </span>
@@ -101,24 +69,9 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
     </div>
 
     <ul class="mbs-8 flex flex-wrap gap-x-6 gap-y-2">
-      <Motion
-        v-for="(link, index) in contact.links"
+      <li
+        v-for="link in contact.links"
         :key="link.id"
-        as="li"
-        initial="hidden"
-        while-in-view="visible"
-        :in-view-options
-        :variants="{
-          hidden: { opacity: 0, y: 16 },
-          visible: {
-            opacity: 1,
-            transition: {
-              ...motion.spring,
-              delay: index * motion.STAGGER,
-            },
-            y: 0,
-          },
-        }"
       >
         <NuxtLink
           :to="link.url"
@@ -126,18 +79,16 @@ const inViewOptions = { margin: '-10% 0px -10% 0px', once: true } as const
           rel="noopener noreferrer"
           external
           class="
-            font-mono text-[10px] tracking-[0.18em] text-muted-foreground
-            uppercase transition-colors outline-none
+            text-2xs transition-colors outline-none
 
             hover:text-foreground
 
             focus-visible:ring-1 focus-visible:ring-ring
           "
-          :style="motion.easeCSS"
         >
           {{ link.label }}
         </NuxtLink>
-      </Motion>
+      </li>
     </ul>
   </Section>
 </template>

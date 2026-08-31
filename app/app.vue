@@ -11,45 +11,41 @@ defineOgImage('Image.takumi')
 </script>
 
 <template>
-  <MotionConfig
-    reduced-motion="user"
-  >
-    <div
-      class="
-        mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
-        max-inline-2xl min-block-dvh
+  <div
+    class="
+      mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
+      max-inline-2xl min-block-dvh
 
-        sm:gap-32 sm:px-8
+      sm:gap-32 sm:px-8
+    "
+  >
+    <NuxtLink
+      to="#main"
+      class="
+        fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
+
+        focus:translate-y-0
       "
     >
-      <NuxtLink
-        to="#main"
-        class="
-          fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
+      Skip to main content
+    </NuxtLink>
 
-          focus:translate-y-0
-        "
-      >
-        Skip to main content
-      </NuxtLink>
+    <Header />
 
-      <Header />
+    <main
+      id="main"
+      class="
+        grid grid-cols-1 gap-24
 
-      <main
-        id="main"
-        class="
-          grid grid-cols-1 gap-24
+        sm:gap-32
+      "
+    >
+      <Hero />
+      <Experience />
+      <Projects />
+      <Contact />
+    </main>
 
-          sm:gap-32
-        "
-      >
-        <Hero />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
-  </MotionConfig>
+    <Footer />
+  </div>
 </template>

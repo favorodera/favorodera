@@ -58,10 +58,6 @@
   body {
     @apply bg-background text-foreground antialiased selection:bg-foreground selection:text-background font-sans;
   }
-
-  html {
-    -webkit-tap-highlight-color: transparent;
-  }
 }
 
 @utility text-2xs {

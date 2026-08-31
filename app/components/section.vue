@@ -16,70 +16,43 @@ const ariaLabel = computed(() => {
 
   return `${props.leading.index}-${title}`
 })
-
-const motion = motionUtils()
 </script>
 
 <template>
-  <Motion
-    as="section"
-    :aria-labelledby="ariaLabel"
-    :variants="motion.containerVariants"
-    initial="hidden"
-    animate="visible"
-  >
+  <section>
     <!-- Heading -->
-    <Motion
-      :variants="motion.containerVariants"
-      initial="hidden"
-      while-in-view="visible"
-      :in-view-options="{ once: true, margin: '-10% 0% -10% 0%' }"
+    <div
       class="flex items-center gap-4"
     >
       <!-- Left Hand Side: Index & Title -->
       <h2
         :id="ariaLabel"
-        class="flex-none overflow-hidden text-2xs"
+        class="flex-none text-2xs"
       >
-        <Motion
-          as="span"
-          class="block"
-          :variants="motion.fadeInFromBottom"
+        <span
+          aria-hidden="true"
+          class="tabular-nums"
         >
-          <span
-            aria-hidden="true"
-            class="tabular-nums"
-          >
-            {{ `${props.leading.index} /` }}
-          </span>
-          {{ props.leading.title }}
-        </Motion>
+          {{ `${props.leading.index} /` }}
+        </span>
+        {{ props.leading.title }}
       </h2>
 
       <!-- Center Line Layout Divider -->
-      <Motion
-        as-child
-        class="flex-1 origin-left bg-border block-px"
-        :variants="motion.scaleInX"
-      >
-        <Separator />
-      </Motion>
+      <div
+        role="separator"
+        class="flex-1 bg-border block-px"
+      />
 
       <!-- Right Hand Side: Trailing Content -->
       <span
         v-if="props.trailing"
-        class="block overflow-hidden"
+        class="flex-none text-2xs tabular-nums"
       >
-        <Motion
-          as="span"
-          class="block flex-none text-2xs tabular-nums"
-          :variants="motion.fadeInFromBottom"
-        >
-          {{ props.trailing }}
-        </Motion>
+        {{ props.trailing }}
       </span>
-    </Motion>
+    </div>
 
     <slot />
-  </Motion>
+  </section>
 </template>

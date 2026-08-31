@@ -30,7 +30,7 @@ import profile from '#data/profile.json'
     </div>
 
     <div class="text-3xl tracking-wide text-muted-foreground">
-      {{ profile.roleLine[0] }}
+      {{ profile.role }}
     </div>
   </div>
 </template>

@@ -1,25 +1,15 @@
 <script setup lang="ts">
 import profile from '#data/profile.json'
 
-const motion = motionUtils()
-
-const nuxtImageComponent = resolveComponent('NuxtImg')
+const showImageFallback = ref(false)
 </script>
 
 <template>
-  <Motion
-    as="section"
-    :variants="motion.containerVariants"
-    initial="hidden"
-    animate="visible"
+  <section
     aria-labelledby="name"
   >
     <!-- Image, name, role and availability -->
-    <Motion
-      :variants="motion.containerVariants"
-      initial="hidden"
-      while-in-view="visible"
-      :in-view-options="{ once: true, margin: '-10% 0% -10% 0%' }"
+    <div
       class="
         grid grid-cols-[auto_1fr] items-end gap-5
 
@@ -27,33 +17,30 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
       "
     >
       <!-- Image -->
-      <Motion
-        as-child
-        :variants="motion.clipInFromBottomLeft"
+      <div
         class="
           relative flex-none overflow-hidden bg-muted block-22 inline-18
 
           sm:block-28 sm:inline-24
         "
       >
-        <AvatarRoot>
-          <AvatarFallback
-            class="
-              flex items-center justify-center font-mono text-sm
-              text-muted-foreground uppercase block-full inline-full
-            "
-          >
-            {{ profile.initials }}
-          </AvatarFallback>
+        <div
+          v-if="showImageFallback"
+          class="
+            flex items-center justify-center font-mono text-sm
+            text-muted-foreground uppercase block-full inline-full
+          "
+        >
+          {{ profile.initials }}
+        </div>
 
-          <AvatarImage
-            :as="nuxtImageComponent"
-            :src="profile.portrait"
-            :alt="`Portrait of ${profile.name}`"
-            class="object-cover grayscale inline-full min-block-full"
-          />
-        </AvatarRoot>
-      </Motion>
+        <NuxtImg
+          :src="profile.portrait"
+          :alt="`Portrait of ${profile.name}`"
+          class="object-cover grayscale inline-full min-block-full"
+          @error="showImageFallback=true"
+        />
+      </div>
 
       <!-- Name -->
       <h1
@@ -70,14 +57,12 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           [&_span]:block
         "
       >
-        <Motion
+        <span
           v-for="name, index in profile.displayName"
           :key="index"
-          as="span"
-          :variants="motion.fadeInFromLeft"
         >
           {{ name }}
-        </Motion>
+        </span>
       </h1>
 
       <!-- Role and availability -->
@@ -91,50 +76,40 @@ const nuxtImageComponent = resolveComponent('NuxtImg')
           v-for="item, index in [profile.role, profile.availability]"
           :key="index"
         >
-          <Motion
+          <span
             v-if="index > 0"
-            as="span"
-            :variants="motion.fadeInFromTop"
           >
             |
-          </Motion>
+          </span>
 
-          <Motion
-            as="p"
-            :variants="motion.fadeInFromTop"
+          <span
             :class="{
-              'text-foreground':index===1
+              'text-foreground': index === 1,
             }"
           >
             {{ item }}
-          </Motion>
+          </span>
         </template>
       </div>
-    </Motion>
+    </div>
 
     <!-- Bio -->
-    <Motion
-      :variants="motion.containerVariants"
-      initial="hidden"
-      while-in-view="visible"
-      :in-view-options="{ once: true, margin: '-10% 0% -10% 0%' }"
+    <div
       class="
         mbs-6 space-y-1.5 overflow-hidden text-[0.95rem] leading-relaxed
 
         sm:text-base
       "
     >
-      <Motion
+      <p
         v-for="item, index in profile.bio"
         :key="index"
-        as="p"
-        :variants="motion.fadeInFromTop"
         :class="{
-          'text-muted-foreground':index===1
+          'text-muted-foreground': index === 1,
         }"
       >
         {{ item }}
-      </Motion>
-    </Motion>
-  </Motion>
+      </p>
+    </div>
+  </section>
 </template>
