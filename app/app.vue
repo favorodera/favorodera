@@ -42,7 +42,7 @@ defineOgImage('Image.takumi')
     >
       <Hero />
       <Experience />
-      <Projects />
+      <Work />
       <Contact />
     </main>
 

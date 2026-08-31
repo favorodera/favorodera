@@ -53,6 +53,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxt/image',
     '@nuxt/fonts',
+    'reka-ui/nuxt',
     'motion-v/nuxt',
     '@nuxtjs/seo',
     '@vercel/analytics',

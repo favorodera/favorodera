@@ -3,30 +3,47 @@
     "id": "notform",
     "title": "NotForm",
     "description": "Type-safe form validation and state management for Vue and Nuxt with minimal boilerplate",
+    "tags": ["Open source"],
     "url": "https://notformdocs.vercel.app"
   },
   {
     "id": "distkit",
     "title": "DistKit",
     "description": "Minimal registry and CLI for distributing open code — fork it and build your own",
+    "tags": [
+      "Tooling",
+      "Open source"
+    ],
     "url": "https://github.com/favorodera/distkit"
   },
   {
     "id": "zod-sqlite",
     "title": "Zod-SQLite",
     "description": "Generate type-safe SQLite table schemas from Zod validation schemas with zero runtime overhead",
+    "tags": [
+      "Tooling",
+      "Open source"
+    ],
     "url": "https://github.com/favorodera/zod-sqlite"
   },
   {
     "id": "eslint-config",
     "title": "@favorodera/eslint-config",
     "description": "Opinionated, type-safe flat ESLint configuration factory for Vue, TypeScript, and Tailwind",
+    "tags": [
+      "Tooling",
+      "Open source"
+    ],
     "url": "https://github.com/favorodera/eslint-config"
   },
   {
     "id": "use-promise",
     "title": "@favorodera/use-promise",
     "description": "Vue composable for async operations with reactive state, cancellation, and race-condition safety",
+    "tags": [
+      "Tooling",
+      "Open source"
+    ],
     "url": "https://github.com/favorodera/use-promise"
   }
 ]

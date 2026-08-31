@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { stagger } from 'motion-v'
+
 type Props = {
   leading: {
     index: string
@@ -16,10 +18,30 @@ const ariaLabel = computed(() => {
 
   return `${props.leading.index}-${title}`
 })
+
+const sectionRef = useTemplateRef<HTMLElement>('sectionRef')
+
+const isInView = useInView(sectionRef, {
+  margin: '-5% 0% -5% 0%',
+  once: true,
+})
 </script>
 
 <template>
-  <section>
+  <Motion
+    ref="sectionRef"
+    as="section"
+    :aria-labelledby="ariaLabel"
+    :variants="{
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: { delayChildren: stagger(0.05) },
+      },
+    }"
+    initial="hidden"
+    :animate="isInView ? 'visible' : 'hidden'"
+  >
     <!-- Heading -->
     <div
       class="flex items-center gap-4"
@@ -27,32 +49,61 @@ const ariaLabel = computed(() => {
       <!-- Left Hand Side: Index & Title -->
       <h2
         :id="ariaLabel"
-        class="flex-none text-2xs"
+        class="flex-none overflow-hidden text-2xs"
       >
-        <span
-          aria-hidden="true"
-          class="tabular-nums"
+        <Motion
+          as="span"
+          class="block"
+          :variants="{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { duration: 0.6, ease: 'easeOut' },
+            },
+          }"
         >
-          {{ `${props.leading.index} /` }}
-        </span>
-        {{ props.leading.title }}
+          <span
+            aria-hidden="true"
+            class="tabular-nums"
+          >
+            {{ `${props.leading.index} /` }}
+          </span>
+          {{ props.leading.title }}
+        </Motion>
       </h2>
 
       <!-- Center Line Layout Divider -->
-      <div
-        role="separator"
-        class="flex-1 bg-border block-px"
-      />
+      <Motion
+        as-child
+        class="flex-1 origin-left bg-border block-px"
+        :variants="{
+          hidden: { opacity: 0, scaleX: 0 },
+          visible: {
+            opacity: 1, scaleX: 1,
+            transition: { duration: 0.6, ease: 'easeOut' }
+          }
+        }"
+      >
+        <Separator />
+      </Motion>
 
       <!-- Right Hand Side: Trailing Content -->
-      <span
+      <Motion
         v-if="props.trailing"
+        as="span"
         class="flex-none text-2xs tabular-nums"
+        :variants="{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { duration: 0.6, ease: 'easeOut' },
+          },
+        }"
       >
         {{ props.trailing }}
-      </span>
+      </Motion>
     </div>
 
     <slot />
-  </section>
+  </Motion>
 </template>
