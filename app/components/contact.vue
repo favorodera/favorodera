@@ -2,6 +2,13 @@
 import { useClipboard } from '@vueuse/core'
 import contact from '#data/contact.json'
 
+const contactListRef = useTemplateRef('contactListRef')
+
+const isContactListInView = useInView(contactListRef, {
+  margin: '-2% 0% -2% 0%',
+  once: true,
+})
+
 const clipboard = useClipboard({
   legacy: true,
   source: contact.email,
@@ -11,11 +18,16 @@ const clipboard = useClipboard({
 <template>
   <Section
     :leading="{
-      index:'03',
-      title:'Contact'
+      index: '03',
+      title: 'Contact',
     }"
   >
-    <p
+    <Motion
+      as="p"
+      :initial="{ opacity: 0 }"
+      :while-in-view="{ opacity: 1 }"
+      :transition="{ duration: 0.6, ease: 'easeOut' }"
+      :in-view-options="{ margin: '-2% 0% -2% 0%', once: true }"
       class="
         mbs-6 text-[0.95rem] leading-relaxed text-muted-foreground
 
@@ -23,14 +35,14 @@ const clipboard = useClipboard({
       "
     >
       {{ contact.invitation }}
-    </p>
+    </Motion>
 
     <div class="mbs-3 flex flex-wrap items-baseline gap-x-4 gap-y-2">
       <button
         type="button"
         class="
-          group text-[1.6rem] leading-tight font-medium tracking-tight
-          outline-none
+          group cursor-copy overflow-hidden text-[1.6rem] leading-tight
+          font-medium tracking-tight outline-none
 
           focus-visible:ring-1 focus-visible:ring-ring
 
@@ -38,7 +50,11 @@ const clipboard = useClipboard({
         "
         @click="clipboard.copy()"
       >
-        <span
+        <Motion
+          :initial="{ opacity: 0, y: '100%' }"
+          :while-in-view="{ opacity: 1, y: 0 }"
+          :transition="{ duration: 0.6, ease: 'easeOut' }"
+          :in-view-options="{ margin: '-2% 0% -2% 0%', once: false }"
           class="
             block border-be pbe-1 transition-colors
 
@@ -46,7 +62,7 @@ const clipboard = useClipboard({
           "
         >
           {{ contact.email }}
-        </span>
+        </Motion>
       </button>
 
       <span
@@ -54,7 +70,7 @@ const clipboard = useClipboard({
         class="text-2xs transition-opacity"
         :class="{
           'opacity-100': clipboard.copied.value,
-          'opacity-0': !clipboard.copied.value
+          'opacity-0': !clipboard.copied.value,
         }"
       >
         Copied
@@ -68,10 +84,25 @@ const clipboard = useClipboard({
       </span>
     </div>
 
-    <ul class="mbs-8 flex flex-wrap gap-x-6 gap-y-2">
-      <li
-        v-for="link in contact.links"
+    <ul
+      ref="contactListRef"
+      class="mbs-8 flex flex-wrap gap-x-6 gap-y-2"
+    >
+      <Motion
+        v-for="(link, index) in contact.links"
         :key="link.id"
+        as="li"
+        :initial="{ opacity: 0, y: '110%' }"
+        :animate="
+          isContactListInView
+            ? { opacity: 1, y: 0 }
+            : { opacity: 0, y: '110%' }
+        "
+        :transition="{
+          duration: 0.6,
+          ease: 'easeOut',
+          delay: index * 0.04,
+        }"
       >
         <NuxtLink
           :to="link.url"
@@ -88,7 +119,7 @@ const clipboard = useClipboard({
         >
           {{ link.label }}
         </NuxtLink>
-      </li>
+      </Motion>
     </ul>
   </Section>
 </template>

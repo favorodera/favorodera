@@ -88,7 +88,7 @@ const remainingItems = computed(() => {
                 visible: {
                   opacity: 1,
                   x: 0,
-                  transition: { duration: 0.6, ease: 'easeOut' },
+                  transition: { duration: 0.4, ease: 'easeOut' },
                 },
               }"
               class="
