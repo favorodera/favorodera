@@ -29,7 +29,7 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2025-07-15',
   css: ['~/assets/css/index.css'],
-  devtools: { enabled: false },
+  devtools: { enabled: true },
   eslint: {
     config: {
       standalone: false,
