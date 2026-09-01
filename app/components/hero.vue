@@ -3,39 +3,33 @@ import profile from '#data/profile.json'
 
 const showImageFallback = ref(false)
 
-// Delay at which bio starts if hero is already visible when bio triggers
-// (i.e. everything's on screen together — read as one continuous cascade)
-const BIO_DELAY_WHEN_SYNCED = 1.05
+const topRowRef = useTemplateRef<HTMLElement>('topRowRef')
+const metaRef = useTemplateRef<HTMLElement>('metaRef')
+const bioRef = useTemplateRef<HTMLElement>('bioRef')
 
-const heroGroupRef = useTemplateRef('heroGroupRef')
-
-// Drives the hero's own reveal — fires once, never replays.
-const isHeroGroupInView = useInView(heroGroupRef, {
-  margin: '-5% 0% -5% 0%',
+const isTopRowInView = useInView(topRowRef, {
+  margin: '-10% 0% -10% 0%',
   once: true,
 })
 
-// Separate, non-latching read of the same element — only used to check
-// "is hero on screen right now" at the moment bio triggers.
-const isHeroCurrentlyVisible = useInView(heroGroupRef, {
-  margin: '-5% 0% -5% 0%',
-})
-
-const bioGroupRef = useTemplateRef('bioGroupRef')
-const isBioGroupInView = useInView(bioGroupRef, {
-  margin: '-5% 0% -5% 0%',
+const isMetaInView = useInView(metaRef, {
+  margin: '-2% 0% -2% 0%',
   once: true,
 })
 
-// Snapshotted the instant bio first triggers, since isBioGroupInView latches.
-const bioBaseDelay = computed(() => (isHeroCurrentlyVisible.value ? BIO_DELAY_WHEN_SYNCED : 0))
+const isBioInView = useInView(bioRef, {
+  margin: '-5% 0% -5% 0%',
+  once: true,
+})
 </script>
 
 <template>
   <section aria-labelledby="name">
-    <!-- Image, name, role and availability -->
-    <div
-      ref="heroGroupRef"
+    <!-- IMAGE + NAME -->
+    <Motion
+      ref="topRowRef"
+      initial="hidden"
+      :animate="isTopRowInView ? 'visible' : 'hidden'"
       class="
         grid grid-cols-[auto_1fr] items-end gap-5
 
@@ -44,16 +38,22 @@ const bioBaseDelay = computed(() => (isHeroCurrentlyVisible.value ? BIO_DELAY_WH
     >
       <!-- Image -->
       <Motion
-        as="div"
-        :initial="{ clipPath: 'circle(0% at 0% 100%)' }"
-        :animate="{
-          clipPath: isHeroGroupInView
-            ? 'circle(150% at 0% 100%)'
-            : 'circle(0% at 0% 100%)',
+        :variants="{
+          hidden: {
+            opacity: 0,
+            clipPath: 'circle(0% at 0% 100%)',
+          },
+          visible: {
+            opacity: 1,
+            clipPath: 'circle(150% at 0% 100%)',
+          },
         }"
-        :transition="{ duration: 0.9, ease: 'easeOut' }"
+        :transition="{
+          duration: 0.7,
+          ease: 'easeOut',
+        }"
         class="
-          relative flex-none overflow-hidden bg-muted block-22 inline-18
+          relative overflow-hidden bg-muted block-22 inline-18
 
           sm:block-28 sm:inline-24
         "
@@ -71,7 +71,7 @@ const bioBaseDelay = computed(() => (isHeroCurrentlyVisible.value ? BIO_DELAY_WH
         <NuxtImg
           :src="profile.portrait"
           :alt="`Portrait of ${profile.name}`"
-          class="object-cover grayscale inline-full min-block-full"
+          class="object-cover grayscale block-full inline-full min-block-full"
           @error="showImageFallback = true"
         />
       </Motion>
@@ -92,56 +92,83 @@ const bioBaseDelay = computed(() => (isHeroCurrentlyVisible.value ? BIO_DELAY_WH
         "
       >
         <Motion
-          v-for="name, index in profile.displayName"
+          v-for="(name, index) in profile.displayName"
           :key="index"
           as="span"
-          :initial="{ opacity: 0, x: '-30%' }"
+          :initial="{
+            opacity: 0,
+          }"
           :animate="
-            isHeroGroupInView
-              ? { opacity: 1, x: 0 }
-              : { opacity: 0, x: '-30%' }
+            isTopRowInView
+              ? {
+                opacity: 1,
+              }
+              : {
+                opacity: 0,
+              }
           "
           :transition="{
             duration: 0.7,
+            delay: index * 0.06,
             ease: 'easeOut',
-            delay: 0.45 + index * 0.08,
           }"
         >
           {{ name }}
         </Motion>
       </h1>
+    </Motion>
 
-      <!-- Role and availability -->
+    <!-- META -->
+    <Motion
+      ref="metaRef"
+      initial="hidden"
+      :animate="isMetaInView ? 'visible' : 'hidden'"
+      :variants="{
+        hidden: {},
+        visible: {},
+      }"
+      class="mbs-3 flex items-end gap-2 overflow-hidden text-2xs"
+    >
       <Motion
-        as="div"
-        :initial="{ opacity: 0, y: '-100%' }"
+        v-for="(item, index) in [
+          profile.role,
+          '|',
+          profile.availability,
+        ]"
+        :key="index"
+        :initial="{
+          opacity: 0,
+          y: '-100%',
+        }"
         :animate="
-          isHeroGroupInView
-            ? { opacity: 1, y: 0 }
-            : { opacity: 0, y: '-100%' }
+          isMetaInView
+            ? {
+              opacity: 1,
+              y: 0,
+            }
+            : {
+              opacity: 0,
+              y: '-100%',
+            }
         "
-        :transition="{ duration: 0.6, ease: 'easeOut', delay: 0.85 }"
-        class="
-          col-span-full row-start-2 flex items-end gap-2 overflow-hidden
-          text-2xs
-        "
+        :transition="{
+          duration: 0.7,
+          delay: index * 0.06,
+          ease: 'easeOut',
+        }"
+        :class="{
+          'text-foreground': index === 2,
+        }"
       >
-        <template
-          v-for="item, index in [profile.role, profile.availability]"
-          :key="index"
-        >
-          <span v-if="index > 0">|</span>
-
-          <span :class="{ 'text-foreground': index === 1 }">
-            {{ item }}
-          </span>
-        </template>
+        {{ item }}
       </Motion>
-    </div>
+    </Motion>
 
-    <!-- Bio -->
-    <div
-      ref="bioGroupRef"
+    <!-- BIO -->
+    <Motion
+      ref="bioRef"
+      initial="hidden"
+      :animate="isBioInView ? 'visible' : 'hidden'"
       class="
         mbs-6 space-y-1.5 text-[0.95rem] leading-relaxed
 
@@ -149,20 +176,32 @@ const bioBaseDelay = computed(() => (isHeroCurrentlyVisible.value ? BIO_DELAY_WH
       "
     >
       <Motion
-        v-for="item, index in profile.bio"
+        v-for="(item, index) in profile.bio"
         :key="index"
         as="p"
-        :initial="{ opacity: 0 }"
-        :animate="{ opacity: isBioGroupInView ? 1 : 0 }"
+        :initial="{
+          opacity: 0,
+        }"
+        :animate="
+          isBioInView
+            ? {
+              opacity: 1,
+            }
+            : {
+              opacity: 0,
+            }
+        "
         :transition="{
           duration: 0.8,
+          delay: index * 0.06,
           ease: 'easeOut',
-          delay: bioBaseDelay + index * 0.12,
         }"
-        :class="{ 'text-muted-foreground': index === 1 }"
+        :class="{
+          'text-muted-foreground': index === 1,
+        }"
       >
         {{ item }}
       </Motion>
-    </div>
+    </Motion>
   </section>
 </template>

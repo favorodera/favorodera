@@ -33,9 +33,8 @@ const isInView = useInView(sectionRef, {
     as="section"
     :aria-labelledby="ariaLabel"
     :variants="{
-      hidden: { opacity: 0 },
+      hidden: { },
       visible: {
-        opacity: 1,
         transition: { delayChildren: stagger(0.05) },
       },
     }"
