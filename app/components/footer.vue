@@ -4,7 +4,7 @@ import { stagger } from 'motion-v'
 const footerRef = useTemplateRef<HTMLElement>('footerRef')
 
 const isInView = useInView(footerRef, {
-  margin: '-3% 0% -3% 0%',
+  margin: '-5% 0% -5% 0%',
   once: false,
 })
 </script>
@@ -29,10 +29,7 @@ const isInView = useInView(footerRef, {
       class="flex-1 origin-left bg-border block-px"
       :variants="{
         hidden: { opacity: 0, scaleX: 0 },
-        visible: {
-          opacity: 1, scaleX: 1,
-          transition: { duration: 0.6, ease: 'easeOut' }
-        }
+        visible: { opacity: 1, scaleX: 1 }
       }"
     >
       <Separator />
@@ -42,10 +39,7 @@ const isInView = useInView(footerRef, {
       as="span"
       :variants="{
         hidden: { opacity: 0 },
-        visible: {
-          opacity: 1,
-          transition: { duration: 0.6, ease: 'easeOut' },
-        },
+        visible: { opacity: 1 },
       }"
       class="ms-auto block pbs-5 text-2xs inline-fit"
     >

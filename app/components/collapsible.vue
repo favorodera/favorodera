@@ -31,7 +31,6 @@ const openModel = defineModel<boolean>({ default: false })
               height:openModel ? 'auto' : 0,
               opacity:openModel ? 1 : 0
             }"
-            :transition="{ duration: 0.3, ease: 'easeOut' }"
             class="overflow-hidden"
           >
             <slot name="hidden" />
@@ -45,7 +44,6 @@ const openModel = defineModel<boolean>({ default: false })
       :initial="{opacity: 0, y: '110%'}"
       :while-in-view="{opacity: 1, y: '0'}"
       :in-view-options="{once:true, margin:'-5% 0% -5% 0%'}"
-      :transition="{duration: 0.6, ease: 'easeOut'}"
     >
       <CollapsibleTrigger
         class="

@@ -12,16 +12,12 @@ defineProps<{
 }>()
 
 const itemVariants = {
-  invisible: {
+  hidden: {
     opacity: 0,
   },
   visible: (custom: number) => ({
     opacity: 1,
-    transition: {
-      delay: custom * 0.04,
-      duration: 0.6,
-      ease: 'easeOut',
-    },
+    transition: { duration: 0.6, ease: 'easeOut', delay: custom * 0.04 },
   }),
 }
 </script>
@@ -32,7 +28,7 @@ const itemVariants = {
     as="li"
     :custom="index"
     :variants="itemVariants"
-    initial="invisible"
+    initial="hidden"
     while-in-view="visible"
     :in-view-options="{
       once: true,

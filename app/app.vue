@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MotionConfig } from 'motion-v'
+
 useSeoMeta({
   colorScheme: 'dark light',
   googleSiteVerification: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
@@ -11,41 +13,46 @@ defineOgImage('Image.takumi')
 </script>
 
 <template>
-  <div
-    class="
-      mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
-      max-inline-2xl min-block-dvh
-
-      sm:gap-32 sm:px-8
-    "
+  <MotionConfig
+    :transition="{ duration: 0.6, ease: 'easeOut' }"
+    reduced-motion="user"
   >
-    <NuxtLink
-      to="#main"
+    <div
       class="
-        fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
+        mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
+        max-inline-2xl min-block-dvh
 
-        focus:translate-y-0
+        sm:gap-32 sm:px-8
       "
     >
-      Skip to main content
-    </NuxtLink>
+      <NuxtLink
+        to="#main"
+        class="
+          fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
 
-    <Header />
+          focus:translate-y-0
+        "
+      >
+        Skip to main content
+      </NuxtLink>
 
-    <main
-      id="main"
-      class="
-        grid grid-cols-1 gap-24
+      <Header />
 
-        sm:gap-32
-      "
-    >
-      <Hero />
-      <Experience />
-      <Work />
-      <Contact />
-    </main>
+      <main
+        id="main"
+        class="
+          grid grid-cols-1 gap-24
 
-    <Footer />
-  </div>
+          sm:gap-32
+        "
+      >
+        <Hero />
+        <Experience />
+        <Work />
+        <Contact />
+      </main>
+
+      <Footer />
+    </div>
+  </MotionConfig>
 </template>

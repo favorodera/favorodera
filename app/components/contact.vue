@@ -5,7 +5,7 @@ import contact from '#data/contact.json'
 const contactListRef = useTemplateRef('contactListRef')
 
 const isContactListInView = useInView(contactListRef, {
-  margin: '-2% 0% -2% 0%',
+  margin: '-5% 0% -5% 0%',
   once: true,
 })
 
@@ -26,8 +26,7 @@ const clipboard = useClipboard({
       as="p"
       :initial="{ opacity: 0 }"
       :while-in-view="{ opacity: 1 }"
-      :transition="{ duration: 0.6, ease: 'easeOut' }"
-      :in-view-options="{ margin: '-2% 0% -2% 0%', once: true }"
+      :in-view-options="{ margin: '-5% 0% -5% 0%', once: true }"
       class="
         mbs-6 text-[0.95rem] leading-relaxed text-muted-foreground
 
@@ -53,8 +52,7 @@ const clipboard = useClipboard({
         <Motion
           :initial="{ opacity: 0, y: '100%' }"
           :while-in-view="{ opacity: 1, y: 0 }"
-          :transition="{ duration: 0.6, ease: 'easeOut' }"
-          :in-view-options="{ margin: '-2% 0% -2% 0%', once: false }"
+          :in-view-options="{ margin: '-5% 0% -5% 0%', once: false }"
           class="
             block border-be pbe-1 transition-colors
 
@@ -98,11 +96,7 @@ const clipboard = useClipboard({
             ? { opacity: 1, y: 0 }
             : { opacity: 0, y: '110%' }
         "
-        :transition="{
-          duration: 0.6,
-          ease: 'easeOut',
-          delay: index * 0.04,
-        }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.04 }"
       >
         <NuxtLink
           :to="link.url"

@@ -55,10 +55,7 @@ const isInView = useInView(sectionRef, {
           class="block"
           :variants="{
             hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { duration: 0.6, ease: 'easeOut' },
-            },
+            visible: { opacity: 1 },
           }"
         >
           <span
@@ -77,10 +74,7 @@ const isInView = useInView(sectionRef, {
         class="flex-1 origin-left bg-border block-px"
         :variants="{
           hidden: { opacity: 0, scaleX: 0 },
-          visible: {
-            opacity: 1, scaleX: 1,
-            transition: { duration: 0.6, ease: 'easeOut' }
-          }
+          visible: { opacity: 1, scaleX: 1 }
         }"
       >
         <Separator />
@@ -93,10 +87,7 @@ const isInView = useInView(sectionRef, {
         class="flex-none text-2xs tabular-nums"
         :variants="{
           hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { duration: 0.6, ease: 'easeOut' },
-          },
+          visible: { opacity: 1 },
         }"
       >
         {{ props.trailing }}

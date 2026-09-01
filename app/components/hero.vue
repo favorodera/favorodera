@@ -8,7 +8,7 @@ const metaRef = useTemplateRef<HTMLElement>('metaRef')
 const bioRef = useTemplateRef<HTMLElement>('bioRef')
 
 const isTopRowInView = useInView(topRowRef, {
-  margin: '-10% 0% -10% 0%',
+  margin: '-5% 0% -5% 0%',
   once: true,
 })
 
@@ -18,7 +18,7 @@ const isMetaInView = useInView(metaRef, {
 })
 
 const isBioInView = useInView(bioRef, {
-  margin: '-5% 0% -5% 0%',
+  margin: '-2% 0% -2% 0%',
   once: true,
 })
 </script>
@@ -47,10 +47,6 @@ const isBioInView = useInView(bioRef, {
             opacity: 1,
             clipPath: 'circle(150% at 0% 100%)',
           },
-        }"
-        :transition="{
-          duration: 0.7,
-          ease: 'easeOut',
         }"
         class="
           relative overflow-hidden bg-muted block-22 inline-18
@@ -95,23 +91,9 @@ const isBioInView = useInView(bioRef, {
           v-for="(name, index) in profile.displayName"
           :key="index"
           as="span"
-          :initial="{
-            opacity: 0,
-          }"
-          :animate="
-            isTopRowInView
-              ? {
-                opacity: 1,
-              }
-              : {
-                opacity: 0,
-              }
-          "
-          :transition="{
-            duration: 0.7,
-            delay: index * 0.06,
-            ease: 'easeOut',
-          }"
+          :initial="{ opacity: 0 }"
+          :animate="isTopRowInView ? { opacity: 1 } : { opacity: 0 }"
+          :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }"
         >
           {{ name }}
         </Motion>
@@ -136,26 +118,9 @@ const isBioInView = useInView(bioRef, {
           profile.availability,
         ]"
         :key="index"
-        :initial="{
-          opacity: 0,
-          y: '-100%',
-        }"
-        :animate="
-          isMetaInView
-            ? {
-              opacity: 1,
-              y: 0,
-            }
-            : {
-              opacity: 0,
-              y: '-100%',
-            }
-        "
-        :transition="{
-          duration: 0.7,
-          delay: index * 0.06,
-          ease: 'easeOut',
-        }"
+        :initial="{ opacity: 0, y: '-100%' }"
+        :animate="isMetaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: '-100%' }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }"
         :class="{
           'text-foreground': index === 2,
         }"
@@ -179,23 +144,9 @@ const isBioInView = useInView(bioRef, {
         v-for="(item, index) in profile.bio"
         :key="index"
         as="p"
-        :initial="{
-          opacity: 0,
-        }"
-        :animate="
-          isBioInView
-            ? {
-              opacity: 1,
-            }
-            : {
-              opacity: 0,
-            }
-        "
-        :transition="{
-          duration: 0.8,
-          delay: index * 0.06,
-          ease: 'easeOut',
-        }"
+        :initial="{ opacity: 0 }"
+        :animate="isBioInView ? { opacity: 1 } : { opacity: 0 }"
+        :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }"
         :class="{
           'text-muted-foreground': index === 1,
         }"
