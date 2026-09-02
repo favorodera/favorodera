@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger } from 'reka-ui'
 
+const props = withDefaults(defineProps<{
+  showTrigger?: boolean
+}>(), {
+  showTrigger: true,
+})
+
 const openModel = defineModel<boolean>({ default: false })
 </script>
 
@@ -40,6 +46,7 @@ const openModel = defineModel<boolean>({ default: false })
     </Motion>
 
     <Motion
+      v-if="props.showTrigger"
       class="flex items-center justify-end border-bs border-border pbs-4"
       :initial="{opacity: 0, y: '110%'}"
       :while-in-view="{opacity: 1, y: '0'}"

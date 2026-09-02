@@ -20,7 +20,7 @@ const remainingItems = computed(() => {
     }"
     :trailing="String(experience.length).padStart(2, '0')"
   >
-    <Collapsible>
+    <Collapsible :show-trigger="remainingItems.length > 0">
       <template #visible="{open}">
         <ExperienceItem
           v-for="item, index in visibleItems"

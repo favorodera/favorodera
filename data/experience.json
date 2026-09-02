@@ -1,50 +1,10 @@
 [
   {
-    "id": "freelance",
-    "from": "2025",
-    "to": "Present",
-    "role": "Frontend Engineer",
-    "company": "Freelance",
-    "note": "Vue/Nuxt applications and design systems for early-stage product teams, from first commit to production."
-  },
-  {
-    "id": "freelanc",
-    "from": "2025",
-    "to": "Present",
-    "role": "Frontend Engineer",
-    "company": "Freelance",
-    "note": "Vue/Nuxt applications and design systems for early-stage product teams, from first commit to production."
-  },
-  {
-    "id": "freelan",
-    "from": "2025",
-    "to": "Present",
-    "role": "Frontend Engineer",
-    "company": "Freelance",
-    "note": "Vue/Nuxt applications and design systems for early-stage product teams, from first commit to production."
-  },
-  {
-    "id": "freela",
-    "from": "2025",
-    "to": "Present",
-    "role": "Frontend Engineer",
-    "company": "Freelance",
-    "note": "Vue/Nuxt applications and design systems for early-stage product teams, from first commit to production."
-  },
-  {
-    "id": "freelance",
-    "from": "2025",
-    "to": "Present",
-    "role": "Frontend Engineer",
-    "company": "Freelance",
-    "note": "Vue/Nuxt applications and design systems for early-stage product teams, from first commit to production."
-  },
-  {
     "id": "oss",
-    "from": "2026",
+    "from": "2025",
     "to": "Present",
     "role": "Maintainer",
     "company": "Open Source",
-    "note": "Nuxt modules and Vue composables used across side projects and small studios."
+    "note": "Building and maintaining open-source tools like NotForm and DistKit, focused on type-safe APIs and developer experience."
   }
 ]

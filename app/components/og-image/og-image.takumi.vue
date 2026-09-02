@@ -17,8 +17,8 @@ import profile from '#data/profile.json'
       class="overflow-hidden bg-muted block-24 inline-24"
     >
       <NuxtImg
-        :src="profile.portrait"
-        :alt="`Portrait of ${profile.name}`"
+        :src="profile.avatar"
+        :alt="`Avatar of ${profile.name}`"
         height="100%"
         width="100%"
         class="object-cover grayscale block-full inline-full"

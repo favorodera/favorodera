@@ -30,11 +30,7 @@ const isBioInView = useInView(bioRef, {
       ref="topRowRef"
       initial="hidden"
       :animate="isTopRowInView ? 'visible' : 'hidden'"
-      class="
-        grid grid-cols-[auto_1fr] items-end gap-5
-
-        sm:gap-7
-      "
+      class="grid grid-cols-[auto_1fr] items-end gap-5"
     >
       <!-- Image -->
       <Motion
@@ -65,8 +61,8 @@ const isBioInView = useInView(bioRef, {
         </div>
 
         <NuxtImg
-          :src="profile.portrait"
-          :alt="`Portrait of ${profile.name}`"
+          :src="profile.avatar"
+          :alt="`Avatar of ${profile.name}`"
           class="object-cover grayscale block-full inline-full min-block-full"
           @error="showImageFallback = true"
         />

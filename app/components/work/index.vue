@@ -51,7 +51,10 @@ const remainingItems = computed(() => {
     }"
     :trailing="String(visibleItems.length + remainingItems.length).padStart(2, '0')"
   >
-    <TabsRoot v-model:model-value="tagsFilterModel">
+    <TabsRoot
+      v-model:model-value="tagsFilterModel"
+      class="overflow-hidden"
+    >
       <TabsList
         ref="listRef"
         as-child
