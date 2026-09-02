@@ -39,7 +39,7 @@
     "eslint": "^10.9.1",
     "nuxtseo-layer-devtools": "^5.3.14",
     "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.0",
     "vue-tsc": "^3.3.11"
   }
 }
