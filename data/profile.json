@@ -1,0 +1,15 @@
+{
+  "name": "Favour Emeka",
+  "initials": "FE",
+  "displayName": [
+    "Favour",
+    "Emeka"
+  ],
+  "role": "Frontend Engineer",
+  "availability": "Open to work",
+  "bio": [
+    "I build fast, quiet interfaces — mostly Vue, Nuxt, and TypeScript, with a bias toward less UI and more clarity.",
+    "Currently shipping open source tooling and design systems for small product teams."
+  ],
+  "avatar": "./avatar.png"
+}

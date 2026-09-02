@@ -1,49 +1,58 @@
 <script setup lang="ts">
+import { MotionConfig } from 'motion-v'
+
 useSeoMeta({
-  charset: 'utf8',
   colorScheme: 'dark light',
-  description: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Creator of CentoUI, NotForm, and other open-source tools.',
   googleSiteVerification: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
-  ogDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
-  ogTitle: 'Favour Emeka | Frontend Engineer',
-  ogUrl: 'https://favorodera.vercel.app',
-  themeColor: [
-    {
-      content: '#ffffff',
-      media: '(prefers-color-scheme: light)',
-    },
-    {
-      content: '#070707',
-      media: '(prefers-color-scheme: dark)',
-    },
-  ],
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
-  twitterDescription: 'Frontend engineer building accessible, type-safe interfaces with Vue, Nuxt, and TypeScript. Explore projects, OSS tools, and more.',
   twitterSite: '@favorodera',
-  twitterTitle: 'Favour Emeka | Frontend Engineer',
-  viewport: 'width=device-width, initial-scale=1',
 })
 
 defineOgImage('Image.takumi')
 </script>
 
 <template>
-  <div class="min-inline-full min-block-dvh grid">
-    <NuxtLink
-      to="#main"
+  <MotionConfig
+    :transition="{ duration: 0.6, ease: 'easeOut' }"
+    reduced-motion="user"
+  >
+    <div
       class="
-        fixed inset-bs-4 inset-s-4 -translate-y-[calc(100%+1rem)] z-50
-        outline-none
+        mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
+        max-inline-2xl min-block-dvh
 
-        focus:translate-y-0 focus:ring-2 focus:ring-ring
+        sm:gap-32 sm:px-8
       "
     >
-      Skip to main content
-    </NuxtLink>
+      <NuxtLink
+        to="#main"
+        class="
+          fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
 
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+          focus:translate-y-0
+        "
+      >
+        Skip to main content
+      </NuxtLink>
+
+      <Header />
+
+      <main
+        id="main"
+        class="
+          grid grid-cols-1 gap-24
+
+          sm:gap-32
+        "
+      >
+        <Hero />
+        <Experience />
+        <Work />
+        <Contact />
+      </main>
+
+      <Footer />
+    </div>
+  </MotionConfig>
 </template>

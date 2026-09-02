@@ -5,16 +5,11 @@ const resolvedFactory = factory({
   tailwind: {
     entryPoint: 'app/assets/css/index.css',
   },
+  test: false,
 })
   .append({
     rules: {
       'pnpm/json-enforce-catalog': 'off',
-    },
-  })
-  .append({
-    files: ['app/components/centoui/**'],
-    rules: {
-      'ts/no-explicit-any': 'off',
     },
   })
 

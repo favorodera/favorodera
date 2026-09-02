@@ -1,0 +1,10 @@
+[
+  {
+    "id": "oss",
+    "from": "2025",
+    "to": "Present",
+    "role": "Maintainer",
+    "company": "Open Source",
+    "note": "Building and maintaining open-source tools like NotForm and DistKit, focused on type-safe APIs and developer experience."
+  }
+]

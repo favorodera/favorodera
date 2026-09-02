@@ -1,18 +1,60 @@
-@import "./centoui.css";
+@import 'tailwindcss';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.9900 0 0);
+  --foreground: oklch(0 0 0);
+
+  --muted: oklch(0.9700 0 0);
+  --muted-foreground: oklch(0.4400 0 0);
+
+  --border: oklch(0.9200 0 0);
+  --ring: oklch(0 0 0);
+}
+
+.dark {
+  --background: oklch(0 0 0);
+  --foreground: oklch(1 0 0);
+
+  --muted: oklch(0.2300 0 0);
+  --muted-foreground: oklch(0.7200 0 0);
+
+  --border: oklch(0.2600 0 0);
+  --ring: oklch(0.7200 0 0);
+}
 
 @theme inline {
-  --font-sans: 'Bricolage Grotesque', sans-serif;
-  --font-serif: 'Instrument Serif', serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --radius: 0.625rem;
+
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
 }
 
 @layer base {
-  html {
-    @apply scroll-smooth scroll-pbs-40 tracking-wide;
-    @apply scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent;
-    @apply selection:bg-foreground selection:text-background;
+  * {
+    @apply border-border outline-ring;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-foreground selection:text-background font-sans;
   }
 }
 
-@utility section-padding {
-  @apply pbs-12 sm:pbs-16 md:pbs-20;
+@utility text-2xs {
+  font-size: 0.6875rem;
+  line-height: calc(0.75 / 0.6875);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+  font-family: var(--font-mono);
 }
