@@ -50,9 +50,9 @@ const clipboard = useClipboard({
         @click="clipboard.copy()"
       >
         <Motion
-          :initial="{ opacity: 0, y: '100%' }"
-          :while-in-view="{ opacity: 1, y: 0 }"
-          :in-view-options="{ margin: '-5% 0% -5% 0%', once: false }"
+          :initial="{ opacity: 0 }"
+          :while-in-view="{ opacity: 1 }"
+          :in-view-options="{ margin: '-5% 0% -5% 0%', once: true }"
           class="
             block border-be pbe-1 transition-colors
 
