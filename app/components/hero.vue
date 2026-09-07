@@ -131,7 +131,7 @@ const isBioInView = useInView(bioRef, {
       initial="hidden"
       :animate="isBioInView ? 'visible' : 'hidden'"
       class="
-        mbs-6 space-y-1.5 text-[0.95rem] leading-relaxed
+        mbs-4 space-y-1.5 text-[0.95rem] leading-relaxed
 
         sm:text-base
       "
