@@ -92,7 +92,8 @@ async function toggleTheme(event: PointerEvent) {
   </button>
 </template>
 
-<style>
+<style lang="css">
+/* eslint-disable css/use-baseline */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

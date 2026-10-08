@@ -7,10 +7,5 @@ const resolvedFactory = factory({
   },
   test: false,
 })
-  .append({
-    rules: {
-      'pnpm/json-enforce-catalog': 'off',
-    },
-  })
 
 export default withNuxt(resolvedFactory)

@@ -5,7 +5,7 @@
   "packageManager": "pnpm@12.9.0",
   "engines": {
     "node": ">=24.0.0",
-    "pnpm": ">=11.0.0"
+    "pnpm": ">=12.0.0"
   },
   "scripts": {
     "build": "nuxt build",
@@ -18,28 +18,28 @@
     "ready": "pnpm install && pnpm lint && pnpm typecheck && pnpm build"
   },
   "dependencies": {
-    "@nuxt/fonts": "^0.14.0",
-    "@nuxt/image": "^2.1.0",
-    "@nuxtjs/color-mode": "^4.0.1",
-    "@nuxtjs/seo": "^5.3.14",
-    "@takumi-rs/core": "^2.12.0",
-    "@vueuse/core": "^15.0.0",
-    "@vueuse/nuxt": "^15.0.0",
-    "motion-v": "^2.4.0",
-    "nuxt": "^4.5.2",
-    "nuxt-schema-org": "^6.3.1",
-    "reka-ui": "^2.10.4",
-    "vue": "^3.5.41"
+    "@nuxt/fonts": "catalog:",
+    "@nuxt/image": "catalog:",
+    "@nuxtjs/color-mode": "catalog:",
+    "@nuxtjs/seo": "catalog:",
+    "@takumi-rs/core": "catalog:",
+    "@vueuse/core": "catalog:",
+    "@vueuse/nuxt": "catalog:",
+    "motion-v": "catalog:",
+    "nuxt": "catalog:",
+    "nuxt-schema-org": "catalog:",
+    "reka-ui": "catalog:",
+    "vue": "catalog:"
   },
   "devDependencies": {
-    "@favorodera/eslint-config": "^1.1.2",
-    "@nuxt/eslint": "^1.17.0",
-    "@tailwindcss/vite": "^4.3.3",
-    "@vercel/analytics": "^2.0.1",
-    "eslint": "^10.9.1",
-    "nuxtseo-layer-devtools": "^5.3.14",
-    "tailwindcss": "^4.3.3",
-    "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.11"
+    "@favorodera/eslint-config": "catalog:",
+    "@nuxt/eslint": "catalog:",
+    "@tailwindcss/vite": "catalog:",
+    "@vercel/analytics": "catalog:",
+    "eslint": "catalog:",
+    "nuxtseo-layer-devtools": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:",
+    "vue-tsc": "catalog:"
   }
 }

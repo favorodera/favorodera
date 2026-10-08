@@ -10,9 +10,31 @@ trustPolicyExclude:
 allowBuilds:
   '@parcel/watcher': true
   '@tailwindcss/oxide': true
-  better-sqlite3: true
   esbuild: true
   sharp: true
   unrs-resolver: true
   vue-demi: true
+
+catalog:
+  '@favorodera/eslint-config': ^2.0.1
+  '@nuxt/eslint': ^1.17.0
+  '@nuxt/fonts': ^0.14.0
+  '@nuxt/image': ^2.1.0
+  '@nuxtjs/color-mode': ^4.0.1
+  '@nuxtjs/seo': ^5.3.14
+  '@tailwindcss/vite': ^4.3.3
+  '@takumi-rs/core': ^2.12.0
+  '@vercel/analytics': ^2.0.1
+  '@vueuse/core': ^15.0.0
+  '@vueuse/nuxt': ^15.0.0
+  eslint: ^10.9.1
+  motion-v: ^2.4.0
+  nuxt: ^4.5.2
+  nuxt-schema-org: ^6.3.1
+  nuxtseo-layer-devtools: ^5.3.14
+  reka-ui: ^2.10.4
+  tailwindcss: ^4.3.3
+  typescript: ^6.0.3
+  vue: ^3.5.41
+  vue-tsc: ^3.3.11
 
