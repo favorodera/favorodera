@@ -5,7 +5,7 @@ import profile from '#data/profile.json'
 <template>
   <div
     :style="{
-      fontFamily: `'Geist', sans-serif`,
+      fontFamily: `'Outfit', sans-serif`,
     }"
     data-theme="dark"
     class="
