@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 
-const ariaLabel = computed(() => (
-  colorMode.value === 'dark'
-    ? 'Switch to light theme'
-    : 'Switch to dark theme'
-))
+const ariaLabel = computed(() => {
+  return (
+    colorMode.value === 'dark'
+      ? 'Switch to light theme'
+      : 'Switch to dark theme'
+  )
+})
 
 /**
  * Toggles the theme from the given interaction point.
@@ -93,6 +95,7 @@ async function toggleTheme(event: PointerEvent) {
 </template>
 
 <style>
+/* eslint-disable css/use-baseline */
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -106,4 +109,5 @@ async function toggleTheme(event: PointerEvent) {
 ::view-transition-new(root) {
   z-index: 999;
 }
+/* eslint-enable css/use-baseline */
 </style>

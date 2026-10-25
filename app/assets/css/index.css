@@ -46,7 +46,11 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased selection:bg-foreground selection:text-background font-sans;
+    @apply
+      bg-background font-sans text-foreground antialiased
+
+      selection:bg-foreground selection:text-background
+    ;
   }
 }
 

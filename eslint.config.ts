@@ -1,16 +1,13 @@
-import { factory } from '@favorodera/eslint-config'
+import { defineConfig } from '@favorodera/eslint-config'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
-const resolvedFactory = factory({
+const config = defineConfig({
   tailwind: {
-    entryPoint: 'app/assets/css/index.css',
-  },
-  test: false,
-})
-  .append({
-    rules: {
-      'pnpm/json-enforce-catalog': 'off',
+    settings: {
+      entryPoint: 'app/assets/css/index.css',
     },
-  })
+  },
+  vitest: false,
+})
 
-export default withNuxt(resolvedFactory)
+export default withNuxt(config)

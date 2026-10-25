@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+    "vue.volar",
+    "streetsidesoftware.code-spell-checker-cspell-bundled-dictionaries",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}

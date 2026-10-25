@@ -1,0 +1,79 @@
+{
+  "editor.quickSuggestions": {
+    "other": "on",
+    "comments": "on"
+  },
+  "tailwindCSS.validate": true,
+  "tailwindCSS.includeLanguages": {
+    "css": "tailwindcss"
+  },
+  "tailwindCSS.classAttributes": [
+    "class",
+    "ui"
+  ],
+  "tailwindCSS.classFunctions": [
+    "tv",
+    "defineAppConfig"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    [
+      "Classes\\s*=\\s*computed\\(\\(\\)\\s*=>\\s*([\\s\\S]+?)\\)",
+      "'([^']+)'"
+    ]
+  ],
+  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+  "tailwindCSS.lint.cssConflict": "ignore",
+  "eslint.format.enable": true,
+  "files.eol": "\n",
+  "eslint.runtime": "node",
+  "npm.packageManager": "pnpm",
+  "editor.tabSize": 2,
+  "editor.indentSize": "tabSize",
+  "editor.detectIndentation": false,
+  "cSpell.ignorePaths": [
+    "package-lock.json",
+    "node_modules",
+    "vscode-extension",
+    ".git/{info,lfs,logs,refs,objects}/**",
+    ".git/{index,*refs,*HEAD}",
+    ".vscode",
+    ".vscode-insiders",
+    ".gitignore",
+    ".gitattributes",
+    "pnpm-lock.yaml"
+  ],
+  "eslint.validate": [
+    "javascript",
+    "vue",
+    "typescript",
+    "json",
+    "jsonc",
+    "json5",
+    "html",
+    "markdown",
+    "yaml",
+    "yml",
+    "mdc"
+  ],
+  "cSpell.words": [
+    "Chidera",
+    "demi",
+    "distkit",
+    "Emeka",
+    "esbuild",
+    "favorodera",
+    "notform",
+    "nums",
+    "Nuxt",
+    "nuxtjs",
+    "nuxtseo",
+    "Paweł",
+    "reka",
+    "Tabler",
+    "takumi",
+    "unrs",
+    "Vercel",
+    "vite",
+    "vueuse"
+  ]
+}
