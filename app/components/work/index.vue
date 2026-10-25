@@ -23,13 +23,17 @@ const tags = computed(() => {
     }
   }
 
-  return [...tags].toSorted((tagA, tagB) => tagA.localeCompare(tagB))
+  return [...tags].toSorted((tagA, tagB) => {
+    return tagA.localeCompare(tagB)
+  })
 })
 
 const visibleItems = computed(() => {
   const filtered = tagsFilterModel.value === 'all'
     ? projects
-    : projects.filter(project => project.tags.includes(tagsFilterModel.value))
+    : projects.filter((project) => {
+        return project.tags.includes(tagsFilterModel.value)
+      })
 
   return filtered.slice(0, ALWAYS_VISIBLE)
 })
@@ -37,7 +41,9 @@ const visibleItems = computed(() => {
 const remainingItems = computed(() => {
   const filtered = tagsFilterModel.value === 'all'
     ? projects
-    : projects.filter(project => project.tags.includes(tagsFilterModel.value))
+    : projects.filter((project) => {
+        return project.tags.includes(tagsFilterModel.value)
+      })
 
   return filtered.slice(ALWAYS_VISIBLE)
 })

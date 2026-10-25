@@ -2,9 +2,6 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
 import { definePerson } from 'nuxt-schema-org/schema'
 
-const fontWeights = [100, 200, 300, 400, 500, 600, 700, 800, 900]
-
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   alias: {
     '#data': fileURLToPath(new URL('data', import.meta.url)),
@@ -27,7 +24,7 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2026-06-21',
   css: ['~/assets/css/index.css'],
   devtools: { enabled: false },
   eslint: {
@@ -36,18 +33,10 @@ export default defineNuxtConfig({
     },
   },
   fonts: {
-    families: [
-      {
-        global: true,
-        name: 'Geist',
-        weights: fontWeights,
-      },
-      {
-        global: true,
-        name: 'Geist Mono',
-        weights: fontWeights,
-      },
-    ],
+    defaults: {
+      weights: [200, 300, 400, 500, 600, 700],
+    },
+    families: [{ global: true, name: 'Outfit' }],
   },
   modules: [
     '@nuxtjs/color-mode',
@@ -94,11 +83,6 @@ export default defineNuxtConfig({
         'Nuxt.js',
         'TypeScript',
         'Tailwind CSS',
-        'Open Source Software',
-        'Form Validation',
-        'SQLite',
-        'Zod',
-        'Developer Tooling',
       ],
       name: 'Favour Emeka',
       sameAs: [

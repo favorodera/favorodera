@@ -1,4 +1,6 @@
-
+minimumReleaseAgeExclude:
+  - '@favorodera/eslint-config@3.0.0'
+  
 shellEmulator: true
 
 trustPolicy: no-downgrade
@@ -10,9 +12,33 @@ trustPolicyExclude:
 allowBuilds:
   '@parcel/watcher': true
   '@tailwindcss/oxide': true
-  better-sqlite3: true
   esbuild: true
   sharp: true
   unrs-resolver: true
   vue-demi: true
+
+catalog:
+  '@favorodera/eslint-config': ^3.0.0
+  '@nuxt/eslint': ^1.17.0
+  '@nuxt/fonts': ^1.0.0
+  '@nuxt/image': ^2.2.0
+  '@nuxtjs/color-mode': ^4.0.1
+  '@nuxtjs/seo': ^5.3.16
+  '@tailwindcss/vite': ^4.3.3
+  '@takumi-rs/core': ^2.17.1
+  '@vercel/analytics': ^2.0.1
+  '@vueuse/core': ^15.0.0
+  '@vueuse/nuxt': ^15.0.0
+  'eslint': ^10.13.0
+  'motion-v': ^2.8.0
+  'nuxt': ^4.6.2
+  'nuxt-schema-org': ^6.4.3
+  'nuxtseo-layer-devtools': ^5.3.16
+  'reka-ui': ^2.11.0
+  'tailwindcss': ^4.3.3
+  'typescript': ^6.0.3
+  'vue': ^3.5.44
+  'vue-tsc': ^3.3.13
+
+catalogPrune: true
 

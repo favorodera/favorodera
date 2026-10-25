@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import projects from '#data/projects.json'
+import type projects from '#data/projects.json'
 
 defineOptions({
   inheritAttrs: false,
@@ -15,10 +15,12 @@ const itemVariants = {
   hidden: {
     opacity: 0,
   },
-  visible: (custom: number) => ({
-    opacity: 1,
-    transition: { delay: custom * 0.04, duration: 0.6, ease: 'easeOut' },
-  }),
+  visible: (custom: number) => {
+    return {
+      opacity: 1,
+      transition: { delay: custom * 0.04, duration: 0.6, ease: 'easeOut' },
+    }
+  },
 }
 </script>
 

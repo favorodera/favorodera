@@ -6,11 +6,11 @@ permissions:
   statuses: write
 
 jobs:
-  ci:
-    name: Lint, Typecheck & Build
+  checks:
+    name: Checks
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
@@ -24,7 +24,7 @@ jobs:
           node-version: 24
           cache: pnpm
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
       - name: Lint
@@ -32,6 +32,9 @@ jobs:
 
       - name: Typecheck
         run: pnpm typecheck
+
+      - name: Test
+        run: pnpm test
 
       - name: Build
         run: pnpm build
