@@ -2,14 +2,14 @@
   {
     "id": "notform",
     "title": "NotForm",
-    "description": "Type-safe form validation and state management for Vue and Nuxt with minimal boilerplate",
+    "description": "Headless, schema-agnostic form management for Vue 3 and Nuxt.",
     "tags": ["Open source"],
     "url": "https://notformdocs.vercel.app"
   },
   {
     "id": "distkit",
     "title": "DistKit",
-    "description": "Minimal registry and CLI for distributing open code — fork it and build your own",
+    "description": "A minimal registry and CLI for distributing open code.",
     "tags": [
       "Tooling",
       "Open source"
@@ -19,7 +19,7 @@
   {
     "id": "zod-sqlite",
     "title": "Zod-SQLite",
-    "description": "Generate type-safe SQLite table schemas from Zod validation schemas with zero runtime overhead",
+    "description": "Generate type-safe SQLite table schemas from Zod validation schemas with zero runtime overhead.",
     "tags": [
       "Tooling",
       "Open source"
@@ -29,7 +29,7 @@
   {
     "id": "eslint-config",
     "title": "@favorodera/eslint-config",
-    "description": "Opinionated, type-safe flat ESLint configuration factory for Vue, TypeScript, and Tailwind",
+    "description": "An opinionated,type-safe ESLint flat configuration for JavaScript and TypeScript projects.",
     "tags": [
       "Tooling",
       "Open source"

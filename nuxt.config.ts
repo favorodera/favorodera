@@ -36,10 +36,7 @@ export default defineNuxtConfig({
     defaults: {
       weights: [200, 300, 400, 500, 600, 700],
     },
-    families: [
-      { global: true, name: 'Geist' },
-      { global: true, name: 'Geist Mono' },
-    ],
+    families: [{ global: true, name: 'Outfit' }],
   },
   modules: [
     '@nuxtjs/color-mode',

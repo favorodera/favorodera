@@ -36,8 +36,7 @@
 
   --radius: 0.625rem;
 
-  --font-sans: 'Geist', sans-serif;
-  --font-mono: 'Geist Mono', monospace;
+  --font-sans: 'Outfit', sans-serif;
 }
 
 @layer base {
