@@ -2,7 +2,7 @@
   {
     "id": "notform",
     "title": "NotForm",
-    "description": "Headless, schema-agnostic form management for Vue 3 and Nuxt.",
+    "description": "Headless, schema-agnostic form management for Vue and Nuxt.",
     "tags": ["Open source"],
     "url": "https://notformdocs.vercel.app"
   },
@@ -10,40 +10,21 @@
     "id": "distkit",
     "title": "DistKit",
     "description": "A minimal registry and CLI for distributing open code.",
-    "tags": [
-      "Tooling",
-      "Open source"
-    ],
+    "tags": ["Open source"],
     "url": "https://github.com/favorodera/distkit"
   },
   {
     "id": "zod-sqlite",
     "title": "Zod-SQLite",
     "description": "Generate type-safe SQLite table schemas from Zod validation schemas with zero runtime overhead.",
-    "tags": [
-      "Tooling",
-      "Open source"
-    ],
+    "tags": ["Open source"],
     "url": "https://github.com/favorodera/zod-sqlite"
   },
   {
     "id": "eslint-config",
     "title": "@favorodera/eslint-config",
-    "description": "An opinionated,type-safe ESLint flat configuration for JavaScript and TypeScript projects.",
-    "tags": [
-      "Tooling",
-      "Open source"
-    ],
+    "description": "An opinionated, type-safe ESLint flat configuration for JavaScript and TypeScript projects.",
+    "tags": ["Open source"],
     "url": "https://github.com/favorodera/eslint-config"
-  },
-  {
-    "id": "use-promise",
-    "title": "@favorodera/use-promise",
-    "description": "Vue composable for async operations with reactive state, cancellation, and race-condition safety",
-    "tags": [
-      "Tooling",
-      "Open source"
-    ],
-    "url": "https://github.com/favorodera/use-promise"
   }
 ]

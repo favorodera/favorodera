@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import profile from '#data/profile.json'
 
+const meta = [
+  { class: '', value: profile.role },
+  { class: 'text-muted-foreground', value: '|' },
+  { class: ' transition-colors outline-none hover:text-muted-foreground focus-visible:ring-1 focus-visible:ring-ring', value: profile.resume },
+]
+
 const showImageFallback = ref(false)
 
 const topRowRef = useTemplateRef<HTMLElement>('topRowRef')
@@ -105,23 +111,32 @@ const isBioInView = useInView(bioRef, {
         hidden: {},
         visible: {},
       }"
-      class="mbs-3 flex items-end gap-2 overflow-hidden text-2xs"
+      class="
+        mbs-3 flex items-end gap-2 overflow-hidden text-2xs text-foreground
+      "
     >
       <Motion
-        v-for="(item, index) in [
-          profile.role,
-          '|',
-          profile.availability,
-        ]"
+        v-for="item, index in meta"
         :key="index"
         :initial="{ opacity: 0, y: '-100%' }"
         :animate="isMetaInView ? { opacity: 1, y: 0 } : { opacity: 0, y: '-100%' }"
         :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }"
-        :class="{
-          'text-foreground': index === 2,
-        }"
       >
-        {{ item }}
+        <NuxtLink
+          v-if="index === 2"
+          target="_blank"
+          rel="noopener noreferrer"
+          external
+          :to="item.value"
+          :class="item.class"
+        >
+          Résumé
+        </NuxtLink>
+
+        <span
+          v-else
+          :class="item.class"
+        >{{ item.value }}</span>
       </Motion>
     </Motion>
 
