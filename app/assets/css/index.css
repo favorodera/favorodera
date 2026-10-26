@@ -34,8 +34,6 @@
   --color-border: var(--border);
   --color-ring: var(--ring);
 
-  --radius: 0.625rem;
-
   --font-sans: 'Outfit', sans-serif;
 }
 
@@ -59,5 +57,4 @@
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--color-muted-foreground);
-  font-family: var(--font-mono);
 }

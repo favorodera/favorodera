@@ -5,7 +5,7 @@ const footerRef = useTemplateRef<HTMLElement>('footerRef')
 
 const isInView = useInView(footerRef, {
   margin: '-5% 0% -5% 0%',
-  once: false,
+  once: true,
 })
 </script>
 
@@ -43,7 +43,7 @@ const isInView = useInView(footerRef, {
       }"
       class="ms-auto block pbs-5 text-2xs inline-fit"
     >
-      COPYRIGHT 2024 - {{ new Date().getFullYear() }}
+      COPYRIGHT 2025 - {{ new Date().getFullYear() }}
     </Motion>
   </Motion>
 </template>
