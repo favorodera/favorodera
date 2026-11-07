@@ -23,7 +23,7 @@ catalog:
   '@nuxt/fonts': ^1.0.0
   '@nuxt/image': ^2.2.0
   '@nuxtjs/color-mode': ^4.0.1
-  '@nuxtjs/seo': ^5.3.16
+  '@nuxtjs/seo': ^6.0.0
   '@tailwindcss/vite': ^4.3.3
   '@takumi-rs/core': ^2.17.1
   '@vercel/analytics': ^2.0.1
