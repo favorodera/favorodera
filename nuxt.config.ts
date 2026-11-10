@@ -92,7 +92,7 @@ export default defineNuxtConfig({
         'https://facebook.com/favorodera',
         'https://wa.me/+2348024383756',
       ],
-      url: 'https://favorodera.vercel.app',
+      url: 'https://favorodera.dev',
     }),
   },
   site: {
@@ -100,7 +100,7 @@ export default defineNuxtConfig({
     description: 'Frontend engineer building fast, quiet interfaces with Vue, Nuxt & TypeScript. Creator of NotForm, and other open-source tools for developers.',
     indexable: true,
     name: 'Favour Emeka | Frontend Engineer',
-    url: 'https://favorodera.vercel.app',
+    url: 'https://favorodera.dev',
   },
   sitemap: {
     zeroRuntime: true,

@@ -3,7 +3,6 @@ import { MotionConfig } from 'motion-v'
 
 useSeoMeta({
   colorScheme: 'dark light',
-  googleSiteVerification: 'qYU6PqljRftNzCNBLdEFxnKJKwH-Aj7aJ9CLp6itnhM',
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
   twitterSite: '@favorodera',
