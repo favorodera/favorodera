@@ -36,6 +36,7 @@
     "@favorodera/eslint-config": "catalog:",
     "@nuxt/eslint": "catalog:",
     "@tailwindcss/vite": "catalog:",
+    "@types/node": "catalog:",
     "@vercel/analytics": "catalog:",
     "eslint": "catalog:",
     "nuxtseo-layer-devtools": "catalog:",
