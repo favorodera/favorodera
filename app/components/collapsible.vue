@@ -1,13 +1,17 @@
 <script setup lang="ts">
 import { CollapsibleContent, CollapsibleRoot, CollapsibleTrigger } from 'reka-ui'
 
-const props = withDefaults(defineProps<{
-  showTrigger?: boolean
-}>(), {
-  showTrigger: true,
-})
+defineSlots<{
+  hidden: () => void
+  visible: (props: { open: boolean | undefined }) => void
+}>()
 
-const openModel = defineModel<boolean>({ default: false })
+const props = withDefaults(
+  defineProps<{ showTrigger?: boolean }>(),
+  { showTrigger: true },
+)
+
+const openModel = defineModel<boolean>()
 </script>
 
 <template>
@@ -34,8 +38,8 @@ const openModel = defineModel<boolean>({ default: false })
             as="ul"
             :initial="false"
             :animate="{
-              height:openModel ? 'auto' : 0,
-              opacity:openModel ? 1 : 0
+              height: openModel ? 'auto' : 0,
+              opacity: openModel ? 1 : 0,
             }"
             class="overflow-hidden"
           >
@@ -48,9 +52,9 @@ const openModel = defineModel<boolean>({ default: false })
     <Motion
       v-if="props.showTrigger"
       class="flex items-center justify-end border-bs border-border pbs-4"
-      :initial="{opacity: 0, y: '110%'}"
-      :while-in-view="{opacity: 1, y: '0'}"
-      :in-view-options="{once:true, margin:'-5% 0% -5% 0%'}"
+      :initial="{ opacity: 0, y: '110%' }"
+      :while-in-view="{ opacity: 1, y: '0' }"
+      :in-view-options="{ once: true, margin: '-5% 0% -5% 0%' }"
     >
       <CollapsibleTrigger
         class="

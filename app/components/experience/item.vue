@@ -34,7 +34,7 @@ const itemVariants = {
     while-in-view="visible"
     :in-view-options="{
       once: true,
-      margin: '-5% 0% -5% 0%'
+      margin: '-5% 0% -5% 0%',
     }"
     class="
       py-5
@@ -42,7 +42,7 @@ const itemVariants = {
       sm:grid sm:grid-cols-[auto_1fr] sm:items-start sm:gap-x-6
     "
     :class="{
-      'border-be':!isLast ,
+      'border-be': !isLast,
     }"
   >
     <!-- Period -->

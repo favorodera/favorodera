@@ -34,7 +34,7 @@ const itemVariants = {
     while-in-view="visible"
     :in-view-options="{
       once: true,
-      margin: '-5% 0% -5% 0%'
+      margin: '-5% 0% -5% 0%',
     }"
   >
     <NuxtLink
@@ -47,7 +47,7 @@ const itemVariants = {
       :to="item.url"
       target="_blank"
       :class="{
-        'border-be':!isLast ,
+        'border-be': !isLast,
       }"
       rel="noopener noreferrer"
       external

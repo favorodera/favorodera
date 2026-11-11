@@ -77,10 +77,10 @@ async function toggleTheme(event: PointerEvent) {
       <AnimatePresence mode="wait">
         <Motion
           :key="ariaLabel"
-          :initial="{x: 'calc(-1rem + 5px)',opacity:0}"
-          :animate="{x:0,opacity:1}"
+          :initial="{ x: 'calc(-1rem + 5px)', opacity: 0 }"
+          :animate="{ x: 0, opacity: 1 }"
           :transition="{
-            duration:0.6,
+            duration: 0.6,
             type: 'spring',
             damping: 36,
             mass: 0.9,

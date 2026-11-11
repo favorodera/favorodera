@@ -9,6 +9,10 @@ type Props = {
   trailing?: string
 }
 
+defineSlots<{
+  default: () => void
+}>()
+
 const props = withDefaults(defineProps<Props>(), {
   trailing: undefined,
 })
@@ -74,7 +78,7 @@ const isInView = useInView(sectionRef, {
         class="flex-1 origin-left bg-border block-px"
         :variants="{
           hidden: { opacity: 0, scaleX: 0 },
-          visible: { opacity: 1, scaleX: 1 }
+          visible: { opacity: 1, scaleX: 1 },
         }"
       >
         <Separator />

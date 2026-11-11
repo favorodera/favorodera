@@ -29,7 +29,7 @@ const isInView = useInView(footerRef, {
       class="flex-1 origin-left bg-border block-px"
       :variants="{
         hidden: { opacity: 0, scaleX: 0 },
-        visible: { opacity: 1, scaleX: 1 }
+        visible: { opacity: 1, scaleX: 1 },
       }"
     >
       <Separator />

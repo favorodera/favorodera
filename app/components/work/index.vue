@@ -138,7 +138,7 @@ const remainingItems = computed(() => {
     </TabsRoot>
 
     <Collapsible>
-      <template #visible="{open}">
+      <template #visible="{ open }">
         <WorkItem
           v-for="item, index in visibleItems"
           :key="item.id"
