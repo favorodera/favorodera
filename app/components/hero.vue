@@ -94,7 +94,7 @@ const isBioInView = useInView(bioRef, {
           :key="index"
           as="span"
           :initial="{ opacity: 0 }"
-          :animate="isTopRowInView ? { opacity: 1 } : { opacity: 0 }"
+          :animate="{ opacity: isTopRowInView ? 1 : 0 }"
           :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }"
         >
           {{ name }}
@@ -156,7 +156,7 @@ const isBioInView = useInView(bioRef, {
         :key="index"
         as="p"
         :initial="{ opacity: 0 }"
-        :animate="isBioInView ? { opacity: 1 } : { opacity: 0 }"
+        :animate="{ opacity: isBioInView ? 1 : 0 }"
         :transition="{ duration: 0.6, ease: 'easeOut', delay: index * 0.06 }"
         :class="{
           'text-muted-foreground': index === 1,

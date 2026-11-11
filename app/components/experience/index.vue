@@ -15,13 +15,13 @@ const remainingItems = computed(() => {
 <template>
   <Section
     :leading="{
-      index:'01',
-      title:'Experience'
+      index: '01',
+      title: 'Experience',
     }"
     :trailing="String(experience.length).padStart(2, '0')"
   >
     <Collapsible :show-trigger="remainingItems.length > 0">
-      <template #visible="{open}">
+      <template #visible="{ open }">
         <ExperienceItem
           v-for="item, index in visibleItems"
           :key="item.id"
