@@ -1,60 +1,46 @@
 <script setup lang="ts">
-import { MotionConfig } from 'motion-v'
+import { seo } from '~/data/seo'
+
+useHead({ titleTemplate: '%s' })
 
 useSeoMeta({
   colorScheme: 'dark light',
+  description: seo.description,
+  themeColor: [
+    { content: '#fcfcfc', media: '(prefers-color-scheme: light)' },
+    { content: '#000000', media: '(prefers-color-scheme: dark)' },
+  ],
+  title: seo.title,
   twitterCard: 'summary_large_image',
   twitterCreator: '@favorodera',
   twitterSite: '@favorodera',
 })
 
-defineOgImage('Image.takumi')
+defineOgImage('Image.takumi', [
+  { key: 'og' },
+  { height: 800, key: 'whatsapp', width: 800 },
+])
 </script>
 
 <template>
-  <MotionConfig
-    :transition="{ duration: 0.6, ease: 'easeOut' }"
-    reduced-motion="user"
+  <div
+    class="
+      mx-auto flex flex-col items-center px-5 py-10 inline-full max-inline-lg
+      min-block-dvh
+
+      md:px-8 md:pbs-22 md:pbe-14
+    "
   >
-    <div
-      class="
-        mx-auto grid grid-cols-1 gap-24 px-6 pbs-8 pbe-20 inline-full
-        max-inline-2xl min-block-dvh
+    <SiteHeader />
 
-        sm:gap-32 sm:px-8
-      "
-    >
-      <NuxtLink
-        to="#main"
-        class="
-          fixed inset-s-4 inset-bs-4 z-50 -translate-y-[calc(100%+1rem)]
+    <main class="flex-1 inline-full">
+      <HomeIntro />
 
-          focus:translate-y-0
-        "
-      >
-        Skip to main content
-      </NuxtLink>
+      <HomeExperience />
 
-      <Header />
+      <HomeProjects />
+    </main>
 
-      <main
-        id="main"
-        class="
-          grid grid-cols-1 gap-24
-
-          sm:gap-32
-        "
-      >
-        <Hero />
-
-        <Experience />
-
-        <Work />
-
-        <Contact />
-      </main>
-
-      <Footer />
-    </div>
-  </MotionConfig>
+    <SiteFooter />
+  </div>
 </template>

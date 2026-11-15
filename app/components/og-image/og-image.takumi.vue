@@ -1,27 +1,28 @@
 <script setup lang="ts">
-import profile from '#data/profile.json'
+import { profile } from '~/data/profile'
 </script>
 
 <template>
   <div
     :style="{
-      fontFamily: `'Outfit', sans-serif`,
+      fontFamily: `'Outfit', ui-sans-serif, system-ui, sans-serif`,
     }"
-    data-theme="dark"
     class="
-      relative flex flex-col items-center justify-center gap-2 border
-      border-border bg-background p-10 text-center block-full inline-full
+      relative flex flex-col items-start justify-end gap-2 bg-background p-10
+      min-block-full min-inline-full
     "
   >
     <div
-      class="overflow-hidden bg-muted block-24 inline-24"
+      class="relative overflow-hidden border border-border block-12 inline-12"
     >
       <NuxtImg
+        format="webp"
+        width="48"
+        height="48"
         :src="profile.avatar"
         :alt="`Avatar of ${profile.name}`"
-        height="100%"
-        width="100%"
-        class="object-cover grayscale block-full inline-full"
+        class="object-cover block-full inline-full"
+        loading="eager"
       />
     </div>
 

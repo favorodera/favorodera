@@ -1,3 +1,5 @@
-Making the web less broken with Vue/Nuxt
+Frontend engineer building type-safe interfaces and developer tools with Vue, Nuxt and TypeScript.
 
-Maintaining [NotForm](https://github.com/favorodera/notform) — Vue Forms without the Friction.
+Currently maintaining [NotForm](https://github.com/favorodera/notform), headless form management for Vue and Nuxt.
+
+[favorodera.dev](https://favorodera.dev)
