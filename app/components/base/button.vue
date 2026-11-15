@@ -3,7 +3,7 @@ import type { PrimitiveProps } from 'reka-ui'
 import { tv } from 'tailwind-variants'
 import { type HTMLAttributes, normalizeClass } from 'vue'
 
-defineSlots<{ default: () => void }>()
+defineSlots<{ default?: () => void }>()
 
 const props = withDefaults(defineProps<PrimitiveProps & {
   class?: HTMLAttributes['class']

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-defineSlots<{
+const slots = defineSlots<{
   action?: () => void
-  default: () => void
+  default?: () => void
 }>()
 
 const props = withDefaults(defineProps<{ title?: string }>(), {
@@ -17,7 +17,7 @@ const headingId = useId()
     class="mbs-10 inline-full"
   >
     <div
-      v-if="props.title || $slots.action"
+      v-if="props.title || slots.action"
       class="mbe-4 flex items-baseline justify-between gap-4"
     >
       <h2

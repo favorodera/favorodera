@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="TItem extends { id: string }">
-defineSlots<{ default: (props: { item: TItem }) => void }>()
+defineSlots<{ default?: (props: { item: TItem }) => void }>()
 
 const props = withDefaults(defineProps<{
   items: TItem[]
