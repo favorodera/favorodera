@@ -1,8 +1,4 @@
 {
-  "editor.quickSuggestions": {
-    "other": "on",
-    "comments": "on"
-  },
   "tailwindCSS.validate": true,
   "tailwindCSS.includeLanguages": {
     "css": "tailwindcss"
@@ -19,10 +15,12 @@
     [
       "Classes\\s*=\\s*computed\\(\\(\\)\\s*=>\\s*([\\s\\S]+?)\\)",
       "'([^']+)'"
+    ],
+    [
+      "tv\\(([^)]*)\\)",
+      "[\"'`]([^\"'`]*).*?[\"'`]"
     ]
   ],
-  "tailwindCSS.lint.suggestCanonicalClasses": "ignore",
-  "tailwindCSS.lint.cssConflict": "ignore",
   "eslint.format.enable": true,
   "files.eol": "\n",
   "eslint.runtime": "node",
@@ -43,25 +41,26 @@
     "pnpm-lock.yaml"
   ],
   "eslint.validate": [
-    "javascript",
     "vue",
     "typescript",
     "json",
     "jsonc",
     "json5",
-    "html",
     "markdown",
+    "css",
     "yaml",
     "yml",
     "mdc"
   ],
   "cSpell.words": [
     "Chidera",
+    "cssicorn",
     "demi",
     "distkit",
     "Emeka",
     "esbuild",
     "favorodera",
+    "hugeicons",
     "notform",
     "nums",
     "Nuxt",

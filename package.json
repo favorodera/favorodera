@@ -24,12 +24,10 @@
     "@nuxtjs/color-mode": "catalog:",
     "@nuxtjs/seo": "catalog:",
     "@takumi-rs/core": "catalog:",
-    "@vueuse/core": "catalog:",
-    "@vueuse/nuxt": "catalog:",
-    "motion-v": "catalog:",
     "nuxt": "catalog:",
     "nuxt-schema-org": "catalog:",
     "reka-ui": "catalog:",
+    "tailwind-variants": "catalog:",
     "vue": "catalog:"
   },
   "devDependencies": {
@@ -39,6 +37,7 @@
     "@types/node": "catalog:",
     "@vercel/analytics": "catalog:",
     "eslint": "catalog:",
+    "nuxtseo-devtools-host": "catalog:",
     "nuxtseo-layer-devtools": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:",

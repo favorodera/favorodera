@@ -4,7 +4,7 @@ import withNuxt from './.nuxt/eslint.config.mjs'
 const config = defineConfig({
   tailwind: {
     settings: {
-      entryPoint: 'app/assets/css/index.css',
+      entryPoint: 'app/assets/tailwind.css',
     },
   },
   vitest: false,

@@ -1,5 +1,3 @@
-minimumReleaseAgeExclude:
-  - '@favorodera/eslint-config@3.5.0'
 shellEmulator: true
 
 trustPolicy: no-downgrade
@@ -27,14 +25,13 @@ catalog:
   '@takumi-rs/core': ^2.17.1
   '@types/node': ^26.6.6
   '@vercel/analytics': ^2.0.1
-  '@vueuse/core': ^15.0.0
-  '@vueuse/nuxt': ^15.0.0
   'eslint': ^10.13.0
-  'motion-v': ^2.8.0
   'nuxt': ^4.6.2
   'nuxt-schema-org': ^7.0.0
+  nuxtseo-devtools-host: ^1.0.2
   'nuxtseo-layer-devtools': ^5.3.16
   'reka-ui': ^2.11.0
+  tailwind-variants: ^4.0.2
   'tailwindcss': ^4.3.3
   'typescript': ^6.0.3
   'vue': ^3.5.44
