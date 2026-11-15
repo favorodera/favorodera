@@ -51,15 +51,20 @@ function isWebLink(href: string) {
           {{ segment }}
         </template>
 
-        <NuxtLink
+        <BaseButton
           v-else
-          :external="isWebLink(segment.href)"
-          :to="segment.href"
-          :target="isWebLink(segment.href) ? '_blank' : undefined"
-          class="underline underline-offset-4"
+          variant="text"
+          as-child
         >
-          {{ segment.label }}
-        </NuxtLink>
+          <NuxtLink
+            :external="isWebLink(segment.href)"
+            :to="segment.href"
+            :target="isWebLink(segment.href) ? '_blank' : undefined"
+            rel="noopener"
+          >
+            {{ segment.label }}
+          </NuxtLink>
+        </BaseButton>
       </template>
     </p>
   </BaseSection>

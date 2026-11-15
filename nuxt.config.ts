@@ -59,6 +59,9 @@ export default defineNuxtConfig({
   ogImage: {
     zeroRuntime: true,
   },
+  routeRules: {
+    '/resume': { redirect: { statusCode: 302, to: profile.resumeUrl } },
+  },
   schemaOrg: {
     identity: definePerson({
       additionalName: 'Chidera',

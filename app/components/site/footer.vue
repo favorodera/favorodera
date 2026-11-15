@@ -38,7 +38,7 @@ onBeforeUnmount(() => {
         {{ profile.availability }}
       </p>
 
-      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+      <div class="flex flex-wrap items-baseline gap-x-3 gap-y-2">
         <BaseButton
           type="button"
           variant="text"
@@ -55,13 +55,14 @@ onBeforeUnmount(() => {
         <span
           aria-hidden="true"
           class="
-            text-[11px] tracking-widest text-muted-foreground transition-opacity
+            text-[10px] tracking-widest text-muted-foreground uppercase
+            transition-opacity
 
             motion-reduce:transition-none
           "
           :class="isEmailCopied? 'opacity-100' : 'opacity-0'"
         >
-          COPIED
+          Copied
         </span>
 
         <span

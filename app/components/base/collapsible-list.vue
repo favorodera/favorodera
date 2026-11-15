@@ -58,9 +58,7 @@ const hiddenItems = computed(() => {
       <BaseButton
         type="button"
         variant="text"
-        class="
-          mbs-4 cursor-pointer self-end text-[10px] tracking-widest uppercase
-        "
+        class="mbs-4 self-end text-[10px] tracking-widest uppercase"
       >
         Show {{ open ? 'less' : 'more' }}
       </BaseButton>

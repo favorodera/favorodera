@@ -4,6 +4,23 @@ import { experience } from '~/data/experience'
 
 <template>
   <BaseSection title="Experience">
+    <template #action>
+      <BaseButton
+        as-child
+        variant="text"
+        class="text-[10px] tracking-widest uppercase"
+      >
+        <NuxtLink
+          external
+          to="/resume"
+          target="_blank"
+          rel="noopener"
+        >
+          View resume
+        </NuxtLink>
+      </BaseButton>
+    </template>
+
     <BaseCollapsibleList
       v-slot="{ item }"
       :items="experience"

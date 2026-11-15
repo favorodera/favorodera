@@ -1,5 +1,8 @@
 <script setup lang="ts">
-defineSlots<{ default: () => void }>()
+defineSlots<{
+  action?: () => void
+  default: () => void
+}>()
 
 const props = withDefaults(defineProps<{ title?: string }>(), {
   title: undefined,
@@ -13,15 +16,20 @@ const headingId = useId()
     :aria-labelledby="props.title ? headingId : undefined"
     class="mbs-10 inline-full"
   >
-    <h2
-      v-if="props.title"
-      :id="headingId"
-      class="
-        mbe-4 text-xs/tight tracking-widest text-muted-foreground uppercase
-      "
+    <div
+      v-if="props.title || $slots.action"
+      class="mbe-4 flex items-baseline justify-between gap-4"
     >
-      {{ props.title }}
-    </h2>
+      <h2
+        v-if="props.title"
+        :id="headingId"
+        class="text-xs/tight tracking-widest text-muted-foreground uppercase"
+      >
+        {{ props.title }}
+      </h2>
+
+      <slot name="action" />
+    </div>
 
     <slot />
   </section>
